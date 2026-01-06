@@ -1,0 +1,198 @@
+
+###### 以下为一个火山软件开发平台系统类库程序的内容 - 访问本程序中的接口需要引用模块"世恒封装的类库".
+
+<火山程序 类型 = "通常" 版本 = 1 />
+
+包 ""
+
+类 类_磁卡操作 <公开 @视窗.附属文件 = "SCDLL32.dll">
+{
+    变量 成员_rHandle_COM句柄 <公开 静态 类型 = 整数>
+    变量 成员_pSNR_序列号 <公开 静态 类型 = 字节集类>
+    变量 成员_pSNR_序列号_文本 <公开 静态 类型 = 文本型>
+    变量 成员_块数据 <公开 静态 类型 = 字节集类>
+
+    方法 方法_打开串口 <公开 静态 类型 = 整数 注释 = "功能说明：此函数用来通过串口与读写器建立通讯链路。传输协议为：波特率为才57600bps，数据位为8 位，1个停止位，无奇偶校验位。"
+            注释 = "                在调用其它函数功能前，一定要先进行串行口的联接。"
+            注释 = "       函数原型：Function InitPort(Const iPort: Integer;Out rHandle:Thandle): Integer;StdCall;"
+            注释 = " 参    数：port: 端口号1 到 9" 注释 = "                 rHandle： COM句柄"
+            注释 = "       返 回 值：返回值为0，表示操作正确；为其它值时表示出错。" 注释 = "       举    例：iRe:=InitPort(1,rHandle);"
+            @输出名 = "InitPort" @视窗.输入 = "SCDLL32.dll">
+    参数 参数_iPort_串口号 <类型 = 整数>
+    参数 参数_rHandle_COM句柄 <类型 = 变整数>
+    {
+
+    }
+
+    方法 方法_关闭串口 <公开 静态 类型 = 整数 注释 = "功能说明： 关闭串口"
+            注释 = "       函数原型：Function ClosePort(Const Handle:THandle):integer;StdCall;"
+            注释 = "       参    数：rHandle： 所要关闭COM的句柄" 注释 = "       返 回 值：返回值为0，表示操作正确；为其它值时表示出错。"
+            注释 = "       举    例：iRe:=ClosePort(rHandle);" @输出名 = "ClosePort" @视窗.输入 = "SCDLL32.dll">
+    参数 参数_rHandle_COM句柄 <类型 = 整数>
+    {
+
+    }
+
+    方法 方法_寻找卡 <公开 静态 类型 = 整数 注释 = "  功能说明：查询感应区内是否有卡"
+            注释 = "       函数原型：Function SC_Request(Const Handle:THandle ):integer;stdcall;" 注释 = ""
+            注释 = "       参    数： rHandle：COM的句柄" 注释 = "       返 回 值： 返回值为：4表示8Kbit(1K字节)"
+            注释 = "返回值为：2表示32Kbit(4K字节卡)" 注释 = "返回值为：1 表示无卡" 注释 = "       举    例：iRe := SC_Request(rHandle);"
+            @输出名 = "SC_Request" @视窗.输入 = "SCDLL32.dll">
+    参数 参数_rHandle_COM句柄 <类型 = 整数>
+    {
+        // 返回值为:4表示8Kbit(1K字节)
+        // 返回值为:2表示32Kbit(4K字节卡)
+        // 返回值为:1 表示无卡
+
+    }
+
+    方法 方法_读卡序列号 <公开 静态 类型 = 整数 注释 = " 功能说明：读取卡片的4字节16进制序列号 使用此函数之前先调用 SC_Request()"
+            注释 = "       函数原型：Function SC_GetSnr(Const Handle:THandle; pSNR:Pchar):integer;stdcall;" 注释 = ""
+            注释 = "       参    数： rHandle：COM的句柄" 注释 = "                  pSNR：4个字节16进制的卡片序列号 ，例如：90A00438"
+            注释 = "       返 回 值：返回值为0，表示操作正确；为其它值时表示出错。" 注释 = "       举    例：GetMem(pSNR,16);"
+            注释 = "                 iRe:=SC_GetSnr(rHandle,pSNR);" @输出名 = "SC_GetSnr" @视窗.输入 = "SCDLL32.dll">
+    参数 参数_rHandle_COM句柄 <类型 = 整数>
+    参数 参数_pSNR_序列号 <类型 = 变整数>
+    {
+
+    }
+
+    方法 方法_选择卡 <公开 静态 类型 = 整数 注释 = " 功能说明：选择要操作的卡 ，使用此函数之前先调用SC_GetSnr()"
+            注释 = "       函数原型：Function SC_SelectSnr(Const Handle:THandle; pSNR:Pchar):integer;stdcall;" 注释 = ""
+            注释 = "       参    数： rHandle：COM的句柄" 注释 = "                  pSNR：4个字节的卡片序列号 ，例如：90A00438"
+            注释 = "       返 回 值：返回值为0，表示操作正确；为其它值时表示出错。32Kbit(4k字节)的卡片返回1正确"
+            注释 = "       举    例：iRe:=SC_SelectSnr(rHandle,pSNR);" @输出名 = "SC_SelectSnr" @视窗.输入 = "SCDLL32.dll">
+    参数 参数_rHandle_COM句柄 <类型 = 整数>
+    参数 参数_pSNR_序列号 <类型 = 变整数>
+    {
+
+    }
+
+    方法 方法_核对秘钥 <公开 静态 类型 = 整数
+            注释 = "功能说明：IC卡带有密钥保护，所以 在对卡进行读写前，要进行 核对密钥，核对正确后才可以对卡进行读写，否则无法对卡进行读写操作，但可以读取卡片的物理序列号。"
+            注释 = "函数原型：Function SC_EncryptAuth (Const Handle:THandle;" 注释 = "iSector:integer;"
+            注释 = "iMode:integer;pKey:Pchar):integer;stdcall;" 注释 = "参数：" 注释 = "rHandle：COM的句柄"
+            注释 = "iSector：核对密钥的扇区号0~15" 注释 = "iMode：卡密钥的类型及A密钥60或B密钥61，通常使用A密钥60，"
+            注释 = "pKey：卡密钥初始为12个FFFFFFFFFFFF" 注释 = "返回值：返回值为0，表示操作正确；为其它值时表示出错。" 注释 = "举例：GetMem(pSNR,64);"
+            注释 = "     iMode := 60;" 注释 = "     iSector := 0;" 注释 = "     pKey := Pchar(\'FFFFFFFFFFFF\');"
+            注释 = "     iRe:= SC_EncryptAuth ( rHandle, iSector, iMode,pKey);" @输出名 = "SC_EncryptAuth"
+            @视窗.输入 = "SCDLL32.dll">
+    参数 参数_rHandle_COM句柄 <类型 = 整数>
+    参数 参数_iSector_扇区 <类型 = 整数>
+    参数 参数_iMode_模式 <类型 = 整数 @默认值 = 60>
+    参数 参数_pKey_秘钥 <类型 = 变整数>
+    {
+
+    }
+
+    方法 方法_读块数据 <公开 静态 类型 = 整数 注释 = " 功能说明：读卡一个块的16字节数据；"
+            注释 = "注意：IC卡带有密钥保护，所以 在对卡进行读写前，要进行 核对密钥，核对正确后才可以对卡进行读写，否则无法对卡进行读写操作，但可以读取卡片的物理序列号。"
+            注释 = "       函数原型：Function SC_ENRead(Const Handle:THandle;"
+            注释 = "iBlock:integer;pData:Pchar):integer;stdcall;" 注释 = "" 注释 = "       参    数： rHandle：COM的句柄"
+            注释 = "                  iBlock：所要读取的块号，值范围0~63块" 注释 = "pData ：存放读取的16个字节块数据。"
+            注释 = "       返 回 值：返回值为0，表示操作正确；为其它值时表示出错。" 注释 = "       举    例： GetMem(pData,64);"
+            注释 = "iBlock := 1;" 注释 = "iRe:= SC_RFRead(rHandle, iBlock, pData);" @输出名 = "SC_ENRead"
+            @视窗.输入 = "SCDLL32.dll">
+    参数 参数_rHandle_COM句柄 <类型 = 整数>
+    参数 参数_iBlock_块号 <类型 = 整数>
+    参数 参数_pData_数据 <类型 = 变整数>
+    {
+
+    }
+
+    方法 方法_写块数据 <公开 静态 类型 = 整数 注释 = " 功能说明：写一个块数据，写入数据必须是16个字节的十六进制。"
+            注释 = "注意：IC卡带有密钥保护，所以 在对卡进行读写前，要进行 核对密钥，核对正确后才可以对卡进行读写，否则无法对卡进行读写操作，但可以读取卡片的物理序列号。"
+            注释 = "       函数原型：Function SC_ENWrite(Const Handle:THandle;"
+            注释 = "iBlock:integer;pData:Pchar):integer;stdcall;" 注释 = "" 注释 = "       参    数： rHandle：COM的句柄"
+            注释 = "                  iBlock：所要读取的块号，值范围0~63块" 注释 = "pData ：要写入的16个字节块数据。"
+            注释 = "       返 回 值：返回值为0，表示操作正确；为其它值时表示出错。" 注释 = "       举    例： iBlock := 1;"
+            注释 = "pData := Pchar(\'11223344556677889900AABBCCDDEEFF\');"
+            注释 = "iRe:= SC_ENWrite ( rHandle,iBlock,pData);" @输出名 = "SC_ENWrite" @视窗.输入 = "SCDLL32.dll">
+    参数 参数_rHandle_COM句柄 <类型 = 整数>
+    参数 参数_iBlock_块号 <类型 = 整数>
+    参数 参数_pData_数据 <类型 = 变整数>
+    {
+
+    }
+
+    方法 方法_鸣叫 <公开 静态 类型 = 整数 注释 = " 功能说明： 控制蜂鸣器的蜂鸣时间" 注释 = "       函数原型："
+            注释 = "Function SC_Beep(Const Handle:THandle;" 注释 = "icount:integer;"
+            注释 = "iTimes:integer):integer;stdcall;" 注释 = "" 注释 = "       参    数：rHandle：COM的句柄"
+            注释 = "icount: 固定为0" 注释 = "iTimes: 1 到 255" 注释 = "       返 回 值：返回值为0，表示操作正确；为其它值时表示出错。"
+            注释 = "       举    例：iRe := SC_Beep(rHandle,0,3); //蜂鸣一声 短" 注释 = "" 注释 = "     报警声实现："
+            注释 = "     iRe := SC_Beep(rHandle,0,25);" 注释 = "     sleep(1000); //延时的时间要大于，SC_Beep 的时间，否则会造成连续蜂鸣。"
+            注释 = "     iRe := SC_Beep(rHandle,0,25);" @输出名 = "SC_Beep" @视窗.输入 = "SCDLL32.dll">
+    参数 参数_rHandle_COM句柄 <类型 = 整数>
+    参数 参数_icount_固定值 <类型 = 整数 @默认值 = 0>
+    参数 参数_iTimes_长度 <类型 = 整数 @默认值 = 1>
+    {
+
+    }
+
+    方法 方法_LED数码管显示 <公开 静态 类型 = 整数 注释 = "SC_LEDDSP()：LED数码管显示(此函数只对SC1023、SC1024、SC1025三种型号有效)"
+            注释 = "     功能说明：可显示8位 数字和部分英文、字符" 注释 = "       函数原型：Function SC_LEDDSP(Const Handle:THandle;"
+            注释 = "pData:Pchar;idot:integer):integer;stdcall;" 注释 = "       参    数： rHandle：COM的句柄"
+            注释 = "                  pData ：可以显示的数据，空格表示 不显示" 注释 = "0、1、2、3、4、5、6、7、8、9、A、B、C、D、E、F、b、"
+            注释 = "c、H、h、L、n、N、o、P、P、r、t、U、-、=、y、j" 注释 = ""
+            注释 = "                  iDot  ：小数点的位置，值为0 ~ 8  ，0表示不显示" 注释 = "       返 回 值：返回值为0，表示操作正确；为其它值时表示出错。"
+            注释 = "       举    例： iRe:= SC_LEDDSP( rHandle,12345678,6);" 注释 = ""
+            注释 = "                  清屏：iRe:= SC_LEDDSP( rHandle,        ,0);" 注释 = "" @输出名 = "SC_LEDDSP"
+            @视窗.输入 = "SCDLL32.dll">
+    参数 参数_rHandle_COM句柄 <类型 = 整数>
+    参数 参数_pData_数据 <类型 = 变整数>
+    参数 参数_iDot_小数点位置 <类型 = 整数 @默认值 = 0>
+    {
+
+    }
+
+    方法 方法_显示ASCII字符 <公开 静态 类型 = 整数 注释 = "SC_LCDDSP()：ASCII字符显示(此函数只对SC1026、SC1027、SC1028三种型号有效)"
+            注释 = "功能说明：显示ASCII字符" 注释 = "函数原型：Function SC_LCDDSP(Const Handle:THandle;"
+            注释 = "iline:integer;ilen:integer;sData:pchar):integer;stdcall;" 注释 = "参    数："
+            注释 = "                 rHandle：COM的句柄" 注释 = "                 iline: 显示在第几行"
+            注释 = "                 ilen : 显示字符长度" 注释 = "                 pData: 可以显示ASCII，如英文，标点符号等" 注释 = ""
+            注释 = "     返 回 值：返回值为0，表示操作正确；为其它值时表示出错。"
+            注释 = "     举    例： iRe:= SC_LCDDSP( rHandle,91,7,Pchar(\'ABCDEFG\'));" @输出名 = "SC_LCDDSP"
+            @视窗.输入 = "SCDLL32.dll">
+    参数 参数_rHandle_COM句柄 <类型 = 整数>
+    参数 参数_iline_第几行 <类型 = 整数>
+    参数 参数_ilen_字符长度 <类型 = 整数>
+    参数 参数_pData_数据 <类型 = 变整数>
+    {
+
+    }
+
+    方法 方法_显示中文 <公开 静态 类型 = 整数 注释 = "SC_LCDDSPCN()：ASCII字符显示(此函数只对SC1026、SC1027、SC1028三种型号有效)"
+            注释 = "功能说明：显示中文" 注释 = "函数原型：Function SC_LCDDSPCN(Const Handle:THandle;"
+            注释 = "iline:integer;ilen:integer;sData:pchar):integer;stdcall;" 注释 = "    参    数： rHandle：COM的句柄"
+            注释 = "               iline: 显示在第几行" 注释 = "               ilen : 显示字符长度"
+            注释 = "               pData: 汉字显示" 注释 = "" 注释 = "   返 回 值：返回值为0，表示操作正确；为其它值时表示出错。"
+            注释 = "   举    例： iRe:= SC_LCDDSPCN( rHandle,91,6,Pchar(\'中文显示测试\'));" @输出名 = "SC_LCDDSPCN"
+            @视窗.输入 = "SCDLL32.dll">
+    参数 参数_rHandle_COM句柄 <类型 = 整数>
+    参数 参数_iline_第几行 <类型 = 整数>
+    参数 参数_ilen_字符长度 <类型 = 整数>
+    参数 参数_pData_数据 <类型 = 变整数>
+    {
+
+    }
+
+    方法 方法_指示灯控制 <公开 静态 类型 = 整数 注释 = "SC_LED()：指示灯控制" 注释 = "     功能说明： 控制红色和绿色指示灯、蜂鸣器" 注释 = "       函数原型："
+            注释 = "Function SC_LED(Const Handle:THandle;" 注释 = "iType:integer;"
+            注释 = "iTimes:integer):integer;stdcall;" 注释 = "       参    数：rHandle：COM的句柄"
+            注释 = "iType:  1  //代表红色LED指示灯" 注释 = "2  //代表绿色LED指示灯" 注释 = "3  //代表红色和绿色LED指示灯" 注释 = "4  //代表 蜂鸣"
+            注释 = "5  //代表 红色LED指示灯和蜂鸣" 注释 = "6  //代表 绿色LED指示灯和蜂鸣" 注释 = "7  //代表 红色和绿色LED指示灯和蜂鸣"
+            注释 = "8  //代表 红色指示灯常亮" 注释 = "9  //代表 红色关闭" 注释 = "10 //代表 绿色指示灯常亮" 注释 = "11 //代表 绿色关闭"
+            注释 = "12 //代表 红色和绿色指示灯常亮" 注释 = "13 //代表 红色和绿色指示灯关闭" 注释 = "iTimes: 1 到 255"
+            注释 = "       返 回 值：返回值为0，表示操作正确；为其它值时表示出错。" 注释 = "       举    例：iRe := SC_LED(rHandle,1,5); //闪红色指示灯"
+            注释 = "" 注释 = "     闪烁两下:：" 注释 = "     iRe := SC_LED(rHandle,1,5);"
+            注释 = "     sleep(300); //延时的时间要大于，SC_LED的时间，否则会造成LED灯常亮。" 注释 = "     iRe := SC_LED (rHandle,1,5);"
+            注释 = "" @输出名 = "SC_LED" @视窗.输入 = "SCDLL32.dll">
+    参数 参数_rHandle_COM句柄 <类型 = 整数>
+    参数 参数_iType_类型 <类型 = 整数>
+    参数 参数_iTimes_事件 <类型 = 整数 @默认值 = 1>
+    {
+
+    }
+}
+
+类 ""

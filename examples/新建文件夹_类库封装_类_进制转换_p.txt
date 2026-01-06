@@ -1,0 +1,266 @@
+
+###### 以下为一个火山软件开发平台系统类库程序的内容
+
+<火山程序 类型 = "通常" 版本 = 1 />
+
+包 ""
+
+类 类_进制转换 <公开 @全局类 = 真>
+{
+    方法 方法_十进制转二进制 <公开 静态 类型 = 文本型 折叠 "">
+    参数 参数_整数 <类型 = 整数>
+    {
+        变量 局部_文本 <类型 = 文本型>
+        @ #include<stdio.h>
+        @ #include<stdlib.h>
+        @ #include<string.h>
+        // @ int main()
+        // @ {
+        @  int n = 0;
+        // @  scanf("%d", &n);//获得一个十进制的数字
+        @  n = @<参数_整数>;
+
+        @  int i = 0;
+        @  int arr[32];//用整型数组来表示二进制
+        @ while (n)  // 只要n不是0就可以继续计算
+        @  {
+        @   i++;
+        @   arr[i] = n % 2;//给数组每一位上赋值
+        @   n = n / 2;//赋值后就自动消去一位
+        @  }
+        @  for (int j = i; j > 0; j--)
+        @  {
+        // @   printf("%d", arr[j]);
+        @    @<局部_文本>.AddText(arr[j]);
+        @  }
+        // @  return @<局部_文本>;
+        返回 (局部_文本)
+
+
+        // 11010010
+        // @ }
+
+
+
+
+
+    }
+
+    方法 方法_二进制转十进制 <公开 静态 类型 = 整数 折叠 @禁止流程检查 = 真>
+    参数 参数_二进制文本 <类型 = 文本型>
+    {
+        @ #include<stdio.h>
+        @ #include<stdlib.h>
+        @ #include<string.h>
+        // @ int main()
+        // @ {
+        @ @an<CVolMem> memBuf;
+        @ INT_P npResultTextLength;
+        @ const char * arr= GetMbsText (@<参数_二进制文本>.GetText (), memBuf, &npResultTextLength);
+        // @  char arr[1001];//创建一个数组char arr[1001]用来接收要转换进制的数。(注意是char类型的数组哦)
+        // @  while (gets(arr) != NULL)
+        // @  {
+        @   int len, i, sum = 0, num, j;//初始化变量。num是每一位的数值,sum是每一位数值最后的加和。
+        @   
+        @   len = strlen(arr);//len是输入的字符数组的长度。
+        @   for (i = 0; i < len; i++)
+        @   {
+        @    num = 1;
+        @    if (arr[i] == '1')//如果位上是1那么就进行次方运算,如果是0的话就不用管(0不参与计算)
+        @    {
+        @     for (j = 1; j <= len - i - 1; j++)//j是每一位上的2的次方的个数。
+        @     {
+        @      num = num * 2;
+        @     }
+        @     sum = sum + num;//sum就是最后的十进制的值。
+        @    }
+        @   }
+        // @   printf("%d\n", sum);
+        // @  }
+        @  return sum;
+        // @ }
+
+
+
+    }
+
+    方法 方法_十进制转十六进制 <公开 静态 类型 = 文本型 @禁止流程检查 = 真>
+    参数 参数_整数 <类型 = 整数>
+    {
+        @ #include<stdio.h>
+        // @ int main()
+        // @ {
+        @  int a = 0;
+
+        @  int arr[32] = { 0 };//将转换后的十六进制数放进数组arr。
+        @  int y = 0;
+        // @  scanf("%d", &a);//获取一个十进制数
+        @  a =@<参数_整数>;
+        @  while (a != 0)
+        @  {
+        @   y++;
+        @   arr[y] = a % 16;
+        @   a = a / 16;
+        @   if (arr[y] > 9)
+        @   {
+        @    arr[y] = 'A' + (arr[y] - 10);
+        @   }
+        @   else
+        @   {
+        @    arr[y] = '0' + arr[y];
+        @   }
+        @  }
+        变量 局部_文本 <类型 = 文本型>
+        @  for (int i = y; i > 0; i--)
+        @  { //'A' 65
+        @  // printf("%c", arr[i]);
+        @ @<局部_文本>.AddText((TCHAR)arr[i]);
+        @  }
+        @  return @<局部_文本>;
+        // @ }
+        @ 
+    }
+
+    方法 方法_十六进制转十进制 <公开 静态 类型 = 整数 折叠 @禁止流程检查 = 真>
+    参数 参数_十六进制文本串 <类型 = 文本型>
+    {
+        @ #include<stdio.h>
+        @ #include<stdlib.h>
+        @ #include<string.h>
+        @ #include<math.h>//千万别忘了引这个库
+        // @ int main()
+        // @ {
+        @ @an<CVolMem> memBuf;
+        @ INT_P npResultTextLength;
+        @ const char * a= GetMbsText (@<参数_十六进制文本串>.GetText (), memBuf, &npResultTextLength);
+
+        // @  char a[20];//输入十六进制数
+        @  int b[20] = { 0 };//将十六进制数转成int类型
+        @  int i, j, sum=0;//这里的sum别忘了初始化。
+        @  int c = 0;//最终的十进制数
+        // @  gets(a);
+        @  //将其从char类型转成int类型,并存入数组b[]中。
+        @  while (a[sum] != '\0')
+        @  {
+        @   if ((a[sum] >= 'a') && (a[sum] <= 'f'))
+        @   {
+        @    b[sum] = a[sum] - 'a' + 10;
+        @    sum++;
+        @    continue;
+        @   }
+        @   if ((a[sum] >= 'A') && (a[sum] <= 'F'))
+        @   {
+        @    b[sum] = a[sum] - 'A' + 10;
+        @    sum++;
+        @    continue;
+        @   }
+        @    b[sum] = a[sum] - '0';
+        @    sum++;
+        @  }
+        @    //将每一位都转成16进制
+        @  for(i = 0; i < sum; i++)//十进制转十六进制和十六进制转十进制是互逆的
+        @  {
+        @   b[sum - 1 - i] = b[sum - 1 - i] * pow(16, i);
+        @  }
+        @  //直接累加
+        @  for (j = 0;j<sum;j++) 
+        @  {
+        @   c = c + b[j];
+        @  }
+        @  //printf("%d", c);
+        @  return c;
+        // @ }
+
+    }
+
+    方法 方法_十六进制转二进制 <公开 静态 类型 = 文本型 折叠>
+    参数 参数_十六进制 <类型 = 文本型>
+    {
+        返回 (方法_十进制转二进制 (方法_十六进制转十进制 (参数_十六进制)))
+
+    }
+
+    方法 二进制转十进制 <公开 静态 类型 = 整数 折叠 @禁止流程检查 = 真>
+    参数 参数_二进制文本 <类型 = 文本型>
+    {
+        @ #include<stdio.h>
+        @ #include<stdlib.h>
+        @ #include<string.h>
+        // @ int main()
+        // @ {
+        @ @an<CVolMem> memBuf;
+        @ INT_P npResultTextLength;
+        @ const char * arr= GetMbsText (@<参数_二进制文本>.GetText (), memBuf, &npResultTextLength);
+        // @  char arr[1001];//创建一个数组char arr[1001]用来接收要转换进制的数。(注意是char类型的数组哦)
+        // @  while (gets(arr) != NULL)
+        // @  {
+        @   int len, i, sum = 0, num, j;//初始化变量。num是每一位的数值,sum是每一位数值最后的加和。
+        @   
+        @   len = strlen(arr);//len是输入的字符数组的长度。
+        @   for (i = 0; i < len; i++)
+        @   {
+        @    num = 1;
+        @    if (arr[i] == '1')//如果位上是1那么就进行次方运算,如果是0的话就不用管(0不参与计算)
+        @    {
+        @     for (j = 1; j <= len - i - 1; j++)//j是每一位上的2的次方的个数。
+        @     {
+        @      num = num * 2;
+        @     }
+        @     sum = sum + num;//sum就是最后的十进制的值。
+        @    }
+        @   }
+        // @   printf("%d\n", sum);
+        // @  }
+        @  return sum;
+        // @ }
+
+
+
+    }
+
+    方法 世恒_二进制转十进制 <公开 静态 类型 = 整数 折叠 @禁止流程检查 = 真>
+    参数 参数_二进制文本 <类型 = 文本型>
+    {
+        @ #include<stdio.h>
+        @ #include<stdlib.h>
+        @ #include<string.h>
+        // @ int main()
+        // @ {
+        @ @an<CVolMem> memBuf;
+        @ INT_P npResultTextLength;
+        @ const char * arr= GetMbsText (@<参数_二进制文本>.GetText (), memBuf, &npResultTextLength);
+        // @  char arr[1001];//创建一个数组char arr[1001]用来接收要转换进制的数。(注意是char类型的数组哦)
+        // @  while (gets(arr) != NULL)
+        // @  {
+        @   int len, i, sum = 0, num, j;//初始化变量。num是每一位的数值,sum是每一位数值最后的加和。
+        @   
+        @   len = strlen(arr);//len是输入的字符数组的长度。
+        @   for (i = 0; i < len; i++)
+        @   {
+        @    num = 1;
+        @    if (arr[i] == '1')//如果位上是1那么就进行次方运算,如果是0的话就不用管(0不参与计算)
+        @    {
+        @     for (j = 1; j <= len - i - 1; j++)//j是每一位上的2的次方的个数。
+        @     {
+        @      num = num * 2;
+        @     }
+        @     sum = sum + num;//sum就是最后的十进制的值。
+        @    }
+        @   }
+        // @   printf("%d\n", sum);
+        // @  }
+        @  return sum;
+        // @ }
+
+
+
+    }
+
+    方法 方法_二进制转十六进制 <公开 静态 类型 = 文本型 折叠>
+    参数 参数_二进制 <类型 = 文本型>
+    {
+        返回 (方法_十进制转十六进制 (方法_二进制转十进制 (参数_二进制)))
+
+
+    }
+}

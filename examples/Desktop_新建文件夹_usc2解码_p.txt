@@ -1,0 +1,75 @@
+
+###### 以下为一个火山软件开发平台系统类库程序的内容
+
+<火山程序 类型 = "通常" 版本 = 1 />
+
+包 火山.程序
+
+类 启动类 <公开 基础类 = 窗口程序类>
+{
+    变量 主窗口对象 <类型 = 我的主窗口 标题 = "我的主窗口">
+
+    方法 启动方法 <公开 类型 = 整数>
+    {
+        主窗口对象.创建主窗口 ()
+        返回 (1)
+    }
+}
+
+# ===
+
+类 我的主窗口 <基础类 = 窗口 注释 = "样例主窗口" @视窗.布局 = "client_size = \"500, 300\"">
+{
+    变量 按钮1 <类型 = 按钮 隐藏值属性 = "0" @视窗.布局 = "id = 101\r\npos = \"93, 126, 144, 72\"" 标题 = "USC2到文本">
+
+    方法 按钮_被单击 <接收事件 类型 = 整数 注释 = "当按钮被单击后发送此事件">
+    参数 来源对象 <类型 = 按钮 注释 = "提供事件产生的具体来源对象">
+    参数 标记值 <类型 = 整数 注释 = "用户调用\"挂接事件\"命令时所提供的\"标记值\"参数值,非此方式挂接事件则本参数值固定为0.">
+    {
+        调试输出 (USC2到文本 (文本到字节集 ("\u6559\u80b2\u7f51")))
+        返回 (0)
+    }
+
+    # @begin
+    # int ucs2_to_utf8( char *olData, int ilen,  char *buff, int bufLen) {
+    #     int length = 0;
+    #     if(!buff) return length;
+    #     char *start = NULL;
+    #     char *pout = buff;
+    #     for(start = olData; start != NULL && start < olData+ilen-1; start +=2) {
+    #         unsigned short ucs2_code = *(unsigned short *)start;
+    #         if(0x0080 > ucs2_code) {
+    #             if(length+1 > bufLen) return -1;
+    #             *pout = *start;
+    #             length++;
+    #             pout ++;
+    #         } else if(0x0800 > ucs2_code) {
+    #             if(length+2 > bufLen) return -1;
+    #             *pout = ((char)(ucs2_code >> 6)) | 0xc0;
+    #             *(pout+1) = ((char)(ucs2_code & 0x003F)) | 0x80;
+    #             length += 2;
+    #             pout += 2;
+    #         } else {
+    #             if(length+3 > bufLen) return -1;
+    #             *pout = ((char)(ucs2_code >> 12)) | 0xE0;
+    #             *(pout+1) = ((char)((ucs2_code & 0x0FC0)>> 6)) | 0x80;
+    #             *(pout+2) = ((char)(ucs2_code & 0x003F)) | 0x80;
+    #             length += 3;
+    #             pout += 3;
+    #         }
+    #     }
+    #     return length;
+    # }
+    # @end
+
+    方法 USC2到文本 <公开 静态 类型 = 文本型 @禁止流程检查 = 真>
+    参数 USC2 <类型 = 字节集类>
+    {
+        @ int nSize = @<USC2>.GetSize() * 2;
+        @ char * pBuff = (char *) malloc(nSize);
+        @ int iSize = ucs2_to_utf8 ((char *)@<USC2>.GetPtr(), @<USC2>.GetSize(), pBuff, nSize);
+        @ @an<CVolMem> memBuf (pBuff, iSize);
+        @ free(pBuff);
+        @ return @an<CVolString> ( (const CHAR*)memBuf.GetPtr () );
+    }
+}

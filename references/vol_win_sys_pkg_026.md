@@ -1,0 +1,10840 @@
+
+## 火山"视窗项目"系统类库模块: MFC界面基本类
+
+### 包: 火山.MFC界面.基本
+* **描述:** 本程序提供视窗项目MFC界面的窗口支持功能
+
+---
+
+#### 火山.MFC界面.基本.图片放置方式
+
+* **类型:** `类`
+* **名称:** `图片放置方式`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+
+##### 火山.MFC界面.基本.图片放置方式.图片居左上
+
+* **类型:** `成员常量`
+* **名称:** `图片居左上`
+* **数据类型:** `图片放置方式`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.图片放置方式.图片平铺
+
+* **类型:** `成员常量`
+* **名称:** `图片平铺`
+* **数据类型:** `图片放置方式`
+* **初始值:** `1`
+
+##### 火山.MFC界面.基本.图片放置方式.图片居中
+
+* **类型:** `成员常量`
+* **名称:** `图片居中`
+* **数据类型:** `图片放置方式`
+* **初始值:** `2`
+
+##### 火山.MFC界面.基本.图片放置方式.缩放图片
+
+* **类型:** `成员常量`
+* **名称:** `缩放图片`
+* **数据类型:** `图片放置方式`
+* **初始值:** `3`
+
+---
+
+#### 火山.MFC界面.基本.空布局
+
+* **类型:** `类`
+* **名称:** `空布局`
+* **基础类:** `组件布局器`
+* **描述:** 一个空白内容的布局
+
+---
+
+#### 火山.MFC界面.基本.组件布局器
+
+* **类型:** `类`
+* **名称:** `组件布局器`
+* **基础类:** `窗口容器组件`
+* **描述:** 提供一个通用的窗口容器组件
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-选择夹3-tab_demo3-main](#vol-选择夹3-tab_demo3-main), [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-卷帘式菜单-outbar-main](#vol-卷帘式菜单-outbar-main), [vol-动态创建布局-dynamic_create-main](#vol-动态创建布局-dynamic_create-main), [vol-用户自定义窗口组件-user_control-main](#vol-用户自定义窗口组件-user_control-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-大整数运算-bnsample-main](#vol-大整数运算-bnsample-main)
+
+##### 火山.MFC界面.基本.组件布局器.底色
+
+* **类型:** `属性读方法`
+* **名称:** `底色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的本组件背景颜色值
+
+##### 火山.MFC界面.基本.组件布局器.底色
+
+* **类型:** `属性写方法`
+* **名称:** `底色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.默认色"来指定使用默认组件背景颜色.
+* **特性:**
+	* `颜色值`(可以为默认色)
+* **描述:** 设置本组件的背景颜色值. 如果本组件未曾设置过背景颜色,则默认为"颜色类.默认色".
+
+##### 火山.MFC界面.基本.组件布局器.底图
+
+* **类型:** `属性写方法`
+* **名称:** `底图`
+* **参数:**
+	* `所欲设置的位图` (`位图资源`): 提供所欲设置的位图资源,如果该资源值为"空资源.空位图",则将取消底图.
+* **描述:** 设置显示在本组件背景上的位图
+
+##### 火山.MFC界面.基本.组件布局器.底图方式
+
+* **类型:** `属性读方法`
+* **名称:** `底图方式`
+* **返回值数据类型:** `图片放置方式`
+* **描述:** 返回本组件上底图的放置方式
+
+##### 火山.MFC界面.基本.组件布局器.底图方式
+
+* **类型:** `属性写方法`
+* **名称:** `底图方式`
+* **参数:**
+	* `放置方式` (`图片放置方式`)
+* **描述:** 设置本组件上底图的放置方式
+
+##### 火山.MFC界面.基本.组件布局器.透明
+
+* **类型:** `属性读方法`
+* **名称:** `透明`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回本组件背景是否透明
+
+##### 火山.MFC界面.基本.组件布局器.透明
+
+* **类型:** `属性写方法`
+* **名称:** `透明`
+* **参数:**
+	* `是否透明` (`逻辑型`)
+* **描述:** 设置本组件的背景颜色值. 如果本属性值设置为真,则"背景颜色"属性将不起作用. 注意本属性不支持在界面设计器中预览,不支持在顶层窗口上使用.
+
+##### 火山.MFC界面.基本.组件布局器.提示框弹出时间
+
+* **类型:** `属性写方法`
+* **名称:** `提示框弹出时间`
+* **参数:**
+	* `延迟时间` (`整数`): 设置具体延迟时间,单位毫秒.
+* **描述:** 设置在显示本组件中子组件的提示文本(由该子组件的"提示信息"属性提供)时,显示提示框前的等待时间(此时鼠标必须在该子组件内保持静止状态).
+
+##### 火山.MFC界面.基本.组件布局器.提示框保持时间
+
+* **类型:** `属性写方法`
+* **名称:** `提示框保持时间`
+* **参数:**
+	* `延迟时间` (`整数`): 设置具体延迟时间,单位毫秒.
+* **描述:** 设置在显示本组件中子组件的提示文本(由该子组件的"提示信息"属性提供)时,提示框的显示时间(此时鼠标必须在该子组件内保持静止状态).
+
+##### 火山.MFC界面.基本.组件布局器.提示框切换时间
+
+* **类型:** `属性写方法`
+* **名称:** `提示框切换时间`
+* **参数:**
+	* `延迟时间` (`整数`): 设置具体延迟时间,单位毫秒.
+* **描述:** 设置在显示本组件中子组件的提示文本(由该子组件的"提示信息"属性提供)时,鼠标位置从一个有提示文本的子组件移动到另一个有提示文本的子组件时的提示框切换显示延迟时间.
+
+##### 火山.MFC界面.基本.组件布局器.提示框边空
+
+* **类型:** `属性写方法`
+* **名称:** `提示框边空`
+* **参数:**
+	* `空白尺寸` (`整数`): 单位像素
+* **描述:** 设置在显示本组件中子组件的提示文本(由该子组件的"提示信息"属性提供)时,提示框中所显示文本内容的周边空白尺寸.
+
+##### 火山.MFC界面.基本.组件布局器.提示框最大宽度
+
+* **类型:** `属性写方法`
+* **名称:** `提示框最大宽度`
+* **参数:**
+	* `最大宽度` (`整数`): 单位像素
+* **描述:** 设置在显示本组件中子组件的提示文本(由该子组件的"提示信息"属性提供)时,提示框的最大显示宽度. 注意: 只有设置了本属性值,显示多行或超宽提示文本时才会自动换行.
+
+##### 火山.MFC界面.基本.组件布局器.提示框背景颜色
+
+* **类型:** `属性写方法`
+* **名称:** `提示框背景颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值
+* **特性:**
+	* `颜色值`
+* **描述:** 设置在显示本组件中子组件的提示文本(由该子组件的"提示信息"属性提供)时,提示框的背景颜色.
+
+##### 火山.MFC界面.基本.组件布局器.提示框文本颜色
+
+* **类型:** `属性写方法`
+* **名称:** `提示框文本颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值
+* **特性:**
+	* `颜色值`
+* **描述:** 设置在显示本组件中子组件的提示文本(由该子组件的"提示信息"属性提供)时,提示框中所显示文本内容的颜色.
+
+##### 火山.MFC界面.基本.组件布局器.提示框禁用系统主题
+
+* **类型:** `属性写方法`
+* **名称:** `提示框禁用系统主题`
+* **参数:**
+	* `是否禁用` (`逻辑型`)
+* **描述:** 设置在显示本组件中子组件的提示文本(由该子组件的"提示信息"属性提供)时,提示框是否禁止使用Windows系统主题. 默认属性值为真. 注意: 如果将本属性值设置为假,则"提示框边空","提示框背景颜色","提示框文本颜色"属性将失去效果.
+
+##### 火山.MFC界面.基本.组件布局器.创建完毕
+
+* **类型:** `事件定义方法`
+* **名称:** `创建完毕`
+* **返回值数据类型:** `整数`
+* **描述:** 当本组件及其中所有子组件均被创建完毕后发送此事件.
+* **相关例程:** [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-文件浏览-file_viewer-main](#vol-文件浏览-file_viewer-main), [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-火花代码编辑框-codeedittext-main](#vol-火花代码编辑框-codeedittext-main), [vol-卷帘式菜单-outbar-main](#vol-卷帘式菜单-outbar-main), [vol-属性表格-property_grid-main](#vol-属性表格-property_grid-main), [vol-带按钮列表框-vs_list_box-main](#vol-带按钮列表框-vs_list_box-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-动态创建布局-dynamic_create-main](#vol-动态创建布局-dynamic_create-main), [vol-空对象测试-null_object_test-main](#vol-空对象测试-null_object_test-main), [vol-位图处理-adv_bitmap-main](#vol-位图处理-adv_bitmap-main), [vol-com变体型测试-variant_test-main](#vol-com变体型测试-variant_test-main), [vol-跨对象发送接收事件-object_event-main](#vol-跨对象发送接收事件-object_event-main), [vol-二维码生成-qrencode-main](#vol-二维码生成-qrencode-main), [vol-win10通知-wintoast-main](#vol-win10通知-wintoast-main), [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main), [vol-程序崩溃回调-breakpad-main](#vol-程序崩溃回调-breakpad-main), [vol-文本编码转换-libiconv-main](#vol-文本编码转换-libiconv-main), [vol-内存映射文件-filemapping-main](#vol-内存映射文件-filemapping-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-邮件槽-mailslot-main](#vol-邮件槽-mailslot-main), [vol-命名管道-namedpipe-main](#vol-命名管道-namedpipe-main), [vol-线程池-pool_thread-main](#vol-线程池-pool_thread-main), [vol-mfc控制台程序-mfc_console-main](#vol-mfc控制台程序-mfc_console-main), [vol-密码管理-pw-main](#vol-密码管理-pw-main), [vol-json数据访问-json-main](#vol-json数据访问-json-main), [vol-xml数据访问-xml-main](#vol-xml数据访问-xml-main), [vol-正则表达式-deelx_regular-main](#vol-正则表达式-deelx_regular-main), [vol-网页解析-html_parser-main](#vol-网页解析-html_parser-main), [vol-高级网页解析-adv_html_parser-main](#vol-高级网页解析-adv_html_parser-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-大整数运算-bnsample-main](#vol-大整数运算-bnsample-main), [vol-高性能键值表-mmkv-main](#vol-高性能键值表-mmkv-main), [vol-cron时间表达式-cron-main](#vol-cron时间表达式-cron-main), [vol-yyjson数据访问-yyjson-main](#vol-yyjson数据访问-yyjson-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-串口通讯-cserialport-main](#vol-串口通讯-cserialport-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-tcp转发-tcp_forward-main](#vol-tcp转发-tcp_forward-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main), [vol-简单http服务器-http_server-main](#vol-简单http服务器-http_server-main), [vol-简单pack服务器-pack_server-main](#vol-简单pack服务器-pack_server-main), [vol-简单pull服务器-pull_server-main](#vol-简单pull服务器-pull_server-main), [vol-简单tcp客户端-tcp_client-main](#vol-简单tcp客户端-tcp_client-main), [vol-简单tcp服务器-tcp_server-main](#vol-简单tcp服务器-tcp_server-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main), [vol-简单udp服务器-udp_server-main](#vol-简单udp服务器-udp_server-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pack文件传送服务器-hp_packfile_server-main](#vol-pack文件传送服务器-hp_packfile_server-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-pull文件传送服务器-hp_pullfile_server-main](#vol-pull文件传送服务器-hp_pullfile_server-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-tcp文件传送服务器-hp_tcpfile_server-main](#vol-tcp文件传送服务器-hp_tcpfile_server-main), [vol-服务器-server-main](#vol-服务器-server-main), [vol-客户端-client-main](#vol-客户端-client-main), [vol-mysql-mysqlsample-main](#vol-mysql-mysqlsample-main), [vol-sqlite3-sqlite3-main](#vol-sqlite3-sqlite3-main), [vol-ado-ado_sample-main](#vol-ado-ado_sample-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main), [vol-python脚本-python_script-main](#vol-python脚本-python_script-main), [vol-javascript脚本-v8js-main](#vol-javascript脚本-v8js-main), [vol-elk微型js引擎-elk_js-main](#vol-elk微型js引擎-elk_js-main), [vol-阿里云oss-aliyun_oss-main](#vol-阿里云oss-aliyun_oss-main), [vol-海康威视工业相机-hikrobot-main](#vol-海康威视工业相机-hikrobot-main), [vol-腾讯云对象存储临时秘钥获取-tencentcos-main](#vol-腾讯云对象存储临时秘钥获取-tencentcos-main), [vol-excel2021-excel2021-main](#vol-excel2021-excel2021-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main), [vol-rvm人像抠图-rvm_segmentation-main](#vol-rvm人像抠图-rvm_segmentation-main), [vol-角点检测-corner_detection-main](#vol-角点检测-corner_detection-main), [vol-dnn文本检测-dnn_text_detection_recognition-main](#vol-dnn文本检测-dnn_text_detection_recognition-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.组件布局器.将被销毁
+
+* **类型:** `事件定义方法`
+* **名称:** `将被销毁`
+* **返回值数据类型:** `整数`
+* **描述:** 当本组件被销毁前发送此事件
+* **相关例程:** [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main), [vol-命名管道-namedpipe-main](#vol-命名管道-namedpipe-main), [vol-多线程-muti_thread-main](#vol-多线程-muti_thread-main), [vol-密码管理-pw-main](#vol-密码管理-pw-main), [vol-网页解析-html_parser-main](#vol-网页解析-html_parser-main), [vol-串口通讯-cserialport-main](#vol-串口通讯-cserialport-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-简单http服务器-http_server-main](#vol-简单http服务器-http_server-main), [vol-简单pack客户端-pack_client-main](#vol-简单pack客户端-pack_client-main), [vol-简单pack服务器-pack_server-main](#vol-简单pack服务器-pack_server-main), [vol-简单pull客户端-pull_client-main](#vol-简单pull客户端-pull_client-main), [vol-简单pull服务器-pull_server-main](#vol-简单pull服务器-pull_server-main), [vol-简单tcp客户端-tcp_client-main](#vol-简单tcp客户端-tcp_client-main), [vol-简单tcp服务器-tcp_server-main](#vol-简单tcp服务器-tcp_server-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main), [vol-简单udp客户端-udp_client-main](#vol-简单udp客户端-udp_client-main), [vol-简单udp服务器-udp_server-main](#vol-简单udp服务器-udp_server-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pack文件传送服务器-hp_packfile_server-main](#vol-pack文件传送服务器-hp_packfile_server-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-pull文件传送服务器-hp_pullfile_server-main](#vol-pull文件传送服务器-hp_pullfile_server-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-tcp文件传送服务器-hp_tcpfile_server-main](#vol-tcp文件传送服务器-hp_tcpfile_server-main), [vol-服务器-server-main](#vol-服务器-server-main), [vol-客户端-client-main](#vol-客户端-client-main), [vol-mysql-mysqlsample-main](#vol-mysql-mysqlsample-main), [vol-sqlite3-sqlite3-main](#vol-sqlite3-sqlite3-main), [vol-ado-ado_sample-main](#vol-ado-ado_sample-main), [vol-excel2021-excel2021-main](#vol-excel2021-excel2021-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-rvm人像抠图-rvm_segmentation-main](#vol-rvm人像抠图-rvm_segmentation-main)
+
+##### 火山.MFC界面.基本.组件布局器.已被销毁
+
+* **类型:** `事件定义方法`
+* **名称:** `已被销毁`
+* **返回值数据类型:** `整数`
+* **描述:** 当本组件被最终销毁时发送此事件. 本事件为窗口组件所接收到的最后一个事件,在接收到本事件时,本窗口组件所对应的窗口句柄已经被关闭,因此在接收到本事件后不要对组件进行任何窗口句柄相关的操作. 可以在本事件中对本组件的相关数据进行最终清理. 注意: 如果本窗口组件不为自然销毁(因为自身或自身的父窗口被用户关闭)而是因为本窗口组件对象被释放而被动销毁,将不会接收到此事件.
+* **相关例程:** [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main)
+
+##### 火山.MFC界面.基本.组件布局器.位置被改变
+
+* **类型:** `事件定义方法`
+* **名称:** `位置被改变`
+* **返回值数据类型:** `整数`
+* **描述:** 当本组件的位置被改变后发送此事件
+* **相关例程:** [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main)
+
+##### 火山.MFC界面.基本.组件布局器.尺寸被改变
+
+* **类型:** `事件定义方法`
+* **名称:** `尺寸被改变`
+* **返回值数据类型:** `整数`
+* **描述:** 当本组件的尺寸被改变后发送此事件
+* **相关例程:** [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-火花代码编辑框-codeedittext-main](#vol-火花代码编辑框-codeedittext-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-卷帘式菜单-outbar-main](#vol-卷帘式菜单-outbar-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main)
+
+##### 火山.MFC界面.基本.组件布局器.被显示
+
+* **类型:** `事件定义方法`
+* **名称:** `被显示`
+* **返回值数据类型:** `整数`
+* **描述:** 当本组件被显示后发送此事件
+
+##### 火山.MFC界面.基本.组件布局器.被隐藏
+
+* **类型:** `事件定义方法`
+* **名称:** `被隐藏`
+* **返回值数据类型:** `整数`
+* **描述:** 当本组件被隐藏后发送此事件
+
+##### 火山.MFC界面.基本.组件布局器.接收到子组件命令
+
+* **类型:** `事件定义方法`
+* **名称:** `接收到子组件命令`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `命令代码` (`整数`): 提供命令所对应的子组件ID值
+* **描述:** 当本组件布局器上的子组件,譬如按钮被单击或者对应快捷键被按下时,发送此事件.
+* **返回值描述:** 所通知的对应命令被处理返回1,否则返回0. 注意: 如果本处的事件处理方法返回1,则所处窗口将不会再接收到"接收到命令"事件.
+
+##### 火山.MFC界面.基本.组件布局器.重画布局器
+
+* **类型:** `方法`
+* **名称:** `重画布局器`
+* **描述:** 如果需要重画本组件,不要调用基础类中的"重画"方法,而需要调用本方法,这样才能保证在"透明"属性被设置为真时正常刷新本组件的显示.
+
+##### 火山.MFC界面.基本.组件布局器.取底图
+
+* **类型:** `方法`
+* **名称:** `取底图`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所取回图片` (`位图对象类`): 组件上通过"底图"属性所置入的图片数据将被填入到此对象中
+	* `输出宽度` (`整数`, 默认值: `0`): 指定图片的输出宽度. 如果小于0,参数值指定的是最终图片输出宽度相对于所取得图片宽度的百分比(最小为10%); 如果等于0,则按图片原宽度输出; 如果大于0,指定输出图片的绝对宽度.
+	* `输出高度` (`整数`, 默认值: `0`): 指定图片的输出高度. 如果小于0,参数值指定的是最终图片输出高度相对于所取得图片高度的百分比(最小为10%); 如果等于0,则按图片原高度输出; 如果大于0,指定输出图片的绝对高度.
+* **描述:** 取回本组件上通过"底图"属性所置入的图片数据
+* **返回值描述:** 成功返回真,失败返回假.
+
+##### 火山.MFC界面.基本.组件布局器.置底图文件
+
+* **类型:** `方法`
+* **名称:** `置底图文件`
+* **参数:**
+	* `所欲设置的位图文件名` (`文本型`)
+* **描述:** 设置显示在本组件背景上的位图文件
+* **相关例程:** [vol-位图处理-adv_bitmap-main](#vol-位图处理-adv_bitmap-main)
+
+##### 火山.MFC界面.基本.组件布局器.置底图数据
+
+* **类型:** `方法`
+* **名称:** `置底图数据`
+* **参数:**
+	* `所欲设置的位图文件数据` (`字节集类`)
+* **描述:** 设置显示在本组件背景上的位图文件数据
+* **相关例程:** [vol-位图处理-adv_bitmap-main](#vol-位图处理-adv_bitmap-main), [vol-二维码生成-qrencode-main](#vol-二维码生成-qrencode-main), [vol-内存映射文件-filemapping-main](#vol-内存映射文件-filemapping-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main)
+
+---
+
+#### 火山.MFC界面.基本.窗口边框类型
+
+* **类型:** `类`
+* **名称:** `窗口边框类型`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供窗口的各种边框类型
+
+##### 火山.MFC界面.基本.窗口边框类型.无边框
+
+* **类型:** `成员常量`
+* **名称:** `无边框`
+* **数据类型:** `窗口边框类型`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.窗口边框类型.普通可调边框
+
+* **类型:** `成员常量`
+* **名称:** `普通可调边框`
+* **数据类型:** `窗口边框类型`
+* **初始值:** `1`
+
+##### 火山.MFC界面.基本.窗口边框类型.普通固定边框
+
+* **类型:** `成员常量`
+* **名称:** `普通固定边框`
+* **数据类型:** `窗口边框类型`
+* **初始值:** `2`
+
+##### 火山.MFC界面.基本.窗口边框类型.窄标题可调边框
+
+* **类型:** `成员常量`
+* **名称:** `窄标题可调边框`
+* **数据类型:** `窗口边框类型`
+* **初始值:** `3`
+
+##### 火山.MFC界面.基本.窗口边框类型.窄标题固定边框
+
+* **类型:** `成员常量`
+* **名称:** `窄标题固定边框`
+* **数据类型:** `窗口边框类型`
+* **初始值:** `4`
+
+##### 火山.MFC界面.基本.窗口边框类型.镜框式可调边框
+
+* **类型:** `成员常量`
+* **名称:** `镜框式可调边框`
+* **数据类型:** `窗口边框类型`
+* **初始值:** `5`
+
+##### 火山.MFC界面.基本.窗口边框类型.镜框式固定边框
+
+* **类型:** `成员常量`
+* **名称:** `镜框式固定边框`
+* **数据类型:** `窗口边框类型`
+* **初始值:** `6`
+
+---
+
+#### 火山.MFC界面.基本.窗口位置类型
+
+* **类型:** `类`
+* **名称:** `窗口位置类型`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供窗口的各种当前位置状态
+
+##### 火山.MFC界面.基本.窗口位置类型.通常
+
+* **类型:** `成员常量`
+* **名称:** `通常`
+* **数据类型:** `窗口位置类型`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.窗口位置类型.居中
+
+* **类型:** `成员常量`
+* **名称:** `居中`
+* **数据类型:** `窗口位置类型`
+* **初始值:** `1`
+
+##### 火山.MFC界面.基本.窗口位置类型.最小化
+
+* **类型:** `成员常量`
+* **名称:** `最小化`
+* **数据类型:** `窗口位置类型`
+* **初始值:** `2`
+
+##### 火山.MFC界面.基本.窗口位置类型.最大化
+
+* **类型:** `成员常量`
+* **名称:** `最大化`
+* **数据类型:** `窗口位置类型`
+* **初始值:** `3`
+
+---
+
+#### 火山.MFC界面.基本.窗口外形类型
+
+* **类型:** `类`
+* **名称:** `窗口外形类型`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供窗口的各种常用外形
+
+##### 火山.MFC界面.基本.窗口外形类型.矩形
+
+* **类型:** `成员常量`
+* **名称:** `矩形`
+* **数据类型:** `窗口外形类型`
+* **初始值:** `0`
+* **描述:** 正常的窗口外形
+
+##### 火山.MFC界面.基本.窗口外形类型.椭圆
+
+* **类型:** `成员常量`
+* **名称:** `椭圆`
+* **数据类型:** `窗口外形类型`
+* **初始值:** `1`
+
+##### 火山.MFC界面.基本.窗口外形类型.圆角矩形
+
+* **类型:** `成员常量`
+* **名称:** `圆角矩形`
+* **数据类型:** `窗口外形类型`
+* **初始值:** `2`
+
+---
+
+#### 火山.MFC界面.基本.窗口位置限制信息
+
+* **类型:** `类`
+* **名称:** `窗口位置限制信息`
+* **文档分类:** `辅助类`
+* **描述:** 提供窗口的位置限制信息,成员单位均为像素.
+* **相关例程:** [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main)
+
+##### 火山.MFC界面.基本.窗口位置限制信息.最大尺寸
+
+* **类型:** `成员变量`
+* **名称:** `最大尺寸`
+* **数据类型:** `尺寸类`
+* **描述:** 指定窗口所允许的最大宽度和高度
+
+##### 火山.MFC界面.基本.窗口位置限制信息.最大位置
+
+* **类型:** `成员变量`
+* **名称:** `最大位置`
+* **数据类型:** `位置类`
+* **描述:** 指定窗口最大化时的左边和顶边位置
+
+##### 火山.MFC界面.基本.窗口位置限制信息.最小调节尺寸
+
+* **类型:** `成员变量`
+* **名称:** `最小调节尺寸`
+* **数据类型:** `尺寸类`
+* **描述:** 指定当拖动边框调节窗口尺寸时所允许的最小窗口尺寸
+* **相关例程:** [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main)
+
+##### 火山.MFC界面.基本.窗口位置限制信息.最大调节尺寸
+
+* **类型:** `成员变量`
+* **名称:** `最大调节尺寸`
+* **数据类型:** `尺寸类`
+* **描述:** 指定当拖动边框调节窗口尺寸时所允许的最大窗口尺寸
+
+---
+
+#### 火山.MFC界面.基本.窗口
+
+* **类型:** `类`
+* **名称:** `窗口`
+* **基础类:** `组件布局器`
+* **描述:** 提供一个顶层窗口类组件
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-选择夹3-tab_demo3-main](#vol-选择夹3-tab_demo3-main), [vol-对话框-dialog_test-main](#vol-对话框-dialog_test-main), [vol-文件浏览-file_viewer-main](#vol-文件浏览-file_viewer-main), [vol-时钟-timer-main](#vol-时钟-timer-main), [vol-超级列表框-listview-main](#vol-超级列表框-listview-main), [vol-虚拟超级列表框-virtual_list-main](#vol-虚拟超级列表框-virtual_list-main), [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-树形框-tree_box-main](#vol-树形框-tree_box-main), [vol-超级编辑框-rich_edit-main](#vol-超级编辑框-rich_edit-main), [vol-工具条-tool_bar-main](#vol-工具条-tool_bar-main), [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-日期框-date_box-main](#vol-日期框-date_box-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-火花代码编辑框-codeedittext-main](#vol-火花代码编辑框-codeedittext-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-卷帘式菜单-outbar-main](#vol-卷帘式菜单-outbar-main), [vol-属性表格-property_grid-main](#vol-属性表格-property_grid-main), [vol-带按钮列表框-vs_list_box-main](#vol-带按钮列表框-vs_list_box-main), [vol-窗口组件动态消息过滤-msg_filter-main](#vol-窗口组件动态消息过滤-msg_filter-main), [vol-图片组动态修改-change_image_list-main](#vol-图片组动态修改-change_image_list-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-edge浏览框自定义菜单-webview2_contextmenu-main](#vol-edge浏览框自定义菜单-webview2_contextmenu-main), [vol-动态创建布局-dynamic_create-main](#vol-动态创建布局-dynamic_create-main), [vol-用户自定义窗口组件-user_control-main](#vol-用户自定义窗口组件-user_control-main), [vol-祖国您好-base_test-main](#vol-祖国您好-base_test-main), [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main), [vol-打印测试-print_test-main](#vol-打印测试-print_test-main), [vol-空对象测试-null_object_test-main](#vol-空对象测试-null_object_test-main), [vol-自定义流程控制-flow_control-main](#vol-自定义流程控制-flow_control-main), [vol-取可执行文件位数-read_exe_bits-main](#vol-取可执行文件位数-read_exe_bits-main), [vol-位图处理-adv_bitmap-main](#vol-位图处理-adv_bitmap-main), [vol-com变体型测试-variant_test-main](#vol-com变体型测试-variant_test-main), [vol-调试输出测试-debug_out-main](#vol-调试输出测试-debug_out-main), [vol-跨对象发送接收事件-object_event-main](#vol-跨对象发送接收事件-object_event-main), [vol-二维码生成-qrencode-main](#vol-二维码生成-qrencode-main), [vol-win10通知-wintoast-main](#vol-win10通知-wintoast-main), [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main), [vol-程序崩溃回调-breakpad-main](#vol-程序崩溃回调-breakpad-main), [vol-文本编码转换-libiconv-main](#vol-文本编码转换-libiconv-main), [vol-内存映射文件-filemapping-main](#vol-内存映射文件-filemapping-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-邮件槽-mailslot-main](#vol-邮件槽-mailslot-main), [vol-命名管道-namedpipe-main](#vol-命名管道-namedpipe-main), [vol-多线程-muti_thread-main](#vol-多线程-muti_thread-main), [vol-线程池-pool_thread-main](#vol-线程池-pool_thread-main), [vol-mfc控制台程序-mfc_console-main](#vol-mfc控制台程序-mfc_console-main), [vol-调用动态链接库-dll_call-main](#vol-调用动态链接库-dll_call-main), [vol-复杂接口api调用-api_call-main](#vol-复杂接口api调用-api_call-main), [vol-被调用mfc动态链接库-mfc_dll-main](#vol-被调用mfc动态链接库-mfc_dll-main), [vol-一步一步跟我学火山-step_by_step-main](#vol-一步一步跟我学火山-step_by_step-main), [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main), [vol-密码管理-pw-main](#vol-密码管理-pw-main), [vol-json数据访问-json-main](#vol-json数据访问-json-main), [vol-xml数据访问-xml-main](#vol-xml数据访问-xml-main), [vol-树结构访问-treestruct-main](#vol-树结构访问-treestruct-main), [vol-正则表达式-deelx_regular-main](#vol-正则表达式-deelx_regular-main), [vol-网页解析-html_parser-main](#vol-网页解析-html_parser-main), [vol-高级网页解析-adv_html_parser-main](#vol-高级网页解析-adv_html_parser-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-大整数运算-bnsample-main](#vol-大整数运算-bnsample-main), [vol-哈希表-hash_map-main](#vol-哈希表-hash_map-main), [vol-对象包装-object_wrapper-main](#vol-对象包装-object_wrapper-main), [vol-高性能键值表-mmkv-main](#vol-高性能键值表-mmkv-main), [vol-cron时间表达式-cron-main](#vol-cron时间表达式-cron-main), [vol-std数据结构-stl_sample-main](#vol-std数据结构-stl_sample-main), [vol-正则表达式2-regex-main](#vol-正则表达式2-regex-main), [vol-yyjson数据访问-yyjson-main](#vol-yyjson数据访问-yyjson-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-串口通讯-cserialport-main](#vol-串口通讯-cserialport-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-tcp转发-tcp_forward-main](#vol-tcp转发-tcp_forward-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main), [vol-简单http服务器-http_server-main](#vol-简单http服务器-http_server-main), [vol-简单pack客户端-pack_client-main](#vol-简单pack客户端-pack_client-main), [vol-简单pack服务器-pack_server-main](#vol-简单pack服务器-pack_server-main), [vol-简单pull客户端-pull_client-main](#vol-简单pull客户端-pull_client-main), [vol-简单pull服务器-pull_server-main](#vol-简单pull服务器-pull_server-main), [vol-简单tcp客户端-tcp_client-main](#vol-简单tcp客户端-tcp_client-main), [vol-简单tcp服务器-tcp_server-main](#vol-简单tcp服务器-tcp_server-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main), [vol-简单udp客户端-udp_client-main](#vol-简单udp客户端-udp_client-main), [vol-简单udp服务器-udp_server-main](#vol-简单udp服务器-udp_server-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pack文件传送服务器-hp_packfile_server-main](#vol-pack文件传送服务器-hp_packfile_server-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-pull文件传送服务器-hp_pullfile_server-main](#vol-pull文件传送服务器-hp_pullfile_server-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-tcp文件传送服务器-hp_tcpfile_server-main](#vol-tcp文件传送服务器-hp_tcpfile_server-main), [vol-服务器-server-main](#vol-服务器-server-main), [vol-客户端-client-main](#vol-客户端-client-main), [vol-mysql-mysqlsample-main](#vol-mysql-mysqlsample-main), [vol-sqlite3-sqlite3-main](#vol-sqlite3-sqlite3-main), [vol-ado-ado_sample-main](#vol-ado-ado_sample-main), [vol-redis-redis-main](#vol-redis-redis-main), [vol-redis连接池-redisconnectpool-main](#vol-redis连接池-redisconnectpool-main), [vol-mysql连接池-mysql_connectionpool-main](#vol-mysql连接池-mysql_connectionpool-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main), [vol-python脚本-python_script-main](#vol-python脚本-python_script-main), [vol-javascript脚本-v8js-main](#vol-javascript脚本-v8js-main), [vol-elk微型js引擎-elk_js-main](#vol-elk微型js引擎-elk_js-main), [vol-阿里云oss-aliyun_oss-main](#vol-阿里云oss-aliyun_oss-main), [vol-海康威视工业相机-hikrobot-main](#vol-海康威视工业相机-hikrobot-main), [vol-腾讯云对象存储临时秘钥获取-tencentcos-main](#vol-腾讯云对象存储临时秘钥获取-tencentcos-main), [vol-excel2021-excel2021-main](#vol-excel2021-excel2021-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-wav播放-wav_play-main](#vol-wav播放-wav_play-main), [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main), [vol-rvm人像抠图-rvm_segmentation-main](#vol-rvm人像抠图-rvm_segmentation-main), [vol-角点检测-corner_detection-main](#vol-角点检测-corner_detection-main), [vol-dnn文本检测-dnn_text_detection_recognition-main](#vol-dnn文本检测-dnn_text_detection_recognition-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.窗口.窗口边框
+
+* **类型:** `属性读方法`
+* **名称:** `窗口边框`
+* **返回值数据类型:** `窗口边框类型`
+* **描述:** 返回先前所设置的窗口边框类型
+
+##### 火山.MFC界面.基本.窗口.窗口边框
+
+* **类型:** `属性写方法`
+* **名称:** `窗口边框`
+* **参数:**
+	* `所欲设置的边框` (`窗口边框类型`)
+* **描述:** 设置窗口当前所使用的边框类型. 本属性默认值为"普通固定边框".
+
+##### 火山.MFC界面.基本.窗口.控制按钮
+
+* **类型:** `属性读方法`
+* **名称:** `控制按钮`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回先前所设置的是否显示窗口上的所有控制按钮及窗口控制菜单
+
+##### 火山.MFC界面.基本.窗口.控制按钮
+
+* **类型:** `属性写方法`
+* **名称:** `控制按钮`
+* **参数:**
+	* `是否显示控制按钮` (`逻辑型`)
+* **描述:** 设置是否显示窗口上的所有控制按钮及窗口控制菜单. 本属性默认值为真.
+
+##### 火山.MFC界面.基本.窗口.最大化按钮
+
+* **类型:** `属性读方法`
+* **名称:** `最大化按钮`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回先前所设置的是否显示窗口右上角的最大化或还原按钮
+
+##### 火山.MFC界面.基本.窗口.最大化按钮
+
+* **类型:** `属性写方法`
+* **名称:** `最大化按钮`
+* **参数:**
+	* `是否显示最大化按钮` (`逻辑型`)
+* **描述:** 本属性设置是否显示窗口右上角的最大化或还原按钮. 注意本属性仅当"控制按钮"属性为真时有效.本属性默认值为假.
+
+##### 火山.MFC界面.基本.窗口.最小化按钮
+
+* **类型:** `属性读方法`
+* **名称:** `最小化按钮`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回先前所设置的是否显示窗口右上角的最小化按钮
+
+##### 火山.MFC界面.基本.窗口.最小化按钮
+
+* **类型:** `属性写方法`
+* **名称:** `最小化按钮`
+* **参数:**
+	* `是否显示最小化按钮` (`逻辑型`)
+* **描述:** 本属性设置是否显示窗口右上角的最小化按钮. 注意本属性仅当"控制按钮"属性为真时有效.本属性默认值为真.
+
+##### 火山.MFC界面.基本.窗口.位置
+
+* **类型:** `属性读方法`
+* **名称:** `位置`
+* **返回值数据类型:** `窗口位置类型`
+* **描述:** 返回窗口当前在屏幕上的位置类型(实时判断)
+
+##### 火山.MFC界面.基本.窗口.位置
+
+* **类型:** `属性写方法`
+* **名称:** `位置`
+* **参数:**
+	* `所欲设置的位置类型` (`窗口位置类型`)
+* **描述:** 设置窗口在屏幕上的位置类型. 本属性默认值为"通常".
+
+##### 火山.MFC界面.基本.窗口.可否移动
+
+* **类型:** `属性读方法`
+* **名称:** `可否移动`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回先前所设置的窗口位置可否被移动
+
+##### 火山.MFC界面.基本.窗口.可否移动
+
+* **类型:** `属性写方法`
+* **名称:** `可否移动`
+* **参数:**
+	* `位置可否被移动` (`逻辑型`): 指定窗口位置可否被移动
+* **描述:** 设置窗口位置可否被移动
+
+##### 火山.MFC界面.基本.窗口.图标
+
+* **类型:** `属性写方法`
+* **名称:** `图标`
+* **参数:**
+	* `所欲设置的图标` (`图标资源`): 本参数提供具体所欲设置的图标,如果该资源值为"空资源.空图标"或载入失败,则将使用默认图标.
+* **描述:** 设置显示在本窗口左上角的图标
+
+##### 火山.MFC界面.基本.窗口.图标对象
+
+* **类型:** `属性写方法`
+* **名称:** `图标对象`
+* **参数:**
+	* `所欲设置的图标` (`图标对象类`): 本参数提供具体所欲设置的图标对象. 注意: 在窗口存在期间必须保证本图标对象不被释放(可以将此对象保存在窗口类的成员变量中),否则所置入图标将失效.
+* **描述:** 设置显示在本窗口左上角的图标
+
+##### 火山.MFC界面.基本.窗口.Esc键关闭
+
+* **类型:** `属性读方法`
+* **名称:** `Esc键关闭`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回运行时用户是否可以用 ESC 键关闭本窗口. 注意: 如果以对话框方式显示本窗口,则无论本属性是否为真,均允许 ESC 键关闭.
+
+##### 火山.MFC界面.基本.窗口.Esc键关闭
+
+* **类型:** `属性写方法`
+* **名称:** `Esc键关闭`
+* **参数:**
+	* `是否允许关闭` (`逻辑型`): 指定当按下 ESC 键时是否关闭窗口
+* **描述:** 设置运行时用户是否可以用 ESC 键关闭本窗口. 注意: 如果以对话框方式显示本窗口,则无论本属性是否为真,均允许 ESC 键关闭. 本属性默认值为真.
+
+##### 火山.MFC界面.基本.窗口.帮助文件名
+
+* **类型:** `属性读方法`
+* **名称:** `帮助文件名`
+* **返回值数据类型:** `文本型`
+* **描述:** 返回在运行时用户按下 F1 键所打开的本窗口相关帮助内容所处文件名,为空文本表示不支持 F1 键打开帮助.
+
+##### 火山.MFC界面.基本.窗口.帮助文件名
+
+* **类型:** `属性写方法`
+* **名称:** `帮助文件名`
+* **参数:**
+	* `文件名` (`文本型`): 提供帮助文件的名称. 注意: 为了在调试时能访问到此帮助文件,可以使用"@视窗.附属文件"属性在编译后将该文件自动拷贝到编译结果文件所处目录.
+* **特性:**
+	* `文件名`
+* **描述:** 提供运行时用户按下 F1 键所打开的本窗口相关帮助内容所处文件名,为空文本表示不支持 F1 键打开帮助.
+
+##### 火山.MFC界面.基本.窗口.帮助标记值
+
+* **类型:** `属性读方法`
+* **名称:** `帮助标记值`
+* **返回值数据类型:** `整数`
+* **描述:** 当"帮助文件名"属性不为空时,返回所欲显示的在该帮助文件中的帮助标志数值,如果为零,则对应其帮助主题.
+
+##### 火山.MFC界面.基本.窗口.帮助标记值
+
+* **类型:** `属性写方法`
+* **名称:** `帮助标记值`
+* **参数:**
+	* `帮助文档标记值` (`整数`): 指定当按下 F1 键时所打开帮助文件的具体标志位置,为0则对应其主题位置.
+* **描述:** 当"帮助文件名"属性不为空时,设置所欲显示的在该帮助文件中的帮助标志数值.
+
+##### 火山.MFC界面.基本.窗口.随意移动
+
+* **类型:** `属性读方法`
+* **名称:** `随意移动`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回当用户在窗口上任何位置按下鼠标左键后是否进入窗口整体移动模式
+
+##### 火山.MFC界面.基本.窗口.随意移动
+
+* **类型:** `属性写方法`
+* **名称:** `随意移动`
+* **参数:**
+	* `是否支持随意移动` (`逻辑型`)
+* **描述:** 设置当用户在窗口上任何位置按下鼠标左键后是否进入窗口整体移动模式. 注意如果本属性设置为真,则在本窗口及其中所有不能接收输入焦点的子组件上均不能再接收到"鼠标左键被按下"和"鼠标左键被放开"事件. 本属性默认值为假.
+
+##### 火山.MFC界面.基本.窗口.外形
+
+* **类型:** `属性读方法`
+* **名称:** `外形`
+* **返回值数据类型:** `窗口外形类型`
+* **描述:** 返回先前所设置的窗口外形
+
+##### 火山.MFC界面.基本.窗口.外形
+
+* **类型:** `属性写方法`
+* **名称:** `外形`
+* **参数:**
+	* `所欲设置的外形` (`窗口外形类型`)
+* **描述:** 设置窗口的外形,本属性默认值为"矩形".
+
+##### 火山.MFC界面.基本.窗口.总在最前
+
+* **类型:** `属性读方法`
+* **名称:** `总在最前`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回先前所设置的本窗口是否永远位于其它窗口的前面
+
+##### 火山.MFC界面.基本.窗口.总在最前
+
+* **类型:** `属性写方法`
+* **名称:** `总在最前`
+* **参数:**
+	* `是否总在最前` (`逻辑型`)
+* **描述:** 设置本窗口是否永远位于其它窗口的前面. 本属性默认值为假.
+
+##### 火山.MFC界面.基本.窗口.保持标题条激活
+
+* **类型:** `属性读方法`
+* **名称:** `保持标题条激活`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回本窗口在非激活状态下其标题条是否仍然与激活状态时相同
+
+##### 火山.MFC界面.基本.窗口.保持标题条激活
+
+* **类型:** `属性写方法`
+* **名称:** `保持标题条激活`
+* **参数:**
+	* `是否保持激活` (`逻辑型`)
+* **描述:** 设置本窗口在非激活状态下其标题条是否仍然与激活状态时相同. 本属性默认值为假.
+
+##### 火山.MFC界面.基本.窗口.窗口类名
+
+* **类型:** `属性读方法`
+* **名称:** `窗口类名`
+* **返回值数据类型:** `文本型`
+* **描述:** 返回先前所设置的本窗口Windows系统类名
+
+##### 火山.MFC界面.基本.窗口.窗口类名
+
+* **类型:** `属性写方法`
+* **名称:** `窗口类名`
+* **参数:**
+	* `所欲设置的类名` (`文本型`): 提供本窗口所使用的Windows系统窗口类名,该名称的类将会在窗口创建时自动登记到Windows系统中.
+* **描述:** 设置本窗口的Windows系统类名,该类将在创建本窗口时自动登记.
+
+##### 火山.MFC界面.基本.窗口.透明度
+
+* **类型:** `属性写方法`
+* **名称:** `透明度`
+* **参数:**
+	* `透明度` (`整数`): 为0到255之间的整数. 0:完全透明; 255: 完全不透明
+* **描述:** 设置本窗口的透明度
+
+##### 火山.MFC界面.基本.窗口.接收到命令
+
+* **类型:** `事件定义方法`
+* **名称:** `接收到命令`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `命令代码` (`整数`): 提供所对应命令的ID值,对于菜单项或其快捷键来说,就是对应菜单项设计时提供的引用常量ID值,对于工具条来说,就是对应按钮设计时提供的引用常量ID值.
+* **描述:** 当本窗口上的菜单项(包括弹出子菜单)/工具条按钮被单击或者对应快捷键被按下时,发送此事件.
+* **返回值描述:** 所通知的对应命令被处理返回1,否则返回0.
+* **相关例程:** [vol-对话框-dialog_test-main](#vol-对话框-dialog_test-main), [vol-工具条-tool_bar-main](#vol-工具条-tool_bar-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main), [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main), [vol-一步一步跟我学火山-step_by_step-main](#vol-一步一步跟我学火山-step_by_step-main), [vol-ado-ado_sample-main](#vol-ado-ado_sample-main)
+
+##### 火山.MFC界面.基本.窗口.命令被选中
+
+* **类型:** `事件定义方法`
+* **名称:** `命令被选中`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `命令代码` (`整数`): 提供所对应命令的ID值,对于菜单项来说,就是对应菜单项设计时提供的引用常量ID值,对于工具条来说,就是对应按钮设计时提供的引用常量ID值. 注意: 当所弹出菜单被关闭或用户鼠标移动到一个非程序命令菜单项(如下级子菜单进入项/分隔线菜单项/系统菜单项)时,将接收到一个本参数值为0的事件,用户可以在接收到此事件时进行一些清理工作(譬如清除掉当前所显示的提示文本).
+* **描述:** 当本窗口上的菜单项(包括弹出子菜单)/工具条按钮处于被选中状态(鼠标移动到 其上方)时,发送此事件. 可以在接收到此事件后进行譬如显示对应提示文本之类的操作.
+* **相关例程:** [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main)
+
+##### 火山.MFC界面.基本.窗口.可否被关闭
+
+* **类型:** `事件定义方法`
+* **名称:** `可否被关闭`
+* **返回值数据类型:** `整数`
+* **描述:** 在本窗口及计算机被关闭之前发送此事件,用于询问该关闭操作是否允许被继续. 本事件包括了"窗口可否被关闭"通知,但是相对其多了在计算机被关闭之前的通知.
+* **返回值描述:** 返回1不允许关闭,返回0允许关闭.
+
+##### 火山.MFC界面.基本.窗口.窗口可否被关闭
+
+* **类型:** `事件定义方法`
+* **名称:** `窗口可否被关闭`
+* **返回值数据类型:** `整数`
+* **描述:** 在本窗口被关闭之前发送此事件,用于询问该关闭操作是否允许被继续. 本事件不包括在计算机被关闭之前的通知.
+* **返回值描述:** 返回1不允许关闭,返回0允许关闭.
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main)
+
+##### 火山.MFC界面.基本.窗口.首次激活
+
+* **类型:** `事件定义方法`
+* **名称:** `首次激活`
+* **返回值数据类型:** `整数`
+* **描述:** 当窗口创建完毕后被首次激活显示时发送此事件,在接收到此事件后用户可以开始在窗口内的画板组件上写出内容.
+
+##### 火山.MFC界面.基本.窗口.被激活
+
+* **类型:** `事件定义方法`
+* **名称:** `被激活`
+* **返回值数据类型:** `整数`
+* **描述:** 当窗口转换为激活状态时发送此事件
+
+##### 火山.MFC界面.基本.窗口.被取消激活
+
+* **类型:** `事件定义方法`
+* **名称:** `被取消激活`
+* **返回值数据类型:** `整数`
+* **描述:** 当窗口转换为非激活状态时发送此事件
+
+##### 火山.MFC界面.基本.窗口.托盘事件
+
+* **类型:** `事件定义方法`
+* **名称:** `托盘事件`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `操作类型` (`整数`): 提供用户的具体操作类型,可能为的值为: 1.单击左键; 2.双击左键; 3.单击右键
+* **描述:** 当用户用鼠标单击或双击本窗口对象的"置托盘图标"方法所设置的图标后即发送此事件
+* **相关例程:** [vol-对话框-dialog_test-main](#vol-对话框-dialog_test-main)
+
+##### 火山.MFC界面.基本.窗口.位置限制
+
+* **类型:** `事件定义方法`
+* **名称:** `位置限制`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `位置限制信息` (`窗口位置限制信息`): 用户可以在处理本事件时修改本参数的内容,以指定其中的某些位置限制参数.
+* **描述:** 用户可以在处理本事件时修改所提供的参数信息,以限定本窗口的对应尺寸或位置.
+* **返回值描述:** 返回1表示已经处理,返回0表示未处理.
+* **相关例程:** [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main)
+
+##### 火山.MFC界面.基本.窗口.对话框已初始化
+
+* **类型:** `事件定义方法`
+* **名称:** `对话框已初始化`
+* **返回值数据类型:** `整数`
+* **描述:** 当以对话框方式创建本窗口时,对话框创建完毕后将发送本事件. 用户可以在处理本事件时初始化窗口中的内容.
+
+##### 火山.MFC界面.基本.窗口.消息过滤
+
+* **类型:** `方法`
+* **名称:** `消息过滤`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `窗口句柄` (`变整数`): 提供消息所对应的窗口句柄(HWND),必定为本窗口或其直接/间接下属子窗口.
+	* `消息值` (`整数`): 提供消息的具体值
+	* `消息参数1` (`变整数`): 提供消息所附带的参数1的值
+	* `消息参数2` (`变整数`): 提供消息所附带的参数2的值
+	* `消息地址` (`变整数`): 提供消息的具体 MSG* 地址指针,用作备用.
+* **特性:**
+	* `虚拟方法`(可在继承类中覆盖)
+* **描述:** 用户的窗口类可以覆盖此方法以过滤处理本窗口及其所有子组件中的消息(仅限键盘/鼠标输入类信息)
+* **返回值描述:** 返回真表示允许消息继续向后传递并处理,返回假表示取消掉该消息的后续处理.
+* **相关例程:** [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main)
+
+##### 火山.MFC界面.基本.窗口.创建窗口
+
+* **类型:** `方法`
+* **名称:** `创建窗口`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `左边位置` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口左边在屏幕上的横向坐标位置,为"数值范围.最小整数值"表示横向居中.
+	* `顶边位置` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口左边在屏幕上的纵向坐标位置,为"数值范围.最小整数值"表示纵向居中.
+	* `宽度` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口的宽度,为"数值范围.最小整数值"表示使用设计时宽度.
+	* `高度` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口的高度,为"数值范围.最小整数值"表示使用设计时高度.
+	* `所欲使用的菜单` (`菜单类`, 默认值: `空对象`): 提供所欲同时设置的窗口菜单,为空对象表示无.
+* **描述:** 创建本窗口类的对象(非主窗口)
+* **返回值描述:** 返回是否成功
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main)
+
+##### 火山.MFC界面.基本.窗口.创建有菜单窗口
+
+* **类型:** `方法`
+* **名称:** `创建有菜单窗口`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `窗口菜单` (`菜单类(需求:数据类型)`): 提供窗口的菜单类数据类型,应该为"菜单类"的继承类.
+	* `左边位置` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口左边在屏幕上的横向坐标位置,为"数值范围.最小整数值"表示横向居中.
+	* `顶边位置` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口左边在屏幕上的纵向坐标位置,为"数值范围.最小整数值"表示纵向居中.
+	* `宽度` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口的宽度,为"数值范围.最小整数值"表示使用设计时宽度.
+	* `高度` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口的高度,为"数值范围.最小整数值"表示使用设计时高度.
+* **描述:** 创建本窗口类的对象(非主窗口)
+* **返回值描述:** 返回是否成功
+
+##### 火山.MFC界面.基本.窗口.创建子窗口
+
+* **类型:** `方法`
+* **名称:** `创建子窗口`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `父窗口组件` (`窗口组件`): 提供所创建窗口的父窗口组件,如果该窗口组件尚未被创建,则认为无父窗口组件.
+	* `左边位置` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口左边在屏幕上的横向坐标位置,为"数值范围.最小整数值"表示横向居中.
+	* `顶边位置` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口左边在屏幕上的纵向坐标位置,为"数值范围.最小整数值"表示纵向居中.
+	* `宽度` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口的宽度,为"数值范围.最小整数值"表示使用设计时宽度.
+	* `高度` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口的高度,为"数值范围.最小整数值"表示使用设计时高度.
+	* `所欲使用的菜单` (`菜单类`, 默认值: `空对象`): 提供所欲同时设置的子窗口菜单,为空对象表示无.
+* **描述:** 创建本窗口类的对象并将其作为其它窗口的子窗口(非主窗口),子窗口的显示内容将始终位于父窗口之上且被其所裁剪.
+* **返回值描述:** 返回是否成功
+
+##### 火山.MFC界面.基本.窗口.创建弹出子窗口
+
+* **类型:** `方法`
+* **名称:** `创建弹出子窗口`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `父窗口组件` (`窗口组件`): 提供所创建窗口的父窗口组件,如果该窗口组件尚未被创建,则认为无父窗口组件.
+	* `左边位置` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口左边在屏幕上的横向坐标位置,为"数值范围.最小整数值"表示横向居中.
+	* `顶边位置` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口左边在屏幕上的纵向坐标位置,为"数值范围.最小整数值"表示纵向居中.
+	* `宽度` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口的宽度,为"数值范围.最小整数值"表示使用设计时宽度.
+	* `高度` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口的高度,为"数值范围.最小整数值"表示使用设计时高度.
+	* `所欲使用的菜单` (`菜单类`, 默认值: `空对象`): 提供所欲同时设置的子窗口菜单,为空对象表示无.
+* **描述:** 创建本窗口类的对象并将其作为其它窗口的弹出风格子窗口(非主窗口),弹出风格子窗口的显示内容将独立存在且不会被父窗口所裁剪.
+* **返回值描述:** 返回是否成功
+* **相关例程:** [vol-火花代码编辑框-codeedittext-main](#vol-火花代码编辑框-codeedittext-main), [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main), [vol-密码管理-pw-main](#vol-密码管理-pw-main)
+
+##### 火山.MFC界面.基本.窗口.创建主窗口
+
+* **类型:** `方法`
+* **名称:** `创建主窗口`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `左边位置` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口左边在屏幕上的横向坐标位置,为"数值范围.最小整数值"表示横向居中.
+	* `顶边位置` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口左边在屏幕上的纵向坐标位置,为"数值范围.最小整数值"表示纵向居中.
+	* `宽度` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口的宽度,为"数值范围.最小整数值"表示使用设计时宽度.
+	* `高度` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口的高度,为"数值范围.最小整数值"表示使用设计时高度.
+	* `所欲使用的菜单` (`菜单类`, 默认值: `空对象`): 提供所欲同时设置的窗口菜单,为空对象表示无.
+* **描述:** 创建本窗口类的对象并将其作为程序的主窗口. 注意: 1. 程序中必须存在且只能存在一个主窗口,调用本方法后,主窗口将被设置为本窗口; 2. 主窗口必须在程序的"启动类"中存在成员变量定义,避免其在程序退出前被释放,否则将可能导致程序运行时崩溃.
+* **返回值描述:** 返回是否成功
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-选择夹3-tab_demo3-main](#vol-选择夹3-tab_demo3-main), [vol-对话框-dialog_test-main](#vol-对话框-dialog_test-main), [vol-文件浏览-file_viewer-main](#vol-文件浏览-file_viewer-main), [vol-时钟-timer-main](#vol-时钟-timer-main), [vol-超级列表框-listview-main](#vol-超级列表框-listview-main), [vol-虚拟超级列表框-virtual_list-main](#vol-虚拟超级列表框-virtual_list-main), [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-树形框-tree_box-main](#vol-树形框-tree_box-main), [vol-超级编辑框-rich_edit-main](#vol-超级编辑框-rich_edit-main), [vol-工具条-tool_bar-main](#vol-工具条-tool_bar-main), [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-日期框-date_box-main](#vol-日期框-date_box-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-火花代码编辑框-codeedittext-main](#vol-火花代码编辑框-codeedittext-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-卷帘式菜单-outbar-main](#vol-卷帘式菜单-outbar-main), [vol-属性表格-property_grid-main](#vol-属性表格-property_grid-main), [vol-带按钮列表框-vs_list_box-main](#vol-带按钮列表框-vs_list_box-main), [vol-窗口组件动态消息过滤-msg_filter-main](#vol-窗口组件动态消息过滤-msg_filter-main), [vol-图片组动态修改-change_image_list-main](#vol-图片组动态修改-change_image_list-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-edge浏览框自定义菜单-webview2_contextmenu-main](#vol-edge浏览框自定义菜单-webview2_contextmenu-main), [vol-动态创建布局-dynamic_create-main](#vol-动态创建布局-dynamic_create-main), [vol-用户自定义窗口组件-user_control-main](#vol-用户自定义窗口组件-user_control-main), [vol-祖国您好-base_test-main](#vol-祖国您好-base_test-main), [vol-打印测试-print_test-main](#vol-打印测试-print_test-main), [vol-空对象测试-null_object_test-main](#vol-空对象测试-null_object_test-main), [vol-自定义流程控制-flow_control-main](#vol-自定义流程控制-flow_control-main), [vol-取可执行文件位数-read_exe_bits-main](#vol-取可执行文件位数-read_exe_bits-main), [vol-位图处理-adv_bitmap-main](#vol-位图处理-adv_bitmap-main), [vol-com变体型测试-variant_test-main](#vol-com变体型测试-variant_test-main), [vol-调试输出测试-debug_out-main](#vol-调试输出测试-debug_out-main), [vol-跨对象发送接收事件-object_event-main](#vol-跨对象发送接收事件-object_event-main), [vol-二维码生成-qrencode-main](#vol-二维码生成-qrencode-main), [vol-win10通知-wintoast-main](#vol-win10通知-wintoast-main), [vol-程序崩溃回调-breakpad-main](#vol-程序崩溃回调-breakpad-main), [vol-文本编码转换-libiconv-main](#vol-文本编码转换-libiconv-main), [vol-内存映射文件-filemapping-main](#vol-内存映射文件-filemapping-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-邮件槽-mailslot-main](#vol-邮件槽-mailslot-main), [vol-命名管道-namedpipe-main](#vol-命名管道-namedpipe-main), [vol-多线程-muti_thread-main](#vol-多线程-muti_thread-main), [vol-线程池-pool_thread-main](#vol-线程池-pool_thread-main), [vol-调用动态链接库-dll_call-main](#vol-调用动态链接库-dll_call-main), [vol-复杂接口api调用-api_call-main](#vol-复杂接口api调用-api_call-main), [vol-一步一步跟我学火山-step_by_step-main](#vol-一步一步跟我学火山-step_by_step-main), [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main), [vol-密码管理-pw-main](#vol-密码管理-pw-main), [vol-json数据访问-json-main](#vol-json数据访问-json-main), [vol-xml数据访问-xml-main](#vol-xml数据访问-xml-main), [vol-树结构访问-treestruct-main](#vol-树结构访问-treestruct-main), [vol-正则表达式-deelx_regular-main](#vol-正则表达式-deelx_regular-main), [vol-网页解析-html_parser-main](#vol-网页解析-html_parser-main), [vol-高级网页解析-adv_html_parser-main](#vol-高级网页解析-adv_html_parser-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-大整数运算-bnsample-main](#vol-大整数运算-bnsample-main), [vol-哈希表-hash_map-main](#vol-哈希表-hash_map-main), [vol-对象包装-object_wrapper-main](#vol-对象包装-object_wrapper-main), [vol-高性能键值表-mmkv-main](#vol-高性能键值表-mmkv-main), [vol-cron时间表达式-cron-main](#vol-cron时间表达式-cron-main), [vol-std数据结构-stl_sample-main](#vol-std数据结构-stl_sample-main), [vol-正则表达式2-regex-main](#vol-正则表达式2-regex-main), [vol-yyjson数据访问-yyjson-main](#vol-yyjson数据访问-yyjson-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-串口通讯-cserialport-main](#vol-串口通讯-cserialport-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-tcp转发-tcp_forward-main](#vol-tcp转发-tcp_forward-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main), [vol-简单http服务器-http_server-main](#vol-简单http服务器-http_server-main), [vol-简单pack客户端-pack_client-main](#vol-简单pack客户端-pack_client-main), [vol-简单pack服务器-pack_server-main](#vol-简单pack服务器-pack_server-main), [vol-简单pull客户端-pull_client-main](#vol-简单pull客户端-pull_client-main), [vol-简单pull服务器-pull_server-main](#vol-简单pull服务器-pull_server-main), [vol-简单tcp客户端-tcp_client-main](#vol-简单tcp客户端-tcp_client-main), [vol-简单tcp服务器-tcp_server-main](#vol-简单tcp服务器-tcp_server-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main), [vol-简单udp客户端-udp_client-main](#vol-简单udp客户端-udp_client-main), [vol-简单udp服务器-udp_server-main](#vol-简单udp服务器-udp_server-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pack文件传送服务器-hp_packfile_server-main](#vol-pack文件传送服务器-hp_packfile_server-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-pull文件传送服务器-hp_pullfile_server-main](#vol-pull文件传送服务器-hp_pullfile_server-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-tcp文件传送服务器-hp_tcpfile_server-main](#vol-tcp文件传送服务器-hp_tcpfile_server-main), [vol-服务器-server-main](#vol-服务器-server-main), [vol-客户端-client-main](#vol-客户端-client-main), [vol-mysql-mysqlsample-main](#vol-mysql-mysqlsample-main), [vol-sqlite3-sqlite3-main](#vol-sqlite3-sqlite3-main), [vol-ado-ado_sample-main](#vol-ado-ado_sample-main), [vol-redis-redis-main](#vol-redis-redis-main), [vol-redis连接池-redisconnectpool-main](#vol-redis连接池-redisconnectpool-main), [vol-mysql连接池-mysql_connectionpool-main](#vol-mysql连接池-mysql_connectionpool-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main), [vol-python脚本-python_script-main](#vol-python脚本-python_script-main), [vol-javascript脚本-v8js-main](#vol-javascript脚本-v8js-main), [vol-elk微型js引擎-elk_js-main](#vol-elk微型js引擎-elk_js-main), [vol-阿里云oss-aliyun_oss-main](#vol-阿里云oss-aliyun_oss-main), [vol-海康威视工业相机-hikrobot-main](#vol-海康威视工业相机-hikrobot-main), [vol-腾讯云对象存储临时秘钥获取-tencentcos-main](#vol-腾讯云对象存储临时秘钥获取-tencentcos-main), [vol-excel2021-excel2021-main](#vol-excel2021-excel2021-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-wav播放-wav_play-main](#vol-wav播放-wav_play-main), [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main), [vol-rvm人像抠图-rvm_segmentation-main](#vol-rvm人像抠图-rvm_segmentation-main), [vol-角点检测-corner_detection-main](#vol-角点检测-corner_detection-main), [vol-dnn文本检测-dnn_text_detection_recognition-main](#vol-dnn文本检测-dnn_text_detection_recognition-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.窗口.创建有菜单主窗口
+
+* **类型:** `方法`
+* **名称:** `创建有菜单主窗口`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `窗口菜单` (`菜单类(需求:数据类型)`): 提供窗口的菜单类数据类型,应该为"菜单类"的继承类.
+	* `左边位置` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口左边在屏幕上的横向坐标位置,为"数值范围.最小整数值"表示横向居中.
+	* `顶边位置` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口左边在屏幕上的纵向坐标位置,为"数值范围.最小整数值"表示纵向居中.
+	* `宽度` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口的宽度,为"数值范围.最小整数值"表示使用设计时宽度.
+	* `高度` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口的高度,为"数值范围.最小整数值"表示使用设计时高度.
+* **描述:** 创建本窗口类的对象并将其作为程序的主窗口. 注意: 1. 程序中必须存在且只能存在一个主窗口,调用本方法后,主窗口将被设置为本窗口; 2. 主窗口必须在程序的"启动类"中存在成员变量定义,避免其在程序退出前被释放,否则将可能导致程序运行时崩溃.
+* **返回值描述:** 返回是否成功
+* **相关例程:** [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main), [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main)
+
+##### 火山.MFC界面.基本.窗口.置为主窗口
+
+* **类型:** `方法`
+* **名称:** `置为主窗口`
+* **描述:** 将本窗口设置为程序的主窗口. 注意: 1. 程序中必须存在且只能存在一个主窗口,调用本方法后,主窗口将被设置为本窗口; 2. 主窗口必须在程序的"启动类"中存在成员变量定义,避免其在程序退出前被释放,否则将可能导致程序运行时崩溃.
+
+##### 火山.MFC界面.基本.窗口.创建对话框
+
+* **类型:** `方法`
+* **名称:** `创建对话框`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `强制使用对话框风格` (`逻辑型`, 默认值: `真`): 是否强制所创建窗口使用固定的对话框风格. 如果参数值为真,则强制使用以下风格: 有标题栏 + 尺寸不可调整 + 只有关闭按钮,否则使用本窗口对象在调用本方法前所设置的窗口风格.
+	* `左边位置` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口左边在屏幕上的横向坐标位置,为"数值范围.最小整数值"表示横向居中.
+	* `顶边位置` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口左边在屏幕上的纵向坐标位置,为"数值范围.最小整数值"表示纵向居中.
+	* `宽度` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口的宽度,为"数值范围.最小整数值"表示使用设计时宽度.
+	* `高度` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口的高度,为"数值范围.最小整数值"表示使用设计时高度.
+	* `所欲使用的菜单` (`菜单类`, 默认值: `空对象`): 提供所欲同时设置的对话框菜单,为空对象表示无.
+* **描述:** 以模态对话框的方式创建并显示本窗口类的对象,并一直等待所创建窗口关闭后才会返回. 注意: 以本方式创建并显示的窗口,不能去动态调整尺寸和位置,并将初始在屏幕中间显示.
+* **返回值描述:** 返回用户程序调用"关闭窗口"方法关闭所显示对话框时所提供的"结果值"参数值. 以下几种情况下,将固定返回值-1: 1. 对话框为用户直接按 Alt+F4 / ESC 键或点击对话框右上角关闭按钮关闭; 2. 程序中直接调用相关方法关闭了本窗口; 3. 创建本窗口或对话框失败.
+* **相关例程:** [vol-对话框-dialog_test-main](#vol-对话框-dialog_test-main), [vol-树形框-tree_box-main](#vol-树形框-tree_box-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-mfc控制台程序-mfc_console-main](#vol-mfc控制台程序-mfc_console-main), [vol-被调用mfc动态链接库-mfc_dll-main](#vol-被调用mfc动态链接库-mfc_dll-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-mysql-mysqlsample-main](#vol-mysql-mysqlsample-main), [vol-ado-ado_sample-main](#vol-ado-ado_sample-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main), [vol-javascript脚本-v8js-main](#vol-javascript脚本-v8js-main), [vol-阿里云oss-aliyun_oss-main](#vol-阿里云oss-aliyun_oss-main)
+
+##### 火山.MFC界面.基本.窗口.创建有菜单对话框
+
+* **类型:** `方法`
+* **名称:** `创建有菜单对话框`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `窗口菜单` (`菜单类(需求:数据类型)`): 提供窗口的菜单类数据类型,应该为"菜单类"的继承类.
+	* `强制使用对话框风格` (`逻辑型`, 默认值: `真`): 是否强制所创建窗口使用固定的对话框风格. 如果参数值为真,则强制使用以下风格: 有标题栏 + 尺寸不可调整 + 只有关闭按钮,否则使用本窗口对象在调用本方法前所设置的窗口风格.
+	* `左边位置` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口左边在屏幕上的横向坐标位置,为"数值范围.最小整数值"表示横向居中.
+	* `顶边位置` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口左边在屏幕上的纵向坐标位置,为"数值范围.最小整数值"表示纵向居中.
+	* `宽度` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口的宽度,为"数值范围.最小整数值"表示使用设计时宽度.
+	* `高度` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口的高度,为"数值范围.最小整数值"表示使用设计时高度.
+* **描述:** 以模态对话框的方式创建并显示本窗口类的对象,并一直等待所创建窗口关闭后才会返回. 注意: 以本方式创建并显示的窗口,不能去动态调整尺寸和位置,并将初始在屏幕中间显示.
+* **返回值描述:** 返回用户程序调用"关闭窗口"方法关闭所显示对话框时所提供的"结果值"参数值. 以下几种情况下,将固定返回值-1: 1. 对话框为用户直接按 Alt+F4 / ESC 键或点击对话框右上角关闭按钮关闭; 2. 程序中直接调用相关方法关闭了本窗口; 3. 创建本窗口或对话框失败.
+* **相关例程:** [vol-对话框-dialog_test-main](#vol-对话框-dialog_test-main), [vol-一步一步跟我学火山-step_by_step-main](#vol-一步一步跟我学火山-step_by_step-main)
+
+##### 火山.MFC界面.基本.窗口.创建子对话框
+
+* **类型:** `方法`
+* **名称:** `创建子对话框`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `父窗口组件` (`窗口组件`): 提供所创建窗口的父窗口组件,如果该窗口组件尚未被创建,则认为无父窗口组件.
+	* `强制使用对话框风格` (`逻辑型`, 默认值: `真`): 是否强制所创建窗口使用固定的对话框风格. 如果参数值为真,则强制使用以下风格: 有标题栏 + 尺寸不可调整 + 只有关闭按钮,否则使用本窗口对象在调用本方法前所设置的窗口风格.
+	* `左边位置` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口左边在屏幕上的横向坐标位置,为"数值范围.最小整数值"表示横向居中.
+	* `顶边位置` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口左边在屏幕上的纵向坐标位置,为"数值范围.最小整数值"表示纵向居中.
+	* `宽度` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口的宽度,为"数值范围.最小整数值"表示使用设计时宽度.
+	* `高度` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口的高度,为"数值范围.最小整数值"表示使用设计时高度.
+	* `所欲使用的菜单` (`菜单类`, 默认值: `空对象`): 提供所欲同时设置的对话框菜单,为空对象表示无.
+* **描述:** 以模态对话框的方式创建并显示本窗口类的对象,并一直等待所创建窗口关闭后才会返回. 注意: 以本方式创建并显示的窗口,不能去动态调整尺寸和位置,并将初始在屏幕中间显示.
+* **返回值描述:** 返回用户程序调用"关闭窗口"方法关闭所显示对话框时所提供的"结果值"参数值. 以下几种情况下,将固定返回值-1: 1. 对话框为用户直接按 Alt+F4 / ESC 键或点击对话框右上角关闭按钮关闭; 2. 程序中直接调用相关方法关闭了本窗口; 3. 创建本窗口或对话框失败.
+
+##### 火山.MFC界面.基本.窗口.创建有菜单子对话框
+
+* **类型:** `方法`
+* **名称:** `创建有菜单子对话框`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `父窗口组件` (`窗口组件`): 提供所创建窗口的父窗口组件,如果该窗口组件尚未被创建,则认为无父窗口组件.
+	* `窗口菜单` (`菜单类(需求:数据类型)`): 提供窗口的菜单类数据类型,应该为"菜单类"的继承类.
+	* `强制使用对话框风格` (`逻辑型`, 默认值: `真`): 是否强制所创建窗口使用固定的对话框风格. 如果参数值为真,则强制使用以下风格: 有标题栏 + 尺寸不可调整 + 只有关闭按钮,否则使用本窗口对象在调用本方法前所设置的窗口风格.
+	* `左边位置` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口左边在屏幕上的横向坐标位置,为"数值范围.最小整数值"表示横向居中.
+	* `顶边位置` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口左边在屏幕上的纵向坐标位置,为"数值范围.最小整数值"表示纵向居中.
+	* `宽度` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口的宽度,为"数值范围.最小整数值"表示使用设计时宽度.
+	* `高度` (`整数`, 默认值: `数值范围.最小整数值`): 提供所创建窗口的高度,为"数值范围.最小整数值"表示使用设计时高度.
+* **描述:** 以模态对话框的方式创建并显示本窗口类的对象,并一直等待所创建窗口关闭后才会返回. 注意: 以本方式创建并显示的窗口,不能去动态调整尺寸和位置,并将初始在屏幕中间显示.
+* **返回值描述:** 返回用户程序调用"关闭窗口"方法关闭所显示对话框时所提供的"结果值"参数值. 以下几种情况下,将固定返回值-1: 1. 对话框为用户直接按 Alt+F4 / ESC 键或点击对话框右上角关闭按钮关闭; 2. 程序中直接调用相关方法关闭了本窗口; 3. 创建本窗口或对话框失败.
+
+##### 火山.MFC界面.基本.窗口.置菜单
+
+* **类型:** `方法`
+* **名称:** `置菜单`
+* **参数:**
+	* `所欲设置的菜单` (`菜单类(需求:数据类型)`): 提供所欲设置菜单类的数据类型,应该为"菜单类"的继承类.
+* **描述:** 设置本窗口的菜单
+* **相关例程:** [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main)
+
+##### 火山.MFC界面.基本.窗口.置实例菜单
+
+* **类型:** `方法`
+* **名称:** `置实例菜单`
+* **参数:**
+	* `所欲设置的菜单` (`菜单类`): 提供所欲设置的菜单类对象
+* **描述:** 设置本窗口的菜单
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main)
+
+##### 火山.MFC界面.基本.窗口.重置菜单
+
+* **类型:** `方法`
+* **名称:** `重置菜单`
+* **描述:** 将本窗口的菜单内容重置到其被置入时的初始状态
+* **相关例程:** [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main)
+
+##### 火山.MFC界面.基本.窗口.清除菜单
+
+* **类型:** `方法`
+* **名称:** `清除菜单`
+* **描述:** 清除本窗口中所已经设置的菜单
+* **相关例程:** [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main)
+
+##### 火山.MFC界面.基本.窗口.取菜单
+
+* **类型:** `方法`
+* **名称:** `取菜单`
+* **返回值数据类型:** `菜单类`
+* **描述:** 返回本窗口中被置入的菜单对象
+* **相关例程:** [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main), [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main)
+
+##### 火山.MFC界面.基本.窗口.关闭窗口
+
+* **类型:** `方法`
+* **名称:** `关闭窗口`
+* **参数:**
+	* `结果值` (`整数`, 默认值: `0`): 如果本窗口为以模态对话框方式显示,提供显示本窗口时所调用的对应"创建对话框"序列方法的返回值,否则没有意义.
+* **描述:** 尝试关闭本窗口. 注意: 1. 本方法被调用后窗口不会被立即关闭,而会延迟等待到下一次消息循环时才会关闭. 3. 如果用户程序处理了本窗口对象的"可否被关闭"/"窗口可否被关闭"事件并返回非零值,则此方法将关闭失败.
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-对话框-dialog_test-main](#vol-对话框-dialog_test-main), [vol-树形框-tree_box-main](#vol-树形框-tree_box-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main), [vol-取可执行文件位数-read_exe_bits-main](#vol-取可执行文件位数-read_exe_bits-main), [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-多线程-muti_thread-main](#vol-多线程-muti_thread-main), [vol-mfc控制台程序-mfc_console-main](#vol-mfc控制台程序-mfc_console-main), [vol-密码管理-pw-main](#vol-密码管理-pw-main), [vol-mysql-mysqlsample-main](#vol-mysql-mysqlsample-main), [vol-ado-ado_sample-main](#vol-ado-ado_sample-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main)
+
+##### 火山.MFC界面.基本.窗口.置托盘图标
+
+* **类型:** `方法`
+* **名称:** `置托盘图标`
+* **参数:**
+	* `所欲设置的图标` (`图标资源`): 本参数提供具体所欲设置的图标,如果该资源值为"空资源.空图标",则将清除本窗口在系统托盘中已经设置的图标.
+	* `提示信息` (`文本型`, 默认值: `""`): 本参数指定当鼠标移动到图标上后所显示的提示信息
+* **描述:** 设置本窗口在系统托盘中的图标
+* **相关例程:** [vol-对话框-dialog_test-main](#vol-对话框-dialog_test-main)
+
+##### 火山.MFC界面.基本.窗口.置托盘图标对象
+
+* **类型:** `方法`
+* **名称:** `置托盘图标对象`
+* **参数:**
+	* `所欲设置的图标` (`图标对象类`): 本参数提供具体所欲设置的图标对象. 注意: 在窗口存在期间必须保证本图标对象不被释放(可以将此对象保存在窗口类的成员变量中),否则所置入图标将失效.
+	* `提示信息` (`文本型`, 默认值: `""`): 本参数指定当鼠标移动到图标上后所显示的提示信息
+* **描述:** 设置本窗口在系统托盘中的图标
+
+##### 火山.MFC界面.基本.窗口.显示托盘通知
+
+* **类型:** `方法`
+* **名称:** `显示托盘通知`
+* **参数:**
+	* `标题` (`文本型`)
+	* `信息` (`文本型`)
+	* `图标类型` (`整数`, 默认值: `0`): 0: 信息图标; 1: 警告图标; 2: 错误图标.
+	* `显示时间` (`整数`, 默认值: `10`): 信息显示时间长度,单位秒. 有效值从10到30之间.
+* **描述:** 如果本窗口已经设置了有效的托盘图标,则可以基于此图标显示相应的托盘通知信息.
+
+##### 火山.MFC界面.基本.窗口.隐藏托盘通知
+
+* **类型:** `方法`
+* **名称:** `隐藏托盘通知`
+* **描述:** 提前隐藏所已经显示的托盘通知信息
+
+##### 火山.MFC界面.基本.窗口.置外形图片
+
+* **类型:** `方法`
+* **名称:** `置外形图片`
+* **参数:**
+	* `所欲设置的位图` (`位图资源`): 提供所欲设置的位图资源,如果该资源值为"空资源.空位图",则将清除所设置的外形图片.
+	* `透明颜色` (`整数`, 默认值: `颜色类.白色`): 指定图片中透明部分的颜色
+* **描述:** 使用图片来设置窗口的外形,图片的轮廓应该尽量简单,以免影响窗口的刷新速度.
+
+##### 火山.MFC界面.基本.窗口.置外形图片2
+
+* **类型:** `方法`
+* **名称:** `置外形图片2`
+* **参数:**
+	* `所欲设置的位图` (`字节集类`): 提供所欲设置的位图数据,如果为空字节集,则将清除所设置的外形图片.
+	* `透明颜色` (`整数`, 默认值: `颜色类.白色`): 指定图片中透明部分的颜色
+* **描述:** 使用图片来设置窗口的外形,图片的轮廓应该尽量简单,以免影响窗口的刷新速度.
+
+##### 火山.MFC界面.基本.窗口.开始移动窗口
+
+* **类型:** `方法`
+* **名称:** `开始移动窗口`
+* **描述:** 使本窗口进入随意移动模式,一般在用户在窗口上按下鼠标左键时调用.
+
+##### 火山.MFC界面.基本.窗口.浏览选择目录
+
+* **类型:** `方法`
+* **名称:** `浏览选择目录`
+* **返回值数据类型:** `文本型`
+* **参数:**
+	* `初始目录` (`文本型`, 默认值: `""`): 提供初始目录路径,为空文本表示无.
+* **描述:** 打开对话框选择所指定的目录,成功返回所选择目录,失败或用户取消关闭对话框则返回空文本.
+
+---
+
+#### 火山.MFC界面.基本.按钮基础类
+
+* **类型:** `类`
+* **名称:** `按钮基础类`
+* **基础类:** `窗口组件`
+* **特性:**
+	* `抽象类`(禁止直接定义其实例变量)
+* **文档分类:** `窗口组件.基础类`
+* **描述:** 按钮系列窗口组件的基础类
+
+##### 火山.MFC界面.基本.按钮基础类.图标
+
+* **类型:** `属性写方法`
+* **名称:** `图标`
+* **参数:**
+	* `所欲设置的图标` (`图标资源`): 提供所欲设置的图标资源,如果该资源值为"空资源.空图标",则将清除所显示的图标.
+* **描述:** 设置显示在本按钮上的图标
+* **相关例程:** [vol-动态创建布局-dynamic_create-main](#vol-动态创建布局-dynamic_create-main)
+
+##### 火山.MFC界面.基本.按钮基础类.图片
+
+* **类型:** `属性写方法`
+* **名称:** `图片`
+* **参数:**
+	* `所欲设置的位图` (`位图资源`): 提供所欲设置的位图资源,如果该资源值为"空资源.空位图",则将清除所显示的位图.
+* **描述:** 设置显示在本按钮上的位图图片
+
+##### 火山.MFC界面.基本.按钮基础类.横向对齐方式
+
+* **类型:** `属性读方法`
+* **名称:** `横向对齐方式`
+* **返回值数据类型:** `横向对齐模式`
+* **描述:** 返回按钮上所显示内容的横向对齐方式
+
+##### 火山.MFC界面.基本.按钮基础类.横向对齐方式
+
+* **类型:** `属性写方法`
+* **名称:** `横向对齐方式`
+* **参数:**
+	* `对齐方式` (`横向对齐模式`)
+* **描述:** 设置按钮上所显示内容的横向对齐方式
+
+##### 火山.MFC界面.基本.按钮基础类.纵向对齐方式
+
+* **类型:** `属性读方法`
+* **名称:** `纵向对齐方式`
+* **返回值数据类型:** `纵向对齐模式`
+* **描述:** 返回按钮上所显示内容的纵向对齐方式
+
+##### 火山.MFC界面.基本.按钮基础类.纵向对齐方式
+
+* **类型:** `属性写方法`
+* **名称:** `纵向对齐方式`
+* **参数:**
+	* `对齐方式` (`纵向对齐模式`)
+* **描述:** 设置按钮上所显示内容的纵向对齐方式
+
+##### 火山.MFC界面.基本.按钮基础类.背景颜色
+
+* **类型:** `属性读方法`
+* **名称:** `背景颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的本按钮背景颜色值
+
+##### 火山.MFC界面.基本.按钮基础类.背景颜色
+
+* **类型:** `属性写方法`
+* **名称:** `背景颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.默认色"来指定使用默认按钮背景颜色.
+* **特性:**
+	* `颜色值`(可以为默认色)
+* **描述:** 设置本按钮的背景颜色值. 如果本按钮未曾设置过背景颜色,则默认为"颜色类.默认色".
+
+##### 火山.MFC界面.基本.按钮基础类.文本颜色
+
+* **类型:** `属性读方法`
+* **名称:** `文本颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的本按钮文本颜色值
+
+##### 火山.MFC界面.基本.按钮基础类.文本颜色
+
+* **类型:** `属性写方法`
+* **名称:** `文本颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值
+* **特性:**
+	* `颜色值`
+* **描述:** 设置本按钮的文本颜色值. 如果本按钮未曾设置过文本颜色,则默认为黑色.
+
+##### 火山.MFC界面.基本.按钮基础类.被单击
+
+* **类型:** `事件定义方法`
+* **名称:** `被单击`
+* **返回值数据类型:** `整数`
+* **描述:** 当按钮被单击后发送此事件
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-选择夹3-tab_demo3-main](#vol-选择夹3-tab_demo3-main), [vol-对话框-dialog_test-main](#vol-对话框-dialog_test-main), [vol-文件浏览-file_viewer-main](#vol-文件浏览-file_viewer-main), [vol-时钟-timer-main](#vol-时钟-timer-main), [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-树形框-tree_box-main](#vol-树形框-tree_box-main), [vol-超级编辑框-rich_edit-main](#vol-超级编辑框-rich_edit-main), [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-日期框-date_box-main](#vol-日期框-date_box-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-火花代码编辑框-codeedittext-main](#vol-火花代码编辑框-codeedittext-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-卷帘式菜单-outbar-main](#vol-卷帘式菜单-outbar-main), [vol-属性表格-property_grid-main](#vol-属性表格-property_grid-main), [vol-带按钮列表框-vs_list_box-main](#vol-带按钮列表框-vs_list_box-main), [vol-图片组动态修改-change_image_list-main](#vol-图片组动态修改-change_image_list-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-动态创建布局-dynamic_create-main](#vol-动态创建布局-dynamic_create-main), [vol-用户自定义窗口组件-user_control-main](#vol-用户自定义窗口组件-user_control-main), [vol-祖国您好-base_test-main](#vol-祖国您好-base_test-main), [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main), [vol-打印测试-print_test-main](#vol-打印测试-print_test-main), [vol-自定义流程控制-flow_control-main](#vol-自定义流程控制-flow_control-main), [vol-取可执行文件位数-read_exe_bits-main](#vol-取可执行文件位数-read_exe_bits-main), [vol-位图处理-adv_bitmap-main](#vol-位图处理-adv_bitmap-main), [vol-调试输出测试-debug_out-main](#vol-调试输出测试-debug_out-main), [vol-跨对象发送接收事件-object_event-main](#vol-跨对象发送接收事件-object_event-main), [vol-二维码生成-qrencode-main](#vol-二维码生成-qrencode-main), [vol-win10通知-wintoast-main](#vol-win10通知-wintoast-main), [vol-程序崩溃回调-breakpad-main](#vol-程序崩溃回调-breakpad-main), [vol-文本编码转换-libiconv-main](#vol-文本编码转换-libiconv-main), [vol-内存映射文件-filemapping-main](#vol-内存映射文件-filemapping-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-邮件槽-mailslot-main](#vol-邮件槽-mailslot-main), [vol-命名管道-namedpipe-main](#vol-命名管道-namedpipe-main), [vol-多线程-muti_thread-main](#vol-多线程-muti_thread-main), [vol-线程池-pool_thread-main](#vol-线程池-pool_thread-main), [vol-mfc控制台程序-mfc_console-main](#vol-mfc控制台程序-mfc_console-main), [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main), [vol-调用动态链接库-dll_call-main](#vol-调用动态链接库-dll_call-main), [vol-复杂接口api调用-api_call-main](#vol-复杂接口api调用-api_call-main), [vol-一步一步跟我学火山-step_by_step-main](#vol-一步一步跟我学火山-step_by_step-main), [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main), [vol-密码管理-pw-main](#vol-密码管理-pw-main), [vol-json数据访问-json-main](#vol-json数据访问-json-main), [vol-xml数据访问-xml-main](#vol-xml数据访问-xml-main), [vol-树结构访问-treestruct-main](#vol-树结构访问-treestruct-main), [vol-正则表达式-deelx_regular-main](#vol-正则表达式-deelx_regular-main), [vol-网页解析-html_parser-main](#vol-网页解析-html_parser-main), [vol-高级网页解析-adv_html_parser-main](#vol-高级网页解析-adv_html_parser-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-大整数运算-bnsample-main](#vol-大整数运算-bnsample-main), [vol-哈希表-hash_map-main](#vol-哈希表-hash_map-main), [vol-对象包装-object_wrapper-main](#vol-对象包装-object_wrapper-main), [vol-高性能键值表-mmkv-main](#vol-高性能键值表-mmkv-main), [vol-cron时间表达式-cron-main](#vol-cron时间表达式-cron-main), [vol-std数据结构-stl_sample-main](#vol-std数据结构-stl_sample-main), [vol-正则表达式2-regex-main](#vol-正则表达式2-regex-main), [vol-yyjson数据访问-yyjson-main](#vol-yyjson数据访问-yyjson-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-串口通讯-cserialport-main](#vol-串口通讯-cserialport-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-tcp转发-tcp_forward-main](#vol-tcp转发-tcp_forward-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main), [vol-简单http服务器-http_server-main](#vol-简单http服务器-http_server-main), [vol-简单pack客户端-pack_client-main](#vol-简单pack客户端-pack_client-main), [vol-简单pack服务器-pack_server-main](#vol-简单pack服务器-pack_server-main), [vol-简单pull客户端-pull_client-main](#vol-简单pull客户端-pull_client-main), [vol-简单pull服务器-pull_server-main](#vol-简单pull服务器-pull_server-main), [vol-简单tcp客户端-tcp_client-main](#vol-简单tcp客户端-tcp_client-main), [vol-简单tcp服务器-tcp_server-main](#vol-简单tcp服务器-tcp_server-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main), [vol-简单udp客户端-udp_client-main](#vol-简单udp客户端-udp_client-main), [vol-简单udp服务器-udp_server-main](#vol-简单udp服务器-udp_server-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pack文件传送服务器-hp_packfile_server-main](#vol-pack文件传送服务器-hp_packfile_server-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-pull文件传送服务器-hp_pullfile_server-main](#vol-pull文件传送服务器-hp_pullfile_server-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-tcp文件传送服务器-hp_tcpfile_server-main](#vol-tcp文件传送服务器-hp_tcpfile_server-main), [vol-服务器-server-main](#vol-服务器-server-main), [vol-客户端-client-main](#vol-客户端-client-main), [vol-mysql-mysqlsample-main](#vol-mysql-mysqlsample-main), [vol-sqlite3-sqlite3-main](#vol-sqlite3-sqlite3-main), [vol-ado-ado_sample-main](#vol-ado-ado_sample-main), [vol-redis-redis-main](#vol-redis-redis-main), [vol-redis连接池-redisconnectpool-main](#vol-redis连接池-redisconnectpool-main), [vol-mysql连接池-mysql_connectionpool-main](#vol-mysql连接池-mysql_connectionpool-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main), [vol-python脚本-python_script-main](#vol-python脚本-python_script-main), [vol-javascript脚本-v8js-main](#vol-javascript脚本-v8js-main), [vol-elk微型js引擎-elk_js-main](#vol-elk微型js引擎-elk_js-main), [vol-阿里云oss-aliyun_oss-main](#vol-阿里云oss-aliyun_oss-main), [vol-excel2021-excel2021-main](#vol-excel2021-excel2021-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-wav播放-wav_play-main](#vol-wav播放-wav_play-main), [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main), [vol-rvm人像抠图-rvm_segmentation-main](#vol-rvm人像抠图-rvm_segmentation-main), [vol-角点检测-corner_detection-main](#vol-角点检测-corner_detection-main), [vol-dnn文本检测-dnn_text_detection_recognition-main](#vol-dnn文本检测-dnn_text_detection_recognition-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+---
+
+#### 火山.MFC界面.基本.选择框
+
+* **类型:** `类`
+* **名称:** `选择框`
+* **基础类:** `按钮基础类`
+* **描述:** 选择框窗口组件类
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-树形框-tree_box-main](#vol-树形框-tree_box-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main)
+
+##### 火山.MFC界面.基本.选择框.标题居左
+
+* **类型:** `属性读方法`
+* **名称:** `标题居左`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回选择框的标题文本是否位于图标的左边
+
+##### 火山.MFC界面.基本.选择框.标题居左
+
+* **类型:** `属性写方法`
+* **名称:** `标题居左`
+* **参数:**
+	* `标题是否居左` (`逻辑型`)
+* **描述:** 设置选择框的标题文本是否位于图标的左边
+
+##### 火山.MFC界面.基本.选择框.按钮形式
+
+* **类型:** `属性读方法`
+* **名称:** `按钮形式`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回选择框的外形是否为按压外形
+
+##### 火山.MFC界面.基本.选择框.按钮形式
+
+* **类型:** `属性写方法`
+* **名称:** `按钮形式`
+* **参数:**
+	* `是否为按压外形` (`逻辑型`)
+* **描述:** 设置选择框的外形是否为按压外形
+
+##### 火山.MFC界面.基本.选择框.平面
+
+* **类型:** `属性读方法`
+* **名称:** `平面`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回选择框的外形是否为平面方式
+
+##### 火山.MFC界面.基本.选择框.平面
+
+* **类型:** `属性写方法`
+* **名称:** `平面`
+* **参数:**
+	* `是否为平面外形` (`逻辑型`)
+* **描述:** 设置选择框的外形是否为平面方式
+
+##### 火山.MFC界面.基本.选择框.选中
+
+* **类型:** `属性读方法`
+* **名称:** `选中`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回选择框当前是否处于被选中状态
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-树形框-tree_box-main](#vol-树形框-tree_box-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main)
+
+##### 火山.MFC界面.基本.选择框.选中
+
+* **类型:** `属性写方法`
+* **名称:** `选中`
+* **参数:**
+	* `是否选中` (`逻辑型`)
+* **描述:** 设置选择框当前是否处于被选中状态
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-树形框-tree_box-main](#vol-树形框-tree_box-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main)
+
+##### 火山.MFC界面.基本.选择框.手动
+
+* **类型:** `属性读方法`
+* **名称:** `手动`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回选择框当前是否处于手动选择方式. 在手动选择方式下,最终用户的单击操作并不会对选择框的状态造成改变,选择框的状态需要在程序中接收到"被单击"事件后进行手动设置.
+
+##### 火山.MFC界面.基本.选择框.手动
+
+* **类型:** `属性写方法`
+* **名称:** `手动`
+* **参数:**
+	* `是否为手动模式` (`逻辑型`)
+* **描述:** 设置选择框当前是否处于手动选择方式. 在手动选择方式下,最终用户的单击操作并不会对选择框的状态造成改变,选择框的状态需要在程序中接收到"被单击"事件后进行手动设置.
+
+---
+
+#### 火山.MFC界面.基本.单选框
+
+* **类型:** `类`
+* **名称:** `单选框`
+* **基础类:** `选择框`
+* **相关例程:** [vol-选择夹3-tab_demo3-main](#vol-选择夹3-tab_demo3-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main)
+
+---
+
+#### 火山.MFC界面.基本.三态选中状态
+
+* **类型:** `类`
+* **名称:** `三态选中状态`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **描述:** 提供三态选择框的三种选择状态
+* **相关例程:** [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main)
+
+##### 火山.MFC界面.基本.三态选中状态.未选中
+
+* **类型:** `成员常量`
+* **名称:** `未选中`
+* **数据类型:** `三态选中状态`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.三态选中状态.选中
+
+* **类型:** `成员常量`
+* **名称:** `选中`
+* **数据类型:** `三态选中状态`
+* **初始值:** `1`
+* **相关例程:** [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main)
+
+##### 火山.MFC界面.基本.三态选中状态.不确定
+
+* **类型:** `成员常量`
+* **名称:** `不确定`
+* **数据类型:** `三态选中状态`
+* **初始值:** `2`
+* **描述:** 用作表达不能确定是选中还是未选中的状态
+
+---
+
+#### 火山.MFC界面.基本.三态选择框
+
+* **类型:** `类`
+* **名称:** `三态选择框`
+* **基础类:** `选择框`
+
+##### 火山.MFC界面.基本.三态选择框.选中状态
+
+* **类型:** `属性读方法`
+* **名称:** `选中状态`
+* **返回值数据类型:** `三态选中状态`
+* **描述:** 返回三态选择框的当前选中状态
+
+##### 火山.MFC界面.基本.三态选择框.选中状态
+
+* **类型:** `属性写方法`
+* **名称:** `选中状态`
+* **参数:**
+	* `选中状态` (`三态选中状态`): 提供所欲设置的选中状态
+* **描述:** 设置三态选择框的当前选中状态
+
+---
+
+#### 火山.MFC界面.基本.分组框
+
+* **类型:** `类`
+* **名称:** `分组框`
+* **基础类:** `窗口容器组件`
+* **相关例程:** [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-高性能键值表-mmkv-main](#vol-高性能键值表-mmkv-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main)
+
+##### 火山.MFC界面.基本.分组框.背景颜色
+
+* **类型:** `属性读方法`
+* **名称:** `背景颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的本按钮背景颜色值
+
+##### 火山.MFC界面.基本.分组框.背景颜色
+
+* **类型:** `属性写方法`
+* **名称:** `背景颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.默认色"来指定使用默认按钮背景颜色.
+* **特性:**
+	* `颜色值`(可以为默认色)
+* **描述:** 设置本按钮的背景颜色值. 如果本按钮未曾设置过背景颜色,则默认为"颜色类.默认色".
+
+##### 火山.MFC界面.基本.分组框.文本颜色
+
+* **类型:** `属性读方法`
+* **名称:** `文本颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的本按钮文本颜色值
+
+##### 火山.MFC界面.基本.分组框.文本颜色
+
+* **类型:** `属性写方法`
+* **名称:** `文本颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值
+* **特性:**
+	* `颜色值`
+* **描述:** 设置本按钮的文本颜色值. 如果本按钮未曾设置过文本颜色,则默认为黑色.
+
+##### 火山.MFC界面.基本.分组框.对齐方式
+
+* **类型:** `属性读方法`
+* **名称:** `对齐方式`
+* **返回值数据类型:** `横向对齐模式`
+* **描述:** 返回按钮上所显示内容的横向对齐方式
+
+##### 火山.MFC界面.基本.分组框.对齐方式
+
+* **类型:** `属性写方法`
+* **名称:** `对齐方式`
+* **参数:**
+	* `对齐方式` (`横向对齐模式`)
+* **描述:** 设置按钮上所显示内容的横向对齐方式
+
+---
+
+#### 火山.MFC界面.基本.按钮类型
+
+* **类型:** `类`
+* **名称:** `按钮类型`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供按钮的各种类型
+
+##### 火山.MFC界面.基本.按钮类型.通常
+
+* **类型:** `成员常量`
+* **名称:** `通常`
+* **数据类型:** `按钮类型`
+
+##### 火山.MFC界面.基本.按钮类型.默认
+
+* **类型:** `成员常量`
+* **名称:** `默认`
+* **数据类型:** `按钮类型`
+* **描述:** 本风格的按钮周边将被加粗显示,当用户在窗口中按下回车键时,系统将认为单击了此按钮.
+
+---
+
+#### 火山.MFC界面.基本.按钮
+
+* **类型:** `类`
+* **名称:** `按钮`
+* **基础类:** `按钮基础类`
+* **描述:** 按钮窗口组件类
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-选择夹3-tab_demo3-main](#vol-选择夹3-tab_demo3-main), [vol-对话框-dialog_test-main](#vol-对话框-dialog_test-main), [vol-文件浏览-file_viewer-main](#vol-文件浏览-file_viewer-main), [vol-时钟-timer-main](#vol-时钟-timer-main), [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-树形框-tree_box-main](#vol-树形框-tree_box-main), [vol-超级编辑框-rich_edit-main](#vol-超级编辑框-rich_edit-main), [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-日期框-date_box-main](#vol-日期框-date_box-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-火花代码编辑框-codeedittext-main](#vol-火花代码编辑框-codeedittext-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-卷帘式菜单-outbar-main](#vol-卷帘式菜单-outbar-main), [vol-属性表格-property_grid-main](#vol-属性表格-property_grid-main), [vol-带按钮列表框-vs_list_box-main](#vol-带按钮列表框-vs_list_box-main), [vol-图片组动态修改-change_image_list-main](#vol-图片组动态修改-change_image_list-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-动态创建布局-dynamic_create-main](#vol-动态创建布局-dynamic_create-main), [vol-用户自定义窗口组件-user_control-main](#vol-用户自定义窗口组件-user_control-main), [vol-祖国您好-base_test-main](#vol-祖国您好-base_test-main), [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main), [vol-打印测试-print_test-main](#vol-打印测试-print_test-main), [vol-自定义流程控制-flow_control-main](#vol-自定义流程控制-flow_control-main), [vol-取可执行文件位数-read_exe_bits-main](#vol-取可执行文件位数-read_exe_bits-main), [vol-位图处理-adv_bitmap-main](#vol-位图处理-adv_bitmap-main), [vol-调试输出测试-debug_out-main](#vol-调试输出测试-debug_out-main), [vol-跨对象发送接收事件-object_event-main](#vol-跨对象发送接收事件-object_event-main), [vol-二维码生成-qrencode-main](#vol-二维码生成-qrencode-main), [vol-win10通知-wintoast-main](#vol-win10通知-wintoast-main), [vol-程序崩溃回调-breakpad-main](#vol-程序崩溃回调-breakpad-main), [vol-文本编码转换-libiconv-main](#vol-文本编码转换-libiconv-main), [vol-内存映射文件-filemapping-main](#vol-内存映射文件-filemapping-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-邮件槽-mailslot-main](#vol-邮件槽-mailslot-main), [vol-命名管道-namedpipe-main](#vol-命名管道-namedpipe-main), [vol-多线程-muti_thread-main](#vol-多线程-muti_thread-main), [vol-线程池-pool_thread-main](#vol-线程池-pool_thread-main), [vol-mfc控制台程序-mfc_console-main](#vol-mfc控制台程序-mfc_console-main), [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main), [vol-调用动态链接库-dll_call-main](#vol-调用动态链接库-dll_call-main), [vol-复杂接口api调用-api_call-main](#vol-复杂接口api调用-api_call-main), [vol-一步一步跟我学火山-step_by_step-main](#vol-一步一步跟我学火山-step_by_step-main), [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main), [vol-密码管理-pw-main](#vol-密码管理-pw-main), [vol-json数据访问-json-main](#vol-json数据访问-json-main), [vol-xml数据访问-xml-main](#vol-xml数据访问-xml-main), [vol-树结构访问-treestruct-main](#vol-树结构访问-treestruct-main), [vol-正则表达式-deelx_regular-main](#vol-正则表达式-deelx_regular-main), [vol-网页解析-html_parser-main](#vol-网页解析-html_parser-main), [vol-高级网页解析-adv_html_parser-main](#vol-高级网页解析-adv_html_parser-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-大整数运算-bnsample-main](#vol-大整数运算-bnsample-main), [vol-哈希表-hash_map-main](#vol-哈希表-hash_map-main), [vol-对象包装-object_wrapper-main](#vol-对象包装-object_wrapper-main), [vol-高性能键值表-mmkv-main](#vol-高性能键值表-mmkv-main), [vol-cron时间表达式-cron-main](#vol-cron时间表达式-cron-main), [vol-std数据结构-stl_sample-main](#vol-std数据结构-stl_sample-main), [vol-正则表达式2-regex-main](#vol-正则表达式2-regex-main), [vol-yyjson数据访问-yyjson-main](#vol-yyjson数据访问-yyjson-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-串口通讯-cserialport-main](#vol-串口通讯-cserialport-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-tcp转发-tcp_forward-main](#vol-tcp转发-tcp_forward-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main), [vol-简单http服务器-http_server-main](#vol-简单http服务器-http_server-main), [vol-简单pack客户端-pack_client-main](#vol-简单pack客户端-pack_client-main), [vol-简单pack服务器-pack_server-main](#vol-简单pack服务器-pack_server-main), [vol-简单pull客户端-pull_client-main](#vol-简单pull客户端-pull_client-main), [vol-简单pull服务器-pull_server-main](#vol-简单pull服务器-pull_server-main), [vol-简单tcp客户端-tcp_client-main](#vol-简单tcp客户端-tcp_client-main), [vol-简单tcp服务器-tcp_server-main](#vol-简单tcp服务器-tcp_server-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main), [vol-简单udp客户端-udp_client-main](#vol-简单udp客户端-udp_client-main), [vol-简单udp服务器-udp_server-main](#vol-简单udp服务器-udp_server-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pack文件传送服务器-hp_packfile_server-main](#vol-pack文件传送服务器-hp_packfile_server-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-pull文件传送服务器-hp_pullfile_server-main](#vol-pull文件传送服务器-hp_pullfile_server-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-tcp文件传送服务器-hp_tcpfile_server-main](#vol-tcp文件传送服务器-hp_tcpfile_server-main), [vol-服务器-server-main](#vol-服务器-server-main), [vol-客户端-client-main](#vol-客户端-client-main), [vol-mysql-mysqlsample-main](#vol-mysql-mysqlsample-main), [vol-sqlite3-sqlite3-main](#vol-sqlite3-sqlite3-main), [vol-ado-ado_sample-main](#vol-ado-ado_sample-main), [vol-redis-redis-main](#vol-redis-redis-main), [vol-redis连接池-redisconnectpool-main](#vol-redis连接池-redisconnectpool-main), [vol-mysql连接池-mysql_connectionpool-main](#vol-mysql连接池-mysql_connectionpool-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main), [vol-python脚本-python_script-main](#vol-python脚本-python_script-main), [vol-javascript脚本-v8js-main](#vol-javascript脚本-v8js-main), [vol-elk微型js引擎-elk_js-main](#vol-elk微型js引擎-elk_js-main), [vol-阿里云oss-aliyun_oss-main](#vol-阿里云oss-aliyun_oss-main), [vol-excel2021-excel2021-main](#vol-excel2021-excel2021-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-wav播放-wav_play-main](#vol-wav播放-wav_play-main), [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main), [vol-rvm人像抠图-rvm_segmentation-main](#vol-rvm人像抠图-rvm_segmentation-main), [vol-角点检测-corner_detection-main](#vol-角点检测-corner_detection-main), [vol-dnn文本检测-dnn_text_detection_recognition-main](#vol-dnn文本检测-dnn_text_detection_recognition-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.按钮.类型
+
+* **类型:** `属性读方法`
+* **名称:** `类型`
+* **返回值数据类型:** `按钮类型`
+* **描述:** 返回按钮的当前类型
+
+##### 火山.MFC界面.基本.按钮.类型
+
+* **类型:** `属性写方法`
+* **名称:** `类型`
+* **参数:**
+	* `所欲设置的类型` (`按钮类型`)
+* **描述:** 设置按钮的当前类型. 注意: 本属性仅当在按钮组件被创建前设置有效
+
+---
+
+#### 火山.MFC界面.基本.标签
+
+* **类型:** `类`
+* **名称:** `标签`
+* **基础类:** `窗口组件`
+* **描述:** 标签窗口组件类
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-超级列表框-listview-main](#vol-超级列表框-listview-main), [vol-树形框-tree_box-main](#vol-树形框-tree_box-main), [vol-工具条-tool_bar-main](#vol-工具条-tool_bar-main), [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-窗口组件动态消息过滤-msg_filter-main](#vol-窗口组件动态消息过滤-msg_filter-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-动态创建布局-dynamic_create-main](#vol-动态创建布局-dynamic_create-main), [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main), [vol-打印测试-print_test-main](#vol-打印测试-print_test-main), [vol-位图处理-adv_bitmap-main](#vol-位图处理-adv_bitmap-main), [vol-调试输出测试-debug_out-main](#vol-调试输出测试-debug_out-main), [vol-二维码生成-qrencode-main](#vol-二维码生成-qrencode-main), [vol-win10通知-wintoast-main](#vol-win10通知-wintoast-main), [vol-文本编码转换-libiconv-main](#vol-文本编码转换-libiconv-main), [vol-内存映射文件-filemapping-main](#vol-内存映射文件-filemapping-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-邮件槽-mailslot-main](#vol-邮件槽-mailslot-main), [vol-命名管道-namedpipe-main](#vol-命名管道-namedpipe-main), [vol-多线程-muti_thread-main](#vol-多线程-muti_thread-main), [vol-线程池-pool_thread-main](#vol-线程池-pool_thread-main), [vol-mfc控制台程序-mfc_console-main](#vol-mfc控制台程序-mfc_console-main), [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main), [vol-被调用mfc动态链接库-mfc_dll-main](#vol-被调用mfc动态链接库-mfc_dll-main), [vol-一步一步跟我学火山-step_by_step-main](#vol-一步一步跟我学火山-step_by_step-main), [vol-密码管理-pw-main](#vol-密码管理-pw-main), [vol-正则表达式-deelx_regular-main](#vol-正则表达式-deelx_regular-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-大整数运算-bnsample-main](#vol-大整数运算-bnsample-main), [vol-对象包装-object_wrapper-main](#vol-对象包装-object_wrapper-main), [vol-正则表达式2-regex-main](#vol-正则表达式2-regex-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-tcp转发-tcp_forward-main](#vol-tcp转发-tcp_forward-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main), [vol-简单pack客户端-pack_client-main](#vol-简单pack客户端-pack_client-main), [vol-简单pack服务器-pack_server-main](#vol-简单pack服务器-pack_server-main), [vol-简单pull客户端-pull_client-main](#vol-简单pull客户端-pull_client-main), [vol-简单pull服务器-pull_server-main](#vol-简单pull服务器-pull_server-main), [vol-简单tcp客户端-tcp_client-main](#vol-简单tcp客户端-tcp_client-main), [vol-简单tcp服务器-tcp_server-main](#vol-简单tcp服务器-tcp_server-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main), [vol-简单udp客户端-udp_client-main](#vol-简单udp客户端-udp_client-main), [vol-简单udp服务器-udp_server-main](#vol-简单udp服务器-udp_server-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pack文件传送服务器-hp_packfile_server-main](#vol-pack文件传送服务器-hp_packfile_server-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-pull文件传送服务器-hp_pullfile_server-main](#vol-pull文件传送服务器-hp_pullfile_server-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-tcp文件传送服务器-hp_tcpfile_server-main](#vol-tcp文件传送服务器-hp_tcpfile_server-main), [vol-服务器-server-main](#vol-服务器-server-main), [vol-客户端-client-main](#vol-客户端-client-main), [vol-mysql-mysqlsample-main](#vol-mysql-mysqlsample-main), [vol-sqlite3-sqlite3-main](#vol-sqlite3-sqlite3-main), [vol-ado-ado_sample-main](#vol-ado-ado_sample-main), [vol-redis-redis-main](#vol-redis-redis-main), [vol-redis连接池-redisconnectpool-main](#vol-redis连接池-redisconnectpool-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main), [vol-javascript脚本-v8js-main](#vol-javascript脚本-v8js-main), [vol-阿里云oss-aliyun_oss-main](#vol-阿里云oss-aliyun_oss-main), [vol-excel2021-excel2021-main](#vol-excel2021-excel2021-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main), [vol-rvm人像抠图-rvm_segmentation-main](#vol-rvm人像抠图-rvm_segmentation-main)
+
+##### 火山.MFC界面.基本.标签.透明
+
+* **类型:** `属性读方法`
+* **名称:** `透明`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回本组件背景是否透明
+
+##### 火山.MFC界面.基本.标签.透明
+
+* **类型:** `属性写方法`
+* **名称:** `透明`
+* **参数:**
+	* `是否透明` (`逻辑型`)
+* **描述:** 设置本组件的背景是否透明. 如果本属性值设置为真,则"背景颜色"属性将不起作用. 注意本属性不支持在界面设计器中预览.
+
+##### 火山.MFC界面.基本.标签.背景颜色
+
+* **类型:** `属性读方法`
+* **名称:** `背景颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的本组件背景颜色值
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main)
+
+##### 火山.MFC界面.基本.标签.背景颜色
+
+* **类型:** `属性写方法`
+* **名称:** `背景颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.默认色"来指定使用默认组件背景颜色.
+* **特性:**
+	* `颜色值`(可以为默认色)
+* **描述:** 设置本组件的背景颜色值. 如果本组件未曾设置过背景颜色,则默认为"颜色类.默认色". 注意如果"透明"属性值为真,则本属性不起作用.
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main)
+
+##### 火山.MFC界面.基本.标签.文本颜色
+
+* **类型:** `属性读方法`
+* **名称:** `文本颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的本组件文本颜色值
+
+##### 火山.MFC界面.基本.标签.文本颜色
+
+* **类型:** `属性写方法`
+* **名称:** `文本颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.默认色"来指定使用默认文本颜色.
+* **特性:**
+	* `颜色值`(可以为默认色)
+* **描述:** 设置本组件的文本颜色值. 如果本组件未曾设置过文本颜色,则默认为"颜色类.默认色".
+
+##### 火山.MFC界面.基本.标签.是否自动折行
+
+* **类型:** `属性读方法`
+* **名称:** `是否自动折行`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回当文本内容超出组件右边界后是否自动转到下一行显示
+
+##### 火山.MFC界面.基本.标签.是否自动折行
+
+* **类型:** `属性写方法`
+* **名称:** `是否自动折行`
+* **参数:**
+	* `自动折行` (`逻辑型`): 为真表示自动折行,为假不自动折行.
+* **描述:** 设置当文本内容超出组件右边界后是否自动转到下一行显示
+
+##### 火山.MFC界面.基本.标签.横向对齐方式
+
+* **类型:** `属性读方法`
+* **名称:** `横向对齐方式`
+* **返回值数据类型:** `横向对齐模式`
+* **描述:** 返回标签上所显示内容的横向对齐方式
+
+##### 火山.MFC界面.基本.标签.横向对齐方式
+
+* **类型:** `属性写方法`
+* **名称:** `横向对齐方式`
+* **参数:**
+	* `对齐方式` (`横向对齐模式`)
+* **描述:** 设置标签上所显示内容的横向对齐方式
+
+##### 火山.MFC界面.基本.标签.纵向对齐方式
+
+* **类型:** `属性读方法`
+* **名称:** `纵向对齐方式`
+* **返回值数据类型:** `纵向对齐模式`
+* **描述:** 返回标签上所显示内容的纵向对齐方式
+
+##### 火山.MFC界面.基本.标签.纵向对齐方式
+
+* **类型:** `属性写方法`
+* **名称:** `纵向对齐方式`
+* **参数:**
+	* `对齐方式` (`纵向对齐模式`)
+* **描述:** 设置标签上所显示内容的纵向对齐方式
+
+##### 火山.MFC界面.基本.标签.底图
+
+* **类型:** `属性写方法`
+* **名称:** `底图`
+* **参数:**
+	* `所欲设置的位图` (`位图资源`): 提供所欲设置的位图资源,如果该资源值为"空资源.空位图",则将取消底图.
+* **描述:** 设置显示在标签背景上的位图
+
+##### 火山.MFC界面.基本.标签.底图方式
+
+* **类型:** `属性读方法`
+* **名称:** `底图方式`
+* **返回值数据类型:** `图片放置方式`
+* **描述:** 返回标签上底图的放置方式
+
+##### 火山.MFC界面.基本.标签.底图方式
+
+* **类型:** `属性写方法`
+* **名称:** `底图方式`
+* **参数:**
+	* `放置方式` (`图片放置方式`)
+* **描述:** 设置标签上底图的放置方式
+
+##### 火山.MFC界面.基本.标签.反馈事件
+
+* **类型:** `事件定义方法`
+* **名称:** `反馈事件`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `参数1` (`变整数`): "调用反馈事件"方法所提供的参数1值
+	* `参数2` (`变整数`): "调用反馈事件"方法所提供的参数2值
+* **描述:** 当在程序中调用本对象的"调用反馈事件"方法基于Windows消息进行通讯时,本事件将被触发.
+* **返回值描述:** 所返回值将返回到"调用反馈事件"方法的调用方
+* **相关例程:** [vol-线程池-pool_thread-main](#vol-线程池-pool_thread-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main)
+
+##### 火山.MFC界面.基本.标签.调用反馈事件
+
+* **类型:** `方法`
+* **名称:** `调用反馈事件`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `参数1` (`变整数`, 默认值: `0`): 为反馈事件所提供的第1个参数值
+	* `参数2` (`变整数`, 默认值: `0`): 为反馈事件所提供的第2个参数值
+	* `等待事件处理完毕` (`逻辑型`, 默认值: `真`): 为真则采用发送方式传递事件消息,此时本方法将一直等待到所产生的"反馈事件"用户事件处理方法处理完毕后才返回,为假则采用投递方式传递事件消息,此时本命令将直接返回且不等待用户事件处理方法处理完毕(用户事件处理方法将在空闲时被调用).
+* **描述:** 产生标签的"反馈事件",以调用此标签该事件的处理方法,可以用作在多线程处理中将控制权转移到程序主线程上去执行.
+* **返回值描述:** 返回用户"反馈事件"事件处理子程序所返回的值,如果没有相应的事件处理子程序或采用投递方式传递事件消息("等待事件处理完毕"参数为假),将返回0.
+* **相关例程:** [vol-线程池-pool_thread-main](#vol-线程池-pool_thread-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main)
+
+##### 火山.MFC界面.基本.标签.重画标签
+
+* **类型:** `方法`
+* **名称:** `重画标签`
+* **描述:** 如果需要重画本组件,不要调用基础类中的"重画"方法,而需要调用本方法,这样才能保证在"透明"属性被设置为真时正常刷新本组件的显示.
+
+##### 火山.MFC界面.基本.标签.置底图文件
+
+* **类型:** `方法`
+* **名称:** `置底图文件`
+* **参数:**
+	* `所欲设置的位图文件名` (`文本型`)
+* **描述:** 设置显示在画板背景上的位图文件
+
+##### 火山.MFC界面.基本.标签.置底图数据
+
+* **类型:** `方法`
+* **名称:** `置底图数据`
+* **参数:**
+	* `所欲设置的位图文件数据` (`字节集类`)
+* **描述:** 设置显示在画板背景上的位图文件数据
+
+---
+
+#### 火山.MFC界面.基本.滚动条类型
+
+* **类型:** `类`
+* **名称:** `滚动条类型`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供滚动条的各种类型
+
+##### 火山.MFC界面.基本.滚动条类型.无
+
+* **类型:** `成员常量`
+* **名称:** `无`
+* **数据类型:** `滚动条类型`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.滚动条类型.横向滚动条
+
+* **类型:** `成员常量`
+* **名称:** `横向滚动条`
+* **数据类型:** `滚动条类型`
+* **初始值:** `1`
+
+##### 火山.MFC界面.基本.滚动条类型.纵向滚动条
+
+* **类型:** `成员常量`
+* **名称:** `纵向滚动条`
+* **数据类型:** `滚动条类型`
+* **初始值:** `2`
+
+##### 火山.MFC界面.基本.滚动条类型.横向及纵向滚动条
+
+* **类型:** `成员常量`
+* **名称:** `横向及纵向滚动条`
+* **数据类型:** `滚动条类型`
+* **初始值:** `3`
+
+---
+
+#### 火山.MFC界面.基本.编辑框输入方式
+
+* **类型:** `类`
+* **名称:** `编辑框输入方式`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供编辑框的各种输入方式
+
+##### 火山.MFC界面.基本.编辑框输入方式.通常方式
+
+* **类型:** `成员常量`
+* **名称:** `通常方式`
+* **数据类型:** `编辑框输入方式`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.编辑框输入方式.只读方式
+
+* **类型:** `成员常量`
+* **名称:** `只读方式`
+* **数据类型:** `编辑框输入方式`
+* **初始值:** `1`
+
+##### 火山.MFC界面.基本.编辑框输入方式.密码输入
+
+* **类型:** `成员常量`
+* **名称:** `密码输入`
+* **数据类型:** `编辑框输入方式`
+* **初始值:** `2`
+
+##### 火山.MFC界面.基本.编辑框输入方式.整数文本输入
+
+* **类型:** `成员常量`
+* **名称:** `整数文本输入`
+* **数据类型:** `编辑框输入方式`
+* **初始值:** `3`
+
+##### 火山.MFC界面.基本.编辑框输入方式.小数文本输入
+
+* **类型:** `成员常量`
+* **名称:** `小数文本输入`
+* **数据类型:** `编辑框输入方式`
+* **初始值:** `4`
+
+##### 火山.MFC界面.基本.编辑框输入方式.输入字节
+
+* **类型:** `成员常量`
+* **名称:** `输入字节`
+* **数据类型:** `编辑框输入方式`
+* **初始值:** `5`
+
+##### 火山.MFC界面.基本.编辑框输入方式.输入短整数
+
+* **类型:** `成员常量`
+* **名称:** `输入短整数`
+* **数据类型:** `编辑框输入方式`
+* **初始值:** `6`
+
+##### 火山.MFC界面.基本.编辑框输入方式.输入整数
+
+* **类型:** `成员常量`
+* **名称:** `输入整数`
+* **数据类型:** `编辑框输入方式`
+* **初始值:** `7`
+
+##### 火山.MFC界面.基本.编辑框输入方式.输入长整数
+
+* **类型:** `成员常量`
+* **名称:** `输入长整数`
+* **数据类型:** `编辑框输入方式`
+* **初始值:** `8`
+
+##### 火山.MFC界面.基本.编辑框输入方式.输入单精度小数
+
+* **类型:** `成员常量`
+* **名称:** `输入单精度小数`
+* **数据类型:** `编辑框输入方式`
+* **初始值:** `9`
+
+##### 火山.MFC界面.基本.编辑框输入方式.输入双精度小数
+
+* **类型:** `成员常量`
+* **名称:** `输入双精度小数`
+* **数据类型:** `编辑框输入方式`
+* **初始值:** `10`
+
+##### 火山.MFC界面.基本.编辑框输入方式.输入中文日期时间
+
+* **类型:** `成员常量`
+* **名称:** `输入中文日期时间`
+* **数据类型:** `编辑框输入方式`
+* **初始值:** `11`
+* **描述:** 输入中文格式的日期时间,具体格式见"日期时间操作类.到时间"方法中的说明.
+
+##### 火山.MFC界面.基本.编辑框输入方式.输入英文日期时间
+
+* **类型:** `成员常量`
+* **名称:** `输入英文日期时间`
+* **数据类型:** `编辑框输入方式`
+* **初始值:** `12`
+* **描述:** 输入非中文格式的日期时间,具体格式见"日期时间操作类.到时间"方法中的说明.
+
+##### 火山.MFC界面.基本.编辑框输入方式.输入十六进制整数
+
+* **类型:** `成员常量`
+* **名称:** `输入十六进制整数`
+* **数据类型:** `编辑框输入方式`
+* **初始值:** `13`
+
+---
+
+#### 火山.MFC界面.基本.编辑框转换方式
+
+* **类型:** `类`
+* **名称:** `编辑框转换方式`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供编辑框的各种转换方式
+
+##### 火山.MFC界面.基本.编辑框转换方式.无
+
+* **类型:** `成员常量`
+* **名称:** `无`
+* **数据类型:** `编辑框转换方式`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.编辑框转换方式.大写到小写
+
+* **类型:** `成员常量`
+* **名称:** `大写到小写`
+* **数据类型:** `编辑框转换方式`
+* **初始值:** `1`
+
+##### 火山.MFC界面.基本.编辑框转换方式.小写到大写
+
+* **类型:** `成员常量`
+* **名称:** `小写到大写`
+* **数据类型:** `编辑框转换方式`
+* **初始值:** `2`
+
+---
+
+#### 火山.MFC界面.基本.编辑框调节器方式
+
+* **类型:** `类`
+* **名称:** `编辑框调节器方式`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供编辑框的各种调节器方式
+
+##### 火山.MFC界面.基本.编辑框调节器方式.无调节器
+
+* **类型:** `成员常量`
+* **名称:** `无调节器`
+* **数据类型:** `编辑框调节器方式`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.编辑框调节器方式.自动调节器
+
+* **类型:** `成员常量`
+* **名称:** `自动调节器`
+* **数据类型:** `编辑框调节器方式`
+* **初始值:** `1`
+
+##### 火山.MFC界面.基本.编辑框调节器方式.手动调节器
+
+* **类型:** `成员常量`
+* **名称:** `手动调节器`
+* **数据类型:** `编辑框调节器方式`
+* **初始值:** `2`
+
+---
+
+#### 火山.MFC界面.基本.编辑框气泡图标
+
+* **类型:** `类`
+* **名称:** `编辑框气泡图标`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+
+##### 火山.MFC界面.基本.编辑框气泡图标.无
+
+* **类型:** `成员常量`
+* **名称:** `无`
+* **数据类型:** `编辑框气泡图标`
+
+##### 火山.MFC界面.基本.编辑框气泡图标.信息
+
+* **类型:** `成员常量`
+* **名称:** `信息`
+* **数据类型:** `编辑框气泡图标`
+
+##### 火山.MFC界面.基本.编辑框气泡图标.警告
+
+* **类型:** `成员常量`
+* **名称:** `警告`
+* **数据类型:** `编辑框气泡图标`
+
+##### 火山.MFC界面.基本.编辑框气泡图标.错误
+
+* **类型:** `成员常量`
+* **名称:** `错误`
+* **数据类型:** `编辑框气泡图标`
+
+---
+
+#### 火山.MFC界面.基本.编辑框
+
+* **类型:** `类`
+* **名称:** `编辑框`
+* **基础类:** `窗口组件`
+* **描述:** 编辑框窗口组件类
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-选择夹3-tab_demo3-main](#vol-选择夹3-tab_demo3-main), [vol-对话框-dialog_test-main](#vol-对话框-dialog_test-main), [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-树形框-tree_box-main](#vol-树形框-tree_box-main), [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-日期框-date_box-main](#vol-日期框-date_box-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-卷帘式菜单-outbar-main](#vol-卷帘式菜单-outbar-main), [vol-属性表格-property_grid-main](#vol-属性表格-property_grid-main), [vol-带按钮列表框-vs_list_box-main](#vol-带按钮列表框-vs_list_box-main), [vol-窗口组件动态消息过滤-msg_filter-main](#vol-窗口组件动态消息过滤-msg_filter-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-动态创建布局-dynamic_create-main](#vol-动态创建布局-dynamic_create-main), [vol-用户自定义窗口组件-user_control-main](#vol-用户自定义窗口组件-user_control-main), [vol-打印测试-print_test-main](#vol-打印测试-print_test-main), [vol-自定义流程控制-flow_control-main](#vol-自定义流程控制-flow_control-main), [vol-取可执行文件位数-read_exe_bits-main](#vol-取可执行文件位数-read_exe_bits-main), [vol-位图处理-adv_bitmap-main](#vol-位图处理-adv_bitmap-main), [vol-com变体型测试-variant_test-main](#vol-com变体型测试-variant_test-main), [vol-二维码生成-qrencode-main](#vol-二维码生成-qrencode-main), [vol-win10通知-wintoast-main](#vol-win10通知-wintoast-main), [vol-文本编码转换-libiconv-main](#vol-文本编码转换-libiconv-main), [vol-内存映射文件-filemapping-main](#vol-内存映射文件-filemapping-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-邮件槽-mailslot-main](#vol-邮件槽-mailslot-main), [vol-命名管道-namedpipe-main](#vol-命名管道-namedpipe-main), [vol-线程池-pool_thread-main](#vol-线程池-pool_thread-main), [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main), [vol-调用动态链接库-dll_call-main](#vol-调用动态链接库-dll_call-main), [vol-复杂接口api调用-api_call-main](#vol-复杂接口api调用-api_call-main), [vol-密码管理-pw-main](#vol-密码管理-pw-main), [vol-json数据访问-json-main](#vol-json数据访问-json-main), [vol-xml数据访问-xml-main](#vol-xml数据访问-xml-main), [vol-树结构访问-treestruct-main](#vol-树结构访问-treestruct-main), [vol-正则表达式-deelx_regular-main](#vol-正则表达式-deelx_regular-main), [vol-网页解析-html_parser-main](#vol-网页解析-html_parser-main), [vol-高级网页解析-adv_html_parser-main](#vol-高级网页解析-adv_html_parser-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-大整数运算-bnsample-main](#vol-大整数运算-bnsample-main), [vol-哈希表-hash_map-main](#vol-哈希表-hash_map-main), [vol-对象包装-object_wrapper-main](#vol-对象包装-object_wrapper-main), [vol-高性能键值表-mmkv-main](#vol-高性能键值表-mmkv-main), [vol-cron时间表达式-cron-main](#vol-cron时间表达式-cron-main), [vol-std数据结构-stl_sample-main](#vol-std数据结构-stl_sample-main), [vol-正则表达式2-regex-main](#vol-正则表达式2-regex-main), [vol-yyjson数据访问-yyjson-main](#vol-yyjson数据访问-yyjson-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-串口通讯-cserialport-main](#vol-串口通讯-cserialport-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-tcp转发-tcp_forward-main](#vol-tcp转发-tcp_forward-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main), [vol-简单pack客户端-pack_client-main](#vol-简单pack客户端-pack_client-main), [vol-简单pack服务器-pack_server-main](#vol-简单pack服务器-pack_server-main), [vol-简单pull客户端-pull_client-main](#vol-简单pull客户端-pull_client-main), [vol-简单pull服务器-pull_server-main](#vol-简单pull服务器-pull_server-main), [vol-简单tcp客户端-tcp_client-main](#vol-简单tcp客户端-tcp_client-main), [vol-简单tcp服务器-tcp_server-main](#vol-简单tcp服务器-tcp_server-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main), [vol-简单udp客户端-udp_client-main](#vol-简单udp客户端-udp_client-main), [vol-简单udp服务器-udp_server-main](#vol-简单udp服务器-udp_server-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pack文件传送服务器-hp_packfile_server-main](#vol-pack文件传送服务器-hp_packfile_server-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-pull文件传送服务器-hp_pullfile_server-main](#vol-pull文件传送服务器-hp_pullfile_server-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-tcp文件传送服务器-hp_tcpfile_server-main](#vol-tcp文件传送服务器-hp_tcpfile_server-main), [vol-服务器-server-main](#vol-服务器-server-main), [vol-客户端-client-main](#vol-客户端-client-main), [vol-mysql-mysqlsample-main](#vol-mysql-mysqlsample-main), [vol-sqlite3-sqlite3-main](#vol-sqlite3-sqlite3-main), [vol-ado-ado_sample-main](#vol-ado-ado_sample-main), [vol-redis-redis-main](#vol-redis-redis-main), [vol-redis连接池-redisconnectpool-main](#vol-redis连接池-redisconnectpool-main), [vol-mysql连接池-mysql_connectionpool-main](#vol-mysql连接池-mysql_connectionpool-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main), [vol-python脚本-python_script-main](#vol-python脚本-python_script-main), [vol-javascript脚本-v8js-main](#vol-javascript脚本-v8js-main), [vol-elk微型js引擎-elk_js-main](#vol-elk微型js引擎-elk_js-main), [vol-阿里云oss-aliyun_oss-main](#vol-阿里云oss-aliyun_oss-main), [vol-海康威视工业相机-hikrobot-main](#vol-海康威视工业相机-hikrobot-main), [vol-腾讯云对象存储临时秘钥获取-tencentcos-main](#vol-腾讯云对象存储临时秘钥获取-tencentcos-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main), [vol-dnn文本检测-dnn_text_detection_recognition-main](#vol-dnn文本检测-dnn_text_detection_recognition-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main)
+
+##### 火山.MFC界面.基本.编辑框.背景颜色
+
+* **类型:** `属性读方法`
+* **名称:** `背景颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的本组件背景颜色值
+
+##### 火山.MFC界面.基本.编辑框.背景颜色
+
+* **类型:** `属性写方法`
+* **名称:** `背景颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.默认色"来指定使用默认组件背景颜色.
+* **特性:**
+	* `颜色值`(可以为默认色)
+* **描述:** 设置本组件的背景颜色值. 如果本组件未曾设置过背景颜色,则默认为"颜色类.白色".
+
+##### 火山.MFC界面.基本.编辑框.文本颜色
+
+* **类型:** `属性读方法`
+* **名称:** `文本颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的本组件文本颜色值
+
+##### 火山.MFC界面.基本.编辑框.文本颜色
+
+* **类型:** `属性写方法`
+* **名称:** `文本颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值
+* **特性:**
+	* `颜色值`
+* **描述:** 设置本组件的文本颜色值. 如果本组件未曾设置过文本颜色,则默认为黑色.
+
+##### 火山.MFC界面.基本.编辑框.内容
+
+* **类型:** `属性读方法`
+* **名称:** `内容`
+* **返回值数据类型:** `文本型`
+* **描述:** 返回本组件的当前内容文本. 本属性等同于窗口组件类中的标题属性.
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-树形框-tree_box-main](#vol-树形框-tree_box-main), [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-日期框-date_box-main](#vol-日期框-date_box-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-属性表格-property_grid-main](#vol-属性表格-property_grid-main), [vol-带按钮列表框-vs_list_box-main](#vol-带按钮列表框-vs_list_box-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-动态创建布局-dynamic_create-main](#vol-动态创建布局-dynamic_create-main), [vol-用户自定义窗口组件-user_control-main](#vol-用户自定义窗口组件-user_control-main), [vol-打印测试-print_test-main](#vol-打印测试-print_test-main), [vol-二维码生成-qrencode-main](#vol-二维码生成-qrencode-main), [vol-win10通知-wintoast-main](#vol-win10通知-wintoast-main), [vol-文本编码转换-libiconv-main](#vol-文本编码转换-libiconv-main), [vol-内存映射文件-filemapping-main](#vol-内存映射文件-filemapping-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-邮件槽-mailslot-main](#vol-邮件槽-mailslot-main), [vol-命名管道-namedpipe-main](#vol-命名管道-namedpipe-main), [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main), [vol-密码管理-pw-main](#vol-密码管理-pw-main), [vol-json数据访问-json-main](#vol-json数据访问-json-main), [vol-xml数据访问-xml-main](#vol-xml数据访问-xml-main), [vol-树结构访问-treestruct-main](#vol-树结构访问-treestruct-main), [vol-正则表达式-deelx_regular-main](#vol-正则表达式-deelx_regular-main), [vol-网页解析-html_parser-main](#vol-网页解析-html_parser-main), [vol-高级网页解析-adv_html_parser-main](#vol-高级网页解析-adv_html_parser-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-大整数运算-bnsample-main](#vol-大整数运算-bnsample-main), [vol-std数据结构-stl_sample-main](#vol-std数据结构-stl_sample-main), [vol-正则表达式2-regex-main](#vol-正则表达式2-regex-main), [vol-yyjson数据访问-yyjson-main](#vol-yyjson数据访问-yyjson-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-串口通讯-cserialport-main](#vol-串口通讯-cserialport-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-tcp转发-tcp_forward-main](#vol-tcp转发-tcp_forward-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main), [vol-简单pack客户端-pack_client-main](#vol-简单pack客户端-pack_client-main), [vol-简单pack服务器-pack_server-main](#vol-简单pack服务器-pack_server-main), [vol-简单pull客户端-pull_client-main](#vol-简单pull客户端-pull_client-main), [vol-简单pull服务器-pull_server-main](#vol-简单pull服务器-pull_server-main), [vol-简单tcp客户端-tcp_client-main](#vol-简单tcp客户端-tcp_client-main), [vol-简单tcp服务器-tcp_server-main](#vol-简单tcp服务器-tcp_server-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main), [vol-简单udp客户端-udp_client-main](#vol-简单udp客户端-udp_client-main), [vol-简单udp服务器-udp_server-main](#vol-简单udp服务器-udp_server-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pack文件传送服务器-hp_packfile_server-main](#vol-pack文件传送服务器-hp_packfile_server-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-pull文件传送服务器-hp_pullfile_server-main](#vol-pull文件传送服务器-hp_pullfile_server-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-tcp文件传送服务器-hp_tcpfile_server-main](#vol-tcp文件传送服务器-hp_tcpfile_server-main), [vol-服务器-server-main](#vol-服务器-server-main), [vol-客户端-client-main](#vol-客户端-client-main), [vol-mysql-mysqlsample-main](#vol-mysql-mysqlsample-main), [vol-sqlite3-sqlite3-main](#vol-sqlite3-sqlite3-main), [vol-ado-ado_sample-main](#vol-ado-ado_sample-main), [vol-redis-redis-main](#vol-redis-redis-main), [vol-redis连接池-redisconnectpool-main](#vol-redis连接池-redisconnectpool-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main), [vol-python脚本-python_script-main](#vol-python脚本-python_script-main), [vol-javascript脚本-v8js-main](#vol-javascript脚本-v8js-main), [vol-elk微型js引擎-elk_js-main](#vol-elk微型js引擎-elk_js-main), [vol-阿里云oss-aliyun_oss-main](#vol-阿里云oss-aliyun_oss-main), [vol-海康威视工业相机-hikrobot-main](#vol-海康威视工业相机-hikrobot-main), [vol-腾讯云对象存储临时秘钥获取-tencentcos-main](#vol-腾讯云对象存储临时秘钥获取-tencentcos-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main)
+
+##### 火山.MFC界面.基本.编辑框.内容
+
+* **类型:** `属性写方法`
+* **名称:** `内容`
+* **参数:**
+	* `所欲设置的内容` (`文本型`)
+* **描述:** 设置本组件的当前内容文本. 本属性等同于窗口组件类中的标题属性.
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-树形框-tree_box-main](#vol-树形框-tree_box-main), [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-日期框-date_box-main](#vol-日期框-date_box-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-属性表格-property_grid-main](#vol-属性表格-property_grid-main), [vol-带按钮列表框-vs_list_box-main](#vol-带按钮列表框-vs_list_box-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-动态创建布局-dynamic_create-main](#vol-动态创建布局-dynamic_create-main), [vol-用户自定义窗口组件-user_control-main](#vol-用户自定义窗口组件-user_control-main), [vol-打印测试-print_test-main](#vol-打印测试-print_test-main), [vol-二维码生成-qrencode-main](#vol-二维码生成-qrencode-main), [vol-win10通知-wintoast-main](#vol-win10通知-wintoast-main), [vol-文本编码转换-libiconv-main](#vol-文本编码转换-libiconv-main), [vol-内存映射文件-filemapping-main](#vol-内存映射文件-filemapping-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-邮件槽-mailslot-main](#vol-邮件槽-mailslot-main), [vol-命名管道-namedpipe-main](#vol-命名管道-namedpipe-main), [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main), [vol-密码管理-pw-main](#vol-密码管理-pw-main), [vol-json数据访问-json-main](#vol-json数据访问-json-main), [vol-xml数据访问-xml-main](#vol-xml数据访问-xml-main), [vol-树结构访问-treestruct-main](#vol-树结构访问-treestruct-main), [vol-正则表达式-deelx_regular-main](#vol-正则表达式-deelx_regular-main), [vol-网页解析-html_parser-main](#vol-网页解析-html_parser-main), [vol-高级网页解析-adv_html_parser-main](#vol-高级网页解析-adv_html_parser-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-大整数运算-bnsample-main](#vol-大整数运算-bnsample-main), [vol-std数据结构-stl_sample-main](#vol-std数据结构-stl_sample-main), [vol-正则表达式2-regex-main](#vol-正则表达式2-regex-main), [vol-yyjson数据访问-yyjson-main](#vol-yyjson数据访问-yyjson-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-串口通讯-cserialport-main](#vol-串口通讯-cserialport-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-tcp转发-tcp_forward-main](#vol-tcp转发-tcp_forward-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main), [vol-简单pack客户端-pack_client-main](#vol-简单pack客户端-pack_client-main), [vol-简单pack服务器-pack_server-main](#vol-简单pack服务器-pack_server-main), [vol-简单pull客户端-pull_client-main](#vol-简单pull客户端-pull_client-main), [vol-简单pull服务器-pull_server-main](#vol-简单pull服务器-pull_server-main), [vol-简单tcp客户端-tcp_client-main](#vol-简单tcp客户端-tcp_client-main), [vol-简单tcp服务器-tcp_server-main](#vol-简单tcp服务器-tcp_server-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main), [vol-简单udp客户端-udp_client-main](#vol-简单udp客户端-udp_client-main), [vol-简单udp服务器-udp_server-main](#vol-简单udp服务器-udp_server-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pack文件传送服务器-hp_packfile_server-main](#vol-pack文件传送服务器-hp_packfile_server-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-pull文件传送服务器-hp_pullfile_server-main](#vol-pull文件传送服务器-hp_pullfile_server-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-tcp文件传送服务器-hp_tcpfile_server-main](#vol-tcp文件传送服务器-hp_tcpfile_server-main), [vol-服务器-server-main](#vol-服务器-server-main), [vol-客户端-client-main](#vol-客户端-client-main), [vol-mysql-mysqlsample-main](#vol-mysql-mysqlsample-main), [vol-sqlite3-sqlite3-main](#vol-sqlite3-sqlite3-main), [vol-ado-ado_sample-main](#vol-ado-ado_sample-main), [vol-redis-redis-main](#vol-redis-redis-main), [vol-redis连接池-redisconnectpool-main](#vol-redis连接池-redisconnectpool-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main), [vol-python脚本-python_script-main](#vol-python脚本-python_script-main), [vol-javascript脚本-v8js-main](#vol-javascript脚本-v8js-main), [vol-elk微型js引擎-elk_js-main](#vol-elk微型js引擎-elk_js-main), [vol-阿里云oss-aliyun_oss-main](#vol-阿里云oss-aliyun_oss-main), [vol-海康威视工业相机-hikrobot-main](#vol-海康威视工业相机-hikrobot-main), [vol-腾讯云对象存储临时秘钥获取-tencentcos-main](#vol-腾讯云对象存储临时秘钥获取-tencentcos-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main)
+
+##### 火山.MFC界面.基本.编辑框.是否允许多行
+
+* **类型:** `属性读方法`
+* **名称:** `是否允许多行`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回编辑框是否允许输入多行文本
+
+##### 火山.MFC界面.基本.编辑框.是否允许多行
+
+* **类型:** `属性写方法`
+* **名称:** `是否允许多行`
+* **参数:**
+	* `允许多行` (`逻辑型`): 为真表示允许输入多行文本,为假不允许.
+* **描述:** 设置编辑框是否允许输入多行文本. 注意: 本属性仅当在编辑框组件被创建前设置有效
+
+##### 火山.MFC界面.基本.编辑框.隐藏选择
+
+* **类型:** `属性读方法`
+* **名称:** `隐藏选择`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回编辑框失去输入焦点后是否不再显示当前被选择的区域
+
+##### 火山.MFC界面.基本.编辑框.隐藏选择
+
+* **类型:** `属性写方法`
+* **名称:** `隐藏选择`
+* **参数:**
+	* `是否隐藏选择` (`逻辑型`)
+* **描述:** 设置编辑框失去输入焦点后是否不再显示当前被选择的区域. 注意: 本属性仅当在编辑框组件被创建前设置有效
+
+##### 火山.MFC界面.基本.编辑框.最大允许长度
+
+* **类型:** `属性读方法`
+* **名称:** `最大允许长度`
+* **返回值数据类型:** `整数`
+* **描述:** 返回先前所设置的编辑框最大允许输入到其中的字符数目,如为0则输入字符数目不受限制.
+
+##### 火山.MFC界面.基本.编辑框.最大允许长度
+
+* **类型:** `属性写方法`
+* **名称:** `最大允许长度`
+* **参数:**
+	* `所欲设置的最大长度` (`整数`)
+* **描述:** 设置编辑框最大允许输入到其中的字符数目,如为0则输入字符数目不受限制.
+
+##### 火山.MFC界面.基本.编辑框.滚动条
+
+* **类型:** `属性读方法`
+* **名称:** `滚动条`
+* **返回值数据类型:** `滚动条类型`
+* **描述:** 返回编辑框在多行模式下所显示滚动条的类型
+
+##### 火山.MFC界面.基本.编辑框.滚动条
+
+* **类型:** `属性写方法`
+* **名称:** `滚动条`
+* **参数:**
+	* `所欲设置的类型` (`滚动条类型`)
+* **描述:** 设置编辑框在多行模式下所显示滚动条的类型. 注意: 本属性仅当在编辑框组件被创建前设置有效
+
+##### 火山.MFC界面.基本.编辑框.对齐方式
+
+* **类型:** `属性读方法`
+* **名称:** `对齐方式`
+* **返回值数据类型:** `横向对齐模式`
+* **描述:** 返回编辑框内所显示内容的横向对齐方式
+
+##### 火山.MFC界面.基本.编辑框.对齐方式
+
+* **类型:** `属性写方法`
+* **名称:** `对齐方式`
+* **参数:**
+	* `对齐方式` (`横向对齐模式`)
+* **描述:** 设置编辑框内所显示内容的横向对齐方式. 注意: 本属性仅当在编辑框组件被创建前设置有效
+
+##### 火山.MFC界面.基本.编辑框.输入方式
+
+* **类型:** `属性读方法`
+* **名称:** `输入方式`
+* **返回值数据类型:** `编辑框输入方式`
+* **描述:** 返回编辑框的当前输入方式
+
+##### 火山.MFC界面.基本.编辑框.输入方式
+
+* **类型:** `属性写方法`
+* **名称:** `输入方式`
+* **参数:**
+	* `所欲设置的输入方式` (`编辑框输入方式`)
+* **描述:** 设置编辑框的当前输入方式
+
+##### 火山.MFC界面.基本.编辑框.密码遮盖字符
+
+* **类型:** `属性读方法`
+* **名称:** `密码遮盖字符`
+* **返回值数据类型:** `字符`
+* **描述:** 返回当输入方式为"密码输入"时输入字符后显示在编辑框中的替代字符
+
+##### 火山.MFC界面.基本.编辑框.密码遮盖字符
+
+* **类型:** `属性写方法`
+* **名称:** `密码遮盖字符`
+* **参数:**
+	* `所欲设置的遮盖字符` (`字符`): 如果为'\0',则取消当前遮盖字符.
+* **描述:** 设置当输入方式为"密码输入"时输入字符后显示在编辑框中的替代字符
+
+##### 火山.MFC界面.基本.编辑框.转换方式
+
+* **类型:** `属性读方法`
+* **名称:** `转换方式`
+* **返回值数据类型:** `编辑框转换方式`
+* **描述:** 返回编辑框内容的自动转换方式
+
+##### 火山.MFC界面.基本.编辑框.转换方式
+
+* **类型:** `属性写方法`
+* **名称:** `转换方式`
+* **参数:**
+	* `所欲设置的转换方式` (`编辑框转换方式`)
+* **描述:** 设置编辑框内容的自动转换方式. 注意: 本属性仅当在编辑框组件被创建前设置有效
+
+##### 火山.MFC界面.基本.编辑框.调节器方式
+
+* **类型:** `属性读方法`
+* **名称:** `调节器方式`
+* **返回值数据类型:** `编辑框调节器方式`
+* **描述:** 返回编辑框的调节器方式
+
+##### 火山.MFC界面.基本.编辑框.调节器方式
+
+* **类型:** `属性写方法`
+* **名称:** `调节器方式`
+* **参数:**
+	* `所欲设置的方式` (`编辑框调节器方式`)
+* **描述:** 设置编辑框的调节器方式. 注意: 本属性仅当在编辑框组件被创建前设置有效
+
+##### 火山.MFC界面.基本.编辑框.调节器底限值
+
+* **类型:** `属性读方法`
+* **名称:** `调节器底限值`
+* **返回值数据类型:** `整数`
+* **描述:** 编辑框如果具有调节器,返回其所能够设置的最小值.
+
+##### 火山.MFC界面.基本.编辑框.调节器底限值
+
+* **类型:** `属性写方法`
+* **名称:** `调节器底限值`
+* **参数:**
+	* `所欲设置的底限值` (`整数`): 提供所欲设置的底限值,不能超出短整数的表达范围.
+* **描述:** 编辑框如果具有调节器,设置其所能够设置的最小值. 本属性的默认值为0.
+
+##### 火山.MFC界面.基本.编辑框.调节器上限值
+
+* **类型:** `属性读方法`
+* **名称:** `调节器上限值`
+* **返回值数据类型:** `整数`
+* **描述:** 编辑框如果具有调节器,返回其所能够设置的最大值.
+
+##### 火山.MFC界面.基本.编辑框.调节器上限值
+
+* **类型:** `属性写方法`
+* **名称:** `调节器上限值`
+* **参数:**
+	* `所欲设置的上限值` (`整数`): 提供所欲设置的底限值,不能超出短整数的表达范围.
+* **描述:** 编辑框如果具有调节器,设置其所能够设置的最大值. 本属性的默认值为100.
+
+##### 火山.MFC界面.基本.编辑框.起始选择位置
+
+* **类型:** `属性读方法`
+* **名称:** `起始选择位置`
+* **返回值数据类型:** `整数`
+* **描述:** 返回编辑框中当前被选择文本的起始索引位置,从0开始. 如果没有文本被选中,则提供光标当前位置.
+* **相关例程:** [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main)
+
+##### 火山.MFC界面.基本.编辑框.起始选择位置
+
+* **类型:** `属性写方法`
+* **名称:** `起始选择位置`
+* **参数:**
+	* `所欲设置的索引位置` (`整数`): 从0开始,如果为-1,则将当前光标位置移动到文本尾部.
+* **描述:** 设置编辑框中当前被选择文本的起始索引位置
+* **相关例程:** [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main)
+
+##### 火山.MFC界面.基本.编辑框.被选择字符数
+
+* **类型:** `属性读方法`
+* **名称:** `被选择字符数`
+* **返回值数据类型:** `整数`
+* **描述:** 返回编辑框中当前被选择文本的字符数
+* **相关例程:** [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main)
+
+##### 火山.MFC界面.基本.编辑框.被选择字符数
+
+* **类型:** `属性写方法`
+* **名称:** `被选择字符数`
+* **参数:**
+	* `所被选择的字符数` (`整数`): 如果为-1,则选择编辑框内的所有字符.
+* **描述:** 设置编辑框中当前被选择文本的字符数
+* **相关例程:** [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main)
+
+##### 火山.MFC界面.基本.编辑框.被选择文本
+
+* **类型:** `属性读方法`
+* **名称:** `被选择文本`
+* **返回值数据类型:** `文本型`
+* **描述:** 返回编辑框中当前被选择区域内的文本,如果没有被选择区域,则返回空文本.
+
+##### 火山.MFC界面.基本.编辑框.被选择文本
+
+* **类型:** `属性写方法`
+* **名称:** `被选择文本`
+* **参数:**
+	* `所替换文本` (`文本型`): 提供用作替换当前被选择区域的文本内容
+* **描述:** 将编辑框中当前被选择区域内的文本替换为所指定文本,如果没有被选择区域,则在当前光标位置插入所指定文本.
+
+##### 火山.MFC界面.基本.编辑框.左边空
+
+* **类型:** `属性读方法`
+* **名称:** `左边空`
+* **返回值数据类型:** `整数`
+* **描述:** 返回编辑框中左边的空白间距尺寸
+
+##### 火山.MFC界面.基本.编辑框.左边空
+
+* **类型:** `属性写方法`
+* **名称:** `左边空`
+* **参数:**
+	* `左边空白尺寸` (`整数`): 提供所欲设置的编辑框左边空白尺寸
+* **描述:** 设置编辑框中左边的空白间距尺寸
+
+##### 火山.MFC界面.基本.编辑框.右边空
+
+* **类型:** `属性读方法`
+* **名称:** `右边空`
+* **返回值数据类型:** `整数`
+* **描述:** 返回编辑框中右边的空白间距尺寸
+
+##### 火山.MFC界面.基本.编辑框.右边空
+
+* **类型:** `属性写方法`
+* **名称:** `右边空`
+* **参数:**
+	* `右边空白尺寸` (`整数`): 提供所欲设置的编辑框右边空白尺寸
+* **描述:** 设置编辑框中右边的空白间距尺寸
+
+##### 火山.MFC界面.基本.编辑框.是否已更改
+
+* **类型:** `属性读方法`
+* **名称:** `是否已更改`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回编辑框的内容是否已被更改标志,用户如果手动修改了编辑框内容,此标志会被自动置位.
+
+##### 火山.MFC界面.基本.编辑框.是否已更改
+
+* **类型:** `属性写方法`
+* **名称:** `是否已更改`
+* **参数:**
+	* `是否设置为已更改` (`逻辑型`)
+* **描述:** 设置编辑框的内容是否已被更改标志
+
+##### 火山.MFC界面.基本.编辑框.提示横幅
+
+* **类型:** `属性读方法`
+* **名称:** `提示横幅`
+* **返回值数据类型:** `文本型`
+* **描述:** 返回编辑框内容为空时所显示的文本提示内容
+
+##### 火山.MFC界面.基本.编辑框.提示横幅
+
+* **类型:** `属性写方法`
+* **名称:** `提示横幅`
+* **参数:**
+	* `文本提示` (`文本型`)
+* **描述:** 设置编辑框内容为空时所显示的文本提示内容
+
+##### 火山.MFC界面.基本.编辑框.内容被改变
+
+* **类型:** `事件定义方法`
+* **名称:** `内容被改变`
+* **返回值数据类型:** `整数`
+* **描述:** 编辑框内容被改变后本事件被发送
+* **相关例程:** [vol-树形框-tree_box-main](#vol-树形框-tree_box-main), [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-ado-ado_sample-main](#vol-ado-ado_sample-main)
+
+##### 火山.MFC界面.基本.编辑框.调节钮被按下
+
+* **类型:** `事件定义方法`
+* **名称:** `调节钮被按下`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `被单击调节按钮` (`整数`): 如果按下的是调节器的向上箭头按钮,参数值为1,否则为-1.
+* **描述:** 当编辑框的调节器方式为"手动调节器"时才会产生此事件,用作发送编辑框一侧的调节器按钮被单击通知.
+
+##### 火山.MFC界面.基本.编辑框.置提示横幅
+
+* **类型:** `方法`
+* **名称:** `置提示横幅`
+* **参数:**
+	* `文本提示` (`文本型`)
+	* `有焦点时提示` (`逻辑型`, 默认值: `假`): 如果为"假",则当编辑框获得输入焦点时不绘制提示横幅. 如果为"真",则即使编辑框获得输入焦点,也会绘制提示横幅,当用户开始在编辑框中输入内容时,提示横幅就会消失.
+* **描述:** 设置编辑框内容为空时所显示的文本提示内容
+
+##### 火山.MFC界面.基本.编辑框.显示气泡提示
+
+* **类型:** `方法`
+* **名称:** `显示气泡提示`
+* **参数:**
+	* `标题` (`文本型`)
+	* `内容` (`文本型`)
+	* `图标` (`编辑框气泡图标`, 默认值: `编辑框气泡图标.无`): 提供所显示的图标类型
+* **描述:** 显示一个气泡提示框,返回是否成功.
+
+##### 火山.MFC界面.基本.编辑框.隐藏气泡提示
+
+* **类型:** `方法`
+* **名称:** `隐藏气泡提示`
+* **描述:** 隐藏所已经显示的气泡提示框
+
+##### 火山.MFC界面.基本.编辑框.选择文本
+
+* **类型:** `方法`
+* **名称:** `选择文本`
+* **参数:**
+	* `起始字符索引` (`整数`): 提供所欲选择区域的首字符索引位置,从0开始.
+	* `所被选择的字符数` (`整数`): 提供所欲选择区域中的字符数目,为-1表示选择编辑框中的所有内容.
+* **描述:** 选择编辑框中所指定区域内的文本
+* **相关例程:** [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pack文件传送服务器-hp_packfile_server-main](#vol-pack文件传送服务器-hp_packfile_server-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-pull文件传送服务器-hp_pullfile_server-main](#vol-pull文件传送服务器-hp_pullfile_server-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-tcp文件传送服务器-hp_tcpfile_server-main](#vol-tcp文件传送服务器-hp_tcpfile_server-main), [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main)
+
+##### 火山.MFC界面.基本.编辑框.加入文本
+
+* **类型:** `方法`
+* **名称:** `加入文本`
+* **参数:**
+	* `所欲加入的文本` (`文本型`)
+* **描述:** 将所指定文本加入到编辑框的尾部
+* **相关例程:** [vol-json数据访问-json-main](#vol-json数据访问-json-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main)
+
+##### 火山.MFC界面.基本.编辑框.加入文本行
+
+* **类型:** `方法`
+* **名称:** `加入文本行`
+* **参数:**
+	* `所欲加入的文本` (`文本型`)
+* **描述:** 将所指定文本行加入到编辑框的尾部
+* **相关例程:** [vol-卷帘式菜单-outbar-main](#vol-卷帘式菜单-outbar-main), [vol-属性表格-property_grid-main](#vol-属性表格-property_grid-main), [vol-带按钮列表框-vs_list_box-main](#vol-带按钮列表框-vs_list_box-main), [vol-自定义流程控制-flow_control-main](#vol-自定义流程控制-flow_control-main), [vol-取可执行文件位数-read_exe_bits-main](#vol-取可执行文件位数-read_exe_bits-main), [vol-位图处理-adv_bitmap-main](#vol-位图处理-adv_bitmap-main), [vol-com变体型测试-variant_test-main](#vol-com变体型测试-variant_test-main), [vol-内存映射文件-filemapping-main](#vol-内存映射文件-filemapping-main), [vol-邮件槽-mailslot-main](#vol-邮件槽-mailslot-main), [vol-命名管道-namedpipe-main](#vol-命名管道-namedpipe-main), [vol-线程池-pool_thread-main](#vol-线程池-pool_thread-main), [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main), [vol-复杂接口api调用-api_call-main](#vol-复杂接口api调用-api_call-main), [vol-json数据访问-json-main](#vol-json数据访问-json-main), [vol-xml数据访问-xml-main](#vol-xml数据访问-xml-main), [vol-树结构访问-treestruct-main](#vol-树结构访问-treestruct-main), [vol-正则表达式-deelx_regular-main](#vol-正则表达式-deelx_regular-main), [vol-网页解析-html_parser-main](#vol-网页解析-html_parser-main), [vol-高级网页解析-adv_html_parser-main](#vol-高级网页解析-adv_html_parser-main), [vol-哈希表-hash_map-main](#vol-哈希表-hash_map-main), [vol-高性能键值表-mmkv-main](#vol-高性能键值表-mmkv-main), [vol-cron时间表达式-cron-main](#vol-cron时间表达式-cron-main), [vol-正则表达式2-regex-main](#vol-正则表达式2-regex-main), [vol-串口通讯-cserialport-main](#vol-串口通讯-cserialport-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pack文件传送服务器-hp_packfile_server-main](#vol-pack文件传送服务器-hp_packfile_server-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-pull文件传送服务器-hp_pullfile_server-main](#vol-pull文件传送服务器-hp_pullfile_server-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-tcp文件传送服务器-hp_tcpfile_server-main](#vol-tcp文件传送服务器-hp_tcpfile_server-main), [vol-mysql-mysqlsample-main](#vol-mysql-mysqlsample-main), [vol-sqlite3-sqlite3-main](#vol-sqlite3-sqlite3-main), [vol-mysql连接池-mysql_connectionpool-main](#vol-mysql连接池-mysql_connectionpool-main), [vol-python脚本-python_script-main](#vol-python脚本-python_script-main), [vol-dnn文本检测-dnn_text_detection_recognition-main](#vol-dnn文本检测-dnn_text_detection_recognition-main)
+
+##### 火山.MFC界面.基本.编辑框.置左右边空
+
+* **类型:** `方法`
+* **名称:** `置左右边空`
+* **参数:**
+	* `左边空白尺寸` (`整数`): 提供所欲设置的左边空白间距尺寸
+	* `右边空白尺寸` (`整数`): 提供所欲设置的右边空白间距尺寸
+* **描述:** 同时设置编辑框左右两侧的空白间距尺寸
+
+##### 火山.MFC界面.基本.编辑框.静默置内容
+
+* **类型:** `方法`
+* **名称:** `静默置内容`
+* **参数:**
+	* `所欲设置的内容` (`文本型`)
+* **描述:** 正常情况下,只要修改本组件的内容或标题属性,就会导致"内容被改变"事件被发送,使用本方法修改本组件的内容将不会发送此事件.
+
+##### 火山.MFC界面.基本.编辑框.取行数
+
+* **类型:** `方法`
+* **名称:** `取行数`
+* **返回值数据类型:** `整数`
+* **描述:** 返回编辑框中当前内容的行数
+
+##### 火山.MFC界面.基本.编辑框.取行文本
+
+* **类型:** `方法`
+* **名称:** `取行文本`
+* **返回值数据类型:** `文本型`
+* **参数:**
+	* `行号` (`整数`): 行号从0开始,用作指定编辑框中的某一行. 即:0指定第一行,1指定第二行,依此类推.
+* **描述:** 返回编辑框中指定行的文本内容
+
+##### 火山.MFC界面.基本.编辑框.取字符所在行
+
+* **类型:** `方法`
+* **名称:** `取字符所在行`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `字符位置` (`整数`, 默认值: `-1`): 字符位置为指定字符在编辑框全部内容中的索引位置,该索引位置从0开始. 如果为-1,则自动取当前光标所在字符位置.
+* **描述:** 返回编辑框中指定位置字符所在行的行号,行号值从0开始.
+* **相关例程:** [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main)
+
+##### 火山.MFC界面.基本.编辑框.取行首位置
+
+* **类型:** `方法`
+* **名称:** `取行首位置`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `行号` (`整数`, 默认值: `-1`): 行号从0开始,用作指定编辑框中的某一行. 即:0指定第一行,1指定第二行,依此类推.如果为-1,则自动取当前光标所在行行号.
+* **描述:** 返回编辑框中指定行的首字符在编辑框全部内容中的索引位置,该索引位置从0开始.
+
+##### 火山.MFC界面.基本.编辑框.取首可视行
+
+* **类型:** `方法`
+* **名称:** `取首可视行`
+* **返回值数据类型:** `整数`
+* **描述:** 返回编辑框中当前顶部可见第一行的行号,行号值从0开始.
+
+##### 火山.MFC界面.基本.编辑框.滚动
+
+* **类型:** `方法`
+* **名称:** `滚动`
+* **参数:**
+	* `行数` (`整数`): 指定欲滚动行数,可以为负数(向前滚动).
+* **描述:** 垂直滚动多行编辑框中的内容显示区域
+
+##### 火山.MFC界面.基本.编辑框.复制
+
+* **类型:** `方法`
+* **名称:** `复制`
+* **描述:** 将现行被选择文本复制到剪辑板
+* **相关例程:** [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main)
+
+##### 火山.MFC界面.基本.编辑框.剪切
+
+* **类型:** `方法`
+* **名称:** `剪切`
+* **描述:** 将现行被选择文本剪切到剪辑板
+* **相关例程:** [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main)
+
+##### 火山.MFC界面.基本.编辑框.删除
+
+* **类型:** `方法`
+* **名称:** `删除`
+* **描述:** 删除现行被选择文本
+
+##### 火山.MFC界面.基本.编辑框.粘贴
+
+* **类型:** `方法`
+* **名称:** `粘贴`
+* **描述:** 将剪辑板中的现行内容粘贴到光标位置
+* **相关例程:** [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main)
+
+##### 火山.MFC界面.基本.编辑框.清空撤消数据
+
+* **类型:** `方法`
+* **名称:** `清空撤消数据`
+* **描述:** 清除编辑框中为支持撤消上次更改操作所保存的所有数据,本方法执行后无法再撤消上次所更改的操作.
+
+##### 火山.MFC界面.基本.编辑框.撤消
+
+* **类型:** `方法`
+* **名称:** `撤消`
+* **描述:** 撤消编辑框中最后一次的更改操作
+
+##### 火山.MFC界面.基本.编辑框.可否撤消
+
+* **类型:** `方法`
+* **名称:** `可否撤消`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回当前编辑框中是否存在可以被撤消的更改操作
+
+---
+
+#### 火山.MFC界面.基本.组合框类型
+
+* **类型:** `类`
+* **名称:** `组合框类型`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供组合框的各种类型
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main)
+
+##### 火山.MFC界面.基本.组合框类型.可编辑列表式
+
+* **类型:** `成员常量`
+* **名称:** `可编辑列表式`
+* **数据类型:** `组合框类型`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.组合框类型.可编辑下拉式
+
+* **类型:** `成员常量`
+* **名称:** `可编辑下拉式`
+* **数据类型:** `组合框类型`
+* **初始值:** `1`
+
+##### 火山.MFC界面.基本.组合框类型.不可编辑下拉式
+
+* **类型:** `成员常量`
+* **名称:** `不可编辑下拉式`
+* **数据类型:** `组合框类型`
+* **初始值:** `2`
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main)
+
+---
+
+#### 火山.MFC界面.基本.组合框
+
+* **类型:** `类`
+* **名称:** `组合框`
+* **基础类:** `窗口组件`
+* **描述:** 组合框窗口组件类
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-窗口组件动态消息过滤-msg_filter-main](#vol-窗口组件动态消息过滤-msg_filter-main), [vol-用户自定义窗口组件-user_control-main](#vol-用户自定义窗口组件-user_control-main), [vol-位图处理-adv_bitmap-main](#vol-位图处理-adv_bitmap-main), [vol-二维码生成-qrencode-main](#vol-二维码生成-qrencode-main), [vol-win10通知-wintoast-main](#vol-win10通知-wintoast-main), [vol-文本编码转换-libiconv-main](#vol-文本编码转换-libiconv-main), [vol-密码管理-pw-main](#vol-密码管理-pw-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-javascript脚本-v8js-main](#vol-javascript脚本-v8js-main), [vol-excel2021-excel2021-main](#vol-excel2021-excel2021-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main)
+
+##### 火山.MFC界面.基本.组合框.类型
+
+* **类型:** `属性读方法`
+* **名称:** `类型`
+* **返回值数据类型:** `组合框类型`
+* **描述:** 返回组合框的当前类型. 如果未设置,则本属性默认值为"可编辑下拉式".
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main)
+
+##### 火山.MFC界面.基本.组合框.类型
+
+* **类型:** `属性写方法`
+* **名称:** `类型`
+* **参数:**
+	* `所欲设置的类型` (`组合框类型`)
+* **描述:** 设置组合框的当前类型. 如果未设置,则本属性默认值为"可编辑下拉式".
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main)
+
+##### 火山.MFC界面.基本.组合框.内容
+
+* **类型:** `属性读方法`
+* **名称:** `内容`
+* **返回值数据类型:** `文本型`
+* **描述:** 返回在组合框编辑部分中的文本内容. 当类型为"不可编辑下拉式"时,本属性无效.
+* **相关例程:** [vol-用户自定义窗口组件-user_control-main](#vol-用户自定义窗口组件-user_control-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main)
+
+##### 火山.MFC界面.基本.组合框.内容
+
+* **类型:** `属性写方法`
+* **名称:** `内容`
+* **参数:**
+	* `所欲设置的内容` (`文本型`)
+* **描述:** 设置在组合框编辑部分中的文本内容. 本属性等同于"窗口组件"类中的"标题"属性. 当类型为"不可编辑下拉式"时,本属性无效.
+* **相关例程:** [vol-用户自定义窗口组件-user_control-main](#vol-用户自定义窗口组件-user_control-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main)
+
+##### 火山.MFC界面.基本.组合框.最大文本长度
+
+* **类型:** `属性写方法`
+* **名称:** `最大文本长度`
+* **参数:**
+	* `所欲设置的最大长度` (`整数`): 提供所欲设置的最大长度,为0表示没有限制.
+* **描述:** 设置在组合框编辑部分所允许输入的最大文本长度. 当类型为"不可编辑下拉式"时,本属性无效.
+
+##### 火山.MFC界面.基本.组合框.起始选择位置
+
+* **类型:** `属性读方法`
+* **名称:** `起始选择位置`
+* **返回值数据类型:** `整数`
+* **描述:** 返回组合框编辑部分中当前被选择文本的起始索引位置,从0开始.如果没有文本被选中,则提供光标当前位置. 当类型为"不可编辑下拉式"时,本属性无效.
+
+##### 火山.MFC界面.基本.组合框.起始选择位置
+
+* **类型:** `属性写方法`
+* **名称:** `起始选择位置`
+* **参数:**
+	* `所欲设置的索引位置` (`整数`): 从0开始,如果为-1,则将当前光标位置移动到文本尾部.
+* **描述:** 设置组合框编辑部分中当前被选择文本的起始索引位置. 当类型为"不可编辑下拉式"时,本属性无效.
+
+##### 火山.MFC界面.基本.组合框.被选择字符数
+
+* **类型:** `属性读方法`
+* **名称:** `被选择字符数`
+* **返回值数据类型:** `整数`
+* **描述:** 返回组合框编辑部分中当前被选择文本的字符数. 当类型为"不可编辑下拉式"时,本属性无效.
+
+##### 火山.MFC界面.基本.组合框.被选择字符数
+
+* **类型:** `属性写方法`
+* **名称:** `被选择字符数`
+* **参数:**
+	* `所被选择的字符数` (`整数`): 如果为-1,则选择组合框编辑部分内的所有字符.
+* **描述:** 设置组合框编辑部分中当前被选择文本的字符数. 当类型为"不可编辑下拉式"时,本属性无效.
+
+##### 火山.MFC界面.基本.组合框.被选择文本
+
+* **类型:** `属性读方法`
+* **名称:** `被选择文本`
+* **返回值数据类型:** `文本型`
+* **描述:** 返回组合框编辑部分中当前被选择区域内的文本,如果没有被选择区域,则返回空文本. 当类型为"不可编辑下拉式"时,本属性无效.
+
+##### 火山.MFC界面.基本.组合框.被选择文本
+
+* **类型:** `属性写方法`
+* **名称:** `被选择文本`
+* **参数:**
+	* `所替换文本` (`文本型`): 提供用作替换当前被选择区域的文本内容
+* **描述:** 将组合框编辑部分中当前被选择区域内的文本替换为所指定文本,如果没有被选择区域,则在当前光标位置插入所指定文本. 当类型为"不可编辑下拉式"时,本属性无效.
+
+##### 火山.MFC界面.基本.组合框.自动排序
+
+* **类型:** `属性读方法`
+* **名称:** `自动排序`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回是否对组合框中的列表项目进行自动排序
+
+##### 火山.MFC界面.基本.组合框.自动排序
+
+* **类型:** `属性写方法`
+* **名称:** `自动排序`
+* **参数:**
+	* `是否自动排序` (`逻辑型`)
+* **描述:** 设置是否对组合框中的列表项目进行自动排序
+
+##### 火山.MFC界面.基本.组合框.行间距
+
+* **类型:** `属性读方法`
+* **名称:** `行间距`
+* **返回值数据类型:** `整数`
+* **描述:** 返回组合框的列表项目之间的纵向间距尺寸. 如果未被设置,则本属性的初始值为1.
+
+##### 火山.MFC界面.基本.组合框.行间距
+
+* **类型:** `属性写方法`
+* **名称:** `行间距`
+* **参数:**
+	* `所欲设置的间距` (`整数`)
+* **描述:** 设置组合框的列表项目之间的纵向间距尺寸. 如果未被设置,则本属性的初始值为1.
+
+##### 火山.MFC界面.基本.组合框.背景颜色
+
+* **类型:** `属性读方法`
+* **名称:** `背景颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的本组件背景颜色值
+
+##### 火山.MFC界面.基本.组合框.背景颜色
+
+* **类型:** `属性写方法`
+* **名称:** `背景颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.默认色"来指定使用默认组件背景颜色.
+* **特性:**
+	* `颜色值`(可以为默认色)
+* **描述:** 设置本组件的背景颜色值. 如果本组件未曾设置过背景颜色,则默认为"颜色类.默认色".
+
+##### 火山.MFC界面.基本.组合框.文本颜色
+
+* **类型:** `属性读方法`
+* **名称:** `文本颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的本组件文本颜色值
+
+##### 火山.MFC界面.基本.组合框.文本颜色
+
+* **类型:** `属性写方法`
+* **名称:** `文本颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值
+* **特性:**
+	* `颜色值`
+* **描述:** 设置本组件的文本颜色值. 如果本组件未曾设置过文本颜色,则默认为黑色.
+
+##### 火山.MFC界面.基本.组合框.现行选中项
+
+* **类型:** `属性读方法`
+* **名称:** `现行选中项`
+* **返回值数据类型:** `整数`
+* **描述:** 返回组合框的下拉列表部分中现行被选中列表项目的索引位置,位置值从0开始,-1表示现行没有被选中的列表项.
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-窗口组件动态消息过滤-msg_filter-main](#vol-窗口组件动态消息过滤-msg_filter-main), [vol-用户自定义窗口组件-user_control-main](#vol-用户自定义窗口组件-user_control-main), [vol-位图处理-adv_bitmap-main](#vol-位图处理-adv_bitmap-main), [vol-二维码生成-qrencode-main](#vol-二维码生成-qrencode-main), [vol-win10通知-wintoast-main](#vol-win10通知-wintoast-main), [vol-文本编码转换-libiconv-main](#vol-文本编码转换-libiconv-main), [vol-密码管理-pw-main](#vol-密码管理-pw-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-javascript脚本-v8js-main](#vol-javascript脚本-v8js-main), [vol-excel2021-excel2021-main](#vol-excel2021-excel2021-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main)
+
+##### 火山.MFC界面.基本.组合框.现行选中项
+
+* **类型:** `属性写方法`
+* **名称:** `现行选中项`
+* **参数:**
+	* `所欲选中项目的位置` (`整数`): 必须大于等于-1且小于"取项目数"方法的返回值.
+* **描述:** 设置组合框的下拉列表部分中现行被选中列表项目的索引位置,位置值从0开始,-1表示现行没有被选中的列表项.
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-窗口组件动态消息过滤-msg_filter-main](#vol-窗口组件动态消息过滤-msg_filter-main), [vol-用户自定义窗口组件-user_control-main](#vol-用户自定义窗口组件-user_control-main), [vol-位图处理-adv_bitmap-main](#vol-位图处理-adv_bitmap-main), [vol-二维码生成-qrencode-main](#vol-二维码生成-qrencode-main), [vol-win10通知-wintoast-main](#vol-win10通知-wintoast-main), [vol-文本编码转换-libiconv-main](#vol-文本编码转换-libiconv-main), [vol-密码管理-pw-main](#vol-密码管理-pw-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-javascript脚本-v8js-main](#vol-javascript脚本-v8js-main), [vol-excel2021-excel2021-main](#vol-excel2021-excel2021-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main)
+
+##### 火山.MFC界面.基本.组合框.列表项目
+
+* **类型:** `属性写方法`
+* **名称:** `列表项目`
+* **参数:**
+	* `所欲设置的列表内容` (`文本型`): 列表内容为以'\n'字符分隔的文本数组,每两个数组成员分别指定一个列表项目的标题文本和关联数值.
+* **描述:** 设置组合框下拉列表部分中的列表项目内容
+
+##### 火山.MFC界面.基本.组合框.提示横幅
+
+* **类型:** `属性读方法`
+* **名称:** `提示横幅`
+* **返回值数据类型:** `文本型`
+* **描述:** 返回组合框中编辑部份内容为空时所显示的文本提示内容
+
+##### 火山.MFC界面.基本.组合框.提示横幅
+
+* **类型:** `属性写方法`
+* **名称:** `提示横幅`
+* **参数:**
+	* `文本提示` (`文本型`)
+* **描述:** 设置组合框中编辑部份内容为空时所显示的文本提示内容
+
+##### 火山.MFC界面.基本.组合框.最小列表项目数
+
+* **类型:** `属性读方法`
+* **名称:** `最小列表项目数`
+* **返回值数据类型:** `整数`
+* **描述:** 返回组合框的下拉列表部分中最少可显示的列表项数目
+
+##### 火山.MFC界面.基本.组合框.最小列表项目数
+
+* **类型:** `属性写方法`
+* **名称:** `最小列表项目数`
+* **参数:**
+	* `可视项目数` (`整数`)
+* **描述:** 设置组合框的下拉列表部分中最少可显示的列表项数目
+
+##### 火山.MFC界面.基本.组合框.编辑框对齐方式
+
+* **类型:** `属性写方法`
+* **名称:** `编辑框对齐方式`
+* **参数:**
+	* `对齐方式` (`横向对齐模式`)
+* **描述:** 设置组合框内编辑框中所显示内容的横向对齐方式
+
+##### 火山.MFC界面.基本.组合框.列表项被选择
+
+* **类型:** `事件定义方法`
+* **名称:** `列表项被选择`
+* **返回值数据类型:** `整数`
+* **描述:** 当某列表项被选择后发送此事件
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-窗口组件动态消息过滤-msg_filter-main](#vol-窗口组件动态消息过滤-msg_filter-main), [vol-用户自定义窗口组件-user_control-main](#vol-用户自定义窗口组件-user_control-main), [vol-位图处理-adv_bitmap-main](#vol-位图处理-adv_bitmap-main), [vol-win10通知-wintoast-main](#vol-win10通知-wintoast-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-javascript脚本-v8js-main](#vol-javascript脚本-v8js-main), [vol-excel2021-excel2021-main](#vol-excel2021-excel2021-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main)
+
+##### 火山.MFC界面.基本.组合框.编辑内容被改变
+
+* **类型:** `事件定义方法`
+* **名称:** `编辑内容被改变`
+* **返回值数据类型:** `整数`
+* **描述:** 当列表框的编辑框中的内容被改变后发送此事件
+
+##### 火山.MFC界面.基本.组合框.将弹出列表
+
+* **类型:** `事件定义方法`
+* **名称:** `将弹出列表`
+* **返回值数据类型:** `整数`
+* **描述:** 在将弹出组合框的列表部分之前发送此事件. 在处理此事件时,可以即时填充组合框中的列表项目.
+
+##### 火山.MFC界面.基本.组合框.列表被关闭
+
+* **类型:** `事件定义方法`
+* **名称:** `列表被关闭`
+* **返回值数据类型:** `整数`
+* **描述:** 在列表框所弹出的列表被关闭后发送此事件
+
+##### 火山.MFC界面.基本.组合框.双击选择
+
+* **类型:** `事件定义方法`
+* **名称:** `双击选择`
+* **返回值数据类型:** `整数`
+* **描述:** 当使用鼠标左键在某列表项目上双击时发送此事件
+
+##### 火山.MFC界面.基本.组合框.取顶端可见项目
+
+* **类型:** `方法`
+* **名称:** `取顶端可见项目`
+* **返回值数据类型:** `整数`
+* **描述:** 返回组合框列表部分中当前最顶端可见项目的索引.
+* **返回值描述:** 所返回索引值从0开始,失败返回-1.
+
+##### 火山.MFC界面.基本.组合框.置顶端可见项目
+
+* **类型:** `方法`
+* **名称:** `置顶端可见项目`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所操作项目位置` (`整数`): 提供所欲操作列表项目的索引位置值,从0开始.
+* **描述:** 设置组合框列表部分中当前最顶端的可见项目,必要时将自动滚动组合框的列表部分.
+* **返回值描述:** 成功返回真,失败返回假.
+
+##### 火山.MFC界面.基本.组合框.取项目数
+
+* **类型:** `方法`
+* **名称:** `取项目数`
+* **返回值数据类型:** `整数`
+* **描述:** 返回组合框中当前列表项目的数目
+
+##### 火山.MFC界面.基本.组合框.取项目数值
+
+* **类型:** `方法`
+* **名称:** `取项目数值`
+* **返回值数据类型:** `变整数`
+* **参数:**
+	* `所操作项目位置` (`整数`): 提供所欲操作列表项目的索引位置值,从0开始,必须大于等于0且小于"取项目数"方法的返回值.
+* **描述:** 返回与指定列表项目相关联的数值
+* **相关例程:** [vol-win10通知-wintoast-main](#vol-win10通知-wintoast-main), [vol-excel2021-excel2021-main](#vol-excel2021-excel2021-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main)
+
+##### 火山.MFC界面.基本.组合框.置项目数值
+
+* **类型:** `方法`
+* **名称:** `置项目数值`
+* **参数:**
+	* `所操作项目位置` (`整数`): 提供所欲操作列表项目的索引位置值,从0开始,必须大于等于0且小于"取项目数"方法的返回值.
+	* `欲置入的项目数值` (`变整数`): 该项目数值将与所指定列表项目相关联
+* **描述:** 设置与指定列表项目相关联的数值
+
+##### 火山.MFC界面.基本.组合框.取项目文本
+
+* **类型:** `方法`
+* **名称:** `取项目文本`
+* **返回值数据类型:** `文本型`
+* **参数:**
+	* `所操作项目位置` (`整数`): 提供所欲操作列表项目的索引位置值,从0开始,必须大于等于0且小于"取项目数"方法的返回值.
+* **描述:** 返回指定列表项目的内容文本
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-用户自定义窗口组件-user_control-main](#vol-用户自定义窗口组件-user_control-main), [vol-文本编码转换-libiconv-main](#vol-文本编码转换-libiconv-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main)
+
+##### 火山.MFC界面.基本.组合框.置项目文本
+
+* **类型:** `方法`
+* **名称:** `置项目文本`
+* **参数:**
+	* `所操作项目位置` (`整数`): 提供所欲操作列表项目的索引位置值,从0开始,必须大于等于0且小于"取项目数"方法的返回值.
+	* `所欲设置的文本内容` (`文本型`)
+* **描述:** 设置指定列表项目的内容文本
+
+##### 火山.MFC界面.基本.组合框.加入项目
+
+* **类型:** `方法`
+* **名称:** `加入项目`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `欲加入项目的文本` (`文本型`): 提供所欲加入项目的文本内容
+	* `相关数值` (`变整数`, 默认值: `0`): 提供与欲加入项目相关的数值
+* **描述:** 加入指定项目到组合框列表部分的尾部,成功返回加入后该项目所处的索引位置,失败返回-1.
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-二维码生成-qrencode-main](#vol-二维码生成-qrencode-main), [vol-win10通知-wintoast-main](#vol-win10通知-wintoast-main), [vol-文本编码转换-libiconv-main](#vol-文本编码转换-libiconv-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-excel2021-excel2021-main](#vol-excel2021-excel2021-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main)
+
+##### 火山.MFC界面.基本.组合框.插入项目
+
+* **类型:** `方法`
+* **名称:** `插入项目`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `欲插入项目的位置` (`整数`): 提供所欲插入项目在组合框列表部分中的索引位置,从0开始,必须大于等于0且小于等于"取项目数"方法的返回值.
+	* `欲插入项目的文本` (`文本型`): 提供所欲插入项目的文本内容
+	* `相关数值` (`变整数`, 默认值: `0`): 提供与欲插入项目相关的数值
+* **描述:** 插入指定项目到组合框列表部分的指定位置处,成功返回插入后该项目所处的索引位置,失败返回-1.
+
+##### 火山.MFC界面.基本.组合框.删除项目
+
+* **类型:** `方法`
+* **名称:** `删除项目`
+* **参数:**
+	* `所欲删除项目的位置` (`整数`): 提供所欲删除项目在组合框列表部分中的索引位置,从0开始,必须大于等于0且小于"取项目数"方法的返回值.
+* **描述:** 删除组合框列表部分指定位置处的项目
+
+##### 火山.MFC界面.基本.组合框.清空
+
+* **类型:** `方法`
+* **名称:** `清空`
+* **描述:** 删除组合框列表部分中的所有项目以及编辑部分中的现有内容
+* **相关例程:** [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main)
+
+##### 火山.MFC界面.基本.组合框.选择
+
+* **类型:** `方法`
+* **名称:** `选择`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `欲选择项目的首部文本` (`文本型`)
+* **描述:** 在组合框列表部分所有项目中寻找首部包含指定文本的项目,如找到,则将其选中并返回该项目的位置索引,否则返回-1.
+
+##### 火山.MFC界面.基本.组合框.静默置内容
+
+* **类型:** `方法`
+* **名称:** `静默置内容`
+* **参数:**
+	* `所欲设置的内容` (`文本型`)
+* **描述:** 正常情况下,只要修改本组件的内容或标题属性,就会导致"编辑内容被改变"事件被发送,使用本方法修改本组件的内容将不会发送此事件.
+
+---
+
+#### 火山.MFC界面.基本.列表框基础类
+
+* **类型:** `类`
+* **名称:** `列表框基础类`
+* **基础类:** `窗口组件`
+* **特性:**
+	* `抽象类`(禁止直接定义其实例变量)
+* **文档分类:** `窗口组件.基础类`
+
+##### 火山.MFC界面.基本.列表框基础类.自动排序
+
+* **类型:** `属性读方法`
+* **名称:** `自动排序`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回是否对列表框中的列表项目进行自动排序
+
+##### 火山.MFC界面.基本.列表框基础类.自动排序
+
+* **类型:** `属性写方法`
+* **名称:** `自动排序`
+* **参数:**
+	* `是否自动排序` (`逻辑型`)
+* **描述:** 设置是否对列表框中的列表项目进行自动排序
+
+##### 火山.MFC界面.基本.列表框基础类.多列
+
+* **类型:** `属性读方法`
+* **名称:** `多列`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回当前组件是否为支持水平滚动的多列列表框
+
+##### 火山.MFC界面.基本.列表框基础类.多列
+
+* **类型:** `属性写方法`
+* **名称:** `多列`
+* **参数:**
+	* `是否为多列` (`逻辑型`)
+* **描述:** 设置当前组件是否为支持水平滚动的多列列表框
+
+##### 火山.MFC界面.基本.列表框基础类.允许选择多项
+
+* **类型:** `属性读方法`
+* **名称:** `允许选择多项`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回是否允许用户同时选择列表框中的多个列表项
+
+##### 火山.MFC界面.基本.列表框基础类.允许选择多项
+
+* **类型:** `属性写方法`
+* **名称:** `允许选择多项`
+* **参数:**
+	* `是否允许多选` (`逻辑型`)
+* **描述:** 设置是否允许用户同时选择列表框中的多个列表项
+
+##### 火山.MFC界面.基本.列表框基础类.现行选中项
+
+* **类型:** `属性读方法`
+* **名称:** `现行选中项`
+* **返回值数据类型:** `整数`
+* **描述:** 返回列表框中现行被选中列表项目的索引位置,位置值从0开始,-1表示现行没有被选中的列表项. 如果"允许选择多项"属性为真,则本属性无效,其值始终为-1.
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-简单pack服务器-pack_server-main](#vol-简单pack服务器-pack_server-main), [vol-简单pull服务器-pull_server-main](#vol-简单pull服务器-pull_server-main), [vol-简单tcp服务器-tcp_server-main](#vol-简单tcp服务器-tcp_server-main), [vol-简单udp服务器-udp_server-main](#vol-简单udp服务器-udp_server-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-服务器-server-main](#vol-服务器-server-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main)
+
+##### 火山.MFC界面.基本.列表框基础类.现行选中项
+
+* **类型:** `属性写方法`
+* **名称:** `现行选中项`
+* **参数:**
+	* `所欲选中项目的位置` (`整数`): 必须大于等于-1且小于"取项目数"方法的返回值
+* **描述:** 设置列表框中现行被选中列表项目的索引位置,位置值从0开始,-1表示现行没有被选中的列表项. 如果"允许选择多项"属性为真,则本属性无效,其值始终为-1.
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-简单pack服务器-pack_server-main](#vol-简单pack服务器-pack_server-main), [vol-简单pull服务器-pull_server-main](#vol-简单pull服务器-pull_server-main), [vol-简单tcp服务器-tcp_server-main](#vol-简单tcp服务器-tcp_server-main), [vol-简单udp服务器-udp_server-main](#vol-简单udp服务器-udp_server-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-服务器-server-main](#vol-服务器-server-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main)
+
+##### 火山.MFC界面.基本.列表框基础类.列表项被选择
+
+* **类型:** `事件定义方法`
+* **名称:** `列表项被选择`
+* **返回值数据类型:** `整数`
+* **描述:** 当某列表项被选择后发送此事件
+* **相关例程:** [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main)
+
+##### 火山.MFC界面.基本.列表框基础类.双击选择
+
+* **类型:** `事件定义方法`
+* **名称:** `双击选择`
+* **返回值数据类型:** `整数`
+* **描述:** 当使用鼠标左键在某列表项目上双击时发送此事件
+
+##### 火山.MFC界面.基本.列表框基础类.取顶端可见项目
+
+* **类型:** `方法`
+* **名称:** `取顶端可见项目`
+* **返回值数据类型:** `整数`
+* **描述:** 返回列表框中当前最顶端可见项目的索引.
+* **返回值描述:** 所返回索引值从0开始,失败返回-1.
+
+##### 火山.MFC界面.基本.列表框基础类.置顶端可见项目
+
+* **类型:** `方法`
+* **名称:** `置顶端可见项目`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所操作项目位置` (`整数`): 提供所欲操作列表项目的索引位置值,从0开始.
+* **描述:** 设置列表框中当前最顶端的可见项目,必要时将自动滚动列表框.
+* **返回值描述:** 成功返回真,失败返回假.
+
+##### 火山.MFC界面.基本.列表框基础类.取项目数
+
+* **类型:** `方法`
+* **名称:** `取项目数`
+* **返回值数据类型:** `整数`
+* **描述:** 返回列表框中当前列表项目的数目
+* **相关例程:** [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main)
+
+##### 火山.MFC界面.基本.列表框基础类.取项目数值
+
+* **类型:** `方法`
+* **名称:** `取项目数值`
+* **返回值数据类型:** `变整数`
+* **参数:**
+	* `所操作项目位置` (`整数`): 提供所欲操作列表项目的索引位置值,从0开始,必须大于等于0且小于"取项目数"方法的返回值.
+* **描述:** 返回与指定列表项目相关联的数值
+* **相关例程:** [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main)
+
+##### 火山.MFC界面.基本.列表框基础类.置项目数值
+
+* **类型:** `方法`
+* **名称:** `置项目数值`
+* **参数:**
+	* `所操作项目位置` (`整数`): 提供所欲操作列表项目的索引位置值,从0开始,必须大于等于0且小于"取项目数"方法的返回值.
+	* `欲置入的项目数值` (`变整数`): 该项目数值将与所指定列表项目相关联
+* **描述:** 设置与指定列表项目相关联的数值
+
+##### 火山.MFC界面.基本.列表框基础类.取项目文本
+
+* **类型:** `方法`
+* **名称:** `取项目文本`
+* **返回值数据类型:** `文本型`
+* **参数:**
+	* `所操作项目位置` (`整数`): 提供所欲操作列表项目的索引位置值,从0开始,必须大于等于0且小于"取项目数"方法的返回值.
+* **描述:** 返回指定列表项目的内容文本
+* **返回值描述:** 如果所指定列表项目不存在,将返回空文本.
+* **相关例程:** [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main)
+
+##### 火山.MFC界面.基本.列表框基础类.置项目文本
+
+* **类型:** `方法`
+* **名称:** `置项目文本`
+* **参数:**
+	* `所操作项目位置` (`整数`): 提供所欲操作列表项目的索引位置值,从0开始,必须大于等于0且小于"取项目数"方法的返回值.
+	* `所欲设置的文本内容` (`文本型`)
+* **描述:** 设置指定列表项目的内容文本
+* **相关例程:** [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main)
+
+##### 火山.MFC界面.基本.列表框基础类.取已选择项目数
+
+* **类型:** `方法`
+* **名称:** `取已选择项目数`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前已选择项目数
+
+##### 火山.MFC界面.基本.列表框基础类.取所有被选择项目
+
+* **类型:** `方法`
+* **名称:** `取所有被选择项目`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `被选择项目数组` (`整数数组类`): 用作接收所有当前被选择项目的位置索引
+* **描述:** 将所有当前被选择项目的位置索引填入到所提供的整数数组对象内
+* **返回值描述:** 返回填入到所提供数组内的位置索引数目
+
+##### 火山.MFC界面.基本.列表框基础类.是否被选择
+
+* **类型:** `方法`
+* **名称:** `是否被选择`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所操作项目位置` (`整数`): 提供所欲操作列表项目的索引位置值,从0开始,必须大于等于0且小于"取项目数"方法的返回值.
+* **描述:** 如果指定项目被选择,返回真,否则返回假.
+
+##### 火山.MFC界面.基本.列表框基础类.选择项目
+
+* **类型:** `方法`
+* **名称:** `选择项目`
+* **参数:**
+	* `所操作项目位置` (`整数`): 提供所欲操作列表项目的索引位置值,从0开始,必须大于等于0且小于"取项目数"方法的返回值.
+	* `是否选中` (`逻辑型`, 默认值: `真`): 参数值为真,则选择该项目,否则取消对该项目的选择.
+* **描述:** 选择或取消选择所指定项目
+
+##### 火山.MFC界面.基本.列表框基础类.取焦点项目
+
+* **类型:** `方法`
+* **名称:** `取焦点项目`
+* **返回值数据类型:** `整数`
+* **描述:** 本方法仅在多选列表框中使用,用作返回当前焦点项目的位置索引. 如果在单选列表框中使用本命令,将返回当前被选择项目的位置索引.
+* **返回值描述:** 所返回索引值从0开始,失败返回-1.
+
+##### 火山.MFC界面.基本.列表框基础类.置焦点项目
+
+* **类型:** `方法`
+* **名称:** `置焦点项目`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所操作项目位置` (`整数`): 提供所欲操作列表项目的索引位置值,从0开始.
+* **描述:** 本方法仅在多选列表框中使用,用作设置当前焦点项目. 如果在单选列表框中使用本方法,将设置当前被选择项目.
+* **返回值描述:** 成功返回真,失败返回假.
+
+##### 火山.MFC界面.基本.列表框基础类.加入项目
+
+* **类型:** `方法`
+* **名称:** `加入项目`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `欲加入项目的文本` (`文本型`): 提供所欲加入项目的文本内容
+	* `相关数值` (`变整数`, 默认值: `0`): 提供与欲加入项目相关的数值
+* **描述:** 加入指定项目到列表框的尾部,成功返回加入后该项目所处的索引位置,失败返回-1.
+* **相关例程:** [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-简单pack服务器-pack_server-main](#vol-简单pack服务器-pack_server-main), [vol-简单pull服务器-pull_server-main](#vol-简单pull服务器-pull_server-main), [vol-简单tcp服务器-tcp_server-main](#vol-简单tcp服务器-tcp_server-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main), [vol-简单udp服务器-udp_server-main](#vol-简单udp服务器-udp_server-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-服务器-server-main](#vol-服务器-server-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main)
+
+##### 火山.MFC界面.基本.列表框基础类.插入项目
+
+* **类型:** `方法`
+* **名称:** `插入项目`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `欲插入项目的位置` (`整数`): 提供所欲插入项目在列表框中的索引位置,从0开始,必须大于等于0且小于等于"取项目数"方法的返回值.
+	* `欲插入项目的文本` (`文本型`): 提供所欲插入项目的文本内容
+	* `相关数值` (`变整数`, 默认值: `0`): 提供与欲插入项目相关的数值
+* **描述:** 插入指定项目到列表框的指定位置处,成功返回插入后该项目所处的索引位置,失败返回-1.
+* **相关例程:** [vol-状态条-status_bar-main](#vol-状态条-status_bar-main)
+
+##### 火山.MFC界面.基本.列表框基础类.删除项目
+
+* **类型:** `方法`
+* **名称:** `删除项目`
+* **参数:**
+	* `所欲删除项目的位置` (`整数`): 提供所欲删除项目在列表框中的索引位置,从0开始,必须大于等于0且小于"取项目数"方法的返回值.
+* **描述:** 删除列表框指定位置处的项目
+* **相关例程:** [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-简单pack服务器-pack_server-main](#vol-简单pack服务器-pack_server-main), [vol-简单pull服务器-pull_server-main](#vol-简单pull服务器-pull_server-main), [vol-简单tcp服务器-tcp_server-main](#vol-简单tcp服务器-tcp_server-main), [vol-简单udp服务器-udp_server-main](#vol-简单udp服务器-udp_server-main), [vol-服务器-server-main](#vol-服务器-server-main)
+
+##### 火山.MFC界面.基本.列表框基础类.清空
+
+* **类型:** `方法`
+* **名称:** `清空`
+* **描述:** 删除列表框中的所有项目以及编辑部分中的现有内容
+* **相关例程:** [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main)
+
+##### 火山.MFC界面.基本.列表框基础类.选择
+
+* **类型:** `方法`
+* **名称:** `选择`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `欲选择项目的首部文本` (`文本型`)
+* **描述:** 在列表框所有项目中寻找首部包含指定文本的项目,如找到,则将其选中并返回该项目的位置索引,否则返回-1.
+
+##### 火山.MFC界面.基本.列表框基础类.置列宽
+
+* **类型:** `方法`
+* **名称:** `置列宽`
+* **参数:**
+	* `所欲设置的列宽` (`整数`)
+* **描述:** 如果列表框当前为多列方式("多列"属性值为真),则设定所有列的宽度.
+
+##### 火山.MFC界面.基本.列表框基础类.计算设置列宽
+
+* **类型:** `方法`
+* **名称:** `计算设置列宽`
+* **描述:** 如果列表框当前为多列方式("多列"属性值为真),则根据当前所有列表项文本的最大宽度来设定所有列的宽度.
+
+---
+
+#### 火山.MFC界面.基本.列表框
+
+* **类型:** `类`
+* **名称:** `列表框`
+* **基础类:** `列表框基础类`
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-卷帘式菜单-outbar-main](#vol-卷帘式菜单-outbar-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-简单pack服务器-pack_server-main](#vol-简单pack服务器-pack_server-main), [vol-简单pull服务器-pull_server-main](#vol-简单pull服务器-pull_server-main), [vol-简单tcp服务器-tcp_server-main](#vol-简单tcp服务器-tcp_server-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main), [vol-简单udp服务器-udp_server-main](#vol-简单udp服务器-udp_server-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-服务器-server-main](#vol-服务器-server-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main)
+
+##### 火山.MFC界面.基本.列表框.行间距
+
+* **类型:** `属性读方法`
+* **名称:** `行间距`
+* **返回值数据类型:** `整数`
+* **描述:** 返回列表框的列表项目之间的纵向间距尺寸. 如果未被设置,则本属性的初始值为1.
+
+##### 火山.MFC界面.基本.列表框.行间距
+
+* **类型:** `属性写方法`
+* **名称:** `行间距`
+* **参数:**
+	* `所欲设置的间距` (`整数`)
+* **描述:** 设置列表框的列表项目之间的纵向间距尺寸. 如果未被设置,则本属性的初始值为1.
+
+##### 火山.MFC界面.基本.列表框.背景颜色
+
+* **类型:** `属性读方法`
+* **名称:** `背景颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的本组件背景颜色值
+
+##### 火山.MFC界面.基本.列表框.背景颜色
+
+* **类型:** `属性写方法`
+* **名称:** `背景颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.默认色"来指定使用默认组件背景颜色.
+* **特性:**
+	* `颜色值`(可以为默认色)
+* **描述:** 设置本组件的背景颜色值. 如果本组件未曾设置过背景颜色,则默认为"颜色类.白色".
+
+##### 火山.MFC界面.基本.列表框.文本颜色
+
+* **类型:** `属性读方法`
+* **名称:** `文本颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的本组件文本颜色值
+
+##### 火山.MFC界面.基本.列表框.文本颜色
+
+* **类型:** `属性写方法`
+* **名称:** `文本颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值
+* **特性:**
+	* `颜色值`
+* **描述:** 设置本组件的文本颜色值. 如果本组件未曾设置过文本颜色,则默认为黑色.
+
+##### 火山.MFC界面.基本.列表框.列表项目
+
+* **类型:** `属性写方法`
+* **名称:** `列表项目`
+* **参数:**
+	* `所欲设置的列表内容` (`文本型`): 列表内容为以'\n'字符分隔的文本数组,每两个数组成员分别指定一个列表项目的标题文本和关联数值.
+* **描述:** 设置列表框中的列表项目内容
+
+---
+
+#### 火山.MFC界面.基本.选择列表框
+
+* **类型:** `类`
+* **名称:** `选择列表框`
+* **基础类:** `列表框基础类`
+* **相关例程:** [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main)
+
+##### 火山.MFC界面.基本.选择列表框.行间距
+
+* **类型:** `属性读方法`
+* **名称:** `行间距`
+* **返回值数据类型:** `整数`
+* **描述:** 返回列表框的列表项目之间的纵向间距尺寸. 如果未被设置,则本属性的初始值为2.
+
+##### 火山.MFC界面.基本.选择列表框.行间距
+
+* **类型:** `属性写方法`
+* **名称:** `行间距`
+* **参数:**
+	* `所欲设置的间距` (`整数`)
+* **描述:** 设置列表框的列表项目之间的纵向间距尺寸. 如果未被设置,则本属性的初始值为2.
+
+##### 火山.MFC界面.基本.选择列表框.单选
+
+* **类型:** `属性读方法`
+* **名称:** `单选`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回列表框是否只允许设置一个列表项左侧的选择框为选中状态
+
+##### 火山.MFC界面.基本.选择列表框.单选
+
+* **类型:** `属性写方法`
+* **名称:** `单选`
+* **参数:**
+	* `是否只能单选` (`逻辑型`)
+* **描述:** 设置列表框是否只允许设置一个列表项左侧的选择框为选中状态
+
+##### 火山.MFC界面.基本.选择列表框.列表项目
+
+* **类型:** `属性写方法`
+* **名称:** `列表项目`
+* **参数:**
+	* `所欲设置的列表内容` (`文本型`): 列表内容为以'\n'字符分隔的文本数组,每两个数组成员分别指定一个列表项目的标题文本和关联数值.
+* **描述:** 设置列表框中的列表项目内容
+
+##### 火山.MFC界面.基本.选择列表框.选中状态被改变
+
+* **类型:** `事件定义方法`
+* **名称:** `选中状态被改变`
+* **返回值数据类型:** `整数`
+* **描述:** 当任一列表项左侧选择框的选中状态(选中/未选中/不确定)被改变后发送此事件
+
+##### 火山.MFC界面.基本.选择列表框.是否被选中
+
+* **类型:** `方法`
+* **名称:** `是否被选中`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所操作项目索引` (`整数`): 项目索引值从0开始
+* **描述:** 如果指定列表项目左侧的选择框被选中,返回真,否则返回假.
+
+##### 火山.MFC界面.基本.选择列表框.选中项目
+
+* **类型:** `方法`
+* **名称:** `选中项目`
+* **参数:**
+	* `所操作项目索引` (`整数`): 项目索引值从0开始
+	* `是否选中` (`逻辑型`, 默认值: `真`): 是否选中指定列表项目左侧的选择框
+* **描述:** 选中或取消选中指定列表项目左侧的选择框
+
+##### 火山.MFC界面.基本.选择列表框.取选中状态
+
+* **类型:** `方法`
+* **名称:** `取选中状态`
+* **返回值数据类型:** `三态选中状态`
+* **参数:**
+	* `所操作项目索引` (`整数`): 项目索引值从0开始
+* **描述:** 返回指定列表项目左侧选择框的选中状态
+* **相关例程:** [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main)
+
+##### 火山.MFC界面.基本.选择列表框.置选中状态
+
+* **类型:** `方法`
+* **名称:** `置选中状态`
+* **参数:**
+	* `所操作项目索引` (`整数`): 项目索引值从0开始
+	* `所欲设置选中状态` (`三态选中状态`, 默认值: `三态选中状态.选中`): 提供所欲设置的具体选中状态
+* **描述:** 设置指定列表项目左侧选择框的选中状态
+
+##### 火山.MFC界面.基本.选择列表框.是否被允许
+
+* **类型:** `方法`
+* **名称:** `是否被允许`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所操作项目索引` (`整数`): 项目索引值从0开始
+* **描述:** 如果指定列表项目左侧的选择框被允许操作,返回真,否则返回假.
+
+##### 火山.MFC界面.基本.选择列表框.允许
+
+* **类型:** `方法`
+* **名称:** `允许`
+* **参数:**
+	* `所操作项目索引` (`整数`): 项目索引值从0开始
+	* `是否允许` (`逻辑型`, 默认值: `真`): 是否允许对指定列表项目左侧的选择框进行操作
+* **描述:** 允许或禁止对指定项目左侧的选择框进行操作
+
+---
+
+#### 火山.MFC界面.基本.图片框
+
+* **类型:** `类`
+* **名称:** `图片框`
+* **基础类:** `组件布局器`
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-位图处理-adv_bitmap-main](#vol-位图处理-adv_bitmap-main), [vol-二维码生成-qrencode-main](#vol-二维码生成-qrencode-main), [vol-内存映射文件-filemapping-main](#vol-内存映射文件-filemapping-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main)
+
+##### 火山.MFC界面.基本.图片框.背景颜色
+
+* **类型:** `属性读方法`
+* **名称:** `背景颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的本组件背景颜色值. 本属性等同于"组件布局器"类中的"底色"属性.
+
+##### 火山.MFC界面.基本.图片框.背景颜色
+
+* **类型:** `属性写方法`
+* **名称:** `背景颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.默认色"来指定使用默认组件背景颜色.
+* **特性:**
+	* `颜色值`(可以为默认色)
+* **描述:** 设置本组件的背景颜色值. 如果本组件未曾设置过背景颜色,则默认为"颜色类.默认色". 本属性等同于"组件布局器"类中的"底色"属性.
+
+##### 火山.MFC界面.基本.图片框.图片
+
+* **类型:** `属性写方法`
+* **名称:** `图片`
+* **参数:**
+	* `所欲设置的位图` (`位图资源`): 提供所欲设置的位图资源,如果该资源值为"空资源.空位图",则将取消底图.
+* **描述:** 设置显示在本组件背景上的位图. 本属性等同于"组件布局器"类中的"底图"属性.
+* **相关例程:** [vol-位图处理-adv_bitmap-main](#vol-位图处理-adv_bitmap-main)
+
+##### 火山.MFC界面.基本.图片框.显示方式
+
+* **类型:** `属性读方法`
+* **名称:** `显示方式`
+* **返回值数据类型:** `图片放置方式`
+* **描述:** 返回本组件上图片的放置方式. 本属性等同于"组件布局器"类中的"底图方式"属性.
+
+##### 火山.MFC界面.基本.图片框.显示方式
+
+* **类型:** `属性写方法`
+* **名称:** `显示方式`
+* **参数:**
+	* `放置方式` (`图片放置方式`)
+* **描述:** 设置本组件上图片的放置方式. 本属性等同于"组件布局器"类中的"底图方式"属性.
+
+---
+
+#### 火山.MFC界面.基本.外形框外形类别
+
+* **类型:** `类`
+* **名称:** `外形框外形类别`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供外形框中显示的内容外形类别
+
+##### 火山.MFC界面.基本.外形框外形类别.矩形
+
+* **类型:** `成员常量`
+* **名称:** `矩形`
+* **数据类型:** `外形框外形类别`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.外形框外形类别.正方形
+
+* **类型:** `成员常量`
+* **名称:** `正方形`
+* **数据类型:** `外形框外形类别`
+* **初始值:** `1`
+
+##### 火山.MFC界面.基本.外形框外形类别.椭圆
+
+* **类型:** `成员常量`
+* **名称:** `椭圆`
+* **数据类型:** `外形框外形类别`
+* **初始值:** `2`
+
+##### 火山.MFC界面.基本.外形框外形类别.圆
+
+* **类型:** `成员常量`
+* **名称:** `圆`
+* **数据类型:** `外形框外形类别`
+* **初始值:** `3`
+
+##### 火山.MFC界面.基本.外形框外形类别.圆角矩形
+
+* **类型:** `成员常量`
+* **名称:** `圆角矩形`
+* **数据类型:** `外形框外形类别`
+* **初始值:** `4`
+
+##### 火山.MFC界面.基本.外形框外形类别.圆角正方形
+
+* **类型:** `成员常量`
+* **名称:** `圆角正方形`
+* **数据类型:** `外形框外形类别`
+* **初始值:** `5`
+
+##### 火山.MFC界面.基本.外形框外形类别.横向线
+
+* **类型:** `成员常量`
+* **名称:** `横向线`
+* **数据类型:** `外形框外形类别`
+* **初始值:** `6`
+
+##### 火山.MFC界面.基本.外形框外形类别.纵向线
+
+* **类型:** `成员常量`
+* **名称:** `纵向线`
+* **数据类型:** `外形框外形类别`
+* **初始值:** `7`
+
+---
+
+#### 火山.MFC界面.基本.外形框线条效果
+
+* **类型:** `类`
+* **名称:** `外形框线条效果`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供外形框中绘制外形时所使用的线条效果
+
+##### 火山.MFC界面.基本.外形框线条效果.通常
+
+* **类型:** `成员常量`
+* **名称:** `通常`
+* **数据类型:** `外形框线条效果`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.外形框线条效果.凹入
+
+* **类型:** `成员常量`
+* **名称:** `凹入`
+* **数据类型:** `外形框线条效果`
+* **初始值:** `1`
+
+##### 火山.MFC界面.基本.外形框线条效果.凸出
+
+* **类型:** `成员常量`
+* **名称:** `凸出`
+* **数据类型:** `外形框线条效果`
+* **初始值:** `2`
+
+---
+
+#### 火山.MFC界面.基本.外形框线型
+
+* **类型:** `类`
+* **名称:** `外形框线型`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供外形框中绘制外形时所使用的线型
+
+##### 火山.MFC界面.基本.外形框线型.无
+
+* **类型:** `成员常量`
+* **名称:** `无`
+* **数据类型:** `外形框线型`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.外形框线型.直线
+
+* **类型:** `成员常量`
+* **名称:** `直线`
+* **数据类型:** `外形框线型`
+* **初始值:** `1`
+
+##### 火山.MFC界面.基本.外形框线型.划线
+
+* **类型:** `成员常量`
+* **名称:** `划线`
+* **数据类型:** `外形框线型`
+* **初始值:** `2`
+
+##### 火山.MFC界面.基本.外形框线型.点线
+
+* **类型:** `成员常量`
+* **名称:** `点线`
+* **数据类型:** `外形框线型`
+* **初始值:** `3`
+
+##### 火山.MFC界面.基本.外形框线型.点划线
+
+* **类型:** `成员常量`
+* **名称:** `点划线`
+* **数据类型:** `外形框线型`
+* **初始值:** `4`
+
+##### 火山.MFC界面.基本.外形框线型.双点划线
+
+* **类型:** `成员常量`
+* **名称:** `双点划线`
+* **数据类型:** `外形框线型`
+* **初始值:** `5`
+
+---
+
+#### 火山.MFC界面.基本.外形框
+
+* **类型:** `类`
+* **名称:** `外形框`
+* **基础类:** `窗口容器组件`
+* **相关例程:** [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main)
+
+##### 火山.MFC界面.基本.外形框.背景颜色
+
+* **类型:** `属性读方法`
+* **名称:** `背景颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的本组件背景颜色值
+
+##### 火山.MFC界面.基本.外形框.背景颜色
+
+* **类型:** `属性写方法`
+* **名称:** `背景颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.默认色"来指定使用默认组件背景颜色.
+* **特性:**
+	* `颜色值`(可以为默认色)
+* **描述:** 设置本组件的背景颜色值. 如果本组件未曾设置过背景颜色,则默认为"颜色类.默认色".
+
+##### 火山.MFC界面.基本.外形框.外形
+
+* **类型:** `属性读方法`
+* **名称:** `外形`
+* **返回值数据类型:** `外形框外形类别`
+* **描述:** 返回本组件中显示的外形类别
+
+##### 火山.MFC界面.基本.外形框.外形
+
+* **类型:** `属性写方法`
+* **名称:** `外形`
+* **参数:**
+	* `所欲设置外形` (`外形框外形类别`)
+* **描述:** 设置本组件中显示的外形类别
+
+##### 火山.MFC界面.基本.外形框.线条效果
+
+* **类型:** `属性读方法`
+* **名称:** `线条效果`
+* **返回值数据类型:** `外形框线条效果`
+* **描述:** 返回本组件中绘制外形时所使用的线条效果
+
+##### 火山.MFC界面.基本.外形框.线条效果
+
+* **类型:** `属性写方法`
+* **名称:** `线条效果`
+* **参数:**
+	* `所欲设置线条效果` (`外形框线条效果`)
+* **描述:** 设置本组件中绘制外形时所使用的线条效果
+
+##### 火山.MFC界面.基本.外形框.线型
+
+* **类型:** `属性读方法`
+* **名称:** `线型`
+* **返回值数据类型:** `外形框线型`
+* **描述:** 返回本组件中绘制外形时所使用的线型
+
+##### 火山.MFC界面.基本.外形框.线型
+
+* **类型:** `属性写方法`
+* **名称:** `线型`
+* **参数:**
+	* `所欲设置线型` (`外形框线型`)
+* **描述:** 设置本组件中绘制外形时所使用的线型
+
+##### 火山.MFC界面.基本.外形框.线宽
+
+* **类型:** `属性读方法`
+* **名称:** `线宽`
+* **返回值数据类型:** `整数`
+* **描述:** 返回本组件中绘制外形时所使用的线条宽度. 注意: 本属性仅在线条效果为"通常"且线型为"直线"时才有效
+
+##### 火山.MFC界面.基本.外形框.线宽
+
+* **类型:** `属性写方法`
+* **名称:** `线宽`
+* **参数:**
+	* `所欲设置线宽` (`整数`)
+* **描述:** 设置本组件中绘制外形时所使用的线条宽度. 注意: 本属性仅在线条效果为"通常"且线型为"直线"时才有效
+
+##### 火山.MFC界面.基本.外形框.线条颜色
+
+* **类型:** `属性读方法`
+* **名称:** `线条颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回本组件中绘制外形时所使用的线条颜色. 注意: 本属性仅在线条效果为"通常"时才有效
+
+##### 火山.MFC界面.基本.外形框.线条颜色
+
+* **类型:** `属性写方法`
+* **名称:** `线条颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值
+* **特性:**
+	* `颜色值`
+* **描述:** 设置本组件中绘制外形时所使用的线条颜色. 注意: 本属性仅在线条效果为"通常"时才有效
+
+##### 火山.MFC界面.基本.外形框.填充颜色
+
+* **类型:** `属性读方法`
+* **名称:** `填充颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回本组件中绘制外形时所使用的外形内部填充颜色. 注意: 本属性仅在外形不为线条时才有效
+
+##### 火山.MFC界面.基本.外形框.填充颜色
+
+* **类型:** `属性写方法`
+* **名称:** `填充颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.透明色"来指定不填充当前外形.
+* **特性:**
+	* `颜色值`(可以为透明色)
+* **描述:** 设置本组件中绘制外形时所使用的外形内部填充颜色. 注意: 本属性仅在外形不为线条时才有效
+
+---
+
+#### 火山.MFC界面.基本.绘画单位类型
+
+* **类型:** `类`
+* **名称:** `绘画单位类型`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供绘制时所使用的各种绘画单位类型
+
+##### 火山.MFC界面.基本.绘画单位类型.像素点
+
+* **类型:** `成员常量`
+* **名称:** `像素点`
+* **数据类型:** `绘画单位类型`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.绘画单位类型.十分之一毫米
+
+* **类型:** `成员常量`
+* **名称:** `十分之一毫米`
+* **数据类型:** `绘画单位类型`
+* **初始值:** `1`
+* **描述:** 0.1毫米
+
+##### 火山.MFC界面.基本.绘画单位类型.百分之一毫米
+
+* **类型:** `成员常量`
+* **名称:** `百分之一毫米`
+* **数据类型:** `绘画单位类型`
+* **初始值:** `2`
+* **描述:** 0.01毫米
+
+##### 火山.MFC界面.基本.绘画单位类型.百分之一英寸
+
+* **类型:** `成员常量`
+* **名称:** `百分之一英寸`
+* **数据类型:** `绘画单位类型`
+* **初始值:** `3`
+* **描述:** 0.01英寸
+
+##### 火山.MFC界面.基本.绘画单位类型.千分之一英寸
+
+* **类型:** `成员常量`
+* **名称:** `千分之一英寸`
+* **数据类型:** `绘画单位类型`
+* **初始值:** `4`
+* **描述:** 0.001英寸
+
+##### 火山.MFC界面.基本.绘画单位类型.缇
+
+* **类型:** `成员常量`
+* **名称:** `缇`
+* **数据类型:** `绘画单位类型`
+* **初始值:** `5`
+* **描述:** 1/1440英寸
+
+---
+
+#### 火山.MFC界面.基本.画笔类型
+
+* **类型:** `类`
+* **名称:** `画笔类型`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供绘制时所使用的各种画笔类型
+
+##### 火山.MFC界面.基本.画笔类型.空笔
+
+* **类型:** `成员常量`
+* **名称:** `空笔`
+* **数据类型:** `画笔类型`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.画笔类型.直线
+
+* **类型:** `成员常量`
+* **名称:** `直线`
+* **数据类型:** `画笔类型`
+* **初始值:** `1`
+
+##### 火山.MFC界面.基本.画笔类型.划线
+
+* **类型:** `成员常量`
+* **名称:** `划线`
+* **数据类型:** `画笔类型`
+* **初始值:** `2`
+
+##### 火山.MFC界面.基本.画笔类型.点线
+
+* **类型:** `成员常量`
+* **名称:** `点线`
+* **数据类型:** `画笔类型`
+* **初始值:** `3`
+
+##### 火山.MFC界面.基本.画笔类型.点划线
+
+* **类型:** `成员常量`
+* **名称:** `点划线`
+* **数据类型:** `画笔类型`
+* **初始值:** `4`
+
+##### 火山.MFC界面.基本.画笔类型.双点划线
+
+* **类型:** `成员常量`
+* **名称:** `双点划线`
+* **数据类型:** `画笔类型`
+* **初始值:** `5`
+
+##### 火山.MFC界面.基本.画笔类型.内直线
+
+* **类型:** `成员常量`
+* **名称:** `内直线`
+* **数据类型:** `画笔类型`
+* **初始值:** `6`
+
+---
+
+#### 火山.MFC界面.基本.画笔画出方式
+
+* **类型:** `类`
+* **名称:** `画笔画出方式`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供绘制时所使用的各种画笔画出方式
+
+##### 火山.MFC界面.基本.画笔画出方式.黑色
+
+* **类型:** `成员常量`
+* **名称:** `黑色`
+* **数据类型:** `画笔画出方式`
+* **初始值:** `0`
+* **描述:** 始终画出黑色
+
+##### 火山.MFC界面.基本.画笔画出方式.非或笔
+
+* **类型:** `成员常量`
+* **名称:** `非或笔`
+* **数据类型:** `画笔画出方式`
+* **初始值:** `1`
+* **描述:** 或笔的相反
+
+##### 火山.MFC界面.基本.画笔画出方式.与非笔
+
+* **类型:** `成员常量`
+* **名称:** `与非笔`
+* **数据类型:** `画笔画出方式`
+* **初始值:** `2`
+* **描述:** 背景色以及画笔反相二者共有颜色的组合
+
+##### 火山.MFC界面.基本.画笔画出方式.非复制笔
+
+* **类型:** `成员常量`
+* **名称:** `非复制笔`
+* **数据类型:** `画笔画出方式`
+* **初始值:** `3`
+* **描述:** 复制笔的相反
+
+##### 火山.MFC界面.基本.画笔画出方式.与笔非
+
+* **类型:** `成员常量`
+* **名称:** `与笔非`
+* **数据类型:** `画笔画出方式`
+* **初始值:** `4`
+* **描述:** 画笔以及已有颜色反相二者共有颜色的组合
+
+##### 火山.MFC界面.基本.画笔画出方式.反转
+
+* **类型:** `成员常量`
+* **名称:** `反转`
+* **数据类型:** `画笔画出方式`
+* **初始值:** `5`
+* **描述:** 已有颜色的反转
+
+##### 火山.MFC界面.基本.画笔画出方式.异或笔
+
+* **类型:** `成员常量`
+* **名称:** `异或笔`
+* **数据类型:** `画笔画出方式`
+* **初始值:** `6`
+* **描述:** 画笔的颜色以及已有颜色的组合,只取其一.
+
+##### 火山.MFC界面.基本.画笔画出方式.非与笔
+
+* **类型:** `成员常量`
+* **名称:** `非与笔`
+* **数据类型:** `画笔画出方式`
+* **初始值:** `7`
+* **描述:** 与笔的相反
+
+##### 火山.MFC界面.基本.画笔画出方式.与笔
+
+* **类型:** `成员常量`
+* **名称:** `与笔`
+* **数据类型:** `画笔画出方式`
+* **初始值:** `8`
+* **描述:** 画笔和已有二者共有颜色的组合
+
+##### 火山.MFC界面.基本.画笔画出方式.非异或笔
+
+* **类型:** `成员常量`
+* **名称:** `非异或笔`
+* **数据类型:** `画笔画出方式`
+* **初始值:** `9`
+* **描述:** 异或笔的相反
+
+##### 火山.MFC界面.基本.画笔画出方式.无操作
+
+* **类型:** `成员常量`
+* **名称:** `无操作`
+* **数据类型:** `画笔画出方式`
+* **初始值:** `10`
+* **描述:** 原有保持不变,该设置实际上关闭画笔.
+
+##### 火山.MFC界面.基本.画笔画出方式.或非笔
+
+* **类型:** `成员常量`
+* **名称:** `或非笔`
+* **数据类型:** `画笔画出方式`
+* **初始值:** `11`
+* **描述:** 已有颜色与画笔颜色反相的组合
+
+##### 火山.MFC界面.基本.画笔画出方式.复制笔
+
+* **类型:** `成员常量`
+* **名称:** `复制笔`
+* **数据类型:** `画笔画出方式`
+* **初始值:** `12`
+* **描述:** 画笔颜色
+
+##### 火山.MFC界面.基本.画笔画出方式.或笔非
+
+* **类型:** `成员常量`
+* **名称:** `或笔非`
+* **数据类型:** `画笔画出方式`
+* **初始值:** `13`
+* **描述:** 画笔颜色与已有颜色的反相的组合
+
+##### 火山.MFC界面.基本.画笔画出方式.或笔
+
+* **类型:** `成员常量`
+* **名称:** `或笔`
+* **数据类型:** `画笔画出方式`
+* **初始值:** `14`
+* **描述:** 画笔颜色与已有颜色的组合
+
+##### 火山.MFC界面.基本.画笔画出方式.白色
+
+* **类型:** `成员常量`
+* **名称:** `白色`
+* **数据类型:** `画笔画出方式`
+* **初始值:** `15`
+* **描述:** 始终画出白色
+
+---
+
+#### 火山.MFC界面.基本.填充刷子类型
+
+* **类型:** `类`
+* **名称:** `填充刷子类型`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供绘制时所使用的各种填充刷子类型
+* **相关例程:** [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.填充刷子类型.空刷子
+
+* **类型:** `成员常量`
+* **名称:** `空刷子`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.填充刷子类型.颜色刷子
+
+* **类型:** `成员常量`
+* **名称:** `颜色刷子`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `1`
+* **相关例程:** [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.填充刷子类型.右斜线
+
+* **类型:** `成员常量`
+* **名称:** `右斜线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `2`
+
+##### 火山.MFC界面.基本.填充刷子类型.直交叉线
+
+* **类型:** `成员常量`
+* **名称:** `直交叉线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `3`
+
+##### 火山.MFC界面.基本.填充刷子类型.斜交叉线
+
+* **类型:** `成员常量`
+* **名称:** `斜交叉线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `4`
+
+##### 火山.MFC界面.基本.填充刷子类型.左斜线
+
+* **类型:** `成员常量`
+* **名称:** `左斜线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `5`
+
+##### 火山.MFC界面.基本.填充刷子类型.横线
+
+* **类型:** `成员常量`
+* **名称:** `横线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `6`
+
+##### 火山.MFC界面.基本.填充刷子类型.竖线
+
+* **类型:** `成员常量`
+* **名称:** `竖线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `7`
+
+##### 火山.MFC界面.基本.填充刷子类型.百分之五色点
+
+* **类型:** `成员常量`
+* **名称:** `百分之五色点`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `8`
+
+##### 火山.MFC界面.基本.填充刷子类型.百分之十色点
+
+* **类型:** `成员常量`
+* **名称:** `百分之十色点`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `9`
+
+##### 火山.MFC界面.基本.填充刷子类型.百分之二十色点
+
+* **类型:** `成员常量`
+* **名称:** `百分之二十色点`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `10`
+
+##### 火山.MFC界面.基本.填充刷子类型.百分之二十五色点
+
+* **类型:** `成员常量`
+* **名称:** `百分之二十五色点`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `11`
+
+##### 火山.MFC界面.基本.填充刷子类型.百分之三十色点
+
+* **类型:** `成员常量`
+* **名称:** `百分之三十色点`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `12`
+
+##### 火山.MFC界面.基本.填充刷子类型.百分之四十色点
+
+* **类型:** `成员常量`
+* **名称:** `百分之四十色点`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `13`
+
+##### 火山.MFC界面.基本.填充刷子类型.百分之五十色点
+
+* **类型:** `成员常量`
+* **名称:** `百分之五十色点`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `14`
+
+##### 火山.MFC界面.基本.填充刷子类型.百分之六十色点
+
+* **类型:** `成员常量`
+* **名称:** `百分之六十色点`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `15`
+
+##### 火山.MFC界面.基本.填充刷子类型.百分之七十色点
+
+* **类型:** `成员常量`
+* **名称:** `百分之七十色点`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `16`
+
+##### 火山.MFC界面.基本.填充刷子类型.百分之七十五色点
+
+* **类型:** `成员常量`
+* **名称:** `百分之七十五色点`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `17`
+
+##### 火山.MFC界面.基本.填充刷子类型.百分之八十色点
+
+* **类型:** `成员常量`
+* **名称:** `百分之八十色点`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `18`
+
+##### 火山.MFC界面.基本.填充刷子类型.百分之九十色点
+
+* **类型:** `成员常量`
+* **名称:** `百分之九十色点`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `19`
+
+##### 火山.MFC界面.基本.填充刷子类型.浅色上对角线
+
+* **类型:** `成员常量`
+* **名称:** `浅色上对角线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `20`
+
+##### 火山.MFC界面.基本.填充刷子类型.浅色下对角线
+
+* **类型:** `成员常量`
+* **名称:** `浅色下对角线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `21`
+
+##### 火山.MFC界面.基本.填充刷子类型.深色上对角线
+
+* **类型:** `成员常量`
+* **名称:** `深色上对角线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `22`
+
+##### 火山.MFC界面.基本.填充刷子类型.深色下对角线
+
+* **类型:** `成员常量`
+* **名称:** `深色下对角线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `23`
+
+##### 火山.MFC界面.基本.填充刷子类型.宽上对角线
+
+* **类型:** `成员常量`
+* **名称:** `宽上对角线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `24`
+
+##### 火山.MFC界面.基本.填充刷子类型.宽下对角线
+
+* **类型:** `成员常量`
+* **名称:** `宽下对角线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `25`
+
+##### 火山.MFC界面.基本.填充刷子类型.浅色竖线
+
+* **类型:** `成员常量`
+* **名称:** `浅色竖线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `26`
+
+##### 火山.MFC界面.基本.填充刷子类型.浅色横线
+
+* **类型:** `成员常量`
+* **名称:** `浅色横线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `27`
+
+##### 火山.MFC界面.基本.填充刷子类型.窄竖线
+
+* **类型:** `成员常量`
+* **名称:** `窄竖线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `28`
+
+##### 火山.MFC界面.基本.填充刷子类型.窄横线
+
+* **类型:** `成员常量`
+* **名称:** `窄横线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `29`
+
+##### 火山.MFC界面.基本.填充刷子类型.深色竖线
+
+* **类型:** `成员常量`
+* **名称:** `深色竖线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `30`
+
+##### 火山.MFC界面.基本.填充刷子类型.深色横线
+
+* **类型:** `成员常量`
+* **名称:** `深色横线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `31`
+
+##### 火山.MFC界面.基本.填充刷子类型.上对角虚线
+
+* **类型:** `成员常量`
+* **名称:** `上对角虚线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `32`
+
+##### 火山.MFC界面.基本.填充刷子类型.下对角虚线
+
+* **类型:** `成员常量`
+* **名称:** `下对角虚线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `33`
+
+##### 火山.MFC界面.基本.填充刷子类型.横虚线
+
+* **类型:** `成员常量`
+* **名称:** `横虚线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `34`
+
+##### 火山.MFC界面.基本.填充刷子类型.竖虚线
+
+* **类型:** `成员常量`
+* **名称:** `竖虚线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `35`
+
+##### 火山.MFC界面.基本.填充刷子类型.小纸屑
+
+* **类型:** `成员常量`
+* **名称:** `小纸屑`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `36`
+
+##### 火山.MFC界面.基本.填充刷子类型.大纸屑
+
+* **类型:** `成员常量`
+* **名称:** `大纸屑`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `37`
+
+##### 火山.MFC界面.基本.填充刷子类型.之字形
+
+* **类型:** `成员常量`
+* **名称:** `之字形`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `38`
+
+##### 火山.MFC界面.基本.填充刷子类型.波浪线
+
+* **类型:** `成员常量`
+* **名称:** `波浪线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `39`
+
+##### 火山.MFC界面.基本.填充刷子类型.对角砖形
+
+* **类型:** `成员常量`
+* **名称:** `对角砖形`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `40`
+
+##### 火山.MFC界面.基本.填充刷子类型.横向砖形
+
+* **类型:** `成员常量`
+* **名称:** `横向砖形`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `41`
+
+##### 火山.MFC界面.基本.填充刷子类型.纺织物
+
+* **类型:** `成员常量`
+* **名称:** `纺织物`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `42`
+
+##### 火山.MFC界面.基本.填充刷子类型.方格呢
+
+* **类型:** `成员常量`
+* **名称:** `方格呢`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `43`
+
+##### 火山.MFC界面.基本.填充刷子类型.草皮
+
+* **类型:** `成员常量`
+* **名称:** `草皮`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `44`
+
+##### 火山.MFC界面.基本.填充刷子类型.虚格线
+
+* **类型:** `成员常量`
+* **名称:** `虚格线`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `45`
+
+##### 火山.MFC界面.基本.填充刷子类型.点式菱形
+
+* **类型:** `成员常量`
+* **名称:** `点式菱形`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `46`
+
+##### 火山.MFC界面.基本.填充刷子类型.瓦形
+
+* **类型:** `成员常量`
+* **名称:** `瓦形`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `47`
+
+##### 火山.MFC界面.基本.填充刷子类型.棚架
+
+* **类型:** `成员常量`
+* **名称:** `棚架`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `48`
+
+##### 火山.MFC界面.基本.填充刷子类型.球体
+
+* **类型:** `成员常量`
+* **名称:** `球体`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `49`
+
+##### 火山.MFC界面.基本.填充刷子类型.小网格
+
+* **类型:** `成员常量`
+* **名称:** `小网格`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `50`
+
+##### 火山.MFC界面.基本.填充刷子类型.大网格
+
+* **类型:** `成员常量`
+* **名称:** `大网格`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `51`
+
+##### 火山.MFC界面.基本.填充刷子类型.小棋盘
+
+* **类型:** `成员常量`
+* **名称:** `小棋盘`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `52`
+
+##### 火山.MFC界面.基本.填充刷子类型.大棋盘
+
+* **类型:** `成员常量`
+* **名称:** `大棋盘`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `53`
+
+##### 火山.MFC界面.基本.填充刷子类型.空心菱形
+
+* **类型:** `成员常量`
+* **名称:** `空心菱形`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `54`
+
+##### 火山.MFC界面.基本.填充刷子类型.实心菱形
+
+* **类型:** `成员常量`
+* **名称:** `实心菱形`
+* **数据类型:** `填充刷子类型`
+* **初始值:** `55`
+
+---
+
+#### 火山.MFC界面.基本.图像复制方法
+
+* **类型:** `类`
+* **名称:** `图像复制方法`
+* **文档分类:** `辅助类`
+* **描述:** 提供绘制或复制图像时的各种处理方法
+* **相关例程:** [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.图像复制方法.拷贝
+
+* **类型:** `成员常量`
+* **名称:** `拷贝`
+* **数据类型:** `整数`
+* **初始值:** `1`
+* **相关例程:** [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.图像复制方法.翻转拷贝
+
+* **类型:** `成员常量`
+* **名称:** `翻转拷贝`
+* **数据类型:** `整数`
+* **初始值:** `2`
+
+##### 火山.MFC界面.基本.图像复制方法.位异或绘制
+
+* **类型:** `成员常量`
+* **名称:** `位异或绘制`
+* **数据类型:** `整数`
+* **初始值:** `3`
+
+##### 火山.MFC界面.基本.图像复制方法.位或绘制
+
+* **类型:** `成员常量`
+* **名称:** `位或绘制`
+* **数据类型:** `整数`
+* **初始值:** `4`
+
+##### 火山.MFC界面.基本.图像复制方法.位与绘制
+
+* **类型:** `成员常量`
+* **名称:** `位与绘制`
+* **数据类型:** `整数`
+* **初始值:** `5`
+
+---
+
+#### 火山.MFC界面.基本.坐标转换类型
+
+* **类型:** `类`
+* **名称:** `坐标转换类型`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供"单位转换"方法使用的欲转换坐标值各种类型
+
+##### 火山.MFC界面.基本.坐标转换类型.横向绘画单位
+
+* **类型:** `成员常量`
+* **名称:** `横向绘画单位`
+* **数据类型:** `坐标转换类型`
+* **初始值:** `1`
+
+##### 火山.MFC界面.基本.坐标转换类型.纵向绘画单位
+
+* **类型:** `成员常量`
+* **名称:** `纵向绘画单位`
+* **数据类型:** `坐标转换类型`
+* **初始值:** `2`
+
+##### 火山.MFC界面.基本.坐标转换类型.横向像素单位
+
+* **类型:** `成员常量`
+* **名称:** `横向像素单位`
+* **数据类型:** `坐标转换类型`
+* **初始值:** `3`
+
+##### 火山.MFC界面.基本.坐标转换类型.纵向像素单位
+
+* **类型:** `成员常量`
+* **名称:** `纵向像素单位`
+* **数据类型:** `坐标转换类型`
+* **初始值:** `4`
+
+---
+
+#### 火山.MFC界面.基本.画板
+
+* **类型:** `类`
+* **名称:** `画板`
+* **基础类:** `窗口组件`
+* **描述:** 画板窗口组件类. 注意: 1. 如未特殊说明,本类中所有坐标位置及尺寸均使用当前"绘画单位"属性所设置的单位; 2. 本类所使用的绘制坐标系的轴方向: 横向为从左到右,纵向为从上到下.
+* **相关例程:** [vol-时钟-timer-main](#vol-时钟-timer-main), [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main), [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main), [vol-rvm人像抠图-rvm_segmentation-main](#vol-rvm人像抠图-rvm_segmentation-main), [vol-角点检测-corner_detection-main](#vol-角点检测-corner_detection-main), [vol-dnn文本检测-dnn_text_detection_recognition-main](#vol-dnn文本检测-dnn_text_detection_recognition-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.画板.画板背景色
+
+* **类型:** `属性读方法`
+* **名称:** `画板背景色`
+* **返回值数据类型:** `整数`
+* **描述:** 提供画板的当前背景颜色
+
+##### 火山.MFC界面.基本.画板.画板背景色
+
+* **类型:** `属性写方法`
+* **名称:** `画板背景色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.默认色"来指定使用默认组件背景颜色.
+* **特性:**
+	* `颜色值`(可以为默认色)
+* **描述:** 设置画板的当前背景颜色. 本属性的默认值为"颜色类.默认色".
+
+##### 火山.MFC界面.基本.画板.底图
+
+* **类型:** `属性写方法`
+* **名称:** `底图`
+* **参数:**
+	* `所欲设置的位图` (`位图资源`): 提供所欲设置的位图资源,如果该资源值为"空资源.空位图",则将取消底图.
+* **描述:** 设置显示在本组件背景上的位图
+
+##### 火山.MFC界面.基本.画板.底图方式
+
+* **类型:** `属性读方法`
+* **名称:** `底图方式`
+* **返回值数据类型:** `图片放置方式`
+* **描述:** 返回本组件上底图的放置方式
+
+##### 火山.MFC界面.基本.画板.底图方式
+
+* **类型:** `属性写方法`
+* **名称:** `底图方式`
+* **参数:**
+	* `放置方式` (`图片放置方式`)
+* **描述:** 设置本组件上底图的放置方式
+
+##### 火山.MFC界面.基本.画板.自动重画
+
+* **类型:** `属性读方法`
+* **名称:** `自动重画`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回本组件是否自动保存并重新绘制先前所绘画内容
+* **相关例程:** [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.画板.自动重画
+
+* **类型:** `属性写方法`
+* **名称:** `自动重画`
+* **参数:**
+	* `是否自动重画` (`逻辑型`)
+* **描述:** 设置本组件是否自动保存并重新绘制先前所绘画内容. 如果本属性设置为真,系统将自动把所有在画板上进行的绘画操作的结果保存到内存中,当以后需要重画时,系统简单地把所保存的绘画结果复制到画板上,而不再产生"绘画"事件. 采用本属性需要消耗一定数量的内存.另外,如果本属性为真且在底图方式为居中时调整画板尺寸,将无法保留以前的绘画数据. 本属性的默认值为假.
+* **相关例程:** [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.画板.绘画单位
+
+* **类型:** `属性读方法`
+* **名称:** `绘画单位`
+* **返回值数据类型:** `绘画单位类型`
+* **描述:** 返回绘画时所使用的单位
+
+##### 火山.MFC界面.基本.画板.绘画单位
+
+* **类型:** `属性写方法`
+* **名称:** `绘画单位`
+* **参数:**
+	* `所欲设置的单位` (`绘画单位类型`)
+* **描述:** 设置绘画时所使用的单位. 本属性的默认值为"像素点".
+
+##### 火山.MFC界面.基本.画板.画笔类型
+
+* **类型:** `属性读方法`
+* **名称:** `画笔类型`
+* **返回值数据类型:** `画笔类型`
+* **描述:** 返回绘画时所使用的画笔类型
+
+##### 火山.MFC界面.基本.画板.画笔类型
+
+* **类型:** `属性写方法`
+* **名称:** `画笔类型`
+* **参数:**
+	* `所欲设置的画笔类型` (`画笔类型`)
+* **描述:** 设置绘画时所使用的画笔类型. 本属性的默认值为"直线".
+
+##### 火山.MFC界面.基本.画板.画出方式
+
+* **类型:** `属性读方法`
+* **名称:** `画出方式`
+* **返回值数据类型:** `画笔画出方式`
+* **描述:** 返回绘画时所使用的画出方式
+
+##### 火山.MFC界面.基本.画板.画出方式
+
+* **类型:** `属性写方法`
+* **名称:** `画出方式`
+* **参数:**
+	* `所欲设置的画出方式` (`画笔画出方式`)
+* **描述:** 设置绘画时所使用的画出方式. 本属性的默认值为"复制笔".
+
+##### 火山.MFC界面.基本.画板.画笔粗细
+
+* **类型:** `属性读方法`
+* **名称:** `画笔粗细`
+* **返回值数据类型:** `整数`
+* **描述:** 返回绘画时所使用的画笔宽度
+* **相关例程:** [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.画板.画笔粗细
+
+* **类型:** `属性写方法`
+* **名称:** `画笔粗细`
+* **参数:**
+	* `所欲设置的画笔宽度` (`整数`)
+* **描述:** 设置绘画时所使用的画笔宽度.使用现行绘画单位.如果为0,表示画笔的粗细为一个像素点(与绘画单位无关). 注意: 当画笔类型为划线、点线、点划线、双点划线时,本属性无效,画笔宽度始终为一个像素点. 本属性的默认值为0.
+* **相关例程:** [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.画板.画笔颜色
+
+* **类型:** `属性读方法`
+* **名称:** `画笔颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回绘画时所使用的画笔颜色
+* **相关例程:** [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.画板.画笔颜色
+
+* **类型:** `属性写方法`
+* **名称:** `画笔颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值
+* **特性:**
+	* `颜色值`
+* **描述:** 设置绘画时所使用的画笔颜色. 本属性的默认值为黑色.
+* **相关例程:** [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.画板.刷子类型
+
+* **类型:** `属性读方法`
+* **名称:** `刷子类型`
+* **返回值数据类型:** `填充刷子类型`
+* **描述:** 返回绘画时所使用的填充刷子类型
+* **相关例程:** [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.画板.刷子类型
+
+* **类型:** `属性写方法`
+* **名称:** `刷子类型`
+* **参数:**
+	* `所欲设置的刷子类型` (`填充刷子类型`)
+* **描述:** 设置绘画时所使用的填充刷子类型. 本属性的默认值为"颜色刷子".
+* **相关例程:** [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.画板.刷子颜色
+
+* **类型:** `属性读方法`
+* **名称:** `刷子颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回绘画时所使用的填充刷子颜色
+* **相关例程:** [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.画板.刷子颜色
+
+* **类型:** `属性写方法`
+* **名称:** `刷子颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值
+* **特性:**
+	* `颜色值`
+* **描述:** 设置绘画时所使用的填充刷子颜色. 本属性的默认值为白色.
+* **相关例程:** [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.画板.文本颜色
+
+* **类型:** `属性读方法`
+* **名称:** `文本颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回绘画时所使用的文本颜色
+* **相关例程:** [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.画板.文本颜色
+
+* **类型:** `属性写方法`
+* **名称:** `文本颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值
+* **特性:**
+	* `颜色值`
+* **描述:** 设置绘画时所使用的文本颜色. 本属性的默认值为黑色.
+* **相关例程:** [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.画板.文本背景颜色
+
+* **类型:** `属性读方法`
+* **名称:** `文本背景颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回绘画时所使用的文本背景颜色
+
+##### 火山.MFC界面.基本.画板.文本背景颜色
+
+* **类型:** `属性写方法`
+* **名称:** `文本背景颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.透明色"来指定不填充文本背景.
+* **特性:**
+	* `颜色值`(可以为透明色)
+* **描述:** 设置绘画时所使用的文本背景颜色. 本属性的默认值为透明色.
+
+##### 火山.MFC界面.基本.画板.画板宽度
+
+* **类型:** `属性读方法`
+* **名称:** `画板宽度`
+* **返回值数据类型:** `整数`
+* **描述:** 本属性提供了画板的当前宽度,使用现行绘画单位.
+
+##### 火山.MFC界面.基本.画板.画板高度
+
+* **类型:** `属性读方法`
+* **名称:** `画板高度`
+* **返回值数据类型:** `整数`
+* **描述:** 本属性提供了画板的当前高度,使用现行绘画单位.
+
+##### 火山.MFC界面.基本.画板.画板尺寸
+
+* **类型:** `属性读方法`
+* **名称:** `画板尺寸`
+* **返回值数据类型:** `尺寸类`
+* **描述:** 返回画板的当前尺寸,使用现行绘画单位.
+
+##### 火山.MFC界面.基本.画板.绘画
+
+* **类型:** `事件定义方法`
+* **名称:** `绘画`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `重画区` (`矩形类`): 提供目前画板中需要更新的矩形区域,使用画板的现行绘画单位,相对画板用户区的左上角. 用作在绘制过程中跳过不需要绘制的部分以提高速度,一般情况下可以不处理.
+* **描述:** 当画板中的全部或一部分区域需要被重新绘制时即产生此事件. 用户程序在响应此事件期间在画板上所进行的任何绘制操作均被限制在"重画区"参数所指定的区域内.
+* **相关例程:** [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main)
+
+##### 火山.MFC界面.基本.画板.置底图文件
+
+* **类型:** `方法`
+* **名称:** `置底图文件`
+* **参数:**
+	* `所欲设置的位图文件名` (`文本型`)
+* **描述:** 设置显示在画板背景上的位图文件
+
+##### 火山.MFC界面.基本.画板.置底图数据
+
+* **类型:** `方法`
+* **名称:** `置底图数据`
+* **参数:**
+	* `所欲设置的位图文件数据` (`字节集类`)
+* **描述:** 设置显示在画板背景上的位图文件数据
+
+##### 火山.MFC界面.基本.画板.取设备句柄
+
+* **类型:** `方法`
+* **名称:** `取设备句柄`
+* **返回值数据类型:** `变整数`
+* **描述:** 如当前用户程序正在处理本画板所产生的"绘画"事件,则返回画板所对应的设备句柄(即HDC),否则返回0.
+* **相关例程:** [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main)
+
+##### 火山.MFC界面.基本.画板.清除
+
+* **类型:** `方法`
+* **名称:** `清除`
+* **参数:**
+	* `清除区左边坐标` (`整数`, 默认值: `0`): 单位为像素
+	* `清除区顶边坐标` (`整数`, 默认值: `0`): 单位为像素
+	* `清除区宽度` (`整数`, 默认值: `-1`): 为-1表示为清除区左边到画板右边之间的宽度,单位为像素.
+	* `清除区高度` (`整数`, 默认值: `-1`): 为-1表示为清除区顶边到画板底边之间的高度,单位为像素.
+* **描述:** 清除画板上指定区域的内容并将当前文本写出位置移动到被清除区左上角
+* **相关例程:** [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main)
+
+##### 火山.MFC界面.基本.画板.取点
+
+* **类型:** `方法`
+* **名称:** `取点`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `点横坐标` (`整数`)
+	* `点纵坐标` (`整数`)
+* **描述:** 返回画板上指定点的颜色值. 如果画板尚未创建或所指定位置超出有效范围,将返回-1.
+
+##### 火山.MFC界面.基本.画板.画点
+
+* **类型:** `方法`
+* **名称:** `画点`
+* **参数:**
+	* `点横坐标` (`整数`)
+	* `点纵坐标` (`整数`)
+	* `欲画入点的颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值
+* **描述:** 在画板上指定位置绘制一个点
+
+##### 火山.MFC界面.基本.画板.画直线
+
+* **类型:** `方法`
+* **名称:** `画直线`
+* **参数:**
+	* `起始点横坐标` (`整数`)
+	* `起始点纵坐标` (`整数`)
+	* `结束点横坐标` (`整数`)
+	* `结束点纵坐标` (`整数`)
+* **描述:** 使用当前画笔在画板上画一条直线
+* **相关例程:** [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.画板.画椭圆
+
+* **类型:** `方法`
+* **名称:** `画椭圆`
+* **参数:**
+	* `椭圆左上角横坐标` (`整数`)
+	* `椭圆左上角纵坐标` (`整数`)
+	* `椭圆右下角横坐标` (`整数`)
+	* `椭圆右下角纵坐标` (`整数`)
+* **描述:** 使用当前画笔在画板上画一个椭圆
+* **相关例程:** [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.画板.画弧线
+
+* **类型:** `方法`
+* **名称:** `画弧线`
+* **参数:**
+	* `椭圆左上角横坐标` (`整数`)
+	* `椭圆左上角纵坐标` (`整数`)
+	* `椭圆右下角横坐标` (`整数`)
+	* `椭圆右下角纵坐标` (`整数`)
+	* `弧线起始点横坐标` (`整数`): 弧线从椭圆中心点至此起始点的直线与椭圆圆弧相交处开始绘制
+	* `弧线起始点纵坐标` (`整数`): 弧线从椭圆中心点至此起始点的直线与椭圆圆弧相交处开始绘制
+	* `弧线终止点横坐标` (`整数`): 弧线在椭圆中心点至此终止点的直线与椭圆圆弧相交处结束绘制
+	* `弧线终止点纵坐标` (`整数`): 弧线在椭圆中心点至此终止点的直线与椭圆圆弧相交处结束绘制
+* **描述:** 使用当前画笔在画板上画一条弧线
+
+##### 火山.MFC界面.基本.画板.画弦
+
+* **类型:** `方法`
+* **名称:** `画弦`
+* **参数:**
+	* `椭圆左上角横坐标` (`整数`)
+	* `椭圆左上角纵坐标` (`整数`)
+	* `椭圆右下角横坐标` (`整数`)
+	* `椭圆右下角纵坐标` (`整数`)
+	* `弧线起始点横坐标` (`整数`): 弦的弧线从椭圆中心点至此起始点的直线与椭圆圆弧相交处开始绘制
+	* `弧线起始点纵坐标` (`整数`): 弦的弧线从椭圆中心点至此起始点的直线与椭圆圆弧相交处开始绘制
+	* `弧线终止点横坐标` (`整数`): 弦的弧线在椭圆中心点至此终止点的直线与椭圆圆弧相交处结束绘制
+	* `弧线终止点纵坐标` (`整数`): 弦的弧线在椭圆中心点至此终止点的直线与椭圆圆弧相交处结束绘制
+* **描述:** 使用当前画笔在画板上画一个弦,弦的内部使用当前刷子填充.
+
+##### 火山.MFC界面.基本.画板.画饼
+
+* **类型:** `方法`
+* **名称:** `画饼`
+* **参数:**
+	* `椭圆左上角横坐标` (`整数`)
+	* `椭圆左上角纵坐标` (`整数`)
+	* `椭圆右下角横坐标` (`整数`)
+	* `椭圆右下角纵坐标` (`整数`)
+	* `弧线起始点横坐标` (`整数`): 饼的弧线从椭圆中心点至此起始点的直线与椭圆圆弧相交处开始绘制
+	* `弧线起始点纵坐标` (`整数`): 饼的弧线从椭圆中心点至此起始点的直线与椭圆圆弧相交处开始绘制
+	* `弧线终止点横坐标` (`整数`): 饼的弧线在椭圆中心点至此终止点的直线与椭圆圆弧相交处结束绘制
+	* `弧线终止点纵坐标` (`整数`): 饼的弧线在椭圆中心点至此终止点的直线与椭圆圆弧相交处结束绘制
+* **描述:** 使用当前画笔在画板上画一个饼,饼的内部使用当前刷子填充.
+
+##### 火山.MFC界面.基本.画板.画矩形
+
+* **类型:** `方法`
+* **名称:** `画矩形`
+* **参数:**
+	* `矩形左上角横坐标` (`整数`)
+	* `矩形左上角纵坐标` (`整数`)
+	* `矩形右下角横坐标` (`整数`)
+	* `矩形右下角纵坐标` (`整数`)
+* **描述:** 使用当前画笔在画板上画一个矩形,矩形的内部使用当前刷子填充.
+
+##### 火山.MFC界面.基本.画板.填充矩形
+
+* **类型:** `方法`
+* **名称:** `填充矩形`
+* **参数:**
+	* `矩形左上角横坐标` (`整数`)
+	* `矩形左上角纵坐标` (`整数`)
+	* `矩形右下角横坐标` (`整数`)
+	* `矩形右下角纵坐标` (`整数`)
+* **描述:** 将画板上指定的矩形区域用当前刷子填充
+
+##### 火山.MFC界面.基本.画板.画圆角矩形
+
+* **类型:** `方法`
+* **名称:** `画圆角矩形`
+* **参数:**
+	* `矩形左上角横坐标` (`整数`)
+	* `矩形左上角纵坐标` (`整数`)
+	* `矩形右下角横坐标` (`整数`)
+	* `矩形右下角纵坐标` (`整数`)
+	* `圆角宽度` (`整数`)
+	* `圆角高度` (`整数`, 默认值: `-1`): 参数值如果为-1,则等同于圆角宽度.
+* **描述:** 使用当前画笔在画板上画一个圆角矩形,圆角矩形的内部使用当前刷子填充.
+
+##### 火山.MFC界面.基本.画板.翻转矩形区
+
+* **类型:** `方法`
+* **名称:** `翻转矩形区`
+* **参数:**
+	* `矩形左上角横坐标` (`整数`)
+	* `矩形左上角纵坐标` (`整数`)
+	* `矩形右下角横坐标` (`整数`)
+	* `矩形右下角纵坐标` (`整数`)
+* **描述:** 将画板上指定矩形区域的颜色翻转过来
+
+##### 火山.MFC界面.基本.画板.画多边形
+
+* **类型:** `方法`
+* **名称:** `画多边形`
+* **参数:**
+	* `多边形顶点数组` (`整数数组类`): 本参数数组顺序记录多边形各个顶点的横向及纵向坐标值
+	* `顶点数目` (`整数`, 默认值: `-1`): 本参数指定多边形顶点的总数目,如果为-1则为数组中记录的所有顶点数目.
+* **描述:** 使用当前画笔在画板上画一个多边形,多边形的内部使用当前刷子填充. 如果该多边形没有闭合,将自动闭合.
+
+##### 火山.MFC界面.基本.画板.置写出位置
+
+* **类型:** `方法`
+* **名称:** `置写出位置`
+* **参数:**
+	* `横向写出位置` (`整数`, 默认值: `数值范围.最大整数值`): 如果本参数为"数值范围.最大整数值",则使用现行横向写出位置.
+	* `纵向写出位置` (`整数`, 默认值: `数值范围.最大整数值`): 如果本参数为"数值范围.最大整数值",则使用现行纵向写出位置.
+* **描述:** 设置下次使用"写文本行"或"写出"命令输出数据时的起始位置
+
+##### 火山.MFC界面.基本.画板.写文本行
+
+* **类型:** `方法`
+* **名称:** `写文本行`
+* **参数:**
+	* `所欲写出的数据` (`通用基本型`)
+	* `行间距` (`整数`, 默认值: `2`): 提供文本行与行之间的纵向间距,单位像素.
+* **描述:** 在当前写出位置写出指定的数据,并将现行写出位置调整到下行行首.
+
+##### 火山.MFC界面.基本.画板.滚动写行
+
+* **类型:** `方法`
+* **名称:** `滚动写行`
+* **参数:**
+	* `所欲写出的数据` (`通用基本型`)
+	* `行间距` (`整数`, 默认值: `2`): 提供文本行与行之间的纵向间距,单位像素.
+* **描述:** 在当前写出位置写出指定的数据,并将现行写出位置调整到下行行首.如果现行画板高度无法容纳当前所要写出的行,则自动向上滚动画板内容.
+* **相关例程:** [vol-时钟-timer-main](#vol-时钟-timer-main)
+
+##### 火山.MFC界面.基本.画板.写出
+
+* **类型:** `方法`
+* **名称:** `写出`
+* **参数:**
+	* `所欲写出的数据` (`通用基本型`)
+	* `行间距` (`整数`, 默认值: `2`): 提供文本行与行之间的纵向间距,单位像素.
+* **描述:** 在当前写出位置写出指定的数据,并将现行写出位置调整到所写出数据的结束位置.
+
+##### 火山.MFC界面.基本.画板.定位写出
+
+* **类型:** `方法`
+* **名称:** `定位写出`
+* **参数:**
+	* `横向写出位置` (`整数`, 默认值: `数值范围.最大整数值`): 如果本参数为"数值范围.最大整数值",则使用现行横向写出位置.
+	* `纵向写出位置` (`整数`, 默认值: `数值范围.最大整数值`): 如果本参数为"数值范围.最大整数值",则使用现行纵向写出位置.
+	* `所欲写出的数据` (`通用基本型`)
+	* `行间距` (`整数`, 默认值: `2`): 提供文本行与行之间的纵向间距,单位像素.
+* **描述:** 在所指定位置写出指定的数据,不改变现行写出位置.
+* **相关例程:** [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.画板.取宽度
+
+* **类型:** `方法`
+* **名称:** `取宽度`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `欲获取其绘制尺寸的数据` (`通用基本型`)
+* **描述:** 返回指定数据的写出宽度,使用当前绘画单位.
+* **相关例程:** [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.画板.取高度
+
+* **类型:** `方法`
+* **名称:** `取高度`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `欲获取其绘制尺寸的数据` (`通用基本型`)
+* **描述:** 返回指定数据的写出高度,使用当前绘画单位.
+
+##### 火山.MFC界面.基本.画板.取尺寸
+
+* **类型:** `方法`
+* **名称:** `取尺寸`
+* **返回值数据类型:** `尺寸类`
+* **参数:**
+	* `欲获取其绘制尺寸的数据` (`通用基本型`)
+* **描述:** 返回指定数据的写出尺寸,使用当前绘画单位.
+
+##### 火山.MFC界面.基本.画板.画图片
+
+* **类型:** `方法`
+* **名称:** `画图片`
+* **参数:**
+	* `所欲绘制的位图` (`位图对象类`): 提供所欲绘制的位图对象
+	* `图片左边画出位置` (`整数`)
+	* `图片顶边画出位置` (`整数`)
+	* `图片画出宽度` (`整数`, 默认值: `-1`): 如果本参数为-1,则使用图片本身宽度.
+	* `图片画出高度` (`整数`, 默认值: `-1`): 如果本参数为-1,则使用图片本身高度.
+	* `图片画出方法` (`整数`, 默认值: `图像复制方法.拷贝`): 本参数定义绘制图片时对图片执行的位操作,可以为"图像复制方法"类中的各个整数常量值,或者其它自定义操作码(请自行查阅相关技术文档). 本参数也可以为一个颜色值,用作指定图片中的透明色(即具有此颜色的像素将不会被绘制),但必须使用其负值. 如: -取颜色 (255, 255, 255) ,此参数值即指定在画板上画出图片中除白色外的所有颜色. 如果本参数值为"图像复制方法.拷贝",则支持对透明/半透明图片(如png)的绘制.
+* **描述:** 在所指定位置绘制图片
+* **相关例程:** [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.画板.取图片宽度
+
+* **类型:** `方法`
+* **名称:** `取图片宽度`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `所欲处理的位图` (`位图对象类`): 提供所欲处理的位图对象
+* **描述:** 返回指定图片的宽度,使用当前绘画单位.
+
+##### 火山.MFC界面.基本.画板.取图片高度
+
+* **类型:** `方法`
+* **名称:** `取图片高度`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `所欲处理的位图` (`位图对象类`): 提供所欲处理的位图对象
+* **描述:** 返回指定图片的高度,使用当前绘画单位.
+
+##### 火山.MFC界面.基本.画板.取图片尺寸
+
+* **类型:** `方法`
+* **名称:** `取图片尺寸`
+* **返回值数据类型:** `尺寸类`
+* **参数:**
+	* `所欲处理的位图` (`位图对象类`): 提供所欲处理的位图对象
+* **描述:** 返回指定图片的尺寸,使用当前绘画单位.
+
+##### 火山.MFC界面.基本.画板.复制
+
+* **类型:** `方法`
+* **名称:** `复制`
+* **参数:**
+	* `欲复制区域的左边` (`整数`, 默认值: `0`)
+	* `欲复制区域的顶边` (`整数`, 默认值: `0`)
+	* `欲复制区域的宽度` (`整数`, 默认值: `-1`): 如果本参数为-1,则使用源画板的本身宽度.
+	* `欲复制区域的高度` (`整数`, 默认值: `-1`): 如果本参数为-1,则使用源画板的本身高度.
+	* `复制到的目的画板` (`画板`): 提供复制到的目的画板,可以为本画板对象自身.
+	* `欲复制到位置左边` (`整数`, 默认值: `0`)
+	* `欲复制到位置顶边` (`整数`, 默认值: `0`)
+	* `复制方法` (`整数`, 默认值: `图像复制方法.拷贝`): 本参数定义在将画板内容复制到目的画板上时对图像执行的位操作,可以为"图像复制方法"类中的各个整数常量值,或者其它自定义操作码(请自行查阅相关技术文档).
+* **描述:** 将源画板(本方法的调用画板对象)中指定区域的内容快速复制到目的画板中 的指定位置,使用源和目的画板各自的当前绘画单位. 如果源画板当前不可视,其"自动重画"属性必须为真.
+
+##### 火山.MFC界面.基本.画板.取图片
+
+* **类型:** `方法`
+* **名称:** `取图片`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所取回图片` (`位图对象类`): 画板上所有现有显示内容将被填入到此对象中
+	* `输出宽度` (`整数`, 默认值: `0`): 指定图片的输出宽度. 如果小于0,参数值指定的是最终图片输出宽度相对于所取得图片宽度的百分比(最小为10%); 如果等于0,则按图片原宽度输出; 如果大于0,指定输出图片的绝对宽度.
+	* `输出高度` (`整数`, 默认值: `0`): 指定图片的输出高度. 如果小于0,参数值指定的是最终图片输出高度相对于所取得图片高度的百分比(最小为10%); 如果等于0,则按图片原高度输出; 如果大于0,指定输出图片的绝对高度.
+* **描述:** 取回本画板上所有现有显示内容的图片对象
+* **返回值描述:** 成功返回真,失败返回假.
+* **相关例程:** [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.画板.单位转换
+
+* **类型:** `方法`
+* **名称:** `单位转换`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `欲转换的坐标值` (`整数`): 提供欲转换的横向或纵向坐标值
+	* `欲转换坐标值的类型` (`坐标转换类型`): 根据所提供的类型值,将进行相反的单位转换,即将绘画单位转换到像素单位,将像素单位转换到绘画单位.
+* **描述:** 将像素单位坐标值转换到当前绘画单位,或将当前绘画单位坐标值转换到像素单位.
+
+##### 火山.MFC界面.基本.画板.逻辑尺寸到像素
+
+* **类型:** `方法`
+* **名称:** `逻辑尺寸到像素`
+* **返回值数据类型:** `尺寸类`
+* **参数:**
+	* `所欲转换的尺寸` (`尺寸类`): 此尺寸基于当前绘画单位
+* **描述:** 将所指定的基于当前绘画单位的尺寸值转换到像素单位并返回
+
+##### 火山.MFC界面.基本.画板.像素尺寸到逻辑
+
+* **类型:** `方法`
+* **名称:** `像素尺寸到逻辑`
+* **返回值数据类型:** `尺寸类`
+* **参数:**
+	* `所欲转换的尺寸` (`尺寸类`): 此尺寸基于像素单位
+* **描述:** 将所指定的基于像素单位的尺寸值转换到当前绘画单位并返回
+
+##### 火山.MFC界面.基本.画板.逻辑位置到像素
+
+* **类型:** `方法`
+* **名称:** `逻辑位置到像素`
+* **返回值数据类型:** `位置类`
+* **参数:**
+	* `所欲转换的位置` (`位置类`): 此位置基于当前绘画单位
+* **描述:** 将所指定的基于当前绘画单位的位置转换到像素单位并返回
+
+##### 火山.MFC界面.基本.画板.像素位置到逻辑
+
+* **类型:** `方法`
+* **名称:** `像素位置到逻辑`
+* **返回值数据类型:** `位置类`
+* **参数:**
+	* `所欲转换的位置` (`位置类`): 此位置基于像素单位
+* **描述:** 将所指定的基于像素单位的位置转换到当前绘画单位并返回
+
+##### 火山.MFC界面.基本.画板.逻辑矩形到像素
+
+* **类型:** `方法`
+* **名称:** `逻辑矩形到像素`
+* **返回值数据类型:** `矩形类`
+* **参数:**
+	* `所欲转换的矩形` (`矩形类`): 此矩形位置基于当前绘画单位
+* **描述:** 将所指定的基于当前绘画单位的矩形位置转换到像素单位并返回
+
+##### 火山.MFC界面.基本.画板.像素矩形到逻辑
+
+* **类型:** `方法`
+* **名称:** `像素矩形到逻辑`
+* **返回值数据类型:** `矩形类`
+* **参数:**
+	* `所欲转换的矩形` (`矩形类`): 此矩形位置基于像素单位
+* **描述:** 将所指定的基于像素单位的矩形位置转换到当前绘画单位并返回
+
+---
+
+#### 火山.MFC界面.基本.滚动条
+
+* **类型:** `类`
+* **名称:** `滚动条`
+* **基础类:** `窗口组件`
+* **特性:**
+	* `抽象类`(禁止直接定义其实例变量)
+* **描述:** 横纵向滚动条的基础类
+
+##### 火山.MFC界面.基本.滚动条.最小位置
+
+* **类型:** `属性读方法`
+* **名称:** `最小位置`
+* **返回值数据类型:** `整数`
+* **描述:** 返回滚动条当前所允许的最小位置值
+
+##### 火山.MFC界面.基本.滚动条.最小位置
+
+* **类型:** `属性写方法`
+* **名称:** `最小位置`
+* **参数:**
+	* `所欲设置的位置值` (`整数`): 有效值的范围在0到32627之间
+* **描述:** 设置滚动条当前所允许的最小位置值
+
+##### 火山.MFC界面.基本.滚动条.最大位置
+
+* **类型:** `属性读方法`
+* **名称:** `最大位置`
+* **返回值数据类型:** `整数`
+* **描述:** 返回滚动条当前所允许的最大位置值
+
+##### 火山.MFC界面.基本.滚动条.最大位置
+
+* **类型:** `属性写方法`
+* **名称:** `最大位置`
+* **参数:**
+	* `所欲设置的位置值` (`整数`): 有效值的范围在0到32627之间
+* **描述:** 设置滚动条当前所允许的最大位置值
+
+##### 火山.MFC界面.基本.滚动条.页改变值
+
+* **类型:** `属性读方法`
+* **名称:** `页改变值`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当用户在滚动条的空隙处单击后滚动条位置的增减数值
+
+##### 火山.MFC界面.基本.滚动条.页改变值
+
+* **类型:** `属性写方法`
+* **名称:** `页改变值`
+* **参数:**
+	* `所欲设置的改变值` (`整数`): 有效值的范围在1到32627之间
+* **描述:** 设置当用户在滚动条的空隙处单击后滚动条位置的增减数值
+
+##### 火山.MFC界面.基本.滚动条.行改变值
+
+* **类型:** `属性读方法`
+* **名称:** `行改变值`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当用户按下滚动条两端的箭头按钮后滚动条位置的增减数值
+
+##### 火山.MFC界面.基本.滚动条.行改变值
+
+* **类型:** `属性写方法`
+* **名称:** `行改变值`
+* **参数:**
+	* `所欲设置的改变值` (`整数`): 有效值的范围在1到32627之间
+* **描述:** 设置当用户按下滚动条两端的箭头按钮后滚动条位置的增减数值
+
+##### 火山.MFC界面.基本.滚动条.位置
+
+* **类型:** `属性读方法`
+* **名称:** `位置`
+* **返回值数据类型:** `整数`
+* **描述:** 返回滚动条的当前滚动位置
+
+##### 火山.MFC界面.基本.滚动条.位置
+
+* **类型:** `属性写方法`
+* **名称:** `位置`
+* **参数:**
+	* `所欲设置的位置值` (`整数`): 有效值的范围在0到32627之间
+* **描述:** 设置滚动条的当前滚动位置
+
+##### 火山.MFC界面.基本.滚动条.允许拖动跟踪
+
+* **类型:** `属性读方法`
+* **名称:** `允许拖动跟踪`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回当用户拖动滚动条的位置盒的过程中是否产生位置改变事件
+
+##### 火山.MFC界面.基本.滚动条.允许拖动跟踪
+
+* **类型:** `属性写方法`
+* **名称:** `允许拖动跟踪`
+* **参数:**
+	* `是否允许拖动跟踪` (`逻辑型`)
+* **描述:** 设置当用户拖动滚动条的位置盒的过程中是否产生位置改变事件
+
+##### 火山.MFC界面.基本.滚动条.位置被改变
+
+* **类型:** `事件定义方法`
+* **名称:** `位置被改变`
+* **返回值数据类型:** `整数`
+* **描述:** 当滚动条位置被改变后本事件被发送
+
+##### 火山.MFC界面.基本.滚动条.置滚动范围
+
+* **类型:** `方法`
+* **名称:** `置滚动范围`
+* **参数:**
+	* `所允许的最小位置值` (`整数`): 有效值的范围在0到32627之间
+	* `所允许的最大位置值` (`整数`): 有效值的范围在0到32627之间
+* **描述:** 设置滚动条当前所允许的最小和最大位置值
+
+---
+
+#### 火山.MFC界面.基本.横向滚动条
+
+* **类型:** `类`
+* **名称:** `横向滚动条`
+* **基础类:** `滚动条`
+
+---
+
+#### 火山.MFC界面.基本.纵向滚动条
+
+* **类型:** `类`
+* **名称:** `纵向滚动条`
+* **基础类:** `滚动条`
+
+---
+
+#### 火山.MFC界面.基本.进度条方向
+
+* **类型:** `类`
+* **名称:** `进度条方向`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+
+##### 火山.MFC界面.基本.进度条方向.横向
+
+* **类型:** `成员常量`
+* **名称:** `横向`
+* **数据类型:** `进度条方向`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.进度条方向.纵向
+
+* **类型:** `成员常量`
+* **名称:** `纵向`
+* **数据类型:** `进度条方向`
+* **初始值:** `1`
+
+---
+
+#### 火山.MFC界面.基本.进度条显示方式
+
+* **类型:** `类`
+* **名称:** `进度条显示方式`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+
+##### 火山.MFC界面.基本.进度条显示方式.分块
+
+* **类型:** `成员常量`
+* **名称:** `分块`
+* **数据类型:** `进度条显示方式`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.进度条显示方式.连续
+
+* **类型:** `成员常量`
+* **名称:** `连续`
+* **数据类型:** `进度条显示方式`
+* **初始值:** `1`
+
+---
+
+#### 火山.MFC界面.基本.进度条
+
+* **类型:** `类`
+* **名称:** `进度条`
+* **基础类:** `窗口组件`
+* **相关例程:** [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-阿里云oss-aliyun_oss-main](#vol-阿里云oss-aliyun_oss-main)
+
+##### 火山.MFC界面.基本.进度条.方向
+
+* **类型:** `属性读方法`
+* **名称:** `方向`
+* **返回值数据类型:** `进度条方向`
+* **描述:** 返回进度条的当前方向
+
+##### 火山.MFC界面.基本.进度条.方向
+
+* **类型:** `属性写方法`
+* **名称:** `方向`
+* **参数:**
+	* `所欲设置的方向` (`进度条方向`)
+* **描述:** 设置进度条的当前方向
+
+##### 火山.MFC界面.基本.进度条.显示方式
+
+* **类型:** `属性读方法`
+* **名称:** `显示方式`
+* **返回值数据类型:** `进度条显示方式`
+* **描述:** 返回进度条的当前显示方式
+
+##### 火山.MFC界面.基本.进度条.显示方式
+
+* **类型:** `属性写方法`
+* **名称:** `显示方式`
+* **参数:**
+	* `所欲设置的显示方式` (`进度条显示方式`)
+* **描述:** 设置进度条的当前显示方式
+
+##### 火山.MFC界面.基本.进度条.最小位置
+
+* **类型:** `属性读方法`
+* **名称:** `最小位置`
+* **返回值数据类型:** `整数`
+* **描述:** 返回进度条当前所允许的最小位置值
+
+##### 火山.MFC界面.基本.进度条.最小位置
+
+* **类型:** `属性写方法`
+* **名称:** `最小位置`
+* **参数:**
+	* `所欲设置的位置值` (`整数`): 有效值的范围在0到32627之间
+* **描述:** 设置进度条当前所允许的最小位置值
+
+##### 火山.MFC界面.基本.进度条.最大位置
+
+* **类型:** `属性读方法`
+* **名称:** `最大位置`
+* **返回值数据类型:** `整数`
+* **描述:** 返回进度条当前所允许的最大位置值
+
+##### 火山.MFC界面.基本.进度条.最大位置
+
+* **类型:** `属性写方法`
+* **名称:** `最大位置`
+* **参数:**
+	* `所欲设置的位置值` (`整数`): 有效值的范围在0到32627之间
+* **描述:** 设置进度条当前所允许的最大位置值
+
+##### 火山.MFC界面.基本.进度条.位置
+
+* **类型:** `属性读方法`
+* **名称:** `位置`
+* **返回值数据类型:** `整数`
+* **描述:** 返回进度条的当前进度位置
+* **相关例程:** [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-阿里云oss-aliyun_oss-main](#vol-阿里云oss-aliyun_oss-main)
+
+##### 火山.MFC界面.基本.进度条.位置
+
+* **类型:** `属性写方法`
+* **名称:** `位置`
+* **参数:**
+	* `所欲设置的位置值` (`整数`): 有效值的范围在0到32627之间
+* **描述:** 设置进度条的当前进度位置
+* **相关例程:** [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-阿里云oss-aliyun_oss-main](#vol-阿里云oss-aliyun_oss-main)
+
+##### 火山.MFC界面.基本.进度条.置进度范围
+
+* **类型:** `方法`
+* **名称:** `置进度范围`
+* **参数:**
+	* `所允许的最小位置值` (`整数`): 有效值的范围在0到32627之间
+	* `所允许的最大位置值` (`整数`): 有效值的范围在0到32627之间
+* **描述:** 设置进度条当前所允许的最小和最大位置值
+
+---
+
+#### 火山.MFC界面.基本.滑块条方向
+
+* **类型:** `类`
+* **名称:** `滑块条方向`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+
+##### 火山.MFC界面.基本.滑块条方向.横向
+
+* **类型:** `成员常量`
+* **名称:** `横向`
+* **数据类型:** `滑块条方向`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.滑块条方向.纵向
+
+* **类型:** `成员常量`
+* **名称:** `纵向`
+* **数据类型:** `滑块条方向`
+* **初始值:** `1`
+
+---
+
+#### 火山.MFC界面.基本.滑块条刻度类型
+
+* **类型:** `类`
+* **名称:** `滑块条刻度类型`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+
+##### 火山.MFC界面.基本.滑块条刻度类型.无
+
+* **类型:** `成员常量`
+* **名称:** `无`
+* **数据类型:** `滑块条刻度类型`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.滑块条刻度类型.上或左
+
+* **类型:** `成员常量`
+* **名称:** `上或左`
+* **数据类型:** `滑块条刻度类型`
+* **初始值:** `1`
+
+##### 火山.MFC界面.基本.滑块条刻度类型.下或右
+
+* **类型:** `成员常量`
+* **名称:** `下或右`
+* **数据类型:** `滑块条刻度类型`
+* **初始值:** `2`
+
+##### 火山.MFC界面.基本.滑块条刻度类型.双向
+
+* **类型:** `成员常量`
+* **名称:** `双向`
+* **数据类型:** `滑块条刻度类型`
+* **初始值:** `3`
+
+---
+
+#### 火山.MFC界面.基本.滑块条
+
+* **类型:** `类`
+* **名称:** `滑块条`
+* **基础类:** `窗口组件`
+* **相关例程:** [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main)
+
+##### 火山.MFC界面.基本.滑块条.方向
+
+* **类型:** `属性读方法`
+* **名称:** `方向`
+* **返回值数据类型:** `滑块条方向`
+* **描述:** 返回滑块条的当前方向
+
+##### 火山.MFC界面.基本.滑块条.方向
+
+* **类型:** `属性写方法`
+* **名称:** `方向`
+* **参数:**
+	* `所欲设置的方向` (`滑块条方向`)
+* **描述:** 设置滑块条的当前方向
+
+##### 火山.MFC界面.基本.滑块条.刻度类型
+
+* **类型:** `属性读方法`
+* **名称:** `刻度类型`
+* **返回值数据类型:** `滑块条刻度类型`
+* **描述:** 返回滑块条的当前刻度类型
+
+##### 火山.MFC界面.基本.滑块条.刻度类型
+
+* **类型:** `属性写方法`
+* **名称:** `刻度类型`
+* **参数:**
+	* `所欲设置的刻度类型` (`滑块条刻度类型`)
+* **描述:** 设置滑块条的当前刻度类型
+
+##### 火山.MFC界面.基本.滑块条.单位刻度值
+
+* **类型:** `属性读方法`
+* **名称:** `单位刻度值`
+* **返回值数据类型:** `整数`
+* **描述:** 返回滑块条每个刻度单位所对应的长度
+
+##### 火山.MFC界面.基本.滑块条.单位刻度值
+
+* **类型:** `属性写方法`
+* **名称:** `单位刻度值`
+* **参数:**
+	* `所欲设置的单位刻度值` (`整数`): 参数值必须大于0
+* **描述:** 设置滑块条每个刻度单位所对应的长度
+
+##### 火山.MFC界面.基本.滑块条.允许选择
+
+* **类型:** `属性读方法`
+* **名称:** `允许选择`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回滑块条是否支持用户选择其中的区域
+
+##### 火山.MFC界面.基本.滑块条.允许选择
+
+* **类型:** `属性写方法`
+* **名称:** `允许选择`
+* **参数:**
+	* `是否允许选择` (`逻辑型`)
+* **描述:** 设置滑块条是否支持用户选择其中的区域
+
+##### 火山.MFC界面.基本.滑块条.首选择位置
+
+* **类型:** `属性读方法`
+* **名称:** `首选择位置`
+* **返回值数据类型:** `整数`
+* **描述:** 如果滑块条支持用户选择其中的区域,返回当前选择区域的起始位置.
+
+##### 火山.MFC界面.基本.滑块条.首选择位置
+
+* **类型:** `属性写方法`
+* **名称:** `首选择位置`
+* **参数:**
+	* `所欲设置的位置值` (`整数`)
+* **描述:** 如果滑块条支持用户选择其中的区域,设置当前选择区域的起始位置.
+
+##### 火山.MFC界面.基本.滑块条.选择长度
+
+* **类型:** `属性读方法`
+* **名称:** `选择长度`
+* **返回值数据类型:** `整数`
+* **描述:** 如果滑块条支持用户选择其中的区域,返回当前选择区域的长度.
+
+##### 火山.MFC界面.基本.滑块条.选择长度
+
+* **类型:** `属性写方法`
+* **名称:** `选择长度`
+* **参数:**
+	* `所欲设置的长度` (`整数`)
+* **描述:** 如果滑块条支持用户选择其中的区域,设置当前选择区域的长度.
+
+##### 火山.MFC界面.基本.滑块条.最小位置
+
+* **类型:** `属性读方法`
+* **名称:** `最小位置`
+* **返回值数据类型:** `整数`
+* **描述:** 返回滑块条当前所允许的最小位置值
+
+##### 火山.MFC界面.基本.滑块条.最小位置
+
+* **类型:** `属性写方法`
+* **名称:** `最小位置`
+* **参数:**
+	* `所欲设置的位置值` (`整数`): 有效值的范围在0到32627之间
+* **描述:** 设置滑块条当前所允许的最小位置值
+
+##### 火山.MFC界面.基本.滑块条.最大位置
+
+* **类型:** `属性读方法`
+* **名称:** `最大位置`
+* **返回值数据类型:** `整数`
+* **描述:** 返回滑块条当前所允许的最大位置值
+
+##### 火山.MFC界面.基本.滑块条.最大位置
+
+* **类型:** `属性写方法`
+* **名称:** `最大位置`
+* **参数:**
+	* `所欲设置的位置值` (`整数`): 有效值的范围在0到32627之间
+* **描述:** 设置滑块条当前所允许的最大位置值
+
+##### 火山.MFC界面.基本.滑块条.页改变值
+
+* **类型:** `属性读方法`
+* **名称:** `页改变值`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当用户在滑块条的空隙处单击后滑块条位置的增减数值
+
+##### 火山.MFC界面.基本.滑块条.页改变值
+
+* **类型:** `属性写方法`
+* **名称:** `页改变值`
+* **参数:**
+	* `所欲设置的改变值` (`整数`): 有效值的范围在1到32627之间
+* **描述:** 设置当用户在滑块条的空隙处单击后滑块条位置的增减数值
+
+##### 火山.MFC界面.基本.滑块条.行改变值
+
+* **类型:** `属性读方法`
+* **名称:** `行改变值`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当用户拖动滑块时滑块条位置的每次增减数值
+
+##### 火山.MFC界面.基本.滑块条.行改变值
+
+* **类型:** `属性写方法`
+* **名称:** `行改变值`
+* **参数:**
+	* `所欲设置的改变值` (`整数`): 有效值的范围在1到32627之间
+* **描述:** 设置当用户拖动滑块时滑块条位置的每次增减数值
+
+##### 火山.MFC界面.基本.滑块条.位置
+
+* **类型:** `属性读方法`
+* **名称:** `位置`
+* **返回值数据类型:** `整数`
+* **描述:** 返回滑块条的当前滑块位置
+* **相关例程:** [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main)
+
+##### 火山.MFC界面.基本.滑块条.位置
+
+* **类型:** `属性写方法`
+* **名称:** `位置`
+* **参数:**
+	* `所欲设置的位置值` (`整数`): 有效值的范围在0到32627之间
+* **描述:** 设置滑块条的当前滑块位置
+* **相关例程:** [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main)
+
+##### 火山.MFC界面.基本.滑块条.位置被改变
+
+* **类型:** `事件定义方法`
+* **名称:** `位置被改变`
+* **返回值数据类型:** `整数`
+* **描述:** 当滑块条位置被改变后本事件被发送
+* **相关例程:** [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main)
+
+##### 火山.MFC界面.基本.滑块条.置刻度范围
+
+* **类型:** `方法`
+* **名称:** `置刻度范围`
+* **参数:**
+	* `最小位置值` (`整数`)
+	* `最大位置值` (`整数`)
+* **描述:** 设置滑块条当前所允许的最小和最大位置值
+
+##### 火山.MFC界面.基本.滑块条.置选择区域
+
+* **类型:** `方法`
+* **名称:** `置选择区域`
+* **参数:**
+	* `选择区域起始位置` (`整数`)
+	* `选择区域长度` (`整数`)
+* **描述:** 如果滑块条支持用户选择其中的区域,设置当前选择区域.
+
+---
+
+#### 火山.MFC界面.基本.选择夹表头方向
+
+* **类型:** `类`
+* **名称:** `选择夹表头方向`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+
+##### 火山.MFC界面.基本.选择夹表头方向.上
+
+* **类型:** `成员常量`
+* **名称:** `上`
+* **数据类型:** `选择夹表头方向`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.选择夹表头方向.下
+
+* **类型:** `成员常量`
+* **名称:** `下`
+* **数据类型:** `选择夹表头方向`
+* **初始值:** `1`
+
+##### 火山.MFC界面.基本.选择夹表头方向.左
+
+* **类型:** `成员常量`
+* **名称:** `左`
+* **数据类型:** `选择夹表头方向`
+* **初始值:** `2`
+
+##### 火山.MFC界面.基本.选择夹表头方向.右
+
+* **类型:** `成员常量`
+* **名称:** `右`
+* **数据类型:** `选择夹表头方向`
+* **初始值:** `3`
+
+---
+
+#### 火山.MFC界面.基本.子夹内容位置
+
+* **类型:** `类`
+* **名称:** `子夹内容位置`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供当插入子夹时,将内容组件放置在子夹中的具体位置.
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-选择夹3-tab_demo3-main](#vol-选择夹3-tab_demo3-main)
+
+##### 火山.MFC界面.基本.子夹内容位置.填满
+
+* **类型:** `成员常量`
+* **名称:** `填满`
+* **数据类型:** `子夹内容位置`
+* **初始值:** `0`
+* **描述:** 改变内容组件的尺寸以填满整个子夹内容区域
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-选择夹3-tab_demo3-main](#vol-选择夹3-tab_demo3-main)
+
+##### 火山.MFC界面.基本.子夹内容位置.左上
+
+* **类型:** `成员常量`
+* **名称:** `左上`
+* **数据类型:** `子夹内容位置`
+* **初始值:** `1`
+
+##### 火山.MFC界面.基本.子夹内容位置.居中
+
+* **类型:** `成员常量`
+* **名称:** `居中`
+* **数据类型:** `子夹内容位置`
+* **初始值:** `2`
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main)
+
+##### 火山.MFC界面.基本.子夹内容位置.右下
+
+* **类型:** `成员常量`
+* **名称:** `右下`
+* **数据类型:** `子夹内容位置`
+* **初始值:** `3`
+
+---
+
+#### 火山.MFC界面.基本.选择夹
+
+* **类型:** `类`
+* **名称:** `选择夹`
+* **基础类:** `窗口容器组件`
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-选择夹3-tab_demo3-main](#vol-选择夹3-tab_demo3-main), [vol-图片组动态修改-change_image_list-main](#vol-图片组动态修改-change_image_list-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main)
+
+##### 火山.MFC界面.基本.选择夹.表头方向
+
+* **类型:** `属性读方法`
+* **名称:** `表头方向`
+* **返回值数据类型:** `选择夹表头方向`
+* **描述:** 返回表头的当前方向
+
+##### 火山.MFC界面.基本.选择夹.表头方向
+
+* **类型:** `属性写方法`
+* **名称:** `表头方向`
+* **参数:**
+	* `所欲设置的表头方向` (`选择夹表头方向`)
+* **描述:** 设置表头的当前方向
+
+##### 火山.MFC界面.基本.选择夹.允许多行表头
+
+* **类型:** `属性读方法`
+* **名称:** `允许多行表头`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回是否允许多行表头
+
+##### 火山.MFC界面.基本.选择夹.允许多行表头
+
+* **类型:** `属性写方法`
+* **名称:** `允许多行表头`
+* **参数:**
+	* `是否允许多行表头` (`逻辑型`)
+* **描述:** 设置是否允许多行表头
+
+##### 火山.MFC界面.基本.选择夹.子夹项目
+
+* **类型:** `属性写方法`
+* **名称:** `子夹项目`
+* **参数:**
+	* `所欲设置的列表内容` (`文本型`): 列表内容为以'\n'字符分隔的文本数组,每两个数组成员分别指定一个子夹的标题文本和其左侧图标在当前图片组(通过"图片组"属性设置)中的索引位置.
+* **描述:** 设置选择夹中的各个子夹项目及其名称
+
+##### 火山.MFC界面.基本.选择夹.现行子夹
+
+* **类型:** `属性读方法`
+* **名称:** `现行子夹`
+* **返回值数据类型:** `整数`
+* **描述:** 返回选择夹的现行子夹索引,从0开始.
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main)
+
+##### 火山.MFC界面.基本.选择夹.现行子夹
+
+* **类型:** `属性写方法`
+* **名称:** `现行子夹`
+* **参数:**
+	* `所欲设置的子夹索引` (`整数`): 索引值从0开始
+* **描述:** 设置选择夹的现行子夹索引,从0开始.
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main)
+
+##### 火山.MFC界面.基本.选择夹.图片组
+
+* **类型:** `属性写方法`
+* **名称:** `图片组`
+* **参数:**
+	* `所欲设置的图片组` (`图片组资源`): 对图片组图片格式的要求请参见"图片组资源"类中的说明
+* **描述:** 设置在本选择夹的各个子夹左侧显示图标用的图片组
+* **相关例程:** [vol-图片组动态修改-change_image_list-main](#vol-图片组动态修改-change_image_list-main)
+
+##### 火山.MFC界面.基本.选择夹.图片组文件
+
+* **类型:** `属性写方法`
+* **名称:** `图片组文件`
+* **参数:**
+	* `所欲设置的图片组文件` (`文本型`): 提供用作保存图片组的图片文件名,该图片文件的格式必须符合"图片组资源"类中所说明的要求.
+* **描述:** 设置在本选择夹的各个子夹左侧显示图标用的图片组
+
+##### 火山.MFC界面.基本.选择夹.被单击
+
+* **类型:** `事件定义方法`
+* **名称:** `被单击`
+* **返回值数据类型:** `整数`
+* **描述:** 当在选择夹上单击后发送此事件
+
+##### 火山.MFC界面.基本.选择夹.将改变子夹
+
+* **类型:** `事件定义方法`
+* **名称:** `将改变子夹`
+* **返回值数据类型:** `整数`
+* **描述:** 当现行被选择子夹即将被改变时发送此事件. 事件处理程序返回 1 中止此改变,返回 0 则允许此改变.
+
+##### 火山.MFC界面.基本.选择夹.子夹被改变
+
+* **类型:** `事件定义方法`
+* **名称:** `子夹被改变`
+* **返回值数据类型:** `整数`
+* **描述:** 当现行被选择子夹已经被改变时发送此事件
+* **相关例程:** [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main)
+
+##### 火山.MFC界面.基本.选择夹.置图片组
+
+* **类型:** `方法`
+* **名称:** `置图片组`
+* **参数:**
+	* `所欲设置的图片组` (`图片组对象类`): 注意该参数对象内的图片组将被移交给本对象管理
+* **描述:** 设置在本选择夹的各个子夹左侧显示图标用的图片组
+
+##### 火山.MFC界面.基本.选择夹.刷新子夹内容
+
+* **类型:** `方法`
+* **名称:** `刷新子夹内容`
+* **描述:** 本方法可以更新当前子夹内容的显示状态,一般情况下无需调用,仅用作在手动调整了子夹中组件的可视状态后使用.
+
+##### 火山.MFC界面.基本.选择夹.取子夹数目
+
+* **类型:** `方法`
+* **名称:** `取子夹数目`
+* **返回值数据类型:** `整数`
+* **描述:** 返回选择夹的当前子夹数目,选择夹必须已经被创建.
+
+##### 火山.MFC界面.基本.选择夹.取子夹名称
+
+* **类型:** `方法`
+* **名称:** `取子夹名称`
+* **返回值数据类型:** `文本型`
+* **参数:**
+	* `所欲操作子夹索引` (`整数`)
+* **描述:** 返回选择夹中所指定索引位置处子夹的名称,选择夹必须已经被创建.
+
+##### 火山.MFC界面.基本.选择夹.置子夹名称
+
+* **类型:** `方法`
+* **名称:** `置子夹名称`
+* **参数:**
+	* `所欲操作子夹索引` (`整数`)
+	* `所欲设置的名称` (`文本型`)
+* **描述:** 设置选择夹中所指定索引位置处子夹的标题,选择夹必须已经被创建.
+
+##### 火山.MFC界面.基本.选择夹.取子夹图标索引
+
+* **类型:** `方法`
+* **名称:** `取子夹图标索引`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `所欲操作子夹索引` (`整数`)
+* **描述:** 返回选择夹中所指定索引位置处子夹的图标在所设置 图片组中的索引位置,选择夹必须已经被创建.
+* **返回值描述:** 如果选择夹尚未创建或者所指定子夹不存在,将返回-1.
+
+##### 火山.MFC界面.基本.选择夹.置子夹图标索引
+
+* **类型:** `方法`
+* **名称:** `置子夹图标索引`
+* **参数:**
+	* `所欲操作子夹索引` (`整数`)
+	* `所欲设置的图标索引` (`整数`)
+* **描述:** 设置选择夹中所指定索引位置处子夹的图标在所设置 图片组中的索引位置,选择夹必须已经被创建.
+
+##### 火山.MFC界面.基本.选择夹.取子夹标签位置
+
+* **类型:** `方法`
+* **名称:** `取子夹标签位置`
+* **返回值数据类型:** `矩形类`
+* **参数:**
+	* `所欲操作子夹索引` (`整数`)
+* **描述:** 返回所指定索引位置处子夹的标签在选择夹中的位置矩形,相对选择夹的左上角.选择夹必须已经被创建.
+
+##### 火山.MFC界面.基本.选择夹.取内容区位置
+
+* **类型:** `方法`
+* **名称:** `取内容区位置`
+* **返回值数据类型:** `矩形类`
+* **描述:** 返回选择夹内除去子夹标签部分后用作放置其中内容子组件的 区域矩形,相对选择夹的左上角.选择夹必须已经被创建.
+
+##### 火山.MFC界面.基本.选择夹.计算整体尺寸
+
+* **类型:** `方法`
+* **名称:** `计算整体尺寸`
+* **返回值数据类型:** `尺寸类`
+* **参数:**
+	* `所需求的内容区宽度` (`整数`)
+	* `所需求的内容区高度` (`整数`)
+* **描述:** 根据所提供的内容区尺寸计算对应的选择夹整体尺寸. 选择夹必须已经被创建.
+
+##### 火山.MFC界面.基本.选择夹.添加子夹
+
+* **类型:** `方法`
+* **名称:** `添加子夹`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `子夹标题` (`文本型`): 提供子夹的标题文本
+	* `子夹图标索引` (`整数`, 默认值: `0`): 提供所插入子夹左侧图标在所设置图片组中的索引位置
+	* `子夹内容组件类型` (`窗口容器组件(需求:数据类型)`): 提供所欲插入到当前子夹中的容器组件类型
+	* `内容组件位置` (`子夹内容位置`, 默认值: `子夹内容位置.填满`): 提供将所指定的内容组件放置在子夹中的具体位置
+* **描述:** 在选择夹中加入一个具有所指定内容的子夹.选择夹必须已经被创建.
+* **返回值描述:** 成功返回所加入子夹的索引位置,失败返回-1.
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main)
+
+##### 火山.MFC界面.基本.选择夹.插入子夹
+
+* **类型:** `方法`
+* **名称:** `插入子夹`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `插入索引位置` (`整数`): 提供具体的插入位置,必须大于等于0且小于等于"取子夹数目"方法返回值,为-1表示在最后一个子夹后面插入.
+	* `子夹标题` (`文本型`): 提供子夹的标题文本
+	* `子夹图标索引` (`整数`, 默认值: `0`): 提供所插入子夹左侧图标在所设置图片组中的索引位置
+	* `子夹内容组件类型` (`窗口容器组件(需求:数据类型)`): 提供所欲插入到当前子夹中的容器组件类型
+	* `内容组件位置` (`子夹内容位置`, 默认值: `子夹内容位置.填满`): 提供将所指定的内容组件放置在子夹中的具体位置
+* **描述:** 在选择夹中指定位置插入一个具有所指定内容的子夹.选择夹必须已经被创建.
+* **返回值描述:** 成功返回所加入子夹的索引位置,失败返回-1.
+* **相关例程:** [vol-选择夹3-tab_demo3-main](#vol-选择夹3-tab_demo3-main)
+
+##### 火山.MFC界面.基本.选择夹.添加子夹2
+
+* **类型:** `方法`
+* **名称:** `添加子夹2`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `子夹标题` (`文本型`): 提供子夹的标题文本
+	* `子夹图标索引` (`整数`, 默认值: `0`): 提供所插入子夹左侧图标在所设置图片组中的索引位置
+	* `子夹内容组件` (`窗口容器组件`): 提供所欲插入到当前子夹中的容器组件,该容器组件必须已经创建且将被自动设置为本子夹的子窗口. 注意同一内容组件不能重复加入.
+	* `内容组件位置` (`子夹内容位置`, 默认值: `子夹内容位置.填满`): 提供将所指定的内容组件放置在子夹中的具体位置
+* **描述:** 在选择夹中加入一个具有所指定内容的子夹.选择夹必须已经被创建.
+* **返回值描述:** 成功返回所加入子夹的索引位置,失败返回-1.
+* **相关例程:** [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main)
+
+##### 火山.MFC界面.基本.选择夹.插入子夹2
+
+* **类型:** `方法`
+* **名称:** `插入子夹2`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `插入索引位置` (`整数`): 提供具体的插入位置,必须大于等于0且小于等于"取子夹数目"方法返回值,为-1表示在最后一个子夹后面插入.
+	* `子夹标题` (`文本型`): 提供子夹的标题文本
+	* `子夹图标索引` (`整数`, 默认值: `0`): 提供所插入子夹左侧图标在所设置图片组中的索引位置
+	* `子夹内容组件` (`窗口容器组件`): 提供所欲插入到当前子夹中的容器组件,该容器组件必须已经创建且将被自动设置为本子夹的子窗口. 注意同一内容组件不能重复加入.
+	* `内容组件位置` (`子夹内容位置`, 默认值: `子夹内容位置.填满`): 提供将所指定的内容组件放置在子夹中的具体位置
+* **描述:** 在选择夹中指定位置插入一个具有所指定内容的子夹.选择夹必须已经被创建.
+* **返回值描述:** 成功返回所加入子夹的索引位置,失败返回-1.
+
+##### 火山.MFC界面.基本.选择夹.取子夹内容组件
+
+* **类型:** `方法`
+* **名称:** `取子夹内容组件`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `子夹索引` (`整数`): 指定所欲处理的子夹索引位置,从0开始.
+	* `所返回组件` (`窗口容器组件`): 如果本方法返回真,则将所获取到的对应内容组件填入到本参数中.
+* **描述:** 获取并返回所指定子夹中的内容组件
+* **返回值描述:** 返回是否获取成功
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main)
+
+##### 火山.MFC界面.基本.选择夹.取子夹内容组件参考
+
+* **类型:** `方法`
+* **名称:** `取子夹内容组件参考`
+* **返回值数据类型:** `窗口容器组件`
+* **参数:**
+	* `子夹索引` (`整数`): 指定所欲处理的子夹索引位置,从0开始,必须有效.
+* **描述:** 获取并返回所指定子夹中的内容组件的参考对象,可以用作挂接事件. 挂接方法如下: 挂接事件 ((您的子夹内容组件类名)选择夹组件.取子夹内容组件参考 (有效子夹索引值)) 注意: 调用本方法时,必须确保本组件已经被创建而且所提供的子夹索引有效,否则运行时程序将崩溃.
+
+##### 火山.MFC界面.基本.选择夹.子夹是否为空
+
+* **类型:** `方法`
+* **名称:** `子夹是否为空`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `子夹索引` (`整数`): 指定所欲处理的子夹索引位置,从0开始.
+* **描述:** 返回所指定索引位置处的子夹中是否存在内容组件
+
+##### 火山.MFC界面.基本.选择夹.删除子夹
+
+* **类型:** `方法`
+* **名称:** `删除子夹`
+* **参数:**
+	* `子夹索引` (`整数`): 指定所欲处理的子夹索引位置,从0开始.
+* **描述:** 删除所指定索引位置处的子夹
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-选择夹3-tab_demo3-main](#vol-选择夹3-tab_demo3-main)
+
+##### 火山.MFC界面.基本.选择夹.删除所有子夹
+
+* **类型:** `方法`
+* **名称:** `删除所有子夹`
+* **描述:** 删除选择夹中的所有子夹
+* **相关例程:** [vol-选择夹3-tab_demo3-main](#vol-选择夹3-tab_demo3-main)
+
+##### 火山.MFC界面.基本.选择夹.显示现行子夹内容
+
+* **类型:** `方法`
+* **名称:** `显示现行子夹内容`
+* **描述:** 根据设计时的子组件分组自动切换显示现行子夹的内容,本方法必须配合界面的设计时分组来使用,具体如下: 在界面设计器中对本选择夹中的所有子组件根据其所处具体子夹进行对应分组: 位于子夹0中的所有子组件分组到组0,位于子夹1中的所有子组件分组到组1,以此类推. 设计时可以使用界面设计器的"设计时隐藏"功能来辅助在同一界面区域同时设计多份内容. 注意: 使用本方法就不能同时使用添加/插入子夹系列方法动态加入子夹.
+
+---
+
+#### 火山.MFC界面.基本.影像框
+
+* **类型:** `类`
+* **名称:** `影像框`
+* **基础类:** `窗口组件`
+
+##### 火山.MFC界面.基本.影像框.文件名
+
+* **类型:** `属性读方法`
+* **名称:** `文件名`
+* **返回值数据类型:** `文本型`
+* **描述:** 返回欲播放影像文件的名称
+
+##### 火山.MFC界面.基本.影像框.文件名
+
+* **类型:** `属性写方法`
+* **名称:** `文件名`
+* **参数:**
+	* `所欲播放的文件名` (`文本型`)
+* **特性:**
+	* `文件名`
+* **描述:** 设置欲播放影像文件的名称
+
+##### 火山.MFC界面.基本.影像框.居中播放
+
+* **类型:** `属性读方法`
+* **名称:** `居中播放`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回是否居中播放影像文件
+
+##### 火山.MFC界面.基本.影像框.居中播放
+
+* **类型:** `属性写方法`
+* **名称:** `居中播放`
+* **参数:**
+	* `是否居中播放` (`逻辑型`)
+* **描述:** 设置是否居中播放影像文件
+
+##### 火山.MFC界面.基本.影像框.透明背景
+
+* **类型:** `属性读方法`
+* **名称:** `透明背景`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回是否使用透明背景
+
+##### 火山.MFC界面.基本.影像框.透明背景
+
+* **类型:** `属性写方法`
+* **名称:** `透明背景`
+* **参数:**
+	* `是否使用透明背景` (`逻辑型`)
+* **描述:** 设置是否使用透明背景
+
+##### 火山.MFC界面.基本.影像框.播放
+
+* **类型:** `属性读方法`
+* **名称:** `播放`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回当前播放状态
+
+##### 火山.MFC界面.基本.影像框.播放
+
+* **类型:** `属性写方法`
+* **名称:** `播放`
+* **参数:**
+	* `是否播放` (`逻辑型`)
+* **描述:** 如果指定了有效的影像文件,通过改变此属性可控制其播放或停止. 如在设计时置本属性为真,运行时影像文件在影像框被创建后即自动开始播放.
+
+##### 火山.MFC界面.基本.影像框.播放次数
+
+* **类型:** `属性读方法`
+* **名称:** `播放次数`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的播放次数. 如为-1,则无限次地循环播放.
+
+##### 火山.MFC界面.基本.影像框.播放次数
+
+* **类型:** `属性写方法`
+* **名称:** `播放次数`
+* **参数:**
+	* `所需要播放的次数` (`整数`): 如为-1,则无限次地循环播放.
+* **描述:** 指定影像的播放次数. 如为-1,则无限次地循环播放.
+
+---
+
+#### 火山.MFC界面.基本.日期框附件类型
+
+* **类型:** `类`
+* **名称:** `日期框附件类型`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供日期框的各种附件类型
+
+##### 火山.MFC界面.基本.日期框附件类型.下拉月历
+
+* **类型:** `成员常量`
+* **名称:** `下拉月历`
+* **数据类型:** `日期框附件类型`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.日期框附件类型.调节器
+
+* **类型:** `成员常量`
+* **名称:** `调节器`
+* **数据类型:** `日期框附件类型`
+* **初始值:** `1`
+
+---
+
+#### 火山.MFC界面.基本.日期框
+
+* **类型:** `类`
+* **名称:** `日期框`
+* **基础类:** `窗口组件`
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-日期框-date_box-main](#vol-日期框-date_box-main)
+
+##### 火山.MFC界面.基本.日期框.允许编辑
+
+* **类型:** `属性读方法`
+* **名称:** `允许编辑`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回是否允许对日期框中的内容进行编辑
+
+##### 火山.MFC界面.基本.日期框.允许编辑
+
+* **类型:** `属性写方法`
+* **名称:** `允许编辑`
+* **参数:**
+	* `是否允许编辑` (`逻辑型`)
+* **描述:** 设置是否允许对日期框中的内容进行编辑
+
+##### 火山.MFC界面.基本.日期框.附件类型
+
+* **类型:** `属性读方法`
+* **名称:** `附件类型`
+* **返回值数据类型:** `日期框附件类型`
+* **描述:** 返回日期框的附件类型
+
+##### 火山.MFC界面.基本.日期框.附件类型
+
+* **类型:** `属性写方法`
+* **名称:** `附件类型`
+* **参数:**
+	* `所欲设置的附件类型` (`日期框附件类型`)
+* **描述:** 设置日期框的附件类型
+
+##### 火山.MFC界面.基本.日期框.今天
+
+* **类型:** `属性读方法`
+* **名称:** `今天`
+* **返回值数据类型:** `小数`
+* **描述:** 返回日期框中的现行时间,如果为0表示为当前系统时间.
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-日期框-date_box-main](#vol-日期框-date_box-main)
+
+##### 火山.MFC界面.基本.日期框.今天
+
+* **类型:** `属性写方法`
+* **名称:** `今天`
+* **参数:**
+	* `所欲设置的时间` (`小数`): 提供所欲设置的时间,如果为0,则设置为当前系统时间.
+* **描述:** 设置日期框中的现行时间
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-日期框-date_box-main](#vol-日期框-date_box-main)
+
+##### 火山.MFC界面.基本.日期框.最小日期
+
+* **类型:** `属性读方法`
+* **名称:** `最小日期`
+* **返回值数据类型:** `小数`
+* **描述:** 返回日期框所能显示的最小时间,如果为0,则无限制.
+
+##### 火山.MFC界面.基本.日期框.最小日期
+
+* **类型:** `属性写方法`
+* **名称:** `最小日期`
+* **参数:**
+	* `所欲设置的时间` (`小数`): 提供所欲设置的最小时间,如果为0,则无限制.
+* **描述:** 设置日期框所能显示的最小时间
+
+##### 火山.MFC界面.基本.日期框.最大日期
+
+* **类型:** `属性读方法`
+* **名称:** `最大日期`
+* **返回值数据类型:** `小数`
+* **描述:** 返回日期框所能显示的最大时间,如果为0,则无限制.
+
+##### 火山.MFC界面.基本.日期框.最大日期
+
+* **类型:** `属性写方法`
+* **名称:** `最大日期`
+* **参数:**
+	* `所欲设置的时间` (`小数`): 提供所欲设置的最大时间,如果为0,则无限制.
+* **描述:** 设置日期框所能显示的最大时间
+
+##### 火山.MFC界面.基本.日期框.选择日期被改变
+
+* **类型:** `事件定义方法`
+* **名称:** `选择日期被改变`
+* **返回值数据类型:** `整数`
+* **描述:** 当现行被选择的日期被改变后发送此事件
+
+##### 火山.MFC界面.基本.日期框.置日期范围
+
+* **类型:** `方法`
+* **名称:** `置日期范围`
+* **参数:**
+	* `所允许的最小时间` (`小数`): 提供日期框所能显示的最小时间,如果为0,则无限制.
+	* `所允许的最大时间` (`小数`): 提供日期框所能显示的最大时间,如果为0,则无限制.
+* **描述:** 设置日期框所能显示的最小和最大时间
+
+---
+
+#### 火山.MFC界面.基本.月历
+
+* **类型:** `类`
+* **名称:** `月历`
+* **基础类:** `窗口组件`
+
+##### 火山.MFC界面.基本.月历.不显示今天
+
+* **类型:** `属性读方法`
+* **名称:** `不显示今天`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回是否不显示今天
+
+##### 火山.MFC界面.基本.月历.不显示今天
+
+* **类型:** `属性写方法`
+* **名称:** `不显示今天`
+* **参数:**
+	* `是否不显示今天` (`逻辑型`)
+* **描述:** 设置是否不显示今天
+
+##### 火山.MFC界面.基本.月历.不圈注今天
+
+* **类型:** `属性读方法`
+* **名称:** `不圈注今天`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回是否不圈注今天
+
+##### 火山.MFC界面.基本.月历.不圈注今天
+
+* **类型:** `属性写方法`
+* **名称:** `不圈注今天`
+* **参数:**
+	* `是否不圈注今天` (`逻辑型`)
+* **描述:** 设置是否不圈注今天
+
+##### 火山.MFC界面.基本.月历.开始星期首日
+
+* **类型:** `属性读方法`
+* **名称:** `开始星期首日`
+* **返回值数据类型:** `星期类`
+* **描述:** 返回星期几为每个星期的第一日
+
+##### 火山.MFC界面.基本.月历.开始星期首日
+
+* **类型:** `属性写方法`
+* **名称:** `开始星期首日`
+* **参数:**
+	* `所欲设置的星期首日` (`星期类`)
+* **描述:** 设置星期几为每个星期的第一日
+
+##### 火山.MFC界面.基本.月历.显示星期序号
+
+* **类型:** `属性读方法`
+* **名称:** `显示星期序号`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回是否显示星期序号
+
+##### 火山.MFC界面.基本.月历.显示星期序号
+
+* **类型:** `属性写方法`
+* **名称:** `显示星期序号`
+* **参数:**
+	* `是否显示星期序号` (`逻辑型`)
+* **描述:** 设置是否显示星期序号
+
+##### 火山.MFC界面.基本.月历.允许选择多天
+
+* **类型:** `属性读方法`
+* **名称:** `允许选择多天`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回是否允许选择多天
+
+##### 火山.MFC界面.基本.月历.允许选择多天
+
+* **类型:** `属性写方法`
+* **名称:** `允许选择多天`
+* **参数:**
+	* `是否允许选择多天` (`逻辑型`)
+* **描述:** 设置是否允许选择多天
+
+##### 火山.MFC界面.基本.月历.滚动月数
+
+* **类型:** `属性读方法`
+* **名称:** `滚动月数`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当按下滚动按钮改变当前显示月时,一次跳过的月的数目.
+
+##### 火山.MFC界面.基本.月历.滚动月数
+
+* **类型:** `属性写方法`
+* **名称:** `滚动月数`
+* **参数:**
+	* `所欲设置的滚动月数` (`整数`)
+* **描述:** 设置当按下滚动按钮改变当前显示月时,一次跳过的月的数目.
+
+##### 火山.MFC界面.基本.月历.今天
+
+* **类型:** `属性读方法`
+* **名称:** `今天`
+* **返回值数据类型:** `小数`
+* **描述:** 返回月历中的现行时间,如果为0表示为当前系统时间. 注意: 本属性仅当在"允许选择多天"属性为假时才能读取.
+
+##### 火山.MFC界面.基本.月历.今天
+
+* **类型:** `属性写方法`
+* **名称:** `今天`
+* **参数:**
+	* `所欲设置的时间` (`小数`): 提供所欲设置的时间,如果为0,则设置为当前系统时间.
+* **描述:** 设置月历中的现行时间.
+
+##### 火山.MFC界面.基本.月历.最小日期
+
+* **类型:** `属性读方法`
+* **名称:** `最小日期`
+* **返回值数据类型:** `小数`
+* **描述:** 返回月历所能显示的最小时间,如果为0,则无限制.
+
+##### 火山.MFC界面.基本.月历.最小日期
+
+* **类型:** `属性写方法`
+* **名称:** `最小日期`
+* **参数:**
+	* `所欲设置的时间` (`小数`): 提供所欲设置的最小时间,如果为0,则无限制.
+* **描述:** 设置月历所能显示的最小时间
+
+##### 火山.MFC界面.基本.月历.最大日期
+
+* **类型:** `属性读方法`
+* **名称:** `最大日期`
+* **返回值数据类型:** `小数`
+* **描述:** 返回月历所能显示的最大时间,如果为0,则无限制.
+
+##### 火山.MFC界面.基本.月历.最大日期
+
+* **类型:** `属性写方法`
+* **名称:** `最大日期`
+* **参数:**
+	* `所欲设置的时间` (`小数`): 提供所欲设置的最大时间,如果为0,则无限制.
+* **描述:** 设置月历所能显示的最大时间
+
+##### 火山.MFC界面.基本.月历.最多选择天数
+
+* **类型:** `属性读方法`
+* **名称:** `最多选择天数`
+* **返回值数据类型:** `整数`
+* **描述:** 返回最多允许选择的天数
+
+##### 火山.MFC界面.基本.月历.最多选择天数
+
+* **类型:** `属性写方法`
+* **名称:** `最多选择天数`
+* **参数:**
+	* `所欲设置的最多选择天数` (`整数`)
+* **描述:** 设置最多允许选择的天数
+
+##### 火山.MFC界面.基本.月历.首选择日
+
+* **类型:** `属性读方法`
+* **名称:** `首选择日`
+* **返回值数据类型:** `小数`
+* **描述:** 返回现行被选择区域的首日期
+
+##### 火山.MFC界面.基本.月历.首选择日
+
+* **类型:** `属性写方法`
+* **名称:** `首选择日`
+* **参数:**
+	* `所欲设置的首选择日` (`小数`)
+* **描述:** 设置现行被选择区域的首日期.如果不允许选择多天(由"允许选择多天"属性指定),则本属性设置现行被选择的日期.
+
+##### 火山.MFC界面.基本.月历.尾选择日
+
+* **类型:** `属性读方法`
+* **名称:** `尾选择日`
+* **返回值数据类型:** `小数`
+* **描述:** 返回现行被选择区域的尾日期
+
+##### 火山.MFC界面.基本.月历.尾选择日
+
+* **类型:** `属性写方法`
+* **名称:** `尾选择日`
+* **参数:**
+	* `所欲设置的尾选择日` (`小数`)
+* **描述:** 设置现行被选择区域的尾日期.如果不允许选择多天(由"允许选择多天"属性指定),则本属性设置现行被选择的日期.
+
+##### 火山.MFC界面.基本.月历.文本颜色
+
+* **类型:** `属性读方法`
+* **名称:** `文本颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回月历所使用的文本颜色
+
+##### 火山.MFC界面.基本.月历.文本颜色
+
+* **类型:** `属性写方法`
+* **名称:** `文本颜色`
+* **参数:**
+	* `所欲设置的颜色` (`整数`): 可以使用"颜色类"所提供的颜色值
+* **特性:**
+	* `颜色值`
+* **描述:** 设置月历所使用的文本颜色
+
+##### 火山.MFC界面.基本.月历.背景颜色
+
+* **类型:** `属性读方法`
+* **名称:** `背景颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回月历所使用的背景颜色
+
+##### 火山.MFC界面.基本.月历.背景颜色
+
+* **类型:** `属性写方法`
+* **名称:** `背景颜色`
+* **参数:**
+	* `所欲设置的颜色` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.默认色"来指定使用默认组件背景颜色.
+* **特性:**
+	* `颜色值`(可以为默认色)
+* **描述:** 设置月历所使用的背景颜色
+
+##### 火山.MFC界面.基本.月历.内背景颜色
+
+* **类型:** `属性读方法`
+* **名称:** `内背景颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回用来实际显示月历部分的背景颜色
+
+##### 火山.MFC界面.基本.月历.内背景颜色
+
+* **类型:** `属性写方法`
+* **名称:** `内背景颜色`
+* **参数:**
+	* `所欲设置的颜色` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.默认色"来指定使用默认组件背景颜色.
+* **特性:**
+	* `颜色值`(可以为默认色)
+* **描述:** 设置用来实际显示月历部分的背景颜色
+
+##### 火山.MFC界面.基本.月历.标题颜色
+
+* **类型:** `属性读方法`
+* **名称:** `标题颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回月历所使用的标题文本颜色
+
+##### 火山.MFC界面.基本.月历.标题颜色
+
+* **类型:** `属性写方法`
+* **名称:** `标题颜色`
+* **参数:**
+	* `所欲设置的颜色` (`整数`): 可以使用"颜色类"所提供的颜色值
+* **特性:**
+	* `颜色值`
+* **描述:** 设置月历所使用的标题文本颜色
+
+##### 火山.MFC界面.基本.月历.标题背景颜色
+
+* **类型:** `属性读方法`
+* **名称:** `标题背景颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回月历所使用的标题背景颜色
+
+##### 火山.MFC界面.基本.月历.标题背景颜色
+
+* **类型:** `属性写方法`
+* **名称:** `标题背景颜色`
+* **参数:**
+	* `所欲设置的颜色` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.默认色"来指定使用默认组件背景颜色.
+* **特性:**
+	* `颜色值`(可以为默认色)
+* **描述:** 设置月历所使用的标题背景颜色
+
+##### 火山.MFC界面.基本.月历.非本月颜色
+
+* **类型:** `属性读方法`
+* **名称:** `非本月颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回月历中非本月部分所使用的文本颜色
+
+##### 火山.MFC界面.基本.月历.非本月颜色
+
+* **类型:** `属性写方法`
+* **名称:** `非本月颜色`
+* **参数:**
+	* `所欲设置的颜色` (`整数`): 可以使用"颜色类"所提供的颜色值
+* **特性:**
+	* `颜色值`
+* **描述:** 设置月历中非本月部分所使用的文本颜色
+
+##### 火山.MFC界面.基本.月历.选择日期被改变
+
+* **类型:** `事件定义方法`
+* **名称:** `选择日期被改变`
+* **返回值数据类型:** `整数`
+* **描述:** 当现行被选择的日期被改变后发送此事件,在事件处理方法中可以通过读取"首选择日"和"尾选择日"属性获得现行被选择的日期.
+
+##### 火山.MFC界面.基本.月历.置日期范围
+
+* **类型:** `方法`
+* **名称:** `置日期范围`
+* **参数:**
+	* `所允许的最小时间` (`小数`): 提供月历所能显示的最小时间,如果为0,则无限制.
+	* `所允许的最大时间` (`小数`): 提供月历所能显示的最大时间,如果为0,则无限制.
+* **描述:** 设置月历所能显示的最小和最大时间
+
+---
+
+#### 火山.MFC界面.基本.驱动器类型
+
+* **类型:** `类`
+* **名称:** `驱动器类型`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供驱动器的各种类型
+
+##### 火山.MFC界面.基本.驱动器类型.全部驱动器
+
+* **类型:** `成员常量`
+* **名称:** `全部驱动器`
+* **数据类型:** `驱动器类型`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.驱动器类型.可抽取式驱动器
+
+* **类型:** `成员常量`
+* **名称:** `可抽取式驱动器`
+* **数据类型:** `驱动器类型`
+* **初始值:** `1`
+
+##### 火山.MFC界面.基本.驱动器类型.固定驱动器
+
+* **类型:** `成员常量`
+* **名称:** `固定驱动器`
+* **数据类型:** `驱动器类型`
+* **初始值:** `2`
+
+##### 火山.MFC界面.基本.驱动器类型.光盘驱动器
+
+* **类型:** `成员常量`
+* **名称:** `光盘驱动器`
+* **数据类型:** `驱动器类型`
+* **初始值:** `3`
+
+##### 火山.MFC界面.基本.驱动器类型.网络驱动器
+
+* **类型:** `成员常量`
+* **名称:** `网络驱动器`
+* **数据类型:** `驱动器类型`
+* **初始值:** `4`
+
+##### 火山.MFC界面.基本.驱动器类型.内存虚拟驱动器
+
+* **类型:** `成员常量`
+* **名称:** `内存虚拟驱动器`
+* **数据类型:** `驱动器类型`
+* **初始值:** `5`
+
+---
+
+#### 火山.MFC界面.基本.驱动器框
+
+* **类型:** `类`
+* **名称:** `驱动器框`
+* **基础类:** `窗口组件`
+* **相关例程:** [vol-文件浏览-file_viewer-main](#vol-文件浏览-file_viewer-main)
+
+##### 火山.MFC界面.基本.驱动器框.驱动器
+
+* **类型:** `属性读方法`
+* **名称:** `驱动器`
+* **返回值数据类型:** `文本型`
+* **描述:** 返回当前所选择的驱动器,为大小写字母'A'到'Z'. 如果未选择任何驱动器,则返回系统现行目录所处的驱动器.
+* **相关例程:** [vol-文件浏览-file_viewer-main](#vol-文件浏览-file_viewer-main)
+
+##### 火山.MFC界面.基本.驱动器框.驱动器
+
+* **类型:** `属性写方法`
+* **名称:** `驱动器`
+* **参数:**
+	* `所欲设置的驱动器` (`文本型`): 提供所欲设置的驱动器符,为大小写字母'A'到'Z'.
+* **描述:** 设置当前所选择的驱动器
+* **相关例程:** [vol-文件浏览-file_viewer-main](#vol-文件浏览-file_viewer-main)
+
+##### 火山.MFC界面.基本.驱动器框.类型
+
+* **类型:** `属性读方法`
+* **名称:** `类型`
+* **返回值数据类型:** `驱动器类型`
+* **描述:** 返回当前所欲匹配驱动器的类型
+
+##### 火山.MFC界面.基本.驱动器框.类型
+
+* **类型:** `属性写方法`
+* **名称:** `类型`
+* **参数:**
+	* `所欲匹配的驱动器类型` (`驱动器类型`)
+* **描述:** 设置当前所欲匹配驱动器的类型
+
+##### 火山.MFC界面.基本.驱动器框.背景颜色
+
+* **类型:** `属性读方法`
+* **名称:** `背景颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的本组件背景颜色值
+
+##### 火山.MFC界面.基本.驱动器框.背景颜色
+
+* **类型:** `属性写方法`
+* **名称:** `背景颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.默认色"来指定使用默认组件背景颜色.
+* **特性:**
+	* `颜色值`(可以为默认色)
+* **描述:** 设置本组件的背景颜色值. 如果本组件未曾设置过背景颜色,则默认为"颜色类.默认色".
+
+##### 火山.MFC界面.基本.驱动器框.文本颜色
+
+* **类型:** `属性读方法`
+* **名称:** `文本颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的本组件文本颜色值
+
+##### 火山.MFC界面.基本.驱动器框.文本颜色
+
+* **类型:** `属性写方法`
+* **名称:** `文本颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值
+* **特性:**
+	* `颜色值`
+* **描述:** 设置本组件的文本颜色值. 如果本组件未曾设置过文本颜色,则默认为黑色.
+
+##### 火山.MFC界面.基本.驱动器框.驱动器被改变
+
+* **类型:** `事件定义方法`
+* **名称:** `驱动器被改变`
+* **返回值数据类型:** `整数`
+* **描述:** 当现行被选择的驱动器被改变后发送此事件
+* **相关例程:** [vol-文件浏览-file_viewer-main](#vol-文件浏览-file_viewer-main)
+
+---
+
+#### 火山.MFC界面.基本.目录框
+
+* **类型:** `类`
+* **名称:** `目录框`
+* **基础类:** `窗口组件`
+* **相关例程:** [vol-文件浏览-file_viewer-main](#vol-文件浏览-file_viewer-main)
+
+##### 火山.MFC界面.基本.目录框.目录
+
+* **类型:** `属性读方法`
+* **名称:** `目录`
+* **返回值数据类型:** `文本型`
+* **描述:** 返回当前被选择的目录
+* **相关例程:** [vol-文件浏览-file_viewer-main](#vol-文件浏览-file_viewer-main)
+
+##### 火山.MFC界面.基本.目录框.目录
+
+* **类型:** `属性写方法`
+* **名称:** `目录`
+* **参数:**
+	* `所欲设置的目录` (`文本型`): 提供当前被选择的目录,为空将自动使用现行系统目录
+* **描述:** 设置当前被选择的目录
+* **相关例程:** [vol-文件浏览-file_viewer-main](#vol-文件浏览-file_viewer-main)
+
+##### 火山.MFC界面.基本.目录框.背景颜色
+
+* **类型:** `属性读方法`
+* **名称:** `背景颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的本组件背景颜色值
+
+##### 火山.MFC界面.基本.目录框.背景颜色
+
+* **类型:** `属性写方法`
+* **名称:** `背景颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.默认色"来指定使用默认组件背景颜色.
+* **特性:**
+	* `颜色值`(可以为默认色)
+* **描述:** 设置本组件的背景颜色值. 如果本组件未曾设置过背景颜色,则默认为"颜色类.默认色".
+
+##### 火山.MFC界面.基本.目录框.目录被改变
+
+* **类型:** `事件定义方法`
+* **名称:** `目录被改变`
+* **返回值数据类型:** `整数`
+* **描述:** 当现行被选择的目录被改变后发送此事件
+* **相关例程:** [vol-文件浏览-file_viewer-main](#vol-文件浏览-file_viewer-main)
+
+---
+
+#### 火山.MFC界面.基本.文件框
+
+* **类型:** `类`
+* **名称:** `文件框`
+* **基础类:** `窗口组件`
+* **相关例程:** [vol-文件浏览-file_viewer-main](#vol-文件浏览-file_viewer-main)
+
+##### 火山.MFC界面.基本.文件框.目录
+
+* **类型:** `属性读方法`
+* **名称:** `目录`
+* **返回值数据类型:** `文本型`
+* **描述:** 返回当前显示其内容的目录
+* **相关例程:** [vol-文件浏览-file_viewer-main](#vol-文件浏览-file_viewer-main)
+
+##### 火山.MFC界面.基本.文件框.目录
+
+* **类型:** `属性写方法`
+* **名称:** `目录`
+* **参数:**
+	* `所欲设置的目录` (`文本型`): 提供当前显示其内容的目录,为空将自动使用现行系统目录
+* **描述:** 设置当前显示其内容的目录. 本属性的默认值为空.
+* **相关例程:** [vol-文件浏览-file_viewer-main](#vol-文件浏览-file_viewer-main)
+
+##### 火山.MFC界面.基本.文件框.被选择文件
+
+* **类型:** `属性读方法`
+* **名称:** `被选择文件`
+* **返回值数据类型:** `文本型`
+* **描述:** 返回当前被选择的所有文件,注意不包含路径.如果有多个文件被选择,各文件名之间用分号隔开. 本属性只读.
+* **相关例程:** [vol-文件浏览-file_viewer-main](#vol-文件浏览-file_viewer-main)
+
+##### 火山.MFC界面.基本.文件框.允许选择多项
+
+* **类型:** `属性读方法`
+* **名称:** `允许选择多项`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回是否允许选择多项
+
+##### 火山.MFC界面.基本.文件框.允许选择多项
+
+* **类型:** `属性写方法`
+* **名称:** `允许选择多项`
+* **参数:**
+	* `是否允许选择多项` (`逻辑型`)
+* **描述:** 设置是否允许选择多项. 本属性的默认值为假.
+
+##### 火山.MFC界面.基本.文件框.通配符
+
+* **类型:** `属性读方法`
+* **名称:** `通配符`
+* **返回值数据类型:** `文本型`
+* **描述:** 返回允许进入文件框的文件类型. 可能同时包括多个通配符,各通配符之间用分号隔开.
+
+##### 火山.MFC界面.基本.文件框.通配符
+
+* **类型:** `属性写方法`
+* **名称:** `通配符`
+* **参数:**
+	* `所欲设置的通配符` (`文本型`): 可以同时指定多个通配符(中间可以包含'*'或'?'字符的文件名匹配文本),各通配符之间用分号隔开. 如果为空文本,则默认为所有名称的文件("*.*").
+* **描述:** 设置允许进入文件框的文件类型. 本属性的默认值为空文本.
+
+##### 火山.MFC界面.基本.文件框.通常
+
+* **类型:** `属性读方法`
+* **名称:** `通常`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回是否允许没有设置存档、只读、系统、隐藏属性的文件进入
+
+##### 火山.MFC界面.基本.文件框.通常
+
+* **类型:** `属性写方法`
+* **名称:** `通常`
+* **参数:**
+	* `是否允许` (`逻辑型`)
+* **描述:** 设置是否允许没有设置存档、只读、系统、隐藏属性的文件进入. 本属性的默认值为真.
+
+##### 火山.MFC界面.基本.文件框.存档
+
+* **类型:** `属性读方法`
+* **名称:** `存档`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回是否允许设置了存档文件属性的文件进入
+
+##### 火山.MFC界面.基本.文件框.存档
+
+* **类型:** `属性写方法`
+* **名称:** `存档`
+* **参数:**
+	* `是否允许` (`逻辑型`)
+* **描述:** 设置是否允许设置了存档文件属性的文件进入. 本属性的默认值为真.
+
+##### 火山.MFC界面.基本.文件框.只读
+
+* **类型:** `属性读方法`
+* **名称:** `只读`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回是否允许设置了只读文件属性的文件进入
+
+##### 火山.MFC界面.基本.文件框.只读
+
+* **类型:** `属性写方法`
+* **名称:** `只读`
+* **参数:**
+	* `是否允许` (`逻辑型`)
+* **描述:** 设置是否允许设置了只读文件属性的文件进入. 本属性的默认值为真.
+
+##### 火山.MFC界面.基本.文件框.系统
+
+* **类型:** `属性读方法`
+* **名称:** `系统`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回是否允许设置了系统文件属性的文件进入
+
+##### 火山.MFC界面.基本.文件框.系统
+
+* **类型:** `属性写方法`
+* **名称:** `系统`
+* **参数:**
+	* `是否允许` (`逻辑型`)
+* **描述:** 设置是否允许设置了系统文件属性的文件进入. 本属性的默认值为假.
+
+##### 火山.MFC界面.基本.文件框.隐藏
+
+* **类型:** `属性读方法`
+* **名称:** `隐藏`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回是否允许设置了隐藏文件属性的文件进入
+
+##### 火山.MFC界面.基本.文件框.隐藏
+
+* **类型:** `属性写方法`
+* **名称:** `隐藏`
+* **参数:**
+	* `是否允许` (`逻辑型`)
+* **描述:** 设置是否允许设置了隐藏文件属性的文件进入. 本属性的默认值为假.
+
+##### 火山.MFC界面.基本.文件框.最小日期
+
+* **类型:** `属性读方法`
+* **名称:** `最小日期`
+* **返回值数据类型:** `小数`
+* **描述:** 返回允许进入的文件的最小修改时间,如果为0,则无限制.
+
+##### 火山.MFC界面.基本.文件框.最小日期
+
+* **类型:** `属性写方法`
+* **名称:** `最小日期`
+* **参数:**
+	* `所欲设置的时间` (`小数`): 提供所欲设置的最小修改时间,如果为0,则无限制.
+* **描述:** 设置允许进入的文件的最小修改时间,如果为0,则无限制. 本属性的默认值为0.
+
+##### 火山.MFC界面.基本.文件框.最大日期
+
+* **类型:** `属性读方法`
+* **名称:** `最大日期`
+* **返回值数据类型:** `小数`
+* **描述:** 返回允许进入的文件的最大修改时间,如果为0,则无限制.
+
+##### 火山.MFC界面.基本.文件框.最大日期
+
+* **类型:** `属性写方法`
+* **名称:** `最大日期`
+* **参数:**
+	* `所欲设置的时间` (`小数`): 提供所欲设置的最大修改时间,如果为0,则无限制.
+* **描述:** 设置允许进入的文件的最大修改时间,如果为0,则无限制. 本属性的默认值为0.
+
+##### 火山.MFC界面.基本.文件框.背景颜色
+
+* **类型:** `属性读方法`
+* **名称:** `背景颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的本组件背景颜色值
+
+##### 火山.MFC界面.基本.文件框.背景颜色
+
+* **类型:** `属性写方法`
+* **名称:** `背景颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.默认色"来指定使用默认组件背景颜色.
+* **特性:**
+	* `颜色值`(可以为默认色)
+* **描述:** 设置本组件的背景颜色值. 如果本组件未曾设置过背景颜色,则默认为"颜色类.默认色".
+
+##### 火山.MFC界面.基本.文件框.文本颜色
+
+* **类型:** `属性读方法`
+* **名称:** `文本颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的本组件文本颜色值
+
+##### 火山.MFC界面.基本.文件框.文本颜色
+
+* **类型:** `属性写方法`
+* **名称:** `文本颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值
+* **特性:**
+	* `颜色值`
+* **描述:** 设置本组件的文本颜色值. 如果本组件未曾设置过文本颜色,则默认为黑色.
+
+##### 火山.MFC界面.基本.文件框.选择文件被改变
+
+* **类型:** `事件定义方法`
+* **名称:** `选择文件被改变`
+* **返回值数据类型:** `整数`
+* **描述:** 当现行被选择的文件被改变后发送此事件
+
+##### 火山.MFC界面.基本.文件框.双击选择
+
+* **类型:** `事件定义方法`
+* **名称:** `双击选择`
+* **返回值数据类型:** `整数`
+* **描述:** 当使用鼠标左键在某列表项目上双击时产生此事件
+
+---
+
+#### 火山.MFC界面.基本.颜色选择器
+
+* **类型:** `类`
+* **名称:** `颜色选择器`
+* **基础类:** `窗口组件`
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main)
+
+##### 火山.MFC界面.基本.颜色选择器.颜色
+
+* **类型:** `属性读方法`
+* **名称:** `颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所选择的颜色
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main)
+
+##### 火山.MFC界面.基本.颜色选择器.颜色
+
+* **类型:** `属性写方法`
+* **名称:** `颜色`
+* **参数:**
+	* `所欲设置的颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值. 本属性的默认值为黑色.
+* **特性:**
+	* `颜色值`(可以为透明色)
+* **描述:** 设置当前所选择的颜色
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main)
+
+##### 火山.MFC界面.基本.颜色选择器.允许透明
+
+* **类型:** `属性读方法`
+* **名称:** `允许透明`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回是否允许透明色. 如果允许透明色,则当用户选择透明色时,本属性的值将为"颜色类.透明色"常量值.
+
+##### 火山.MFC界面.基本.颜色选择器.允许透明
+
+* **类型:** `属性写方法`
+* **名称:** `允许透明`
+* **参数:**
+	* `是否允许透明色` (`逻辑型`)
+* **描述:** 设置是否允许透明色. 如果允许透明色,则当用户选择透明色时,本属性的值将为"颜色类.透明色"常量值. 本属性的默认值为假.
+
+##### 火山.MFC界面.基本.颜色选择器.透明色标题
+
+* **类型:** `属性读方法`
+* **名称:** `透明色标题`
+* **返回值数据类型:** `文本型`
+* **描述:** 返回当允许透明色时,显示在颜色选择框上的具体文本.
+
+##### 火山.MFC界面.基本.颜色选择器.透明色标题
+
+* **类型:** `属性写方法`
+* **名称:** `透明色标题`
+* **参数:**
+	* `所欲设置的标题` (`文本型`)
+* **描述:** 设置当允许透明色时,显示在颜色选择框上的具体文本. 本属性的默认值为"透明色".
+
+##### 火山.MFC界面.基本.颜色选择器.颜色被改变
+
+* **类型:** `事件定义方法`
+* **名称:** `颜色被改变`
+* **返回值数据类型:** `整数`
+* **描述:** 当用户选中了某颜色后本事件被触发,在事件处理方法中可以通过读取"颜色"属性来获取用户所选择的颜色.
+
+---
+
+#### 火山.MFC界面.基本.调节器方向
+
+* **类型:** `类`
+* **名称:** `调节器方向`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供调节器的按钮方向
+
+##### 火山.MFC界面.基本.调节器方向.横向
+
+* **类型:** `成员常量`
+* **名称:** `横向`
+* **数据类型:** `调节器方向`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.调节器方向.纵向
+
+* **类型:** `成员常量`
+* **名称:** `纵向`
+* **数据类型:** `调节器方向`
+* **初始值:** `1`
+
+---
+
+#### 火山.MFC界面.基本.调节器
+
+* **类型:** `类`
+* **名称:** `调节器`
+* **基础类:** `窗口组件`
+
+##### 火山.MFC界面.基本.调节器.方向
+
+* **类型:** `属性读方法`
+* **名称:** `方向`
+* **返回值数据类型:** `调节器方向`
+* **描述:** 返回当前所设置的调节器方向
+
+##### 火山.MFC界面.基本.调节器.方向
+
+* **类型:** `属性写方法`
+* **名称:** `方向`
+* **参数:**
+	* `所欲设置的方向` (`调节器方向`)
+* **描述:** 设置调节器的当前按钮方向
+
+##### 火山.MFC界面.基本.调节器.热点跟踪
+
+* **类型:** `属性读方法`
+* **名称:** `热点跟踪`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回当鼠标移动到组件上时是否显示热点状态
+
+##### 火山.MFC界面.基本.调节器.热点跟踪
+
+* **类型:** `属性写方法`
+* **名称:** `热点跟踪`
+* **参数:**
+	* `是否热点跟踪` (`逻辑型`)
+* **描述:** 设置当鼠标移动到组件上时是否显示热点状态
+
+##### 火山.MFC界面.基本.调节器.调节钮被按下
+
+* **类型:** `事件定义方法`
+* **名称:** `调节钮被按下`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `按钮值` (`整数`): 如果按下的是调节器的向上箭头按钮,参数值为1,否则为-1.
+* **描述:** 当用户单击调节钮上的按钮时本事件被发送
+
+---
+
+#### 火山.MFC界面.基本.通用对话框类型
+
+* **类型:** `类`
+* **名称:** `通用对话框类型`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 用作提供通用对话框的具体类型
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main)
+
+##### 火山.MFC界面.基本.通用对话框类型.打开文件
+
+* **类型:** `成员常量`
+* **名称:** `打开文件`
+* **数据类型:** `通用对话框类型`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.通用对话框类型.保存文件
+
+* **类型:** `成员常量`
+* **名称:** `保存文件`
+* **数据类型:** `通用对话框类型`
+* **初始值:** `1`
+
+##### 火山.MFC界面.基本.通用对话框类型.字体选择
+
+* **类型:** `成员常量`
+* **名称:** `字体选择`
+* **数据类型:** `通用对话框类型`
+* **初始值:** `2`
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main)
+
+##### 火山.MFC界面.基本.通用对话框类型.打开帮助
+
+* **类型:** `成员常量`
+* **名称:** `打开帮助`
+* **数据类型:** `通用对话框类型`
+* **初始值:** `3`
+
+---
+
+#### 火山.MFC界面.基本.帮助命令类型
+
+* **类型:** `类`
+* **名称:** `帮助命令类型`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 用作提供帮助命令的具体类型
+
+##### 火山.MFC界面.基本.帮助命令类型.显示帮助主题
+
+* **类型:** `成员常量`
+* **名称:** `显示帮助主题`
+* **数据类型:** `帮助命令类型`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.帮助命令类型.显示指定标志信息
+
+* **类型:** `成员常量`
+* **名称:** `显示指定标志信息`
+* **数据类型:** `帮助命令类型`
+* **初始值:** `1`
+
+##### 火山.MFC界面.基本.帮助命令类型.弹出指定标志信息
+
+* **类型:** `成员常量`
+* **名称:** `弹出指定标志信息`
+* **数据类型:** `帮助命令类型`
+* **初始值:** `2`
+
+##### 火山.MFC界面.基本.帮助命令类型.确定帮助已显示
+
+* **类型:** `成员常量`
+* **名称:** `确定帮助已显示`
+* **数据类型:** `帮助命令类型`
+* **初始值:** `3`
+
+##### 火山.MFC界面.基本.帮助命令类型.显示帮助软件使用方法
+
+* **类型:** `成员常量`
+* **名称:** `显示帮助软件使用方法`
+* **数据类型:** `帮助命令类型`
+* **初始值:** `4`
+
+##### 火山.MFC界面.基本.帮助命令类型.退出帮助
+
+* **类型:** `成员常量`
+* **名称:** `退出帮助`
+* **数据类型:** `帮助命令类型`
+* **初始值:** `5`
+
+---
+
+#### 火山.MFC界面.基本.通用对话框
+
+* **类型:** `类`
+* **名称:** `通用对话框`
+* **描述:** 提供各种通用对话框操作
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-取可执行文件位数-read_exe_bits-main](#vol-取可执行文件位数-read_exe_bits-main), [vol-位图处理-adv_bitmap-main](#vol-位图处理-adv_bitmap-main), [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-阿里云oss-aliyun_oss-main](#vol-阿里云oss-aliyun_oss-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-wav播放-wav_play-main](#vol-wav播放-wav_play-main)
+
+##### 火山.MFC界面.基本.通用对话框.类型
+
+* **类型:** `属性成员变量`
+* **名称:** `类型`
+* **数据类型:** `通用对话框类型`
+* **描述:** 指定对话框的具体类型
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main)
+
+##### 火山.MFC界面.基本.通用对话框.标题
+
+* **类型:** `属性成员变量`
+* **名称:** `标题`
+* **数据类型:** `文本型`
+* **描述:** 仅适用于打开文件和保存文件对话框. 用作提供对话框标题.
+
+##### 火山.MFC界面.基本.通用对话框.文件名
+
+* **类型:** `属性成员变量`
+* **名称:** `文件名`
+* **数据类型:** `文本型`
+* **描述:** 仅适用于打开文件和保存文件对话框. 用作初始化对话框中的文件名编辑框内容以及返回用户所选择的全路径文件名.
+* **相关例程:** [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-位图处理-adv_bitmap-main](#vol-位图处理-adv_bitmap-main), [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-阿里云oss-aliyun_oss-main](#vol-阿里云oss-aliyun_oss-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-wav播放-wav_play-main](#vol-wav播放-wav_play-main)
+
+##### 火山.MFC界面.基本.通用对话框.过滤器
+
+* **类型:** `属性成员变量`
+* **名称:** `过滤器`
+* **数据类型:** `文本型`
+* **描述:** 仅适用于打开文件和保存文件对话框. 过滤器文本由单个或多个成对的文本串组成,每对文本串的第一个提供显示文本,如:"文本文件(*.txt)"; 第二个指定实际的过滤匹配符,如: "*.txt",所有各文本串之间用"|"号隔开.
+* **相关例程:** [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main)
+
+##### 火山.MFC界面.基本.通用对话框.初始过滤器
+
+* **类型:** `属性成员变量`
+* **名称:** `初始过滤器`
+* **数据类型:** `整数`
+* **描述:** 仅适用于打开文件和保存文件对话框. 指定初始过滤器在"过滤器"属性中的索引位置,0为第一个过滤器. 在成功获取所打开或保存文件名后,会被更新为当前用户所实际选择的过滤器索引位置.
+
+##### 火山.MFC界面.基本.通用对话框.初始目录
+
+* **类型:** `属性成员变量`
+* **名称:** `初始目录`
+* **数据类型:** `文本型`
+* **描述:** 仅适用于打开文件和保存文件对话框. 指定当打开对话框时所自动跳转到的目录.
+
+##### 火山.MFC界面.基本.通用对话框.默认文件后缀
+
+* **类型:** `属性成员变量`
+* **名称:** `默认文件后缀`
+* **数据类型:** `文本型`
+* **描述:** 仅适用于打开文件和保存文件对话框. 指定当用户没有输入文件的后缀名称时所自动使用的文件后缀名称.
+
+##### 火山.MFC界面.基本.通用对话框.创建时提示
+
+* **类型:** `属性成员变量`
+* **名称:** `创建时提示`
+* **数据类型:** `逻辑型`
+* **描述:** 仅适用于打开文件对话框. 如果用户指定了一个不存在的文件名称,是否提示用户即将创建它.
+
+##### 火山.MFC界面.基本.通用对话框.文件必须存在
+
+* **类型:** `属性成员变量`
+* **名称:** `文件必须存在`
+* **数据类型:** `逻辑型`
+* **描述:** 仅适用于打开文件对话框. 是否允许用户指定一个不存在的文件.
+
+##### 火山.MFC界面.基本.通用对话框.文件覆盖提示
+
+* **类型:** `属性成员变量`
+* **名称:** `文件覆盖提示`
+* **数据类型:** `逻辑型`
+* **描述:** 仅适用于保存文件对话框. 如果用户指定了一个已经存在的文件,是否询问用户确定覆盖此文件.
+
+##### 火山.MFC界面.基本.通用对话框.目录必须存在
+
+* **类型:** `属性成员变量`
+* **名称:** `目录必须存在`
+* **数据类型:** `逻辑型`
+* **描述:** 仅适用于打开文件和保存文件对话框. 是否允许用户指定一个不存在的目录.
+
+##### 火山.MFC界面.基本.通用对话框.不改变目录
+
+* **类型:** `属性成员变量`
+* **名称:** `不改变目录`
+* **数据类型:** `逻辑型`
+* **描述:** 仅适用于打开文件和保存文件对话框. 指定在对话框关闭后是否自动返回到进入对话框时的文件目录.
+
+##### 火山.MFC界面.基本.通用对话框.字体颜色
+
+* **类型:** `属性成员变量`
+* **名称:** `字体颜色`
+* **数据类型:** `整数`
+* **特性:**
+	* `颜色值`
+* **描述:** 仅适用于字体选择对话框. 用作初始化及返回字体的颜色,可以使用"颜色类"所提供的颜色值.
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main)
+
+##### 火山.MFC界面.基本.通用对话框.加粗
+
+* **类型:** `属性成员变量`
+* **名称:** `加粗`
+* **数据类型:** `逻辑型`
+* **描述:** 仅适用于字体选择对话框. 用作初始化及返回字体的加粗状态.
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main)
+
+##### 火山.MFC界面.基本.通用对话框.倾斜
+
+* **类型:** `属性成员变量`
+* **名称:** `倾斜`
+* **数据类型:** `逻辑型`
+* **描述:** 仅适用于字体选择对话框. 用作初始化及返回字体的倾斜状态.
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main)
+
+##### 火山.MFC界面.基本.通用对话框.删除线
+
+* **类型:** `属性成员变量`
+* **名称:** `删除线`
+* **数据类型:** `逻辑型`
+* **描述:** 仅适用于字体选择对话框. 用作初始化及返回字体的删除线状态.
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main)
+
+##### 火山.MFC界面.基本.通用对话框.下划线
+
+* **类型:** `属性成员变量`
+* **名称:** `下划线`
+* **数据类型:** `逻辑型`
+* **描述:** 仅适用于字体选择对话框. 用作初始化及返回字体的下划线状态.
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main)
+
+##### 火山.MFC界面.基本.通用对话框.字体名称
+
+* **类型:** `属性成员变量`
+* **名称:** `字体名称`
+* **数据类型:** `文本型`
+* **描述:** 仅适用于字体选择对话框. 用作初始化及返回字体的名称.
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main)
+
+##### 火山.MFC界面.基本.通用对话框.字体大小
+
+* **类型:** `属性成员变量`
+* **名称:** `字体大小`
+* **数据类型:** `整数`
+* **描述:** 仅适用于字体选择对话框. 用作初始化及返回字体的尺寸,单位为磅(1/72英寸).
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main)
+
+##### 火山.MFC界面.基本.通用对话框.帮助文件名
+
+* **类型:** `属性成员变量`
+* **名称:** `帮助文件名`
+* **数据类型:** `文本型`
+* **描述:** 仅适用于打开帮助对话框. 指定欲打开帮助文件的名称.不能为空文本,如果为相对路径,为相对程序可执行文件的当前所处目录.
+
+##### 火山.MFC界面.基本.通用对话框.帮助命令
+
+* **类型:** `属性成员变量`
+* **名称:** `帮助命令`
+* **数据类型:** `帮助命令类型`
+* **描述:** 仅适用于打开帮助对话框. 指定具体所执行的帮助命令.
+
+##### 火山.MFC界面.基本.通用对话框.帮助标志值
+
+* **类型:** `属性成员变量`
+* **名称:** `帮助标志值`
+* **数据类型:** `整数`
+* **描述:** 仅适用于打开帮助对话框. 仅在帮助命令为"显示指定标志信息"和"弹出指定标志信息"时才有效,用于指定相应的帮助标志数值.
+
+##### 火山.MFC界面.基本.通用对话框.打开
+
+* **类型:** `方法`
+* **名称:** `打开`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所使用父窗口组件` (`窗口组件`): 提供所使用的父窗口组件,必须已经被创建.
+* **描述:** 打开当前类型的对话框,返回一个逻辑值. 对于类型为"打开文件"/"保存文件"/"字体选择"的对话框,如果为真,表示用户已通过该对话框输入并返回了有效数据,否则表示用户取消关闭了该对话框,且没有输入任何有效数据. 对于类型为"打开帮助"的对话框,如打开帮助成功则返回真,否则返回假.
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-位图处理-adv_bitmap-main](#vol-位图处理-adv_bitmap-main), [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-阿里云oss-aliyun_oss-main](#vol-阿里云oss-aliyun_oss-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-wav播放-wav_play-main](#vol-wav播放-wav_play-main)
+
+##### 火山.MFC界面.基本.通用对话框.打开选择多个文件
+
+* **类型:** `方法`
+* **名称:** `打开选择多个文件`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所使用父窗口组件` (`窗口组件`): 提供所使用的父窗口组件,必须已经被创建.
+	* `所选择的所有文件名` (`文本数组类`): 如果本方法返回真,则将用户所选择的所有文件名填入到该数组中.
+* **描述:** 如果当前对话框类型为"打开文件",则显示该对话框并允许用户同时选择多个文件.
+* **返回值描述:** 如果为真,表示用户已通过对话框输入并返回了有效数据,否则表示用户取消关闭了该对话框,且没有输入任何有效数据.
+* **相关例程:** [vol-取可执行文件位数-read_exe_bits-main](#vol-取可执行文件位数-read_exe_bits-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main)
+
+---
+
+#### 火山.MFC界面.基本.时钟
+
+* **类型:** `类`
+* **名称:** `时钟`
+* **基础类:** `窗口组件`
+* **相关例程:** [vol-时钟-timer-main](#vol-时钟-timer-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-多线程-muti_thread-main](#vol-多线程-muti_thread-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main), [vol-海康威视工业相机-hikrobot-main](#vol-海康威视工业相机-hikrobot-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.时钟.时钟周期
+
+* **类型:** `属性读方法`
+* **名称:** `时钟周期`
+* **返回值数据类型:** `整数`
+* **描述:** 返回时钟事件产生的周期,单位为毫秒.如果为0,则表示无时钟事件产生.
+* **相关例程:** [vol-时钟-timer-main](#vol-时钟-timer-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main), [vol-海康威视工业相机-hikrobot-main](#vol-海康威视工业相机-hikrobot-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.时钟.时钟周期
+
+* **类型:** `属性写方法`
+* **名称:** `时钟周期`
+* **参数:**
+	* `所欲设置的时钟周期` (`整数`): 提供所欲设置的时钟周期时间,单位为毫秒.如果设置为0,则无时钟事件产生.
+* **描述:** 设置时钟事件产生的周期,单位为毫秒.
+* **相关例程:** [vol-时钟-timer-main](#vol-时钟-timer-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main), [vol-海康威视工业相机-hikrobot-main](#vol-海康威视工业相机-hikrobot-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.时钟.周期事件
+
+* **类型:** `事件定义方法`
+* **名称:** `周期事件`
+* **返回值数据类型:** `整数`
+* **描述:** 每当经过了指定的时钟周期,将发送本事件.
+* **相关例程:** [vol-时钟-timer-main](#vol-时钟-timer-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-多线程-muti_thread-main](#vol-多线程-muti_thread-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+---
+
+#### 火山.MFC界面.基本.图形按钮类型
+
+* **类型:** `类`
+* **名称:** `图形按钮类型`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 用作提供图形按钮的具体类型
+
+##### 火山.MFC界面.基本.图形按钮类型.按钮
+
+* **类型:** `成员常量`
+* **名称:** `按钮`
+* **数据类型:** `图形按钮类型`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.图形按钮类型.选择框
+
+* **类型:** `成员常量`
+* **名称:** `选择框`
+* **数据类型:** `图形按钮类型`
+* **初始值:** `1`
+
+---
+
+#### 火山.MFC界面.基本.图形按钮
+
+* **类型:** `类`
+* **名称:** `图形按钮`
+* **基础类:** `窗口组件`
+* **相关例程:** [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main)
+
+##### 火山.MFC界面.基本.图形按钮.类型
+
+* **类型:** `属性读方法`
+* **名称:** `类型`
+* **返回值数据类型:** `图形按钮类型`
+* **描述:** 返回图形按钮的当前类型
+
+##### 火山.MFC界面.基本.图形按钮.类型
+
+* **类型:** `属性写方法`
+* **名称:** `类型`
+* **参数:**
+	* `所欲设置的类型` (`图形按钮类型`)
+* **描述:** 设置图形按钮的当前类型
+
+##### 火山.MFC界面.基本.图形按钮.选中
+
+* **类型:** `属性读方法`
+* **名称:** `选中`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 当类型为选择框时,返形按钮的当前选中状态.
+
+##### 火山.MFC界面.基本.图形按钮.选中
+
+* **类型:** `属性写方法`
+* **名称:** `选中`
+* **参数:**
+	* `是否被选中` (`逻辑型`)
+* **描述:** 当类型为选择框时,设置按钮的当前选中状态.
+
+##### 火山.MFC界面.基本.图形按钮.正常图片
+
+* **类型:** `属性写方法`
+* **名称:** `正常图片`
+* **参数:**
+	* `所欲设置的位图` (`位图资源`): 提供所欲设置的位图资源,如果该资源值为"空资源.空位图",则将取消底图.
+* **描述:** 指定在正常情况下所显示图片
+* **相关例程:** [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main)
+
+##### 火山.MFC界面.基本.图形按钮.点燃图片
+
+* **类型:** `属性写方法`
+* **名称:** `点燃图片`
+* **参数:**
+	* `所欲设置的位图` (`位图资源`): 提供所欲设置的位图资源,如果该资源值为"空资源.空位图",则将取消底图.
+* **描述:** 当类型为按钮时,指定当鼠标移动到按钮上时所显示图片.
+* **相关例程:** [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main)
+
+##### 火山.MFC界面.基本.图形按钮.按下图片
+
+* **类型:** `属性写方法`
+* **名称:** `按下图片`
+* **参数:**
+	* `所欲设置的位图` (`位图资源`): 提供所欲设置的位图资源,如果该资源值为"空资源.空位图",则将取消底图.
+* **描述:** 指定当选择框被选中或者按钮被按下后所显示图片
+* **相关例程:** [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main)
+
+##### 火山.MFC界面.基本.图形按钮.禁止图片
+
+* **类型:** `属性写方法`
+* **名称:** `禁止图片`
+* **参数:**
+	* `所欲设置的位图` (`位图资源`): 提供所欲设置的位图资源,如果该资源值为"空资源.空位图",则将取消底图.
+* **描述:** 指定当按钮被禁止后所显示图片
+
+##### 火山.MFC界面.基本.图形按钮.透明颜色
+
+* **类型:** `属性读方法`
+* **名称:** `透明颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回所有图片中透明部分所对应的颜色
+
+##### 火山.MFC界面.基本.图形按钮.透明颜色
+
+* **类型:** `属性写方法`
+* **名称:** `透明颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.默认色"来指定图片中没有透明色.
+* **特性:**
+	* `颜色值`(可以为默认色)
+* **描述:** 设置所有图片中透明部分所对应的颜色,图片中的透明部分将被摈除在按钮组件范围之外.
+
+##### 火山.MFC界面.基本.图形按钮.背景颜色
+
+* **类型:** `属性读方法`
+* **名称:** `背景颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前所设置的本组件背景颜色值
+
+##### 火山.MFC界面.基本.图形按钮.背景颜色
+
+* **类型:** `属性写方法`
+* **名称:** `背景颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.默认色"来指定使用默认组件背景颜色.
+* **特性:**
+	* `颜色值`(可以为默认色)
+* **描述:** 设置本组件的背景颜色值. 如果本组件未曾设置过背景颜色,则默认为"颜色类.默认色".
+
+##### 火山.MFC界面.基本.图形按钮.被单击
+
+* **类型:** `事件定义方法`
+* **名称:** `被单击`
+* **返回值数据类型:** `整数`
+* **描述:** 图形按钮被单击后将发送本事件.
+* **相关例程:** [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main)
+
+##### 火山.MFC界面.基本.图形按钮.置禁止图片数据
+
+* **类型:** `方法`
+* **名称:** `置禁止图片数据`
+* **参数:**
+	* `所欲设置的位图数据` (`字节集类`): 提供所设置的图片字节集
+* **描述:** 指定当按钮被禁止后所显示图片
+
+##### 火山.MFC界面.基本.图形按钮.置正常图片数据
+
+* **类型:** `方法`
+* **名称:** `置正常图片数据`
+* **参数:**
+	* `所欲设置的位图数据` (`字节集类`): 提供所设置的图片字节集
+* **描述:** 指定在正常情况下所显示图片数据
+
+##### 火山.MFC界面.基本.图形按钮.置点燃图片数据
+
+* **类型:** `方法`
+* **名称:** `置点燃图片数据`
+* **参数:**
+	* `所欲设置的位图数据` (`字节集类`): 提供所设置的图片字节集
+* **描述:** 当类型为按钮时,指定当鼠标移动到按钮上时所显示图片.
+
+##### 火山.MFC界面.基本.图形按钮.置按下图片数据
+
+* **类型:** `方法`
+* **名称:** `置按下图片数据`
+* **参数:**
+	* `所欲设置的位图数据` (`字节集类`): 提供所设置的图片字节集
+* **描述:** 指定当选择框被选中或者按钮被按下后所显示图片
+
+---
+
+#### 火山.MFC界面.基本.打印机纸张方向
+
+* **类型:** `类`
+* **名称:** `打印机纸张方向`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **相关例程:** [vol-打印测试-print_test-main](#vol-打印测试-print_test-main)
+
+##### 火山.MFC界面.基本.打印机纸张方向.纵向
+
+* **类型:** `成员常量`
+* **名称:** `纵向`
+* **数据类型:** `打印机纸张方向`
+* **初始值:** `0`
+* **相关例程:** [vol-打印测试-print_test-main](#vol-打印测试-print_test-main)
+
+##### 火山.MFC界面.基本.打印机纸张方向.横向
+
+* **类型:** `成员常量`
+* **名称:** `横向`
+* **数据类型:** `打印机纸张方向`
+* **初始值:** `1`
+
+---
+
+#### 火山.MFC界面.基本.打印机纸张类型
+
+* **类型:** `类`
+* **名称:** `打印机纸张类型`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供打印机的各种纸张类型,各常量成员备注中的尺寸单位均为毫米.
+* **相关例程:** [vol-打印测试-print_test-main](#vol-打印测试-print_test-main)
+
+##### 火山.MFC界面.基本.打印机纸张类型.自定义纸张
+
+* **类型:** `成员常量`
+* **名称:** `自定义纸张`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `-1`
+* **描述:** 需要另外提供纸张的确切尺寸
+
+##### 火山.MFC界面.基本.打印机纸张类型.默认纸
+
+* **类型:** `成员常量`
+* **名称:** `默认纸`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `0`
+* **描述:** 使用打印机的默认纸张
+* **相关例程:** [vol-打印测试-print_test-main](#vol-打印测试-print_test-main)
+
+##### 火山.MFC界面.基本.打印机纸张类型.A3纸
+
+* **类型:** `成员常量`
+* **名称:** `A3纸`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1`
+* **描述:** 297 x 420
+
+##### 火山.MFC界面.基本.打印机纸张类型.A4纸
+
+* **类型:** `成员常量`
+* **名称:** `A4纸`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `2`
+* **描述:** 210 x 297
+
+##### 火山.MFC界面.基本.打印机纸张类型.A5纸
+
+* **类型:** `成员常量`
+* **名称:** `A5纸`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `3`
+* **描述:** 148 x 210
+
+##### 火山.MFC界面.基本.打印机纸张类型.B4纸
+
+* **类型:** `成员常量`
+* **名称:** `B4纸`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `4`
+* **描述:** 250 x 354
+
+##### 火山.MFC界面.基本.打印机纸张类型.B5纸
+
+* **类型:** `成员常量`
+* **名称:** `B5纸`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `5`
+* **描述:** 182 x 257
+
+##### 火山.MFC界面.基本.打印机纸张类型.四开
+
+* **类型:** `成员常量`
+* **名称:** `四开`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `6`
+* **描述:** 215 x 275
+
+##### 火山.MFC界面.基本.打印机纸张类型.十六开
+
+* **类型:** `成员常量`
+* **名称:** `十六开`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `7`
+* **描述:** 146 x 215
+
+##### 火山.MFC界面.基本.打印机纸张类型.三十二开
+
+* **类型:** `成员常量`
+* **名称:** `三十二开`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `8`
+* **描述:** 97 x 151
+
+##### 火山.MFC界面.基本.打印机纸张类型.信纸
+
+* **类型:** `成员常量`
+* **名称:** `信纸`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `9`
+* **描述:** 216 x 279
+
+##### 火山.MFC界面.基本.打印机纸张类型.法律用纸
+
+* **类型:** `成员常量`
+* **名称:** `法律用纸`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `10`
+* **描述:** 216 x 355
+
+##### 火山.MFC界面.基本.打印机纸张类型.行政用纸
+
+* **类型:** `成员常量`
+* **名称:** `行政用纸`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `11`
+* **描述:** 184 x 266
+
+##### 火山.MFC界面.基本.打印机纸张类型.声明
+
+* **类型:** `成员常量`
+* **名称:** `声明`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `12`
+* **描述:** 140 x 216
+
+##### 火山.MFC界面.基本.打印机纸张类型.小报
+
+* **类型:** `成员常量`
+* **名称:** `小报`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `13`
+* **描述:** 279 x 432
+
+##### 火山.MFC界面.基本.打印机纸张类型.笔记
+
+* **类型:** `成员常量`
+* **名称:** `笔记`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `14`
+* **描述:** 216 x 279
+
+##### 火山.MFC界面.基本.打印机纸张类型.帐本
+
+* **类型:** `成员常量`
+* **名称:** `帐本`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `15`
+* **描述:** 432 x 279
+
+##### 火山.MFC界面.基本.打印机纸张类型.对开纸
+
+* **类型:** `成员常量`
+* **名称:** `对开纸`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `16`
+* **描述:** 216 x 330
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸184x267
+
+* **类型:** `成员常量`
+* **名称:** `纸184x267`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1006`
+* **描述:** 184 x 267
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸257x364
+
+* **类型:** `成员常量`
+* **名称:** `纸257x364`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1011`
+* **描述:** 257 x 364
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸254x355
+
+* **类型:** `成员常量`
+* **名称:** `纸254x355`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1015`
+* **描述:** 254 x 355
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸98x225
+
+* **类型:** `成员常量`
+* **名称:** `纸98x225`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1018`
+* **描述:** 98 x 225
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸105x241
+
+* **类型:** `成员常量`
+* **名称:** `纸105x241`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1019`
+* **描述:** 105 x 241
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸114x263
+
+* **类型:** `成员常量`
+* **名称:** `纸114x263`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1020`
+* **描述:** 114 x 263
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸121x279
+
+* **类型:** `成员常量`
+* **名称:** `纸121x279`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1021`
+* **描述:** 121 x 279
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸127x292
+
+* **类型:** `成员常量`
+* **名称:** `纸127x292`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1022`
+* **描述:** 127 x 292
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸432x558
+
+* **类型:** `成员常量`
+* **名称:** `纸432x558`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1023`
+* **描述:** 432 x 558
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸558x863
+
+* **类型:** `成员常量`
+* **名称:** `纸558x863`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1024`
+* **描述:** 558 x 863
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸863x1117
+
+* **类型:** `成员常量`
+* **名称:** `纸863x1117`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1025`
+* **描述:** 863 x 1117
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸110x220
+
+* **类型:** `成员常量`
+* **名称:** `纸110x220`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1026`
+* **描述:** 110 x 220
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸162x229
+
+* **类型:** `成员常量`
+* **名称:** `纸162x229`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1027`
+* **描述:** 162 x 229
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸324x458
+
+* **类型:** `成员常量`
+* **名称:** `纸324x458`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1028`
+* **描述:** 324 x 458
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸229x324
+
+* **类型:** `成员常量`
+* **名称:** `纸229x324`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1029`
+* **描述:** 229 x 324
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸114x162
+
+* **类型:** `成员常量`
+* **名称:** `纸114x162`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1030`
+* **描述:** 114 x 162
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸114x229
+
+* **类型:** `成员常量`
+* **名称:** `纸114x229`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1031`
+* **描述:** 114 x 229
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸250x353
+
+* **类型:** `成员常量`
+* **名称:** `纸250x353`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1032`
+* **描述:** 250 x 353
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸176x250
+
+* **类型:** `成员常量`
+* **名称:** `纸176x250`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1033`
+* **描述:** 176 x 250
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸176x125
+
+* **类型:** `成员常量`
+* **名称:** `纸176x125`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1034`
+* **描述:** 176 x 125
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸110x230
+
+* **类型:** `成员常量`
+* **名称:** `纸110x230`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1035`
+* **描述:** 110 x 230
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸98x190
+
+* **类型:** `成员常量`
+* **名称:** `纸98x190`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1036`
+* **描述:** 98 x 190
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸92x165
+
+* **类型:** `成员常量`
+* **名称:** `纸92x165`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1037`
+* **描述:** 92 x 165
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸378x279
+
+* **类型:** `成员常量`
+* **名称:** `纸378x279`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1038`
+* **描述:** 378 x 279
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸216x305
+
+* **类型:** `成员常量`
+* **名称:** `纸216x305`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1039`
+* **描述:** 216 x 305
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸100x148
+
+* **类型:** `成员常量`
+* **名称:** `纸100x148`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1042`
+* **描述:** 100 x 148
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸228x279
+
+* **类型:** `成员常量`
+* **名称:** `纸228x279`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1043`
+* **描述:** 228 x 279
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸254x279
+
+* **类型:** `成员常量`
+* **名称:** `纸254x279`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1044`
+* **描述:** 254 x 279
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸381x279
+
+* **类型:** `成员常量`
+* **名称:** `纸381x279`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1045`
+* **描述:** 381 x 279
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸220x220
+
+* **类型:** `成员常量`
+* **名称:** `纸220x220`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1046`
+* **描述:** 220 x 220
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸241x305
+
+* **类型:** `成员常量`
+* **名称:** `纸241x305`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1049`
+* **描述:** 241 x 305
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸241x381
+
+* **类型:** `成员常量`
+* **名称:** `纸241x381`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1050`
+* **描述:** 241 x 381
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸305x457
+
+* **类型:** `成员常量`
+* **名称:** `纸305x457`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1051`
+* **描述:** 305 x 457
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸235x322
+
+* **类型:** `成员常量`
+* **名称:** `纸235x322`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1052`
+* **描述:** 235 x 322
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸210x297
+
+* **类型:** `成员常量`
+* **名称:** `纸210x297`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1054`
+* **描述:** 210 x 297
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸227x356
+
+* **类型:** `成员常量`
+* **名称:** `纸227x356`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1056`
+* **描述:** 227 x 356
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸305x487
+
+* **类型:** `成员常量`
+* **名称:** `纸305x487`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1057`
+* **描述:** 305 x 487
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸216x322
+
+* **类型:** `成员常量`
+* **名称:** `纸216x322`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1058`
+* **描述:** 216 x 322
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸210x330
+
+* **类型:** `成员常量`
+* **名称:** `纸210x330`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1059`
+* **描述:** 210 x 330
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸148x210
+
+* **类型:** `成员常量`
+* **名称:** `纸148x210`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1060`
+* **描述:** 148 x 210
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸182x257
+
+* **类型:** `成员常量`
+* **名称:** `纸182x257`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1061`
+* **描述:** 182 x 257
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸322x445
+
+* **类型:** `成员常量`
+* **名称:** `纸322x445`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1062`
+* **描述:** 322 x 445
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸174x235
+
+* **类型:** `成员常量`
+* **名称:** `纸174x235`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1063`
+* **描述:** 174 x 235
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸201x276
+
+* **类型:** `成员常量`
+* **名称:** `纸201x276`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1064`
+* **描述:** 201 x 276
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸420x594
+
+* **类型:** `成员常量`
+* **名称:** `纸420x594`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1065`
+* **描述:** 420 x 594
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸297x420
+
+* **类型:** `成员常量`
+* **名称:** `纸297x420`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1066`
+* **描述:** 297 x 420
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸200x148
+
+* **类型:** `成员常量`
+* **名称:** `纸200x148`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1068`
+* **描述:** 200 x 148
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸105x148
+
+* **类型:** `成员常量`
+* **名称:** `纸105x148`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1069`
+* **描述:** 105 x 148
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸240x332
+
+* **类型:** `成员常量`
+* **名称:** `纸240x332`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1070`
+* **描述:** 240 x 332
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸216x277
+
+* **类型:** `成员常量`
+* **名称:** `纸216x277`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1071`
+* **描述:** 216 x 277
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸120x235
+
+* **类型:** `成员常量`
+* **名称:** `纸120x235`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1072`
+* **描述:** 120 x 235
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸90x205
+
+* **类型:** `成员常量`
+* **名称:** `纸90x205`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1073`
+* **描述:** 90 x 205
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸279x216
+
+* **类型:** `成员常量`
+* **名称:** `纸279x216`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1074`
+* **描述:** 279 x 216
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸420x297
+
+* **类型:** `成员常量`
+* **名称:** `纸420x297`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1075`
+* **描述:** 420 x 297
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸297x210
+
+* **类型:** `成员常量`
+* **名称:** `纸297x210`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1076`
+* **描述:** 297 x 210
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸210x148
+
+* **类型:** `成员常量`
+* **名称:** `纸210x148`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1077`
+* **描述:** 210 x 148
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸364x257
+
+* **类型:** `成员常量`
+* **名称:** `纸364x257`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1078`
+* **描述:** 364 x 257
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸257x182
+
+* **类型:** `成员常量`
+* **名称:** `纸257x182`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1079`
+* **描述:** 257 x 182
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸148x100
+
+* **类型:** `成员常量`
+* **名称:** `纸148x100`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1080`
+* **描述:** 148 x 100
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸148x200
+
+* **类型:** `成员常量`
+* **名称:** `纸148x200`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1081`
+* **描述:** 148 x 200
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸148x105
+
+* **类型:** `成员常量`
+* **名称:** `纸148x105`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1082`
+* **描述:** 148 x 105
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸332x240
+
+* **类型:** `成员常量`
+* **名称:** `纸332x240`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1083`
+* **描述:** 332 x 240
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸277x216
+
+* **类型:** `成员常量`
+* **名称:** `纸277x216`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1084`
+* **描述:** 277 x 216
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸235x120
+
+* **类型:** `成员常量`
+* **名称:** `纸235x120`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1085`
+* **描述:** 235 x 120
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸205x90
+
+* **类型:** `成员常量`
+* **名称:** `纸205x90`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1086`
+* **描述:** 205 x 90
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸128x182
+
+* **类型:** `成员常量`
+* **名称:** `纸128x182`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1087`
+* **描述:** 128 x 182
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸182x128
+
+* **类型:** `成员常量`
+* **名称:** `纸182x128`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1088`
+* **描述:** 182 x 128
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸305x279
+
+* **类型:** `成员常量`
+* **名称:** `纸305x279`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1089`
+* **描述:** 305 x 279
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸105x235
+
+* **类型:** `成员常量`
+* **名称:** `纸105x235`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1090`
+* **描述:** 105 x 235
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸235x105
+
+* **类型:** `成员常量`
+* **名称:** `纸235x105`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1091`
+* **描述:** 235 x 105
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸188x260
+
+* **类型:** `成员常量`
+* **名称:** `纸188x260`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1092`
+* **描述:** 188 x 260
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸130x184
+
+* **类型:** `成员常量`
+* **名称:** `纸130x184`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1093`
+* **描述:** 130 x 184
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸140x203
+
+* **类型:** `成员常量`
+* **名称:** `纸140x203`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1094`
+* **描述:** 140 x 203
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸102x165
+
+* **类型:** `成员常量`
+* **名称:** `纸102x165`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1095`
+* **描述:** 102 x 165
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸102x176
+
+* **类型:** `成员常量`
+* **名称:** `纸102x176`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1096`
+* **描述:** 102 x 176
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸125x176
+
+* **类型:** `成员常量`
+* **名称:** `纸125x176`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1097`
+* **描述:** 125 x 176
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸110x208
+
+* **类型:** `成员常量`
+* **名称:** `纸110x208`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1098`
+* **描述:** 110 x 208
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸120x230
+
+* **类型:** `成员常量`
+* **名称:** `纸120x230`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1100`
+* **描述:** 120 x 230
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸160x230
+
+* **类型:** `成员常量`
+* **名称:** `纸160x230`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1101`
+* **描述:** 160 x 230
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸120x309
+
+* **类型:** `成员常量`
+* **名称:** `纸120x309`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1102`
+* **描述:** 120 x 309
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸260x188
+
+* **类型:** `成员常量`
+* **名称:** `纸260x188`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1105`
+* **描述:** 260 x 188
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸184x130
+
+* **类型:** `成员常量`
+* **名称:** `纸184x130`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1106`
+* **描述:** 184 x 130
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸203x140
+
+* **类型:** `成员常量`
+* **名称:** `纸203x140`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1107`
+* **描述:** 203 x 140
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸165x102
+
+* **类型:** `成员常量`
+* **名称:** `纸165x102`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1108`
+* **描述:** 165 x 102
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸176x102
+
+* **类型:** `成员常量`
+* **名称:** `纸176x102`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1109`
+* **描述:** 176 x 102
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸208x110
+
+* **类型:** `成员常量`
+* **名称:** `纸208x110`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1111`
+* **描述:** 208 x 110
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸220x110
+
+* **类型:** `成员常量`
+* **名称:** `纸220x110`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1112`
+* **描述:** 220 x 110
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸230x120
+
+* **类型:** `成员常量`
+* **名称:** `纸230x120`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1113`
+* **描述:** 230 x 120
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸230x160
+
+* **类型:** `成员常量`
+* **名称:** `纸230x160`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1114`
+* **描述:** 230 x 160
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸309x120
+
+* **类型:** `成员常量`
+* **名称:** `纸309x120`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1115`
+* **描述:** 309 x 120
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸324x229
+
+* **类型:** `成员常量`
+* **名称:** `纸324x229`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1116`
+* **描述:** 324 x 229
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸458x324
+
+* **类型:** `成员常量`
+* **名称:** `纸458x324`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1117`
+* **描述:** 458 x 324
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸241x140
+
+* **类型:** `成员常量`
+* **名称:** `纸241x140`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1118`
+* **描述:** 241 x 140
+
+##### 火山.MFC界面.基本.打印机纸张类型.纸241x93
+
+* **类型:** `成员常量`
+* **名称:** `纸241x93`
+* **数据类型:** `打印机纸张类型`
+* **初始值:** `1119`
+* **描述:** 241 x 93
+
+---
+
+#### 火山.MFC界面.基本.打印机
+
+* **类型:** `类`
+* **名称:** `打印机`
+* **基础类:** `参考对象类`
+* **文档分类:** `常用功能`
+* **描述:** 打印机操作支持类. 注意: 1. 如未特殊说明,本类中所有坐标位置及尺寸均使用当前"绘画单位"属性所设置的单位; 2. 本类所使用的绘制坐标系的轴方向: 横向为从左到右,纵向为从上到下.
+* **相关例程:** [vol-打印测试-print_test-main](#vol-打印测试-print_test-main)
+
+##### 火山.MFC界面.基本.打印机.绘画单位
+
+* **类型:** `属性读方法`
+* **名称:** `绘画单位`
+* **返回值数据类型:** `绘画单位类型`
+* **描述:** 返回绘画时所使用的单位
+
+##### 火山.MFC界面.基本.打印机.绘画单位
+
+* **类型:** `属性写方法`
+* **名称:** `绘画单位`
+* **参数:**
+	* `所欲设置的单位` (`绘画单位类型`)
+* **描述:** 设置绘画时所使用的单位. 本属性的默认值为0.1毫米.
+
+##### 火山.MFC界面.基本.打印机.画笔类型
+
+* **类型:** `属性读方法`
+* **名称:** `画笔类型`
+* **返回值数据类型:** `画笔类型`
+* **描述:** 返回绘画时所使用的画笔类型
+
+##### 火山.MFC界面.基本.打印机.画笔类型
+
+* **类型:** `属性写方法`
+* **名称:** `画笔类型`
+* **参数:**
+	* `所欲设置的画笔类型` (`画笔类型`)
+* **描述:** 设置绘画时所使用的画笔类型. 本属性的默认值为"直线".
+
+##### 火山.MFC界面.基本.打印机.画出方式
+
+* **类型:** `属性读方法`
+* **名称:** `画出方式`
+* **返回值数据类型:** `画笔画出方式`
+* **描述:** 返回绘画时所使用的画出方式
+
+##### 火山.MFC界面.基本.打印机.画出方式
+
+* **类型:** `属性写方法`
+* **名称:** `画出方式`
+* **参数:**
+	* `所欲设置的画出方式` (`画笔画出方式`)
+* **描述:** 设置绘画时所使用的画出方式. 本属性的默认值为"复制笔".
+
+##### 火山.MFC界面.基本.打印机.画笔粗细
+
+* **类型:** `属性读方法`
+* **名称:** `画笔粗细`
+* **返回值数据类型:** `整数`
+* **描述:** 返回绘画时所使用的画笔宽度
+
+##### 火山.MFC界面.基本.打印机.画笔粗细
+
+* **类型:** `属性写方法`
+* **名称:** `画笔粗细`
+* **参数:**
+	* `所欲设置的画笔宽度` (`整数`)
+* **描述:** 设置绘画时所使用的画笔宽度.使用现行绘画单位.如果为0,表示画笔的粗细为一个像素点(与绘画单位无关). 注意: 当画笔类型为划线、点线、点划线、双点划线时,本属性无效,画笔宽度始终为一个像素点. 本属性的默认值为0.
+
+##### 火山.MFC界面.基本.打印机.画笔颜色
+
+* **类型:** `属性读方法`
+* **名称:** `画笔颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回绘画时所使用的画笔颜色
+
+##### 火山.MFC界面.基本.打印机.画笔颜色
+
+* **类型:** `属性写方法`
+* **名称:** `画笔颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值
+* **特性:**
+	* `颜色值`
+* **描述:** 设置绘画时所使用的画笔颜色. 本属性的默认值为黑色.
+
+##### 火山.MFC界面.基本.打印机.刷子类型
+
+* **类型:** `属性读方法`
+* **名称:** `刷子类型`
+* **返回值数据类型:** `填充刷子类型`
+* **描述:** 返回绘画时所使用的填充刷子类型
+
+##### 火山.MFC界面.基本.打印机.刷子类型
+
+* **类型:** `属性写方法`
+* **名称:** `刷子类型`
+* **参数:**
+	* `所欲设置的刷子类型` (`填充刷子类型`)
+* **描述:** 设置绘画时所使用的填充刷子类型. 本属性的默认值为"颜色刷子".
+
+##### 火山.MFC界面.基本.打印机.刷子颜色
+
+* **类型:** `属性读方法`
+* **名称:** `刷子颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回绘画时所使用的填充刷子颜色
+
+##### 火山.MFC界面.基本.打印机.刷子颜色
+
+* **类型:** `属性写方法`
+* **名称:** `刷子颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值
+* **特性:**
+	* `颜色值`
+* **描述:** 设置绘画时所使用的填充刷子颜色. 本属性的默认值为白色.
+
+##### 火山.MFC界面.基本.打印机.文本颜色
+
+* **类型:** `属性读方法`
+* **名称:** `文本颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回绘画时所使用的文本颜色
+
+##### 火山.MFC界面.基本.打印机.文本颜色
+
+* **类型:** `属性写方法`
+* **名称:** `文本颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值
+* **特性:**
+	* `颜色值`
+* **描述:** 设置绘画时所使用的文本颜色. 本属性的默认值为黑色.
+
+##### 火山.MFC界面.基本.打印机.文本背景颜色
+
+* **类型:** `属性读方法`
+* **名称:** `文本背景颜色`
+* **返回值数据类型:** `整数`
+* **描述:** 返回绘画时所使用的文本背景颜色
+
+##### 火山.MFC界面.基本.打印机.文本背景颜色
+
+* **类型:** `属性写方法`
+* **名称:** `文本背景颜色`
+* **参数:**
+	* `所欲设置颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值,可以使用"颜色类.透明色"来指定不填充文本背景.
+* **特性:**
+	* `颜色值`(可以为透明色)
+* **描述:** 设置绘画时所使用的文本背景颜色. 本属性的默认值为透明色.
+
+##### 火山.MFC界面.基本.打印机.字体
+
+* **类型:** `属性写方法`
+* **名称:** `字体`
+* **参数:**
+	* `字体描述文本` (`文本型`): 本参数的格式为: "字体名, 字体尺寸, 是否为粗体, 是否为斜体, 是否有下划线, 是否有删除线, 旋转角度",其中"是否"字段,用1代表真,0代表假,可以被省略.字体尺寸单位为磅, 旋转角度单位为1/10度. 例子: "宋体, 10", "宋体, 10, 0, 1, 1, 0, 100".
+* **特性:**
+	* `字体`. 格式: "字体名, 字体尺寸, 是否为粗体(0/1), 是否为斜体(0/1), 是否有下划线(0/1), 是否有删除线(0/1), 旋转角度(单位为1/10度)"
+* **描述:** 设置打印文本时所使用的字体
+* **相关例程:** [vol-打印测试-print_test-main](#vol-打印测试-print_test-main)
+
+##### 火山.MFC界面.基本.打印机.打印作业名
+
+* **类型:** `属性读方法`
+* **名称:** `打印作业名`
+* **返回值数据类型:** `文本型`
+* **描述:** 在打印过程中,本属性的内容将显示在由类库自动提供的打印状态对话框及Windows打印管理器中. 如果为空,默认为"未命名打印作业".
+
+##### 火山.MFC界面.基本.打印机.打印作业名
+
+* **类型:** `属性写方法`
+* **名称:** `打印作业名`
+* **参数:**
+	* `所欲设置名称` (`文本型`): 提供具体的打印作业名称,如果为空,默认为"未命名打印作业".
+* **描述:** 在打印过程中,本属性的内容将显示在由类库自动提供的打印状态对话框及Windows打印管理器中.
+
+##### 火山.MFC界面.基本.打印机.最小页号
+
+* **类型:** `属性读方法`
+* **名称:** `最小页号`
+* **返回值数据类型:** `整数`
+* **描述:** 返回打印作业所允许的最小页号值,为-1表示无页号范围.
+
+##### 火山.MFC界面.基本.打印机.最小页号
+
+* **类型:** `属性写方法`
+* **名称:** `最小页号`
+* **参数:**
+	* `所欲设置的页号` (`整数`)
+* **描述:** 本属性用作设置打印作业所允许的最小页号值,为-1表示无页号范围.
+
+##### 火山.MFC界面.基本.打印机.最大页号
+
+* **类型:** `属性读方法`
+* **名称:** `最大页号`
+* **返回值数据类型:** `整数`
+* **描述:** 返回打印作业所允许的最大页号值,为-1表示最大页号不受限制.
+
+##### 火山.MFC界面.基本.打印机.最大页号
+
+* **类型:** `属性写方法`
+* **名称:** `最大页号`
+* **参数:**
+	* `所欲设置的页号` (`整数`)
+* **描述:** 本属性用作设置打印作业所允许的最大页号值,为-1表示最大页号不受限制. 如果"最小页号"属性值为-1,则本属性无意义.
+
+##### 火山.MFC界面.基本.打印机.左边空
+
+* **类型:** `属性读方法`
+* **名称:** `左边空`
+* **返回值数据类型:** `整数`
+* **描述:** 返回打印时打印纸左边所留空白的尺寸,使用现行绘画单位.
+
+##### 火山.MFC界面.基本.打印机.左边空
+
+* **类型:** `属性写方法`
+* **名称:** `左边空`
+* **参数:**
+	* `所欲设置的空白尺寸` (`整数`)
+* **描述:** 本属性指定打印时打印纸左边所留空白的尺寸,使用现行绘画单位,由类库自动提供支持.
+
+##### 火山.MFC界面.基本.打印机.顶边空
+
+* **类型:** `属性读方法`
+* **名称:** `顶边空`
+* **返回值数据类型:** `整数`
+* **描述:** 返回打印时打印纸顶边所留空白的尺寸,使用现行绘画单位.
+
+##### 火山.MFC界面.基本.打印机.顶边空
+
+* **类型:** `属性写方法`
+* **名称:** `顶边空`
+* **参数:**
+	* `所欲设置的空白尺寸` (`整数`)
+* **描述:** 本属性指定打印时打印纸顶边所留空白的尺寸,使用现行绘画单位,由类库自动提供支持.
+
+##### 火山.MFC界面.基本.打印机.右边空
+
+* **类型:** `属性读方法`
+* **名称:** `右边空`
+* **返回值数据类型:** `整数`
+* **描述:** 返回打印时打印纸右边所留空白的尺寸,使用现行绘画单位.
+
+##### 火山.MFC界面.基本.打印机.右边空
+
+* **类型:** `属性写方法`
+* **名称:** `右边空`
+* **参数:**
+	* `所欲设置的空白尺寸` (`整数`)
+* **描述:** 本属性指定打印时打印纸右边所留空白的尺寸,使用现行绘画单位,由类库自动提供支持.
+
+##### 火山.MFC界面.基本.打印机.底边空
+
+* **类型:** `属性读方法`
+* **名称:** `底边空`
+* **返回值数据类型:** `整数`
+* **描述:** 返回打印时打印纸底边所留空白的尺寸,使用现行绘画单位.
+
+##### 火山.MFC界面.基本.打印机.底边空
+
+* **类型:** `属性写方法`
+* **名称:** `底边空`
+* **参数:**
+	* `所欲设置的空白尺寸` (`整数`)
+* **描述:** 本属性指定打印时打印纸底边所留空白的尺寸,使用现行绘画单位,由类库自动提供支持.
+
+##### 火山.MFC界面.基本.打印机.设备名称
+
+* **类型:** `属性读方法`
+* **名称:** `设备名称`
+* **返回值数据类型:** `文本型`
+* **描述:** 如果已经开始打印,则返回当前打印机设备的名称.
+* **相关例程:** [vol-打印测试-print_test-main](#vol-打印测试-print_test-main)
+
+##### 火山.MFC界面.基本.打印机.端口名称
+
+* **类型:** `属性读方法`
+* **名称:** `端口名称`
+* **返回值数据类型:** `文本型`
+* **描述:** 如果已经开始打印,则返回当前打印机端口的名称.
+* **相关例程:** [vol-打印测试-print_test-main](#vol-打印测试-print_test-main)
+
+##### 火山.MFC界面.基本.打印机.是否正在打印
+
+* **类型:** `属性读方法`
+* **名称:** `是否正在打印`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回当前是否正在进行打印
+
+##### 火山.MFC界面.基本.打印机.当前页号
+
+* **类型:** `属性读方法`
+* **名称:** `当前页号`
+* **返回值数据类型:** `整数`
+* **描述:** 本属性提供现行打印页的页号,由类库自行维护. 页号值从"首页页号"属性值开始,如果"最小页号"属性值被置为-1,则页号值从1开始. 在以下情况下属性值被自动增一: 1.使用"写文本行"方法打印一行文本并且要打印文本行的高度当前页容纳不下(此时将会首先自动换页); 2.使用"换页"方法. 本属性仅在打印作业过程中有效,如果当前没有进行打印,将返回0.
+* **相关例程:** [vol-打印测试-print_test-main](#vol-打印测试-print_test-main)
+
+##### 火山.MFC界面.基本.打印机.已打印份数
+
+* **类型:** `属性读方法`
+* **名称:** `已打印份数`
+* **返回值数据类型:** `整数`
+* **描述:** 本属性提供现行所已经打印的份数(含当前份),由类库自行维护. 在调用"开始下一份"方法后,本属性值被自动加一. 本属性仅在打印作业过程中有效,如果当前没有进行打印,将返回0.
+* **相关例程:** [vol-打印测试-print_test-main](#vol-打印测试-print_test-main)
+
+##### 火山.MFC界面.基本.打印机.打印区宽度
+
+* **类型:** `属性读方法`
+* **名称:** `打印区宽度`
+* **返回值数据类型:** `整数`
+* **描述:** 本属性提供了打印纸实际可打印区域宽度减去左右边空后的值,使用现行绘画单位. 本属性仅在打印作业过程中有效,如果当前没有进行打印,将返回0.
+
+##### 火山.MFC界面.基本.打印机.打印区高度
+
+* **类型:** `属性读方法`
+* **名称:** `打印区高度`
+* **返回值数据类型:** `整数`
+* **描述:** 本属性提供了打印纸实际可打印区域高度减去上下边空后的值,使用现行绘画单位. 本属性仅在打印作业过程中有效,如果当前没有进行打印,将返回0.
+
+##### 火山.MFC界面.基本.打印机.打印区尺寸
+
+* **类型:** `属性读方法`
+* **名称:** `打印区尺寸`
+* **返回值数据类型:** `尺寸类`
+* **描述:** 本属性提供了打印纸实际可打印区域的尺寸,其中宽度值减去左右边空,高度值减去上下边空,使用现行绘画单位. 本属性仅在打印作业过程中有效,如果当前没有进行打印,将返回0尺寸.
+
+##### 火山.MFC界面.基本.打印机.打印份数
+
+* **类型:** `属性读方法`
+* **名称:** `打印份数`
+* **返回值数据类型:** `整数`
+* **描述:** 如果已经开始打印且开始打印时显示了打印设置对话框,则返回用户在打印设置对话框内打印份数编辑框中输入的值,否则返回先前所设置的初始值.
+
+##### 火山.MFC界面.基本.打印机.打印份数
+
+* **类型:** `属性写方法`
+* **名称:** `打印份数`
+* **参数:**
+	* `所欲打印份数` (`整数`): 必须大于等于-1,具体解释参见属性说明.
+* **描述:** 本属性用作为打印设置对话框中的打印份数编辑框提供初始值,当用户从打印设置对话框中确认返回后,属性值提供用户所实际输入的需要打印份数.如果开始打印时没有显示打印设置对话框,本属性值保持先前所设置的初始值不变. 需了解的是: 如果被选定打印机硬件支持多份拷贝功能,无论用户设置打印份数为多少,打印设置对话框永远返回1,多份打印被转交给打印机硬件去自动完成.如果在进入打印设置对话框前置属性值为-1,表明现行程序不支持多份打印,此时类库会自动检查当前所选择打印机硬件,如果该打印机硬件支持多份拷贝,将允许用户指定打印份数并启用硬件多份拷贝功能,否则不允许.
+
+##### 火山.MFC界面.基本.打印机.多份打印方式
+
+* **类型:** `属性读方法`
+* **名称:** `多份打印方式`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 如果已经开始打印且开始打印时显示了打印设置对话框,则返回用户在打印设置对话框内"份数"组中的"分页"选择框上的选中状态值,否则返回先前所设置的初始值.
+
+##### 火山.MFC界面.基本.打印机.多份打印方式
+
+* **类型:** `属性写方法`
+* **名称:** `多份打印方式`
+* **参数:**
+	* `是否多份打印` (`逻辑型`)
+* **描述:** 本属性用作为打印设置对话框中"份数"组中的"分页"选择框提供初始值,当用户从打印设置对话框中确认返回后,属性值提供用户所实际输入的值.如果开始打印时没有显示打印设置对话框,本属性值保持先前所设置的初始值不变.
+
+##### 火山.MFC界面.基本.打印机.首页页号
+
+* **类型:** `属性读方法`
+* **名称:** `首页页号`
+* **返回值数据类型:** `整数`
+* **描述:** 如果已经开始打印且开始打印时显示了打印设置对话框,则返回用户在打印设置对话框内首打印页页号编辑框中输入的值,如果用户未选择在指定页号范围内打印,将返回-1. 如果尚未开始打印或开始打印时没有显示打印设置对话框,将返回先前所设置的初始值. 从打印设置对话框中确认返回后,通过判断本属性值是否不为-1即可得知当前是否被限定在指定页号范围内打印.
+
+##### 火山.MFC界面.基本.打印机.首页页号
+
+* **类型:** `属性写方法`
+* **名称:** `首页页号`
+* **参数:**
+	* `所欲设置的页号` (`整数`)
+* **描述:** 本属性用作为打印设置对话框中的首打印页页号编辑框提供初始值. 当用户从打印设置对话框中确认返回且用户选择在指定页号范围内打印时,属性值提供用户所实际输入的首打印页号,如果用户未选择在指定页号范围内打印,属性值将填入-1. 从打印设置对话框中确认返回后,通过判断本属性值是否不为-1即可得知当前是否被限定在指定页号范围内打印. 如果使用"开始打印"方法进入打印时没有显示打印设置对话框,本属性保持其所初始设置的值不变.
+
+##### 火山.MFC界面.基本.打印机.末页页号
+
+* **类型:** `属性读方法`
+* **名称:** `末页页号`
+* **返回值数据类型:** `整数`
+* **描述:** 如果已经开始打印且开始打印时显示了打印设置对话框,则返回用户在打印设置对话框内末打印页页号编辑框中输入的值,如果用户未选择在指定页号范围内打印,将返回-1. 如果尚未开始打印或开始打印时没有显示打印设置对话框,将返回先前所设置的初始值.
+
+##### 火山.MFC界面.基本.打印机.末页页号
+
+* **类型:** `属性写方法`
+* **名称:** `末页页号`
+* **参数:**
+	* `所欲设置的页号` (`整数`)
+* **描述:** 本属性用作为打印设置对话框中的末打印页页号编辑框提供初始值,如果为-1表示未提供初始值. 当用户从打印设置对话框中确认返回且用户选择在指定页号范围内打印时,属性值提供用户所实际输入的末打印页号,如果用户未选择在指定页号范围内打印,属性值将填入-1. 如果使用"开始打印"方法进入打印时没有显示打印设置对话框,本属性保持其所初始设置的值不变.
+
+##### 火山.MFC界面.基本.打印机.打印选择区
+
+* **类型:** `属性读方法`
+* **名称:** `打印选择区`
+* **返回值数据类型:** `整数`
+* **描述:** 如果已经开始打印且开始打印时显示了打印设置对话框,则返回用户在打印设置对话框内"选择的范围"选择框上的选中状态值(1或0),否则返回先前所设置的初始值. 从打印设置对话框中确认返回后,通过判断本属性值是否为1即可得知当前是否限定仅打印选择区域内容.
+
+##### 火山.MFC界面.基本.打印机.打印选择区
+
+* **类型:** `属性写方法`
+* **名称:** `打印选择区`
+* **参数:**
+	* `所欲设置的打印选择区` (`整数`)
+* **描述:** 本属性用作为打印设置对话框中"选择的范围"选择框提供初始值,为1表示真,为0表示假. 当用户从打印设置对话框中确认返回后,属性值提供用户所实际设置的值(1或0).如果在进入打印设置对话框前置属性值为-1,打印设置对话框中将不允许用户选取该选择框. 从打印设置对话框中确认返回后,通过判断本属性值是否为1即可得知当前是否限定仅打印选择区域内容. 如果使用"开始打印"方法进入打印时没有显示打印设置对话框,本属性保持其所初始设置的值不变.
+
+##### 火山.MFC界面.基本.打印机.打印开始
+
+* **类型:** `事件定义方法`
+* **名称:** `打印开始`
+* **返回值数据类型:** `整数`
+* **描述:** 当打印成功开始后,本事件被发送.
+* **相关例程:** [vol-打印测试-print_test-main](#vol-打印测试-print_test-main)
+
+##### 火山.MFC界面.基本.打印机.打印完一页
+
+* **类型:** `事件定义方法`
+* **名称:** `打印完一页`
+* **返回值数据类型:** `整数`
+* **描述:** 当成功打印完一页后,将发送本事件. 可以在事件接收处理方法中读取"打印作业名","当前页号","已打印份数","设备名称","端口名称"等属性来获取当前相关信息.
+* **相关例程:** [vol-打印测试-print_test-main](#vol-打印测试-print_test-main)
+
+##### 火山.MFC界面.基本.打印机.打印结束
+
+* **类型:** `事件定义方法`
+* **名称:** `打印结束`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `是否为被中止` (`逻辑型`): 参数值为真表示打印被中止(中途打印失败或调用了"取消打印"方法),否则表示打印正常结束.
+* **描述:** 当打印结束或被中止后,本事件被发送.
+* **相关例程:** [vol-打印测试-print_test-main](#vol-打印测试-print_test-main)
+
+##### 火山.MFC界面.基本.打印机.是否全部打印
+
+* **类型:** `方法`
+* **名称:** `是否全部打印`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 如果成功开始打印且调用"开始打印"方法时显示了打印设置对话框,则返回用户是否选择了打印全部内容.
+
+##### 火山.MFC界面.基本.打印机.是否打印选择区
+
+* **类型:** `方法`
+* **名称:** `是否打印选择区`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 如果成功开始打印且调用"开始打印"方法时显示了打印设置对话框,则返回用户是否选择了打印当前所选择区域内容.
+
+##### 火山.MFC界面.基本.打印机.是否打印页范围
+
+* **类型:** `方法`
+* **名称:** `是否打印页范围`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 如果成功开始打印且调用"开始打印"方法时显示了打印设置对话框,则返回用户是否选择了打印所指定页范围中的内容. 具体页范围可以通过读取"首页页号"和"末页页号"属性值获得.
+
+##### 火山.MFC界面.基本.打印机.取设备句柄
+
+* **类型:** `方法`
+* **名称:** `取设备句柄`
+* **返回值数据类型:** `变整数`
+* **描述:** 如当前用户程序正在进行打印作业,则返回打印机所对应的设备句柄(即HDC),否则返回0.
+
+##### 火山.MFC界面.基本.打印机.开始打印
+
+* **类型:** `方法`
+* **名称:** `开始打印`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `父窗口组件` (`窗口组件`): 如果显示打印设置对话框,本参数用作提供该对话框的父窗口组件.
+	* `是否显示打印设置对话框` (`逻辑型`, 默认值: `真`): 指定在进入打印之前是否先显示打印设置对话框对打印机及相关打印 参数进行设置. 如果参数值为假,将自动使用Windows系统默认打印机,但如果取Windows系统默认打印机失败,仍然会显示打印设置对话框.
+	* `纸张类型` (`打印机纸张类型`, 默认值: `打印机纸张类型.默认纸`): 指定所使用的打印纸类型. 如果打印纸类型为"自定义纸张",则必须在后续参数中明确指定纸张的尺寸. 注意如果所选择纸张得不到打印机的支持,打印机将会自动选择尺寸最接近的纸张.
+	* `纸张方向` (`打印机纸张方向`, 默认值: `打印机纸张方向.纵向`): 指定打印机纸张的具体放置方向
+	* `自定义纸张宽度` (`整数`, 默认值: `0`): 指定自定义纸张的宽度,单位为0.1毫米. 只有当前面的"纸张"参数值为"打印机纸张类型.自定义纸张"时,本参数才有作用且必须提供具体值.
+	* `自定义纸张高度` (`整数`, 默认值: `0`): 指定自定义纸张的高度,单位为0.1毫米. 只有当前面的"纸张"参数值为"打印机纸张类型.自定义纸张"时,本参数才有作用且必须提供具体值.
+* **描述:** 开始进入打印作业,返回真表示已经成功进入,否则表示失败, 进入打印作业后文本写出位置将被重置为0.如果执行本命令时已经在打印作业中或者用户在打印设置对话框中选择了取消,返回假. 进入打印后必须调用"结束打印"或者"取消打印"方法来退出打印. 进入打印前程序进行的所有打印绘画操作都将被忽略.
+* **相关例程:** [vol-打印测试-print_test-main](#vol-打印测试-print_test-main)
+
+##### 火山.MFC界面.基本.打印机.结束打印
+
+* **类型:** `方法`
+* **名称:** `结束打印`
+* **描述:** 如果当前已经进入了打印作业,调用本命令可完成此作业. 结束打印后程序进行的后续打印绘画操作都将被忽略.
+* **相关例程:** [vol-打印测试-print_test-main](#vol-打印测试-print_test-main)
+
+##### 火山.MFC界面.基本.打印机.取消打印
+
+* **类型:** `方法`
+* **名称:** `取消打印`
+* **描述:** 如果当前已经进入了打印作业,调用本命令可立即中止且取消该作业. 如果操作系统的打印管理器正在处理该打印作业(打印管理器正在运行 并且允许后台打印),那么该作业将被删除且使打印机不接收任何信息. 如果打印管理器未正在处理该作业(没有选用后台打印),部分或全部数据可能在此之前已发送到打印机.此时,打印机驱动程序将尽可能使打印机立即复位并终止该作业. 取消打印后易程序进行的后续打印绘画操作都将被忽略.
+
+##### 火山.MFC界面.基本.打印机.换页
+
+* **类型:** `方法`
+* **名称:** `换页`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 调用本命令使打印机完成当前页的打印,文本写出位置被重置为0,并走纸到下一页左上角. 换页成功返回真,否则将自动取消打印并返回假.
+
+##### 火山.MFC界面.基本.打印机.开始下一份
+
+* **类型:** `方法`
+* **名称:** `开始下一份`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 调用本命令后将结束在当前页上的打印作业,并将当前打印份数加一,当前页号置回到首页页号,以进入下一份拷贝的打印. 成功返回真,失败将自动取消打印并返回假.
+
+##### 火山.MFC界面.基本.打印机.画点
+
+* **类型:** `方法`
+* **名称:** `画点`
+* **参数:**
+	* `点横坐标` (`整数`)
+	* `点纵坐标` (`整数`)
+	* `欲画入点的颜色值` (`整数`): 可以使用"颜色类"所提供的颜色值
+* **描述:** 在打印设备上指定位置绘制一个点
+
+##### 火山.MFC界面.基本.打印机.画直线
+
+* **类型:** `方法`
+* **名称:** `画直线`
+* **参数:**
+	* `起始点横坐标` (`整数`)
+	* `起始点纵坐标` (`整数`)
+	* `结束点横坐标` (`整数`)
+	* `结束点纵坐标` (`整数`)
+* **描述:** 使用当前画笔在打印设备上画一条直线
+
+##### 火山.MFC界面.基本.打印机.画椭圆
+
+* **类型:** `方法`
+* **名称:** `画椭圆`
+* **参数:**
+	* `椭圆左上角横坐标` (`整数`)
+	* `椭圆左上角纵坐标` (`整数`)
+	* `椭圆右下角横坐标` (`整数`)
+	* `椭圆右下角纵坐标` (`整数`)
+* **描述:** 使用当前画笔在打印设备上画一个椭圆
+
+##### 火山.MFC界面.基本.打印机.画弧线
+
+* **类型:** `方法`
+* **名称:** `画弧线`
+* **参数:**
+	* `椭圆左上角横坐标` (`整数`)
+	* `椭圆左上角纵坐标` (`整数`)
+	* `椭圆右下角横坐标` (`整数`)
+	* `椭圆右下角纵坐标` (`整数`)
+	* `弧线起始点横坐标` (`整数`): 弧线从椭圆中心点至此起始点的直线与椭圆圆弧相交处开始绘制
+	* `弧线起始点纵坐标` (`整数`): 弧线从椭圆中心点至此起始点的直线与椭圆圆弧相交处开始绘制
+	* `弧线终止点横坐标` (`整数`): 弧线在椭圆中心点至此终止点的直线与椭圆圆弧相交处结束绘制
+	* `弧线终止点纵坐标` (`整数`): 弧线在椭圆中心点至此终止点的直线与椭圆圆弧相交处结束绘制
+* **描述:** 使用当前画笔在打印设备上画一条弧线
+
+##### 火山.MFC界面.基本.打印机.画弦
+
+* **类型:** `方法`
+* **名称:** `画弦`
+* **参数:**
+	* `椭圆左上角横坐标` (`整数`)
+	* `椭圆左上角纵坐标` (`整数`)
+	* `椭圆右下角横坐标` (`整数`)
+	* `椭圆右下角纵坐标` (`整数`)
+	* `弧线起始点横坐标` (`整数`): 弦的弧线从椭圆中心点至此起始点的直线与椭圆圆弧相交处开始绘制
+	* `弧线起始点纵坐标` (`整数`): 弦的弧线从椭圆中心点至此起始点的直线与椭圆圆弧相交处开始绘制
+	* `弧线终止点横坐标` (`整数`): 弦的弧线在椭圆中心点至此终止点的直线与椭圆圆弧相交处结束绘制
+	* `弧线终止点纵坐标` (`整数`): 弦的弧线在椭圆中心点至此终止点的直线与椭圆圆弧相交处结束绘制
+* **描述:** 使用当前画笔在打印设备上画一个弦,弦的内部使用当前刷子填充.
+
+##### 火山.MFC界面.基本.打印机.画饼
+
+* **类型:** `方法`
+* **名称:** `画饼`
+* **参数:**
+	* `椭圆左上角横坐标` (`整数`)
+	* `椭圆左上角纵坐标` (`整数`)
+	* `椭圆右下角横坐标` (`整数`)
+	* `椭圆右下角纵坐标` (`整数`)
+	* `弧线起始点横坐标` (`整数`): 饼的弧线从椭圆中心点至此起始点的直线与椭圆圆弧相交处开始绘制
+	* `弧线起始点纵坐标` (`整数`): 饼的弧线从椭圆中心点至此起始点的直线与椭圆圆弧相交处开始绘制
+	* `弧线终止点横坐标` (`整数`): 饼的弧线在椭圆中心点至此终止点的直线与椭圆圆弧相交处结束绘制
+	* `弧线终止点纵坐标` (`整数`): 饼的弧线在椭圆中心点至此终止点的直线与椭圆圆弧相交处结束绘制
+* **描述:** 使用当前画笔在打印设备上画一个饼,饼的内部使用当前刷子填充.
+
+##### 火山.MFC界面.基本.打印机.画矩形
+
+* **类型:** `方法`
+* **名称:** `画矩形`
+* **参数:**
+	* `矩形左上角横坐标` (`整数`)
+	* `矩形左上角纵坐标` (`整数`)
+	* `矩形右下角横坐标` (`整数`)
+	* `矩形右下角纵坐标` (`整数`)
+* **描述:** 使用当前画笔在打印设备上画一个矩形,矩形的内部使用当前刷子填充.
+
+##### 火山.MFC界面.基本.打印机.填充矩形
+
+* **类型:** `方法`
+* **名称:** `填充矩形`
+* **参数:**
+	* `矩形左上角横坐标` (`整数`)
+	* `矩形左上角纵坐标` (`整数`)
+	* `矩形右下角横坐标` (`整数`)
+	* `矩形右下角纵坐标` (`整数`)
+* **描述:** 将打印设备上指定的矩形区域用当前刷子填充
+
+##### 火山.MFC界面.基本.打印机.画圆角矩形
+
+* **类型:** `方法`
+* **名称:** `画圆角矩形`
+* **参数:**
+	* `矩形左上角横坐标` (`整数`)
+	* `矩形左上角纵坐标` (`整数`)
+	* `矩形右下角横坐标` (`整数`)
+	* `矩形右下角纵坐标` (`整数`)
+	* `圆角宽度` (`整数`)
+	* `圆角高度` (`整数`, 默认值: `-1`): 参数值如果为-1,则等同于圆角宽度.
+* **描述:** 使用当前画笔在打印设备上画一个圆角矩形,圆角矩形的内部使用当前刷子填充.
+
+##### 火山.MFC界面.基本.打印机.画多边形
+
+* **类型:** `方法`
+* **名称:** `画多边形`
+* **参数:**
+	* `多边形顶点数组` (`整数数组类`): 本参数数组顺序记录多边形各个顶点的横向及纵向坐标值
+	* `顶点数目` (`整数`, 默认值: `-1`): 本参数指定多边形顶点的总数目,如果为-1则为数组中记录的所有顶点数目.
+* **描述:** 使用当前画笔在打印设备上画一个多边形,多边形的内部使用当前刷子填充. 如果该多边形没有闭合,将自动闭合.
+
+##### 火山.MFC界面.基本.打印机.置写出位置
+
+* **类型:** `方法`
+* **名称:** `置写出位置`
+* **参数:**
+	* `横向写出位置` (`整数`, 默认值: `数值范围.最大整数值`): 如果本参数为"数值范围.最大整数值",则使用现行横向写出位置.
+	* `纵向写出位置` (`整数`, 默认值: `数值范围.最大整数值`): 如果本参数为"数值范围.最大整数值",则使用现行纵向写出位置.
+* **描述:** 设置下次使用"写文本行"或"写出"命令输出数据时的起始位置
+
+##### 火山.MFC界面.基本.打印机.写文本行
+
+* **类型:** `方法`
+* **名称:** `写文本行`
+* **参数:**
+	* `所欲写出的数据` (`通用基本型`)
+	* `行间距` (`整数`, 默认值: `2`): 提供文本行与行之间的纵向间距,单位像素.
+* **描述:** 在当前写出位置写出指定的数据,并将现行写出位置调整到下行行首. 如果当前打印页已经无法容纳当前行,则将自动换页.
+* **相关例程:** [vol-打印测试-print_test-main](#vol-打印测试-print_test-main)
+
+##### 火山.MFC界面.基本.打印机.写出
+
+* **类型:** `方法`
+* **名称:** `写出`
+* **参数:**
+	* `所欲写出的数据` (`通用基本型`)
+	* `行间距` (`整数`, 默认值: `2`): 提供文本行与行之间的纵向间距,单位像素.
+* **描述:** 在当前写出位置写出指定的数据,并将现行写出位置调整到所写出数据的结束位置.
+
+##### 火山.MFC界面.基本.打印机.定位写出
+
+* **类型:** `方法`
+* **名称:** `定位写出`
+* **参数:**
+	* `横向写出位置` (`整数`, 默认值: `数值范围.最大整数值`): 如果本参数为"数值范围.最大整数值",则使用现行横向写出位置.
+	* `纵向写出位置` (`整数`, 默认值: `数值范围.最大整数值`): 如果本参数为"数值范围.最大整数值",则使用现行纵向写出位置.
+	* `所欲写出的数据` (`通用基本型`)
+	* `行间距` (`整数`, 默认值: `2`): 提供文本行与行之间的纵向间距,单位像素.
+* **描述:** 在所指定位置写出指定的数据,不改变现行写出位置.
+
+##### 火山.MFC界面.基本.打印机.取宽度
+
+* **类型:** `方法`
+* **名称:** `取宽度`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `欲获取其绘制尺寸的数据` (`通用基本型`)
+* **描述:** 返回指定数据的写出宽度. 如果调用本方法时尚未进入打印,使用像素点为单位,否则使用当前绘画单位.
+
+##### 火山.MFC界面.基本.打印机.取高度
+
+* **类型:** `方法`
+* **名称:** `取高度`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `欲获取其绘制尺寸的数据` (`通用基本型`)
+* **描述:** 返回指定数据的写出高度. 如果调用本方法时尚未进入打印,使用像素点为单位,否则使用当前绘画单位.
+
+##### 火山.MFC界面.基本.打印机.取尺寸
+
+* **类型:** `方法`
+* **名称:** `取尺寸`
+* **返回值数据类型:** `尺寸类`
+* **参数:**
+	* `欲获取其绘制尺寸的数据` (`通用基本型`)
+* **描述:** 返回指定数据的写出尺寸. 如果调用本方法时尚未进入打印,使用像素点为单位,否则使用当前绘画单位.
+
+##### 火山.MFC界面.基本.打印机.画图片
+
+* **类型:** `方法`
+* **名称:** `画图片`
+* **参数:**
+	* `所欲绘制的位图` (`位图对象类`): 提供所欲绘制的位图对象
+	* `图片左边画出位置` (`整数`)
+	* `图片顶边画出位置` (`整数`)
+	* `图片画出宽度` (`整数`, 默认值: `-1`): 如果本参数为-1,则使用图片本身宽度.
+	* `图片画出高度` (`整数`, 默认值: `-1`): 如果本参数为-1,则使用图片本身高度.
+	* `图片画出方法` (`整数`, 默认值: `图像复制方法.拷贝`): 本参数定义绘制图片时对图片执行的位操作,可以为"图像复制方法"类中的各个整数常量值,或者其它自定义操作码(请自行查阅相关技术文档). 本参数也可以为一个颜色值,用作指定图片中的透明色(即具有此颜色的像素将不会被绘制),但必须使用其负值. 如: -取颜色 (255, 255, 255) ,此参数值即指定在打印设备上画出图片中除白色外的所有颜色. 如果本参数值为"图像复制方法.拷贝",则支持对透明/半透明图片(如png)的绘制.
+* **描述:** 在所指定位置绘制图片
+
+##### 火山.MFC界面.基本.打印机.取图片宽度
+
+* **类型:** `方法`
+* **名称:** `取图片宽度`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `所欲处理的位图` (`位图对象类`): 提供所欲处理的位图对象
+* **描述:** 返回指定图片的宽度. 如果调用本方法时尚未进入打印,使用像素点为单位,否则使用当前绘画单位.
+
+##### 火山.MFC界面.基本.打印机.取图片高度
+
+* **类型:** `方法`
+* **名称:** `取图片高度`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `所欲处理的位图` (`位图对象类`): 提供所欲处理的位图对象
+* **描述:** 返回指定图片的高度. 如果调用本方法时尚未进入打印,使用像素点为单位,否则使用当前绘画单位.
+
+##### 火山.MFC界面.基本.打印机.取图片尺寸
+
+* **类型:** `方法`
+* **名称:** `取图片尺寸`
+* **返回值数据类型:** `尺寸类`
+* **参数:**
+	* `所欲处理的位图` (`位图对象类`): 提供所欲处理的位图对象
+* **描述:** 返回指定图片的尺寸. 如果调用本方法时尚未进入打印,使用像素点为单位,否则使用当前绘画单位.
+
+##### 火山.MFC界面.基本.打印机.单位转换
+
+* **类型:** `方法`
+* **名称:** `单位转换`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `欲转换的坐标值` (`整数`): 提供欲转换的横向或纵向坐标值
+	* `欲转换坐标值的类型` (`坐标转换类型`): 根据所提供的类型值,将进行相反的单位转换,即将绘画单位转换到像素单位,将像素单位转换到绘画单位.
+* **描述:** 将像素单位坐标值转换到当前绘画单位,或将当前绘画单位坐标值转换到像素单位. 调用本方法时必须已经开始打印.
+
+##### 火山.MFC界面.基本.打印机.逻辑尺寸到像素
+
+* **类型:** `方法`
+* **名称:** `逻辑尺寸到像素`
+* **返回值数据类型:** `尺寸类`
+* **参数:**
+	* `所欲转换的尺寸` (`尺寸类`): 此尺寸基于当前绘画单位
+* **描述:** 将所指定的基于当前绘画单位的尺寸值转换到像素单位并返回. 调用本方法时必须已经开始打印.
+
+##### 火山.MFC界面.基本.打印机.像素尺寸到逻辑
+
+* **类型:** `方法`
+* **名称:** `像素尺寸到逻辑`
+* **返回值数据类型:** `尺寸类`
+* **参数:**
+	* `所欲转换的尺寸` (`尺寸类`): 此尺寸基于像素单位
+* **描述:** 将所指定的基于像素单位的尺寸值转换到当前绘画单位并返回. 调用本方法时必须已经开始打印.
+
+##### 火山.MFC界面.基本.打印机.逻辑位置到像素
+
+* **类型:** `方法`
+* **名称:** `逻辑位置到像素`
+* **返回值数据类型:** `位置类`
+* **参数:**
+	* `所欲转换的位置` (`位置类`): 此位置基于当前绘画单位
+* **描述:** 将所指定的基于当前绘画单位的位置转换到像素单位并返回. 调用本方法时必须已经开始打印.
+
+##### 火山.MFC界面.基本.打印机.像素位置到逻辑
+
+* **类型:** `方法`
+* **名称:** `像素位置到逻辑`
+* **返回值数据类型:** `位置类`
+* **参数:**
+	* `所欲转换的位置` (`位置类`): 此位置基于像素单位
+* **描述:** 将所指定的基于像素单位的位置转换到当前绘画单位并返回. 调用本方法时必须已经开始打印.
+
+##### 火山.MFC界面.基本.打印机.逻辑矩形到像素
+
+* **类型:** `方法`
+* **名称:** `逻辑矩形到像素`
+* **返回值数据类型:** `矩形类`
+* **参数:**
+	* `所欲转换的矩形` (`矩形类`): 此矩形位置基于当前绘画单位
+* **描述:** 将所指定的基于当前绘画单位的矩形位置转换到像素单位并返回. 调用本方法时必须已经开始打印.
+
+##### 火山.MFC界面.基本.打印机.像素矩形到逻辑
+
+* **类型:** `方法`
+* **名称:** `像素矩形到逻辑`
+* **返回值数据类型:** `矩形类`
+* **参数:**
+	* `所欲转换的矩形` (`矩形类`): 此矩形位置基于像素单位
+* **描述:** 将所指定的基于像素单位的矩形位置转换到当前绘画单位并返回. 调用本方法时必须已经开始打印.
+
+##### 火山.MFC界面.基本.打印机.置字体对象
+
+* **类型:** `方法`
+* **名称:** `置字体对象`
+* **参数:**
+	* `所欲设置的字体` (`字体对象类`)
+* **描述:** 设置打印文本时所使用的字体
+
+---
+
+#### 火山.MFC界面.基本.OCX组件
+
+* **类型:** `类`
+* **名称:** `OCX组件`
+* **基础类:** `窗口组件`
+
+##### 火山.MFC界面.基本.OCX组件.组件接口
+
+* **类型:** `成员变量`
+* **名称:** `组件接口`
+* **数据类型:** `COM对象类`
+* **描述:** 提供OCX组件创建完毕后的组件接口对象
+
+##### 火山.MFC界面.基本.OCX组件.组件类型
+
+* **类型:** `属性读方法`
+* **名称:** `组件类型`
+* **返回值数据类型:** `文本型`
+* **描述:** 返回所设置的OCX组件类型文本
+
+##### 火山.MFC界面.基本.OCX组件.组件类型
+
+* **类型:** `属性写方法`
+* **名称:** `组件类型`
+* **参数:**
+	* `组件类型文本` (`文本型`): 提供OCX组件的类型文本,可以为其可识别名称: 譬如"Excel.Application"/"Word.Application",也可以是其CLSID,如"{0003088F-0000-0000-C000-000000000058}".
+* **描述:** 设置OCX组件的类型文本,可以为其可识别名称: 譬如"Excel.Application"/"Word.Application",也可以是其CLSID,如"{0003088F-0000-0000-C000-000000000058}".
+
+##### 火山.MFC界面.基本.OCX组件.组件文件
+
+* **类型:** `属性读方法`
+* **名称:** `组件文件`
+* **返回值数据类型:** `文本型`
+* **描述:** 返回所设置的OCX组件文件名,为空文本表示无.
+
+##### 火山.MFC界面.基本.OCX组件.组件文件
+
+* **类型:** `属性写方法`
+* **名称:** `组件文件`
+* **参数:**
+	* `组件文件名` (`文本型`): 提供OCX组件的文件名,如果不为空文本,则当创建组件前会首先自动尝试将其登记.
+* **描述:** 设置OCX组件的文件名,如果不为空文本,则当创建组件前会首先自动尝试将其登记. 如果创建组件之前能够确认该OCX组件已经登记到了Windows系统中,则无需设置本属性. 注意: 如果执行程序时所登录的Windows用户不为管理员身份,可能会登记组件失败.
+
+##### 火山.MFC界面.基本.OCX组件.授权码
+
+* **类型:** `属性读方法`
+* **名称:** `授权码`
+* **返回值数据类型:** `文本型`
+* **描述:** 返回所设置的OCX组件授权码,为空文本表示无.
+
+##### 火山.MFC界面.基本.OCX组件.授权码
+
+* **类型:** `属性写方法`
+* **名称:** `授权码`
+* **参数:**
+	* `授权码文本` (`文本型`): 提供OCX组件的授权码,为空文本表示无.
+* **描述:** 如果该OCX组件需要授权码才能创建其实例,则需要通过本属性设置.
+
+##### 火山.MFC界面.基本.OCX组件.是否需要TAB键
+
+* **类型:** `属性读方法`
+* **名称:** `是否需要TAB键`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回本OCX组件是否需要Tab或Shift+Tab键事件
+
+##### 火山.MFC界面.基本.OCX组件.是否需要TAB键
+
+* **类型:** `属性写方法`
+* **名称:** `是否需要TAB键`
+* **参数:**
+	* `是否需要此键` (`逻辑型`): 指定本OCX组件是否需要此按键事件
+* **描述:** Tab或Shift+Tab键用作在窗口中的组件之间移动输入焦点时使用,会被类库提前截获,如果本OCX组件需要处理此按键事件,需要设置本属性为真.
+
+##### 火山.MFC界面.基本.OCX组件.是否需要光标键
+
+* **类型:** `属性读方法`
+* **名称:** `是否需要光标键`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回本OCX组件是否需要上下左右光标键事件
+
+##### 火山.MFC界面.基本.OCX组件.是否需要光标键
+
+* **类型:** `属性写方法`
+* **名称:** `是否需要光标键`
+* **参数:**
+	* `是否需要此键` (`逻辑型`): 指定本OCX组件是否需要此按键事件
+* **描述:** 上下左右光标键用作在窗口中位于分组框内的组件之间移动输入焦点时使用,会被类库提前截获,如果本OCX组件需要处理此按键事件,需要设置本属性为真.
+
+##### 火山.MFC界面.基本.OCX组件.是否需要回车键
+
+* **类型:** `属性读方法`
+* **名称:** `是否需要回车键`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回本OCX组件是否需要回车键事件
+
+##### 火山.MFC界面.基本.OCX组件.是否需要回车键
+
+* **类型:** `属性写方法`
+* **名称:** `是否需要回车键`
+* **参数:**
+	* `是否需要此键` (`逻辑型`): 指定本OCX组件是否需要此按键事件
+* **描述:** 回车键用作在窗口中自动触发具有默认风格的按钮,会被类库提前截获,如果本OCX组件需要处理此按键事件,需要设置本属性为真.
+
+##### 火山.MFC界面.基本.OCX组件.接收到事件
+
+* **类型:** `事件定义方法`
+* **名称:** `接收到事件`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `事件方法ID` (`整数`): 提供所触发的具体事件的对应COM方法ID值
+	* `事件参数` (`COM变体型数组类`): 提供事件的所有参数数据
+* **描述:** 当接收到OCX组件的COM事件时,本事件被触发.
+* **返回值描述:** 本事件的处理方法如果返回非0整数值,表明事件已经得到处理且不再需要后续处理.
+
+##### 火山.MFC界面.基本.OCX组件.取对象
+
+* **类型:** `方法`
+* **名称:** `取对象`
+* **返回值数据类型:** `COM对象类`
+* **描述:** 返回本OCX组件所对应的COM对象,如果该OCX组件未能成功创建,则所返回的COM对象为空(其"是否为空"方法返回真).
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main)
+
+##### 火山.MFC界面.基本.OCX组件.使用版本2
+
+* **类型:** `方法`
+* **名称:** `使用版本2`
+* **特性:**
+	* `静态`
+* **描述:** 指定是否使用本类的第2个封装版本
+
+---
+
+#### 火山.MFC界面.基本.热键框
+
+* **类型:** `类`
+* **名称:** `热键框`
+* **基础类:** `窗口组件`
+
+##### 火山.MFC界面.基本.热键框.当前键
+
+* **类型:** `属性读方法`
+* **名称:** `当前键`
+* **返回值数据类型:** `整数`
+* **描述:** 获取热键框中的当前键代码,为"按键码.空"表示未设置热键.
+* **返回值描述:** 返回具体键代码,为"按键码"及"辅助键状态"类中常量值的组合.
+
+##### 火山.MFC界面.基本.热键框.当前键
+
+* **类型:** `属性写方法`
+* **名称:** `当前键`
+* **参数:**
+	* `所欲设置键代码` (`整数`): 为"按键码"及"辅助键状态"类中常量值的组合,提供"按键码.空"表示清空已设置热键.
+* **描述:** 设置热键框中的当前键代码
+
+##### 火山.MFC界面.基本.热键框.置无效辅助键
+
+* **类型:** `方法`
+* **名称:** `置无效辅助键`
+* **参数:**
+	* `无效辅助键` (`整数`): 提供所欲过滤的无效辅助键,为"辅助键状态"类中常量值的组合或"按键码.空"(表示为无辅助键).
+	* `替换辅助键` (`整数`): 提供当用户输入了前参数所指定的无效辅助键后,将会自动替换为的辅助键状态,为"辅助键状态"类中常量值的组合或"按键码.空"(表示替换为无辅助键).
+* **描述:** 指定无效辅助键,用户将无法在本组件中设置为该辅助键状态的热键.
+
+---
+
+#### 火山.MFC界面.基本.组件边框类型
+
+* **类型:** `类`
+* **名称:** `组件边框类型`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供组件的各种边框类型
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main)
+
+##### 火山.MFC界面.基本.组件边框类型.无边框
+
+* **类型:** `成员常量`
+* **名称:** `无边框`
+* **数据类型:** `组件边框类型`
+* **初始值:** `0`
+
+##### 火山.MFC界面.基本.组件边框类型.凹入式
+
+* **类型:** `成员常量`
+* **名称:** `凹入式`
+* **数据类型:** `组件边框类型`
+* **初始值:** `1`
+
+##### 火山.MFC界面.基本.组件边框类型.凸出式
+
+* **类型:** `成员常量`
+* **名称:** `凸出式`
+* **数据类型:** `组件边框类型`
+* **初始值:** `2`
+
+##### 火山.MFC界面.基本.组件边框类型.浅凹入式
+
+* **类型:** `成员常量`
+* **名称:** `浅凹入式`
+* **数据类型:** `组件边框类型`
+* **初始值:** `3`
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main)
+
+##### 火山.MFC界面.基本.组件边框类型.镜框式
+
+* **类型:** `成员常量`
+* **名称:** `镜框式`
+* **数据类型:** `组件边框类型`
+* **初始值:** `4`
+
+##### 火山.MFC界面.基本.组件边框类型.单线边框式
+
+* **类型:** `成员常量`
+* **名称:** `单线边框式`
+* **数据类型:** `组件边框类型`
+* **初始值:** `5`
+
+---
+
+#### 火山.MFC界面.基本.组件层次
+
+* **类型:** `类`
+* **名称:** `组件层次`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供窗口组件的各种显示层次
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main)
+
+##### 火山.MFC界面.基本.组件层次.顶层
+
+* **类型:** `成员常量`
+* **名称:** `顶层`
+* **数据类型:** `组件层次`
+* **初始值:** `0`
+* **描述:** 将组件放置在具有相同父组件的其它组件的顶层,如果为窗口(无父组件),则放置在其它窗口的顶层. HWND_TOP
+
+##### 火山.MFC界面.基本.组件层次.底层
+
+* **类型:** `成员常量`
+* **名称:** `底层`
+* **数据类型:** `组件层次`
+* **初始值:** `1`
+* **描述:** 将组件放置在具有相同父组件的其它组件的底层,如果为窗口(无父组件),则放置在其它窗口的底层. HWND_BOTTOM
+
+##### 火山.MFC界面.基本.组件层次.最高层
+
+* **类型:** `成员常量`
+* **名称:** `最高层`
+* **数据类型:** `组件层次`
+* **初始值:** `-1`
+* **描述:** 将窗口放置在其它所有非最高层窗口的上方,即使窗口不再被激活依旧保持保留在此层次上. HWND_TOPMOST
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main)
+
+##### 火山.MFC界面.基本.组件层次.次高层
+
+* **类型:** `成员常量`
+* **名称:** `次高层`
+* **数据类型:** `组件层次`
+* **初始值:** `-2`
+* **描述:** 将窗口放置在其它所有非最高层窗口的上方. HWND_NOTOPMOST
+
+---
+
+#### 火山.MFC界面.基本.输入框输入方式
+
+* **类型:** `类`
+* **名称:** `输入框输入方式`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **描述:** 提供输入框的各种输入方式
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main), [vol-属性表格-property_grid-main](#vol-属性表格-property_grid-main), [vol-带按钮列表框-vs_list_box-main](#vol-带按钮列表框-vs_list_box-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main)
+
+##### 火山.MFC界面.基本.输入框输入方式.输入文本
+
+* **类型:** `成员常量`
+* **名称:** `输入文本`
+* **数据类型:** `输入框输入方式`
+* **初始值:** `1`
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main), [vol-属性表格-property_grid-main](#vol-属性表格-property_grid-main), [vol-带按钮列表框-vs_list_box-main](#vol-带按钮列表框-vs_list_box-main)
+
+##### 火山.MFC界面.基本.输入框输入方式.输入整数
+
+* **类型:** `成员常量`
+* **名称:** `输入整数`
+* **数据类型:** `输入框输入方式`
+* **初始值:** `2`
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main)
+
+##### 火山.MFC界面.基本.输入框输入方式.输入小数
+
+* **类型:** `成员常量`
+* **名称:** `输入小数`
+* **数据类型:** `输入框输入方式`
+* **初始值:** `3`
+* **相关例程:** [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main)
+
+##### 火山.MFC界面.基本.输入框输入方式.输入密码
+
+* **类型:** `成员常量`
+* **名称:** `输入密码`
+* **数据类型:** `输入框输入方式`
+* **初始值:** `4`
+
+---
+
+#### 火山.MFC界面.基本.所执行命令类型
+
+* **类型:** `类`
+* **名称:** `所执行命令类型`
+* **特性:**
+	* `常量类`(对应数据类型: `整数`)
+* **文档分类:** `辅助类`
+* **相关例程:** [vol-excel2021-excel2021-main](#vol-excel2021-excel2021-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main)
+
+##### 火山.MFC界面.基本.所执行命令类型.默认
+
+* **类型:** `成员常量`
+* **名称:** `默认`
+* **数据类型:** `所执行命令类型`
+* **初始值:** `0`
+* **描述:** 系统将首先搜寻注册表以获取对应于欲操作文件的一个合适命令类型,如果未找到将使用"打开文件"命令.
+* **相关例程:** [vol-excel2021-excel2021-main](#vol-excel2021-excel2021-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main)
+
+##### 火山.MFC界面.基本.所执行命令类型.编辑文档
+
+* **类型:** `成员常量`
+* **名称:** `编辑文档`
+* **数据类型:** `所执行命令类型`
+* **初始值:** `1`
+* **描述:** 启动编辑软件打开"欲操作文件名"参数所指定的文档文件进行编辑
+
+##### 火山.MFC界面.基本.所执行命令类型.浏览文件夹
+
+* **类型:** `成员常量`
+* **名称:** `浏览文件夹`
+* **数据类型:** `所执行命令类型`
+* **初始值:** `2`
+* **描述:** 打开"欲操作文件名"参数所指定的文件夹进行浏览
+
+##### 火山.MFC界面.基本.所执行命令类型.寻找文件
+
+* **类型:** `成员常量`
+* **名称:** `寻找文件`
+* **数据类型:** `所执行命令类型`
+* **初始值:** `3`
+* **描述:** 打开"欲操作文件名"参数所指定的文件夹进行文件寻找操作
+
+##### 火山.MFC界面.基本.所执行命令类型.打开文件
+
+* **类型:** `成员常量`
+* **名称:** `打开文件`
+* **数据类型:** `所执行命令类型`
+* **初始值:** `4`
+* **描述:** 打开"欲操作文件名"参数所指定的文件,该文件可以是可执行文件/文档文件或文件夹.
+
+##### 火山.MFC界面.基本.所执行命令类型.打印文档
+
+* **类型:** `成员常量`
+* **名称:** `打印文档`
+* **数据类型:** `所执行命令类型`
+* **初始值:** `5`
+* **描述:** 打印"欲操作文件名"参数所指定的文档文件,注意该文档的编辑软件可能不支持本命令,故使用前需要先测试是否可用.
+
+---
+
+#### 火山.MFC界面.基本.窗口组件
+
+* **类型:** `类`
+* **名称:** `窗口组件`
+* **基础类:** `参考对象类`
+* **文档分类:** `窗口组件.基础类`
+* **描述:** 所有窗口组件的基础类
+* **相关例程:** [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-哈希表-hash_map-main](#vol-哈希表-hash_map-main), [vol-对象包装-object_wrapper-main](#vol-对象包装-object_wrapper-main)
+
+##### 火山.MFC界面.基本.窗口组件.标题
+
+* **类型:** `属性读方法`
+* **名称:** `标题`
+* **返回值数据类型:** `文本型`
+* **描述:** 返回本组件的当前标题文本
+* **相关例程:** [vol-选择夹3-tab_demo3-main](#vol-选择夹3-tab_demo3-main), [vol-超级列表框-listview-main](#vol-超级列表框-listview-main), [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-火花代码编辑框-codeedittext-main](#vol-火花代码编辑框-codeedittext-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main), [vol-打印测试-print_test-main](#vol-打印测试-print_test-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-邮件槽-mailslot-main](#vol-邮件槽-mailslot-main), [vol-多线程-muti_thread-main](#vol-多线程-muti_thread-main), [vol-mfc控制台程序-mfc_console-main](#vol-mfc控制台程序-mfc_console-main), [vol-密码管理-pw-main](#vol-密码管理-pw-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-大整数运算-bnsample-main](#vol-大整数运算-bnsample-main), [vol-哈希表-hash_map-main](#vol-哈希表-hash_map-main), [vol-对象包装-object_wrapper-main](#vol-对象包装-object_wrapper-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main), [vol-简单pack客户端-pack_client-main](#vol-简单pack客户端-pack_client-main), [vol-简单pack服务器-pack_server-main](#vol-简单pack服务器-pack_server-main), [vol-简单pull客户端-pull_client-main](#vol-简单pull客户端-pull_client-main), [vol-简单pull服务器-pull_server-main](#vol-简单pull服务器-pull_server-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main), [vol-简单udp客户端-udp_client-main](#vol-简单udp客户端-udp_client-main), [vol-简单udp服务器-udp_server-main](#vol-简单udp服务器-udp_server-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pack文件传送服务器-hp_packfile_server-main](#vol-pack文件传送服务器-hp_packfile_server-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-pull文件传送服务器-hp_pullfile_server-main](#vol-pull文件传送服务器-hp_pullfile_server-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-tcp文件传送服务器-hp_tcpfile_server-main](#vol-tcp文件传送服务器-hp_tcpfile_server-main), [vol-mysql-mysqlsample-main](#vol-mysql-mysqlsample-main), [vol-sqlite3-sqlite3-main](#vol-sqlite3-sqlite3-main), [vol-ado-ado_sample-main](#vol-ado-ado_sample-main), [vol-mysql连接池-mysql_connectionpool-main](#vol-mysql连接池-mysql_connectionpool-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main), [vol-javascript脚本-v8js-main](#vol-javascript脚本-v8js-main), [vol-阿里云oss-aliyun_oss-main](#vol-阿里云oss-aliyun_oss-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main), [vol-rvm人像抠图-rvm_segmentation-main](#vol-rvm人像抠图-rvm_segmentation-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.窗口组件.标题
+
+* **类型:** `属性写方法`
+* **名称:** `标题`
+* **参数:**
+	* `所欲设置的标题` (`文本型`): 提供所欲设置的标题文本
+* **描述:** 设置本组件的当前标题文本. 注意: 在某些组件中(譬如标签,按钮,选择框,单选框,分组框等),'&'字符本身不会被显示,而会导致其后方紧接的一个字符以下划线方式显示,表示Alt加该字符为此组件的快捷访问键. 这种情况下如果需要显示'&'字符本身,需要使用连续两个该字符,即"&&".
+* **相关例程:** [vol-选择夹3-tab_demo3-main](#vol-选择夹3-tab_demo3-main), [vol-超级列表框-listview-main](#vol-超级列表框-listview-main), [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-火花代码编辑框-codeedittext-main](#vol-火花代码编辑框-codeedittext-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main), [vol-打印测试-print_test-main](#vol-打印测试-print_test-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-邮件槽-mailslot-main](#vol-邮件槽-mailslot-main), [vol-多线程-muti_thread-main](#vol-多线程-muti_thread-main), [vol-mfc控制台程序-mfc_console-main](#vol-mfc控制台程序-mfc_console-main), [vol-密码管理-pw-main](#vol-密码管理-pw-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-大整数运算-bnsample-main](#vol-大整数运算-bnsample-main), [vol-哈希表-hash_map-main](#vol-哈希表-hash_map-main), [vol-对象包装-object_wrapper-main](#vol-对象包装-object_wrapper-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main), [vol-简单pack客户端-pack_client-main](#vol-简单pack客户端-pack_client-main), [vol-简单pack服务器-pack_server-main](#vol-简单pack服务器-pack_server-main), [vol-简单pull客户端-pull_client-main](#vol-简单pull客户端-pull_client-main), [vol-简单pull服务器-pull_server-main](#vol-简单pull服务器-pull_server-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main), [vol-简单udp客户端-udp_client-main](#vol-简单udp客户端-udp_client-main), [vol-简单udp服务器-udp_server-main](#vol-简单udp服务器-udp_server-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pack文件传送服务器-hp_packfile_server-main](#vol-pack文件传送服务器-hp_packfile_server-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-pull文件传送服务器-hp_pullfile_server-main](#vol-pull文件传送服务器-hp_pullfile_server-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-tcp文件传送服务器-hp_tcpfile_server-main](#vol-tcp文件传送服务器-hp_tcpfile_server-main), [vol-mysql-mysqlsample-main](#vol-mysql-mysqlsample-main), [vol-sqlite3-sqlite3-main](#vol-sqlite3-sqlite3-main), [vol-ado-ado_sample-main](#vol-ado-ado_sample-main), [vol-mysql连接池-mysql_connectionpool-main](#vol-mysql连接池-mysql_connectionpool-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main), [vol-javascript脚本-v8js-main](#vol-javascript脚本-v8js-main), [vol-阿里云oss-aliyun_oss-main](#vol-阿里云oss-aliyun_oss-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main), [vol-rvm人像抠图-rvm_segmentation-main](#vol-rvm人像抠图-rvm_segmentation-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.窗口组件.标题字符串
+
+* **类型:** `属性写方法`
+* **名称:** `标题字符串`
+* **参数:**
+	* `所欲设置的标题` (`字符串资源`)
+* **描述:** 以字符串资源的方式设置本组件的当前标题文本
+
+##### 火山.MFC界面.基本.窗口组件.可视
+
+* **类型:** `属性读方法`
+* **名称:** `可视`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回本组件当前是否可视
+* **相关例程:** [vol-选择夹3-tab_demo3-main](#vol-选择夹3-tab_demo3-main), [vol-win10通知-wintoast-main](#vol-win10通知-wintoast-main), [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main)
+
+##### 火山.MFC界面.基本.窗口组件.可视
+
+* **类型:** `属性写方法`
+* **名称:** `可视`
+* **参数:**
+	* `是否可视` (`逻辑型`): 指定本组件是否可视
+* **描述:** 设置本组件当前是否可视
+* **相关例程:** [vol-选择夹3-tab_demo3-main](#vol-选择夹3-tab_demo3-main), [vol-win10通知-wintoast-main](#vol-win10通知-wintoast-main), [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main)
+
+##### 火山.MFC界面.基本.窗口组件.禁止
+
+* **类型:** `属性读方法`
+* **名称:** `禁止`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回本组件当前是否被禁止操作
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-tcp转发-tcp_forward-main](#vol-tcp转发-tcp_forward-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main), [vol-简单http服务器-http_server-main](#vol-简单http服务器-http_server-main), [vol-简单pack客户端-pack_client-main](#vol-简单pack客户端-pack_client-main), [vol-简单pack服务器-pack_server-main](#vol-简单pack服务器-pack_server-main), [vol-简单pull客户端-pull_client-main](#vol-简单pull客户端-pull_client-main), [vol-简单pull服务器-pull_server-main](#vol-简单pull服务器-pull_server-main), [vol-简单tcp客户端-tcp_client-main](#vol-简单tcp客户端-tcp_client-main), [vol-简单tcp服务器-tcp_server-main](#vol-简单tcp服务器-tcp_server-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main), [vol-简单udp客户端-udp_client-main](#vol-简单udp客户端-udp_client-main), [vol-简单udp服务器-udp_server-main](#vol-简单udp服务器-udp_server-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pack文件传送服务器-hp_packfile_server-main](#vol-pack文件传送服务器-hp_packfile_server-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-pull文件传送服务器-hp_pullfile_server-main](#vol-pull文件传送服务器-hp_pullfile_server-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-tcp文件传送服务器-hp_tcpfile_server-main](#vol-tcp文件传送服务器-hp_tcpfile_server-main), [vol-服务器-server-main](#vol-服务器-server-main), [vol-客户端-client-main](#vol-客户端-client-main), [vol-sqlite3-sqlite3-main](#vol-sqlite3-sqlite3-main), [vol-ado-ado_sample-main](#vol-ado-ado_sample-main), [vol-redis-redis-main](#vol-redis-redis-main), [vol-redis连接池-redisconnectpool-main](#vol-redis连接池-redisconnectpool-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main)
+
+##### 火山.MFC界面.基本.窗口组件.禁止
+
+* **类型:** `属性写方法`
+* **名称:** `禁止`
+* **参数:**
+	* `是否禁止` (`逻辑型`): 指定本组件是否被禁止
+* **描述:** 设置本组件当前是否被禁止操作
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-tcp转发-tcp_forward-main](#vol-tcp转发-tcp_forward-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main), [vol-简单http服务器-http_server-main](#vol-简单http服务器-http_server-main), [vol-简单pack客户端-pack_client-main](#vol-简单pack客户端-pack_client-main), [vol-简单pack服务器-pack_server-main](#vol-简单pack服务器-pack_server-main), [vol-简单pull客户端-pull_client-main](#vol-简单pull客户端-pull_client-main), [vol-简单pull服务器-pull_server-main](#vol-简单pull服务器-pull_server-main), [vol-简单tcp客户端-tcp_client-main](#vol-简单tcp客户端-tcp_client-main), [vol-简单tcp服务器-tcp_server-main](#vol-简单tcp服务器-tcp_server-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main), [vol-简单udp客户端-udp_client-main](#vol-简单udp客户端-udp_client-main), [vol-简单udp服务器-udp_server-main](#vol-简单udp服务器-udp_server-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pack文件传送服务器-hp_packfile_server-main](#vol-pack文件传送服务器-hp_packfile_server-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-pull文件传送服务器-hp_pullfile_server-main](#vol-pull文件传送服务器-hp_pullfile_server-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-tcp文件传送服务器-hp_tcpfile_server-main](#vol-tcp文件传送服务器-hp_tcpfile_server-main), [vol-服务器-server-main](#vol-服务器-server-main), [vol-客户端-client-main](#vol-客户端-client-main), [vol-sqlite3-sqlite3-main](#vol-sqlite3-sqlite3-main), [vol-ado-ado_sample-main](#vol-ado-ado_sample-main), [vol-redis-redis-main](#vol-redis-redis-main), [vol-redis连接池-redisconnectpool-main](#vol-redis连接池-redisconnectpool-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main)
+
+##### 火山.MFC界面.基本.窗口组件.首组件
+
+* **类型:** `属性读方法`
+* **名称:** `首组件`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回本组件是否为一组组件的首组件.同一组内组件之间的输入焦点可以使用光标键移动,其中所有单选框组件将被自动只选中一个.
+
+##### 火山.MFC界面.基本.窗口组件.首组件
+
+* **类型:** `属性写方法`
+* **名称:** `首组件`
+* **参数:**
+	* `是否为组内的首组件` (`逻辑型`)
+* **描述:** 设置本组件为一组组件的首组件,本组件及后续所有本属性值为假的兄弟组件均被认为在同一组中. 同一组内组件之间的输入焦点可以使用光标键移动,其中所有单选框组件将被自动只选中一个. 如果同一父组件中的所有子组件均位于同一组中,则不需要设置本属性. 注意本属性对"窗口"类对象不起作用.
+
+##### 火山.MFC界面.基本.窗口组件.可停留焦点
+
+* **类型:** `属性读方法`
+* **名称:** `可停留焦点`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回当用户使用TAB键在组件之间移动输入焦点时是否允许在本组件上停留
+
+##### 火山.MFC界面.基本.窗口组件.可停留焦点
+
+* **类型:** `属性写方法`
+* **名称:** `可停留焦点`
+* **参数:**
+	* `是否可停留焦点` (`逻辑型`)
+* **描述:** 设置当用户使用TAB键在组件之间移动输入焦点时是否允许在本组件上停留. 注意: 1. 对于编辑框,按钮之类可以接收按键输入的组件,本属性值默认为真; 2. 本属性对"窗口"类对象不起作用; 3. 如欲设置各个组件之间的焦点停留顺序,请在界面布局设计器中的布局内容树中拖动改变组件的创建顺序,也可在源程序中直接调整窗口类中组件成员变量的定义顺序; 4(内部): 封装本属性时必须将本属性的设置时机置为"组件创建后",以支持对本属性默认值(前面第一条决定)的覆盖修改.
+
+##### 火山.MFC界面.基本.窗口组件.标准鼠标指针
+
+* **类型:** `属性写方法`
+* **名称:** `标准鼠标指针`
+* **参数:**
+	* `所欲设置指针类型` (`标准鼠标指针类型`)
+* **描述:** 设置当鼠标指针移动到本组件上时的标准鼠标指针形状类型. 注意: 使用"自定义鼠标指针"所设置的鼠标指针形状将被覆盖.
+
+##### 火山.MFC界面.基本.窗口组件.自定义鼠标指针
+
+* **类型:** `属性写方法`
+* **名称:** `自定义鼠标指针`
+* **参数:**
+	* `所欲设置指针形状` (`鼠标指针资源`): 提供所欲设置的鼠标指针资源,如果该资源值为"空资源.空鼠标指针",则将取消自定义鼠标指针.
+* **描述:** 设置当鼠标指针移动到本组件上时的自定义鼠标指针形状类型. 注意: 使用"标准鼠标指针"所设置的鼠标指针形状将被覆盖.
+
+##### 火山.MFC界面.基本.窗口组件.字体
+
+* **类型:** `属性写方法`
+* **名称:** `字体`
+* **参数:**
+	* `字体描述文本` (`文本型`): 本参数的格式为: "字体名, 字体尺寸, 是否为粗体, 是否为斜体, 是否有下划线, 是否有删除线, 旋转角度",其中"是否"字段,用1代表真,0代表假,可以被省略.字体尺寸单位为磅, 旋转角度单位为1/10度. 例子: "宋体, 10", "宋体, 10, 0, 1, 1, 0, 100".
+* **特性:**
+	* `字体`. 格式: "字体名, 字体尺寸, 是否为粗体(0/1), 是否为斜体(0/1), 是否有下划线(0/1), 是否有删除线(0/1), 旋转角度(单位为1/10度)"
+* **描述:** 设置本组件显示文本时所使用的字体
+* **相关例程:** [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.窗口组件.字体
+
+* **类型:** `属性读方法`
+* **名称:** `字体`
+* **返回值数据类型:** `文本型`
+* **描述:** 返回本组件显示文本时所使用的字体,如果未设置则为空文本.
+* **相关例程:** [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.窗口组件.组件边框
+
+* **类型:** `属性写方法`
+* **名称:** `组件边框`
+* **参数:**
+	* `所设置边框类型` (`组件边框类型`): 提供所欲设置的组件边框类型
+* **描述:** 设置组件的边框类型. 注意本属性对"窗口"类对象不起作用,窗口类对象请使用"窗口边框"属性.
+
+##### 火山.MFC界面.基本.窗口组件.组件位置
+
+* **类型:** `属性读方法`
+* **名称:** `组件位置`
+* **返回值数据类型:** `矩形类`
+* **描述:** 获取并返回当前组件在所处父组件用户区或屏幕(当无父组件时,譬如为顶层窗口)中的所处矩形位置
+* **返回值描述:** 如果当前组件存在父组件,所返回位置矩形基于其用户区左上角,否则基于屏幕左上角.
+* **相关例程:** [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main)
+
+##### 火山.MFC界面.基本.窗口组件.组件位置
+
+* **类型:** `属性写方法`
+* **名称:** `组件位置`
+* **参数:**
+	* `所欲设置的矩形` (`矩形类`): 如果当前组件存在父组件,为基于其用户区左上角,否则为基于屏幕左上角.
+* **描述:** 设置当前组件在所处父组件用户区或屏幕(当无父组件时,譬如为顶层窗口)中的所处矩形位置
+* **相关例程:** [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main)
+
+##### 火山.MFC界面.基本.窗口组件.左边
+
+* **类型:** `属性读方法`
+* **名称:** `左边`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前组件在所处父组件用户区或屏幕(当无父组件时,譬如为顶层窗口)中的左边位置,如果组件尚未被创建,将始终返回0.
+* **相关例程:** [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-内存映射文件-filemapping-main](#vol-内存映射文件-filemapping-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-邮件槽-mailslot-main](#vol-邮件槽-mailslot-main), [vol-命名管道-namedpipe-main](#vol-命名管道-namedpipe-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main)
+
+##### 火山.MFC界面.基本.窗口组件.左边
+
+* **类型:** `属性写方法`
+* **名称:** `左边`
+* **参数:**
+	* `所欲设置的位置` (`整数`)
+* **描述:** 设置当前组件在所处父组件用户区或屏幕(当无父组件时,譬如为顶层窗口)中的左边位置
+* **相关例程:** [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-内存映射文件-filemapping-main](#vol-内存映射文件-filemapping-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-邮件槽-mailslot-main](#vol-邮件槽-mailslot-main), [vol-命名管道-namedpipe-main](#vol-命名管道-namedpipe-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main)
+
+##### 火山.MFC界面.基本.窗口组件.顶边
+
+* **类型:** `属性读方法`
+* **名称:** `顶边`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前组件在所处父组件用户区或屏幕(当无父组件时,譬如为顶层窗口)中的顶边位置,如果组件尚未被创建,将始终返回0.
+* **相关例程:** [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main)
+
+##### 火山.MFC界面.基本.窗口组件.顶边
+
+* **类型:** `属性写方法`
+* **名称:** `顶边`
+* **参数:**
+	* `所欲设置的位置` (`整数`)
+* **描述:** 设置当前组件在所处父组件用户区或屏幕(当无父组件时,譬如为顶层窗口)中的顶边位置
+* **相关例程:** [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main)
+
+##### 火山.MFC界面.基本.窗口组件.宽度
+
+* **类型:** `属性读方法`
+* **名称:** `宽度`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前组件的宽度,如果组件尚未被创建,将始终返回0.
+* **相关例程:** [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-火花代码编辑框-codeedittext-main](#vol-火花代码编辑框-codeedittext-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-卷帘式菜单-outbar-main](#vol-卷帘式菜单-outbar-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main), [vol-内存映射文件-filemapping-main](#vol-内存映射文件-filemapping-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-邮件槽-mailslot-main](#vol-邮件槽-mailslot-main), [vol-命名管道-namedpipe-main](#vol-命名管道-namedpipe-main), [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-rvm人像抠图-rvm_segmentation-main](#vol-rvm人像抠图-rvm_segmentation-main), [vol-角点检测-corner_detection-main](#vol-角点检测-corner_detection-main), [vol-dnn文本检测-dnn_text_detection_recognition-main](#vol-dnn文本检测-dnn_text_detection_recognition-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.窗口组件.宽度
+
+* **类型:** `属性写方法`
+* **名称:** `宽度`
+* **参数:**
+	* `所欲设置的宽度` (`整数`)
+* **描述:** 设置当前组件的宽度
+* **相关例程:** [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-火花代码编辑框-codeedittext-main](#vol-火花代码编辑框-codeedittext-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-卷帘式菜单-outbar-main](#vol-卷帘式菜单-outbar-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main), [vol-内存映射文件-filemapping-main](#vol-内存映射文件-filemapping-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-邮件槽-mailslot-main](#vol-邮件槽-mailslot-main), [vol-命名管道-namedpipe-main](#vol-命名管道-namedpipe-main), [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-rvm人像抠图-rvm_segmentation-main](#vol-rvm人像抠图-rvm_segmentation-main), [vol-角点检测-corner_detection-main](#vol-角点检测-corner_detection-main), [vol-dnn文本检测-dnn_text_detection_recognition-main](#vol-dnn文本检测-dnn_text_detection_recognition-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.窗口组件.高度
+
+* **类型:** `属性读方法`
+* **名称:** `高度`
+* **返回值数据类型:** `整数`
+* **描述:** 返回当前组件的高度,如果组件尚未被创建,将始终返回0.
+* **相关例程:** [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-火花代码编辑框-codeedittext-main](#vol-火花代码编辑框-codeedittext-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-卷帘式菜单-outbar-main](#vol-卷帘式菜单-outbar-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main), [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-rvm人像抠图-rvm_segmentation-main](#vol-rvm人像抠图-rvm_segmentation-main), [vol-角点检测-corner_detection-main](#vol-角点检测-corner_detection-main), [vol-dnn文本检测-dnn_text_detection_recognition-main](#vol-dnn文本检测-dnn_text_detection_recognition-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.窗口组件.高度
+
+* **类型:** `属性写方法`
+* **名称:** `高度`
+* **参数:**
+	* `所欲设置的高度` (`整数`)
+* **描述:** 设置当前组件的高度
+* **相关例程:** [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-火花代码编辑框-codeedittext-main](#vol-火花代码编辑框-codeedittext-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-卷帘式菜单-outbar-main](#vol-卷帘式菜单-outbar-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main), [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main), [vol-rvm人像抠图-rvm_segmentation-main](#vol-rvm人像抠图-rvm_segmentation-main), [vol-角点检测-corner_detection-main](#vol-角点检测-corner_detection-main), [vol-dnn文本检测-dnn_text_detection_recognition-main](#vol-dnn文本检测-dnn_text_detection_recognition-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.窗口组件.允许文件拖放
+
+* **类型:** `属性写方法`
+* **名称:** `允许文件拖放`
+* **参数:**
+	* `是否允许` (`逻辑型`): 指定是否允许文件被拖放到本窗口组件上
+* **描述:** 设置是否允许将文件拖放到本窗口组件上. 如果本属性被设置为真,则允许文件被拖放到本窗口组件上,当文件被拖放上来后,将发送"文件被拖放"事件.
+
+##### 火山.MFC界面.基本.窗口组件.提示信息
+
+* **类型:** `属性写方法`
+* **名称:** `提示信息`
+* **参数:**
+	* `提示文本内容` (`文本型`): 提供具体的提示文本内容,为空文本清除已有提示文本.
+* **描述:** 设置当鼠标移动到本组件上时所显示的提示文本信息
+
+##### 火山.MFC界面.基本.窗口组件.禁止系统主题
+
+* **类型:** `属性写方法`
+* **名称:** `禁止系统主题`
+* **参数:**
+	* `是否禁止` (`逻辑型`)
+* **描述:** 设置本组件是否禁止使用所处应用程序对应的Windows主题. 禁止使用Windows主题可以保证本组件的一些外观属性(譬如颜色/字体等)显示正常.
+
+##### 火山.MFC界面.基本.窗口组件.标记
+
+* **类型:** `属性成员变量`
+* **名称:** `标记`
+* **数据类型:** `文本型`
+* **描述:** 用作在组件中保存一个用户自定义标记文本值
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-密码管理-pw-main](#vol-密码管理-pw-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main)
+
+##### 火山.MFC界面.基本.窗口组件.鼠标左键被按下
+
+* **类型:** `事件定义方法`
+* **名称:** `鼠标左键被按下`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `横向位置` (`整数`): 事件触发时的鼠标横向坐标位置,相对所处用户区的左边.
+	* `纵向位置` (`整数`): 事件触发时的鼠标纵向坐标位置,相对所处用户区的顶边.
+	* `辅助键状态` (`整数`): 事件触发时的辅助键组合状态,为"辅助键状态"类中各常量值的组合.
+* **描述:** 当鼠标左键被按下时事件被触发
+* **返回值描述:** 本事件的处理方法如果返回非0整数值,表明事件已经得到处理且不再需要后续处理.
+* **相关例程:** [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main)
+
+##### 火山.MFC界面.基本.窗口组件.鼠标左键被放开
+
+* **类型:** `事件定义方法`
+* **名称:** `鼠标左键被放开`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `横向位置` (`整数`): 事件触发时的鼠标横向坐标位置,相对所处用户区的左边.
+	* `纵向位置` (`整数`): 事件触发时的鼠标纵向坐标位置,相对所处用户区的顶边.
+	* `辅助键状态` (`整数`): 事件触发时的辅助键组合状态,为"辅助键状态"类中各常量值的组合.
+* **描述:** 当鼠标左键被放开时事件被触发
+* **返回值描述:** 本事件的处理方法如果返回非0整数值,表明事件已经得到处理且不再需要后续处理.
+* **相关例程:** [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main)
+
+##### 火山.MFC界面.基本.窗口组件.被双击
+
+* **类型:** `事件定义方法`
+* **名称:** `被双击`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `横向位置` (`整数`): 事件触发时的鼠标横向坐标位置,相对所处用户区的左边.
+	* `纵向位置` (`整数`): 事件触发时的鼠标纵向坐标位置,相对所处用户区的顶边.
+	* `辅助键状态` (`整数`): 事件触发时的辅助键组合状态,为"辅助键状态"类中各常量值的组合.
+* **描述:** 当鼠标左键被双击时事件被触发
+* **返回值描述:** 本事件的处理方法如果返回非0整数值,表明事件已经得到处理且不再需要后续处理.
+* **相关例程:** [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main)
+
+##### 火山.MFC界面.基本.窗口组件.鼠标右键被按下
+
+* **类型:** `事件定义方法`
+* **名称:** `鼠标右键被按下`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `横向位置` (`整数`): 事件触发时的鼠标横向坐标位置,相对所处用户区的左边.
+	* `纵向位置` (`整数`): 事件触发时的鼠标纵向坐标位置,相对所处用户区的顶边.
+	* `辅助键状态` (`整数`): 事件触发时的辅助键组合状态,为"辅助键状态"类中各常量值的组合.
+* **描述:** 当鼠标右键被按下时事件被触发
+* **返回值描述:** 本事件的处理方法如果返回非0整数值,表明事件已经得到处理且不再需要后续处理.
+* **相关例程:** [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main)
+
+##### 火山.MFC界面.基本.窗口组件.鼠标右键被放开
+
+* **类型:** `事件定义方法`
+* **名称:** `鼠标右键被放开`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `横向位置` (`整数`): 事件触发时的鼠标横向坐标位置,相对所处用户区的左边.
+	* `纵向位置` (`整数`): 事件触发时的鼠标纵向坐标位置,相对所处用户区的顶边.
+	* `辅助键状态` (`整数`): 事件触发时的辅助键组合状态,为"辅助键状态"类中各常量值的组合.
+* **描述:** 当鼠标右键被放开时事件被触发
+* **返回值描述:** 本事件的处理方法如果返回非0整数值,表明事件已经得到处理且不再需要后续处理.
+* **相关例程:** [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main)
+
+##### 火山.MFC界面.基本.窗口组件.鼠标中键被按下
+
+* **类型:** `事件定义方法`
+* **名称:** `鼠标中键被按下`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `横向位置` (`整数`): 事件触发时的鼠标横向坐标位置,相对所处用户区的左边.
+	* `纵向位置` (`整数`): 事件触发时的鼠标纵向坐标位置,相对所处用户区的顶边.
+	* `辅助键状态` (`整数`): 事件触发时的辅助键组合状态,为"辅助键状态"类中各常量值的组合.
+* **描述:** 当鼠标中键被按下时事件被触发
+* **返回值描述:** 本事件的处理方法如果返回非0整数值,表明事件已经得到处理且不再需要后续处理.
+
+##### 火山.MFC界面.基本.窗口组件.鼠标中键被放开
+
+* **类型:** `事件定义方法`
+* **名称:** `鼠标中键被放开`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `横向位置` (`整数`): 事件触发时的鼠标横向坐标位置,相对所处用户区的左边.
+	* `纵向位置` (`整数`): 事件触发时的鼠标纵向坐标位置,相对所处用户区的顶边.
+	* `辅助键状态` (`整数`): 事件触发时的辅助键组合状态,为"辅助键状态"类中各常量值的组合.
+* **描述:** 当鼠标中键被放开时事件被触发
+* **返回值描述:** 本事件的处理方法如果返回非0整数值,表明事件已经得到处理且不再需要后续处理.
+
+##### 火山.MFC界面.基本.窗口组件.鼠标位置被移动
+
+* **类型:** `事件定义方法`
+* **名称:** `鼠标位置被移动`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `横向位置` (`整数`): 事件触发时的鼠标横向坐标位置,相对所处用户区的左边.
+	* `纵向位置` (`整数`): 事件触发时的鼠标纵向坐标位置,相对所处用户区的顶边.
+	* `辅助键状态` (`整数`): 事件触发时的辅助键组合状态,为"辅助键状态"类中各常量值的组合.
+* **描述:** 当鼠标位置被移动时事件被触发
+* **返回值描述:** 本事件的处理方法如果返回非0整数值,表明事件已经得到处理且不再需要后续处理.
+* **相关例程:** [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main)
+
+##### 火山.MFC界面.基本.窗口组件.滚轮被滚动
+
+* **类型:** `事件定义方法`
+* **名称:** `滚轮被滚动`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `滚动距离` (`整数`): 表明鼠标滚轮所滚动的距离,大于零表示向前滚动,小于零表示向后滚动.
+	* `辅助键状态` (`整数`): 事件触发时的辅助键组合状态,为"辅助键状态"类中各常量值的组合.
+* **描述:** 当鼠标滚轮被滚动时事件被触发
+* **返回值描述:** 本事件的处理方法如果返回非0整数值,表明事件已经得到处理且不再需要后续处理.
+
+##### 火山.MFC界面.基本.窗口组件.按下某键
+
+* **类型:** `事件定义方法`
+* **名称:** `按下某键`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `键代码` (`整数`): 为"按键码"类中的常量值,注意不包括辅助键组合状态值.
+	* `辅助键状态` (`整数`): 事件触发时的辅助键组合状态,为"辅助键状态"类中各常量值的组合.
+* **描述:** 当用户按下某个按键时事件被触发
+* **返回值描述:** 本事件的处理方法如果返回非0整数值,表明事件已经得到处理且不再需要后续处理.
+
+##### 火山.MFC界面.基本.窗口组件.放开某键
+
+* **类型:** `事件定义方法`
+* **名称:** `放开某键`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `键代码` (`整数`): 为"按键码"类中的常量值,注意不包括辅助键组合状态值.
+	* `辅助键状态` (`整数`): 事件触发时的辅助键组合状态,为"辅助键状态"类中各常量值的组合.
+* **描述:** 当用户按下某个按键时事件被触发
+* **返回值描述:** 本事件的处理方法如果返回非0整数值,表明事件已经得到处理且不再需要后续处理.
+* **相关例程:** [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main)
+
+##### 火山.MFC界面.基本.窗口组件.获得焦点
+
+* **类型:** `事件定义方法`
+* **名称:** `获得焦点`
+* **返回值数据类型:** `整数`
+* **描述:** 当本组件获得输入焦点后发送此事件. 所谓"输入焦点",即当前用户按键操作所对应的目标组件. 譬如: 用户正在编辑框中输入文本,那么此编辑框就具有输入焦点,因为它将获得目前用户所进行的所有按键操作. 所谓"获得"或者"失去"输入焦点,即当前用户按键操作所对应的目标对象发生转移. 譬如: 用户现在正在编辑框1中输入文本,突然使用鼠标或其它方法切换到了编辑框2上去继续输入,那么此时编辑框1就"失去"了输入焦点,编辑框2就"获得"了输入焦点,因为在此以后用户所进行的所有按键操作都将被编辑框2所获得.
+* **返回值描述:** 本事件的处理方法如果返回非0整数值,表明事件已经得到处理且不再需要后续处理.
+* **相关例程:** [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main)
+
+##### 火山.MFC界面.基本.窗口组件.失去焦点
+
+* **类型:** `事件定义方法`
+* **名称:** `失去焦点`
+* **返回值数据类型:** `整数`
+* **描述:** 当本组件失去输入焦点后发送此事件. 所谓"输入焦点",即当前用户按键操作所对应的目标组件. 譬如: 用户正在编辑框中输入文本,那么此编辑框就具有输入焦点,因为它将获得目前用户所进行的所有按键操作. 所谓"获得"或者"失去"输入焦点,即当前用户按键操作所对应的目标对象发生转移. 譬如: 用户现在正在编辑框1中输入文本,突然使用鼠标或其它方法切换到了编辑框2上去继续输入,那么此时编辑框1就"失去"了输入焦点,编辑框2就"获得"了输入焦点,因为在此以后用户所进行的所有按键操作都将被编辑框2所获得.
+* **返回值描述:** 本事件的处理方法如果返回非0整数值,表明事件已经得到处理且不再需要后续处理.
+
+##### 火山.MFC界面.基本.窗口组件.字符输入
+
+* **类型:** `事件定义方法`
+* **名称:** `字符输入`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `字符代码` (`字符`): 提供所输入的字符
+* **描述:** 当用户输入一个字符后发生此事件,字符键包括任何可打印的键盘字符及回车(Enter)和退格(BackSpace)键.
+* **返回值描述:** 本事件的处理方法返回值如果小于0,表明事件已经得到处理且不再需要后续处理,如果大于0,则将该值作为新的替代字符代码继续进行后续处理.如果等于0,则使用原字符值继续进行后续处理.
+
+##### 火山.MFC界面.基本.窗口组件.组件消息过滤
+
+* **类型:** `事件定义方法`
+* **名称:** `组件消息过滤`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `窗口句柄` (`变整数`): 提供消息所对应的本组件窗口句柄(HWND)
+	* `消息值` (`整数`): 提供消息的具体值
+	* `消息参数1` (`变整数`): 提供消息所附带的参数1的值
+	* `消息参数2` (`变整数`): 提供消息所附带的参数2的值
+	* `消息地址` (`变整数`): 提供消息的具体 MSG* 地址指针,用作备用.
+* **描述:** 当用户组件接收到任何Windows消息在其被实际处理前,本事件被发送.
+* **返回值描述:** 返回0表示允许该Windows消息继续向后传递并处理,返回1表示该Windows消息已经被处理且无需后续处理.
+* **相关例程:** [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main)
+
+##### 火山.MFC界面.基本.窗口组件.组件创建完毕
+
+* **类型:** `事件定义方法`
+* **名称:** `组件创建完毕`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `父组件` (`窗口组件`): 提供组件所处的父组件,必定有效且已经成功创建. 可以使用"属于"操作符判断具体的父组件数据类型,如: "如果 (父组件 属于 窗口容器组件)","如果 (父组件 属于 图片框)" 等. 判断清楚具体数据类型后,可以使用强制转换将其转换到具体的窗口组件类对象,如: "(窗口容器组件)父组件"
+	* `组件ID` (`整数`): 提供组件在所处父组件中的ID值
+* **描述:** 当组件被创建完毕后发送此事件
+
+##### 火山.MFC界面.基本.窗口组件.文件被拖放
+
+* **类型:** `事件定义方法`
+* **名称:** `文件被拖放`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `所拖放文件` (`文本数组类`): 提供所有被拖放到本组件上的文件名,数组成员数必定大于0.
+* **描述:** 当文件被拖放到本窗口组件上后,将发送本事件. 注意: 仅当"允许文件拖放"属性被设置为真时,本事件才会被发送.
+
+##### 火山.MFC界面.基本.窗口组件.是否初始可视
+
+* **类型:** `方法`
+* **名称:** `是否初始可视`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回本组件在实际创建前被设置的初始可视状态
+* **返回值描述:** 可视返回真,不可视返回假.
+
+##### 火山.MFC界面.基本.窗口组件.创建组件
+
+* **类型:** `方法`
+* **名称:** `创建组件`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `父窗口容器组件` (`窗口容器组件`): 提供所创建组件所处的父窗口容器组件
+	* `左边位置` (`整数`): 提供所创建组件在所处父窗口容器组件中的左边横向坐标位置
+	* `顶边位置` (`整数`): 提供所创建组件在所处父窗口容器组件中的顶边纵向坐标位置
+	* `宽度` (`整数`): 提供所创建组件的宽度值
+	* `高度` (`整数`): 提供所创建组件的高度值
+	* `ID值` (`整数`, 默认值: `0xFFFF`): 指定所创建组件在其父窗口容器组件中的ID值
+	* `所处分组编号` (`整数`, 默认值: `-1`): 指定所创建组件所处的设计时分组编号
+* **描述:** 创建本类的窗口组件
+* **返回值描述:** 返回是否成功
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-动态创建布局-dynamic_create-main](#vol-动态创建布局-dynamic_create-main), [vol-对象包装-object_wrapper-main](#vol-对象包装-object_wrapper-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main)
+
+##### 火山.MFC界面.基本.窗口组件.取窗口句柄
+
+* **类型:** `方法`
+* **名称:** `取窗口句柄`
+* **返回值数据类型:** `变整数`
+* **描述:** 返回当前窗口组件的句柄,如果尚未创建或创建失败,则返回0.
+* **相关例程:** [vol-miniblink浏览器-mini_blink-main](#vol-miniblink浏览器-mini_blink-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-rvm人像抠图-rvm_segmentation-main](#vol-rvm人像抠图-rvm_segmentation-main), [vol-角点检测-corner_detection-main](#vol-角点检测-corner_detection-main), [vol-dnn文本检测-dnn_text_detection_recognition-main](#vol-dnn文本检测-dnn_text_detection_recognition-main)
+
+##### 火山.MFC界面.基本.窗口组件.取父窗口句柄
+
+* **类型:** `方法`
+* **名称:** `取父窗口句柄`
+* **返回值数据类型:** `变整数`
+* **描述:** 返回当前窗口组件的父窗口句柄,如果不存在则返回0.
+
+##### 火山.MFC界面.基本.窗口组件.取所有者窗口句柄
+
+* **类型:** `方法`
+* **名称:** `取所有者窗口句柄`
+* **返回值数据类型:** `变整数`
+* **描述:** 返回当前窗口组件的所有者窗口的句柄,如果不存在则返回0. 如果当前窗口组件没有所有者窗口,则默认返回其父窗口句柄.
+
+##### 火山.MFC界面.基本.窗口组件.是否为空
+
+* **类型:** `方法`
+* **名称:** `是否为空`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回当前组件是否尚未成功创建
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main)
+
+##### 火山.MFC界面.基本.窗口组件.销毁
+
+* **类型:** `方法`
+* **名称:** `销毁`
+* **描述:** 销毁本窗口组件,本方法调用后如欲继续使用本对象,必须再次创建.
+
+##### 火山.MFC界面.基本.窗口组件.信息框
+
+* **类型:** `方法`
+* **名称:** `信息框`
+* **返回值数据类型:** `返回按钮类型`
+* **参数:**
+	* `提示信息` (`文本型`): 提供具体的提示文本
+	* `按钮` (`整数`, 默认值: `0`): 由"信息框按钮"类中的各组常量值相加后的值,具体请见该类中的说明.
+	* `窗口标题` (`文本型`, 默认值: `"信息:"`): 指定显示在信息框标题栏中的文本
+* **描述:** 显示一个信息框(本组件为其拥有窗口),等待用户单击按钮.
+* **返回值描述:** 返回一个值告诉用户单击哪一个按钮. 如果信息框有"取消"按钮,则按下 ESC 键与单击"取消"按钮的效果相同.
+* **相关例程:** [vol-选择夹1-tab_demo-main](#vol-选择夹1-tab_demo-main), [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-选择夹3-tab_demo3-main](#vol-选择夹3-tab_demo3-main), [vol-对话框-dialog_test-main](#vol-对话框-dialog_test-main), [vol-文件浏览-file_viewer-main](#vol-文件浏览-file_viewer-main), [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-树形框-tree_box-main](#vol-树形框-tree_box-main), [vol-工具条-tool_bar-main](#vol-工具条-tool_bar-main), [vol-状态条-status_bar-main](#vol-状态条-status_bar-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-火花代码编辑框-codeedittext-main](#vol-火花代码编辑框-codeedittext-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-动态创建布局-dynamic_create-main](#vol-动态创建布局-dynamic_create-main), [vol-用户自定义窗口组件-user_control-main](#vol-用户自定义窗口组件-user_control-main), [vol-祖国您好-base_test-main](#vol-祖国您好-base_test-main), [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main), [vol-跨对象发送接收事件-object_event-main](#vol-跨对象发送接收事件-object_event-main), [vol-二维码生成-qrencode-main](#vol-二维码生成-qrencode-main), [vol-win10通知-wintoast-main](#vol-win10通知-wintoast-main), [vol-文本编码转换-libiconv-main](#vol-文本编码转换-libiconv-main), [vol-硬件及键鼠和钩子操作-syshardwareinfo-main](#vol-硬件及键鼠和钩子操作-syshardwareinfo-main), [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main), [vol-调用动态链接库-dll_call-main](#vol-调用动态链接库-dll_call-main), [vol-一步一步跟我学火山-step_by_step-main](#vol-一步一步跟我学火山-step_by_step-main), [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main), [vol-密码管理-pw-main](#vol-密码管理-pw-main), [vol-高级网页解析-adv_html_parser-main](#vol-高级网页解析-adv_html_parser-main), [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-大整数运算-bnsample-main](#vol-大整数运算-bnsample-main), [vol-高性能键值表-mmkv-main](#vol-高性能键值表-mmkv-main), [vol-正则表达式2-regex-main](#vol-正则表达式2-regex-main), [vol-串口通讯-cserialport-main](#vol-串口通讯-cserialport-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-tcp转发-tcp_forward-main](#vol-tcp转发-tcp_forward-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-简单pack客户端-pack_client-main](#vol-简单pack客户端-pack_client-main), [vol-简单pack服务器-pack_server-main](#vol-简单pack服务器-pack_server-main), [vol-简单pull客户端-pull_client-main](#vol-简单pull客户端-pull_client-main), [vol-简单pull服务器-pull_server-main](#vol-简单pull服务器-pull_server-main), [vol-简单tcp客户端-tcp_client-main](#vol-简单tcp客户端-tcp_client-main), [vol-简单tcp服务器-tcp_server-main](#vol-简单tcp服务器-tcp_server-main), [vol-简单udp客户端-udp_client-main](#vol-简单udp客户端-udp_client-main), [vol-简单udp服务器-udp_server-main](#vol-简单udp服务器-udp_server-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main), [vol-pull文件传送客户端-hp_pullfile_client-main](#vol-pull文件传送客户端-hp_pullfile_client-main), [vol-tcp文件传送客户端-hp_tcpfile_client-main](#vol-tcp文件传送客户端-hp_tcpfile_client-main), [vol-服务器-server-main](#vol-服务器-server-main), [vol-客户端-client-main](#vol-客户端-client-main), [vol-mysql-mysqlsample-main](#vol-mysql-mysqlsample-main), [vol-sqlite3-sqlite3-main](#vol-sqlite3-sqlite3-main), [vol-ado-ado_sample-main](#vol-ado-ado_sample-main), [vol-redis-redis-main](#vol-redis-redis-main), [vol-redis连接池-redisconnectpool-main](#vol-redis连接池-redisconnectpool-main), [vol-mysql连接池-mysql_connectionpool-main](#vol-mysql连接池-mysql_connectionpool-main), [vol-odbc外部数据库-odbc-main](#vol-odbc外部数据库-odbc-main), [vol-python脚本-python_script-main](#vol-python脚本-python_script-main), [vol-javascript脚本-v8js-main](#vol-javascript脚本-v8js-main), [vol-阿里云oss-aliyun_oss-main](#vol-阿里云oss-aliyun_oss-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main), [vol-powerpoint2021-powerpoint2021-main](#vol-powerpoint2021-powerpoint2021-main), [vol-rvm人像抠图-rvm_segmentation-main](#vol-rvm人像抠图-rvm_segmentation-main), [vol-autocad时钟-cad_clock-main](#vol-autocad时钟-cad_clock-main), [vol-autocad2024时钟-cad_clock_2024-main](#vol-autocad2024时钟-cad_clock_2024-main)
+
+##### 火山.MFC界面.基本.窗口组件.询问信息框
+
+* **类型:** `方法`
+* **名称:** `询问信息框`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `询问信息` (`文本型`): 提供具体的询问提示文本
+	* `窗口标题` (`文本型`, 默认值: `"询问:"`): 指定显示在信息框标题栏中的文本
+* **描述:** 用户点击"是"按钮将返回真,点击"否"按钮将返回假.
+* **相关例程:** [vol-带按钮列表框-vs_list_box-main](#vol-带按钮列表框-vs_list_box-main)
+
+##### 火山.MFC界面.基本.窗口组件.错误信息框
+
+* **类型:** `方法`
+* **名称:** `错误信息框`
+* **参数:**
+	* `提示信息` (`文本型`): 提供具体的提示文本
+	* `窗口标题` (`文本型`, 默认值: `"错误:"`): 指定显示在信息框标题栏中的文本
+* **相关例程:** [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main)
+
+##### 火山.MFC界面.基本.窗口组件.警告信息框
+
+* **类型:** `方法`
+* **名称:** `警告信息框`
+* **参数:**
+	* `提示信息` (`文本型`): 提供具体的提示文本
+	* `窗口标题` (`文本型`, 默认值: `"警告:"`): 指定显示在信息框标题栏中的文本
+
+##### 火山.MFC界面.基本.窗口组件.输入框
+
+* **类型:** `方法`
+* **名称:** `输入框`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `存放输入内容的变量` (`文本型`): 如果用户在确认输入后,相关输入内容将被填入到此文本变量中.
+	* `提示信息` (`文本型`, 默认值: `""`): 提供输入提示信息,可以中间加入回车换行"\r\n"以包括多行. 如果提示信息太长或行数过多,超过部分将不会被显示出来.
+	* `窗口标题` (`文本型`, 默认值: `""`): 指定显示在对话框标题栏中的文本.如果为空文本,默认为"请输入：".
+	* `初始文本` (`文本型`, 默认值: `""`): 指定初始设置到对话框输入文本框中的内容
+	* `输入方式` (`输入框输入方式`, 默认值: `输入框输入方式.输入文本`): 用作指定具体的输入方式
+* **描述:** 在对话框中显示提示,等待用户输入正文并按下按钮. 如果用户在确认输入后(按下"确认输入"按钮或回车键)退出,返回真,否则返回假.
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main), [vol-属性表格-property_grid-main](#vol-属性表格-property_grid-main), [vol-带按钮列表框-vs_list_box-main](#vol-带按钮列表框-vs_list_box-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main)
+
+##### 火山.MFC界面.基本.窗口组件.置字体
+
+* **类型:** `方法`
+* **名称:** `置字体`
+* **参数:**
+	* `所欲设置的字体` (`字体对象类`)
+* **描述:** 设置本窗口组件所使用的字体
+
+##### 火山.MFC界面.基本.窗口组件.取字体
+
+* **类型:** `方法`
+* **名称:** `取字体`
+* **返回值数据类型:** `字体对象类`
+* **描述:** 返回本窗口组件所使用的字体
+
+##### 火山.MFC界面.基本.窗口组件.获取焦点
+
+* **类型:** `方法`
+* **名称:** `获取焦点`
+* **描述:** 将当前输入焦点设置到本组件上
+* **相关例程:** [vol-窗口组件动态消息过滤-msg_filter-main](#vol-窗口组件动态消息过滤-msg_filter-main), [vol-动态创建布局-dynamic_create-main](#vol-动态创建布局-dynamic_create-main), [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main), [vol-密码管理-pw-main](#vol-密码管理-pw-main), [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-跨平台http通讯演示客户端-httpclient-main](#vol-跨平台http通讯演示客户端-httpclient-main)
+
+##### 火山.MFC界面.基本.窗口组件.可有焦点
+
+* **类型:** `方法`
+* **名称:** `可有焦点`
+* **返回值数据类型:** `逻辑型`
+* **描述:** 返回当前窗口组件是否具有输入焦点
+
+##### 火山.MFC界面.基本.窗口组件.取用户区宽度
+
+* **类型:** `方法`
+* **名称:** `取用户区宽度`
+* **返回值数据类型:** `整数`
+* **描述:** 返回窗口或窗口组件用户区域的宽度,对窗口而言,用户区域为窗口区域减去标题栏+菜单栏+边框后的区域.
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-火花代码编辑框-codeedittext-main](#vol-火花代码编辑框-codeedittext-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main)
+
+##### 火山.MFC界面.基本.窗口组件.取用户区高度
+
+* **类型:** `方法`
+* **名称:** `取用户区高度`
+* **返回值数据类型:** `整数`
+* **描述:** 返回窗口或窗口组件用户区域的高度,对窗口而言,用户区域为窗口区域减去标题栏+菜单栏+边框后的区域.
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-火花代码编辑框-codeedittext-main](#vol-火花代码编辑框-codeedittext-main), [vol-echarts图表-echarts-main](#vol-echarts图表-echarts-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-markdown解析-markdown-main](#vol-markdown解析-markdown-main)
+
+##### 火山.MFC界面.基本.窗口组件.取用户区矩形
+
+* **类型:** `方法`
+* **名称:** `取用户区矩形`
+* **返回值数据类型:** `矩形类`
+* **描述:** 获取并返回当前组件的用户区矩形位置,对窗口而言,用户区域为窗口区域减去标题栏+菜单栏+边框后的区域.
+* **相关例程:** [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main)
+
+##### 火山.MFC界面.基本.窗口组件.取屏幕位置
+
+* **类型:** `方法`
+* **名称:** `取屏幕位置`
+* **返回值数据类型:** `矩形类`
+* **描述:** 获取并返回当前组件在屏幕中的所处矩形位置
+
+##### 火山.MFC界面.基本.窗口组件.屏幕矩形到用户区
+
+* **类型:** `方法`
+* **名称:** `屏幕矩形到用户区`
+* **参数:**
+	* `待转换矩形` (`矩形类`): 提供待转换的屏幕矩形位置,转换完毕后的结果将写回此对象中.
+* **描述:** 将所指定的屏幕矩形位置转换到基于本组件用户区左上角
+
+##### 火山.MFC界面.基本.窗口组件.用户区矩形到屏幕
+
+* **类型:** `方法`
+* **名称:** `用户区矩形到屏幕`
+* **参数:**
+	* `待转换矩形` (`矩形类`): 提供待转换的屏幕矩形位置,转换完毕后的结果将写回此对象中.
+* **描述:** 将所指定的用户区矩形位置(基于本组件用户区左上角)转换到基于屏幕左上角
+
+##### 火山.MFC界面.基本.窗口组件.屏幕位置到用户区
+
+* **类型:** `方法`
+* **名称:** `屏幕位置到用户区`
+* **参数:**
+	* `待转换位置` (`位置类`): 提供待转换的屏幕位置,转换完毕后的结果将写回此对象中.
+* **描述:** 将所指定的屏幕位置转换到基于本组件用户区左上角
+
+##### 火山.MFC界面.基本.窗口组件.用户区位置到屏幕
+
+* **类型:** `方法`
+* **名称:** `用户区位置到屏幕`
+* **参数:**
+	* `待转换位置` (`位置类`): 提供待转换的屏幕位置,转换完毕后的结果将写回此对象中.
+* **描述:** 将所指定的用户区位置(基于本组件用户区左上角)转换到基于屏幕左上角
+* **相关例程:** [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main)
+
+##### 火山.MFC界面.基本.窗口组件.禁止重画
+
+* **类型:** `方法`
+* **名称:** `禁止重画`
+* **描述:** 禁止本窗口组件重画,以避免当频繁进行操作时引起闪烁. 注意调用本命令后必须调用"允许重画"命令进行恢复.
+
+##### 火山.MFC界面.基本.窗口组件.允许重画
+
+* **类型:** `方法`
+* **名称:** `允许重画`
+* **描述:** 如果本组件先前调用过"禁止重画"方法禁止了重画,调用本方法可以重新将其允许.
+
+##### 火山.MFC界面.基本.窗口组件.重画
+
+* **类型:** `方法`
+* **名称:** `重画`
+* **描述:** 通知Windows系统本窗口组件上的显示内容需要被全部重画
+* **相关例程:** [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main)
+
+##### 火山.MFC界面.基本.窗口组件.部分重画
+
+* **类型:** `方法`
+* **名称:** `部分重画`
+* **参数:**
+	* `欲重画区域的左边` (`整数`): 相对于本组件用户区域的左边
+	* `欲重画区域的顶边` (`整数`): 相对于本组件用户区域的顶边
+	* `欲重画区域的宽度` (`整数`)
+	* `欲重画区域的高度` (`整数`)
+* **描述:** 通知Windows系统本窗口组件上所指定用户区域内的显示内容需要被重画
+
+##### 火山.MFC界面.基本.窗口组件.取消重画
+
+* **类型:** `方法`
+* **名称:** `取消重画`
+* **描述:** 通知Windows系统本窗口组件不再需要被重画,保留现有的全部显示内容.
+
+##### 火山.MFC界面.基本.窗口组件.刷新显示
+
+* **类型:** `方法`
+* **名称:** `刷新显示`
+* **描述:** 一般情况下,如果本窗口组件上的显示内容需要被全部或部分重画,Windows系统会等到下一次系统空闲时刷新显示,但是这样无法满足一些需要即时更新的场合,此时执行本方法可以立即对本窗口组件进行重画更新.
+* **相关例程:** [vol-打印测试-print_test-main](#vol-打印测试-print_test-main), [vol-多线程-muti_thread-main](#vol-多线程-muti_thread-main)
+
+##### 火山.MFC界面.基本.窗口组件.移动
+
+* **类型:** `方法`
+* **名称:** `移动`
+* **参数:**
+	* `左边` (`整数`, 默认值: `数值范围.最小整数值`): 提供新的左边位置,如果当前组件为顶层窗口,则相对屏幕左边位置,否则相对其所处父组件的用户区左边位置. 为"数值范围.最小整数值"常量值表示保持原有左边位置不变.
+	* `顶边` (`整数`, 默认值: `数值范围.最小整数值`): 提供新的顶边位置,如果当前组件为顶层窗口,则相对屏幕顶边位置,否则相对其所处父组件的用户区顶边位置. 为"数值范围.最小整数值"常量值表示保持原有顶边位置不变.
+	* `宽度` (`整数`, 默认值: `-1`): 提供组件新的宽度,如果为-1则保持原有宽度不变.
+	* `高度` (`整数`, 默认值: `-1`): 提供组件新的高度,如果为-1则保持原有高度不变.
+* **描述:** 改变窗口组件的位置或尺寸
+* **相关例程:** [vol-选择夹2-tab_demo-main](#vol-选择夹2-tab_demo-main), [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-卷帘式菜单-outbar-main](#vol-卷帘式菜单-outbar-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main)
+
+##### 火山.MFC界面.基本.窗口组件.移动2
+
+* **类型:** `方法`
+* **名称:** `移动2`
+* **参数:**
+	* `新位置` (`矩形类`)
+* **描述:** 改变窗口组件的位置或尺寸
+* **相关例程:** [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main)
+
+##### 火山.MFC界面.基本.窗口组件.调整层次
+
+* **类型:** `方法`
+* **名称:** `调整层次`
+* **参数:**
+	* `欲调整到的层次` (`组件层次`)
+* **描述:** 改变窗口组件的当前所处显示层次
+* **相关例程:** [vol-锐浪报表-grid_report-main](#vol-锐浪报表-grid_report-main)
+
+##### 火山.MFC界面.基本.窗口组件.发送信息
+
+* **类型:** `方法`
+* **名称:** `发送信息`
+* **返回值数据类型:** `变整数`
+* **参数:**
+	* `信息值` (`整数`)
+	* `参数1` (`变整数`, 默认值: `0`)
+	* `参数2` (`变整数`, 默认值: `0`)
+* **描述:** 将指定信息发送到本窗口组件,并等待且取回信息反馈值.
+* **相关例程:** [vol-日期框-date_box-main](#vol-日期框-date_box-main), [vol-线程池异步任务-threadpool-main](#vol-线程池异步任务-threadpool-main)
+
+##### 火山.MFC界面.基本.窗口组件.投递信息
+
+* **类型:** `方法`
+* **名称:** `投递信息`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `信息值` (`整数`)
+	* `参数1` (`变整数`, 默认值: `0`)
+	* `参数2` (`变整数`, 默认值: `0`)
+* **描述:** 将指定信息发送到本窗口组件,不等待直接返回.
+* **返回值描述:** 成功返回真,失败返回假.
+* **相关例程:** [vol-openssl数据操作-opensslsample-main](#vol-openssl数据操作-opensslsample-main), [vol-curl网络传输-curlsample-main](#vol-curl网络传输-curlsample-main), [vol-pack文件传送客户端-hp_packfile_client-main](#vol-pack文件传送客户端-hp_packfile_client-main)
+
+##### 火山.MFC界面.基本.窗口组件.置父窗口
+
+* **类型:** `方法`
+* **名称:** `置父窗口`
+* **参数:**
+	* `所欲设置的父组件` (`窗口组件`): 可以是窗口或窗口组件
+* **描述:** 设置本窗口组件的父窗口组件
+
+##### 火山.MFC界面.基本.窗口组件.用户区截图
+
+* **类型:** `方法`
+* **名称:** `用户区截图`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所取回图片` (`位图对象类`): 组件上用户区内所有现有显示内容将被填入到此对象中
+	* `输出宽度` (`整数`, 默认值: `0`): 指定图片的输出宽度. 如果小于0,参数值指定的是最终图片输出宽度相对于所取得图片宽度的百分比(最小为10%); 如果等于0,则按图片原宽度输出; 如果大于0,指定输出图片的绝对宽度.
+	* `输出高度` (`整数`, 默认值: `0`): 指定图片的输出高度. 如果小于0,参数值指定的是最终图片输出高度相对于所取得图片高度的百分比(最小为10%); 如果等于0,则按图片原高度输出; 如果大于0,指定输出图片的绝对高度.
+* **描述:** 取回本组件上用户区内所有现有显示内容的图片对象
+* **返回值描述:** 成功返回真,失败返回假.
+
+##### 火山.MFC界面.基本.窗口组件.组件截图
+
+* **类型:** `方法`
+* **名称:** `组件截图`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所取回图片` (`位图对象类`): 组件上整体所有现有显示内容将被填入到此对象中
+	* `输出宽度` (`整数`, 默认值: `0`): 指定图片的输出宽度. 如果小于0,参数值指定的是最终图片输出宽度相对于所取得图片宽度的百分比(最小为10%); 如果等于0,则按图片原宽度输出; 如果大于0,指定输出图片的绝对宽度.
+	* `输出高度` (`整数`, 默认值: `0`): 指定图片的输出高度. 如果小于0,参数值指定的是最终图片输出高度相对于所取得图片高度的百分比(最小为10%); 如果等于0,则按图片原高度输出; 如果大于0,指定输出图片的绝对高度.
+* **描述:** 取回本组件上整体(包括用户区与非用户区)所有现有显示内容的图片对象
+* **返回值描述:** 成功返回真,失败返回假.
+
+##### 火山.MFC界面.基本.窗口组件.提到前方
+
+* **类型:** `方法`
+* **名称:** `提到前方`
+* **描述:** 将本窗口的叠放位置提到其它窗口的前方
+
+##### 火山.MFC界面.基本.窗口组件.激活
+
+* **类型:** `方法`
+* **名称:** `激活`
+* **描述:** 将本窗口设置为当前活动窗口. 仅用作本对象的实际类型为"窗口"或"MDI主窗口"的情况.
+
+##### 火山.MFC界面.基本.窗口组件.置为前台窗口
+
+* **类型:** `方法`
+* **名称:** `置为前台窗口`
+* **描述:** 将本窗口设置为系统前台窗口. 仅用作本对象的实际类型为"窗口"或"MDI主窗口"的情况.
+
+##### 火山.MFC界面.基本.窗口组件.执行
+
+* **类型:** `方法`
+* **名称:** `执行`
+* **参数:**
+	* `欲操作文件名` (`文本型`): 提供欲操作文件或文件夹的名称
+	* `命令类型` (`所执行命令类型`, 默认值: `所执行命令类型.默认`): 本参数提供欲执行命令的类型
+	* `命令行` (`文本型`, 默认值: `""`): 如果欲进行操作的类型为"打开文件"且被打开文件为可执行文件,本参数提供启动该可执行文件时欲附加的命令行文本,其它情况下本参数将被忽略.
+	* `默认当前目录` (`文本型`, 默认值: `""`): 提供命令执行时的默认当前目录
+* **描述:** 执行所指定的命令行. 仅用作本对象的实际类型为"窗口"或"MDI主窗口"的情况.
+* **相关例程:** [vol-excel2021-excel2021-main](#vol-excel2021-excel2021-main), [vol-word2021-word2021-main](#vol-word2021-word2021-main)
+
+##### 火山.MFC界面.基本.窗口组件.删除到回收站
+
+* **类型:** `方法`
+* **名称:** `删除到回收站`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `欲删除文件` (`文本型`): 提供所欲删除的文件名(注意必须是全路径),支持使用通配字符"*"和"?".
+	* `删除选项` (`整数`, 默认值: `0`): 本参数提供删除操作选项,可以为以下值之一或之和: 1.不询问删除; 2.不提示错误; 4.不显示进度.
+* **描述:** 将一个或一批文件删除到Windows系统回收站中. 仅用作本对象的实际类型为"窗口"或"MDI主窗口"的情况.
+* **返回值描述:** 成功返回真,失败或被用户中止删除操作返回假.
+
+##### 火山.MFC界面.基本.窗口组件.进度复制文件
+
+* **类型:** `方法`
+* **名称:** `进度复制文件`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `目的目录` (`文本型`): 本参数提供目的目录路径,如果该目录不存在,系统将自动询问是否创建.
+	* `源文件` (`文本型`): 提供所欲复制的文件名(注意必须是全路径),支持使用通配字符"*"和"?".
+	* `是否为移动` (`逻辑型`, 默认值: `假`): 为真则移动文件,为假则复制文件.
+* **描述:** 将所指定文件复制或移动到另一个目录中,并同时显示一个进度对话框. 仅用作本对象的实际类型为"窗口"或"MDI主窗口"的情况.
+* **返回值描述:** 成功返回真,失败或被用户中止删除操作返回假.
+
+##### 火山.MFC界面.基本.窗口组件.批量删除到回收站
+
+* **类型:** `方法`
+* **名称:** `批量删除到回收站`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `欲删除文件数组` (`文本数组类`): 提供所欲删除的所有文件名(注意必须是全路径),支持使用通配字符"*"和"?".
+	* `删除选项` (`整数`, 默认值: `0`): 本参数提供删除操作选项,可以为以下值之一或之和: 1.不询问删除; 2.不提示错误; 4.不显示进度.
+* **描述:** 将一个或一批文件删除到Windows系统回收站中. 仅用作本对象的实际类型为"窗口"或"MDI主窗口"的情况.
+* **返回值描述:** 成功返回真,失败或被用户中止删除操作返回假.
+
+##### 火山.MFC界面.基本.窗口组件.批量进度复制文件
+
+* **类型:** `方法`
+* **名称:** `批量进度复制文件`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `目的目录` (`文本型`): 本参数提供目的目录路径,如果该目录不存在,系统将自动询问是否创建.
+	* `源文件数组` (`文本数组类`): 提供所有欲复制的文件名(注意必须是全路径),支持使用通配字符"*"和"?".
+	* `是否为移动` (`逻辑型`, 默认值: `假`): 为真则移动文件,为假则复制文件.
+* **描述:** 将一个或一批文件复制或移动到另一个目录中,并同时显示一个进度对话框. 仅用作本对象的实际类型为"窗口"或"MDI主窗口"的情况.
+* **返回值描述:** 成功返回真,失败或被用户中止删除操作返回假.
+
+##### 火山.MFC界面.基本.窗口组件.浏览文件夹
+
+* **类型:** `方法`
+* **名称:** `浏览文件夹`
+* **返回值数据类型:** `文本型`
+* **参数:**
+	* `标题` (`文本型`): 提供显示在对话框上部的标题文本
+	* `是否包含文件` (`逻辑型`, 默认值: `假`): 指定是否在浏览框中同时列出文件名
+* **描述:** 打开一个对话框,浏览系统中存在的所有文件夹,返回被选定文件夹的路径名,如果未选中任何文件夹,则返回空文本. 仅用作本对象的实际类型为"窗口"或"MDI主窗口"的情况.
+* **相关例程:** [vol-winhttp-winhttp5_1-main](#vol-winhttp-winhttp5_1-main), [vol-tts语音引擎-w_tts5_4-main](#vol-tts语音引擎-w_tts5_4-main)
+
+##### 火山.MFC界面.基本.窗口组件.弹出菜单
+
+* **类型:** `方法`
+* **名称:** `弹出菜单`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所欲弹出的菜单` (`菜单类(需求:数据类型)`): 提供所欲弹出菜单类的数据类型,应该为"菜单类"的继承类.所实际弹出的菜单为该菜单的第一个子菜单.
+	* `横向位置` (`整数`, 默认值: `数值范围.最小整数值`): 指定所弹出子菜单的左边在屏幕上的横向位置,为"数值范围.最小整数值"常量值则使用当前鼠标在屏幕上的横向位置.
+	* `纵向位置` (`整数`, 默认值: `数值范围.最小整数值`): 指定所弹出子菜单的顶边在屏幕上的纵向位置,为"数值范围.最小整数值"常量值则使用当前鼠标在屏幕上的纵向位置.
+	* `子菜单位置` (`整数`, 默认值: `0`): 指定所欲弹出子菜单在所提供菜单内顶层菜单项中的索引位置
+* **描述:** 在屏幕上指定位置弹出所指定的子菜单,用户点击该子菜单中菜单项所产生的命令将由本窗口组件接收处理.
+* **返回值描述:** 返回是否成功
+* **相关例程:** [vol-工具条-tool_bar-main](#vol-工具条-tool_bar-main), [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main), [vol-ado-ado_sample-main](#vol-ado-ado_sample-main)
+
+##### 火山.MFC界面.基本.窗口组件.弹出实例菜单
+
+* **类型:** `方法`
+* **名称:** `弹出实例菜单`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所欲弹出的菜单` (`菜单类`): 提供所欲弹出的菜单类对象,所实际弹出的菜单为该菜单的第一个子菜单.
+	* `横向位置` (`整数`, 默认值: `数值范围.最小整数值`): 指定所弹出子菜单的左边在屏幕上的横向位置,为"数值范围.最小整数值"常量值则使用当前鼠标在屏幕上的横向位置.
+	* `纵向位置` (`整数`, 默认值: `数值范围.最小整数值`): 指定所弹出子菜单的顶边在屏幕上的纵向位置,为"数值范围.最小整数值"常量值则使用当前鼠标在屏幕上的纵向位置.
+	* `子菜单位置` (`整数`, 默认值: `0`): 指定所欲弹出子菜单在所提供菜单内顶层菜单项中的索引位置
+* **描述:** 在屏幕上指定位置弹出所指定的子菜单,用户点击该子菜单中菜单项所产生的命令将由本窗口组件接收处理.
+* **返回值描述:** 返回是否成功
+* **相关例程:** [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main)
+
+##### 火山.MFC界面.基本.窗口组件.弹出托盘菜单
+
+* **类型:** `方法`
+* **名称:** `弹出托盘菜单`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所欲弹出的菜单` (`菜单类(需求:数据类型)`): 提供所欲弹出菜单类的数据类型,应该为"菜单类"的继承类.所实际弹出的菜单为该菜单的第一个子菜单.
+	* `子菜单位置` (`整数`, 默认值: `0`): 指定所欲弹出子菜单在所提供菜单内顶层菜单项中的索引位置
+* **描述:** 在当前鼠标位置弹出指定菜单,本方法一般用作支持托盘菜单的弹出.
+* **返回值描述:** 返回是否成功
+
+##### 火山.MFC界面.基本.窗口组件.弹出托盘实例菜单
+
+* **类型:** `方法`
+* **名称:** `弹出托盘实例菜单`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所欲弹出的菜单` (`菜单类`): 提供所欲弹出得菜单类对象,所实际弹出的菜单为该菜单的第一个子菜单.
+	* `子菜单位置` (`整数`, 默认值: `0`): 指定所欲弹出子菜单在所提供菜单内顶层菜单项中的索引位置
+* **描述:** 在当前鼠标位置弹出指定菜单,本方法一般用作支持托盘菜单的弹出.
+* **返回值描述:** 返回是否成功
+
+##### 火山.MFC界面.基本.窗口组件.置窗口属性
+
+* **类型:** `方法`
+* **名称:** `置窗口属性`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `属性名称` (`文本型`): 提供所欲设置的属性名称,不能为空文本.
+	* `属性值` (`变整数`): 提供所欲设置的属性值
+* **描述:** 设置关联到窗口句柄的一个命名属性值. 注意: 当不再使用该属性时,需要调用"删除窗口属性"将其删除.
+* **返回值描述:** 成功返回真,失败返回假.
+
+##### 火山.MFC界面.基本.窗口组件.取窗口属性
+
+* **类型:** `方法`
+* **名称:** `取窗口属性`
+* **返回值数据类型:** `变整数`
+* **参数:**
+	* `属性名称` (`文本型`): 提供所欲读取属性的名称,不能为空文本.
+* **描述:** 读取并返回关联到窗口句柄的指定命名属性值. 该属性为使用"置窗口属性"方法设置.
+* **返回值描述:** 成功返回所对应的属性值,失败返回0(注意也有可能本身属性值就为0).
+
+##### 火山.MFC界面.基本.窗口组件.删除窗口属性
+
+* **类型:** `方法`
+* **名称:** `删除窗口属性`
+* **返回值数据类型:** `变整数`
+* **参数:**
+	* `属性名称` (`文本型`): 提供所欲删除属性的名称,不能为空文本.
+* **描述:** 删除通过使用"置窗口属性"方法所设置到窗口句柄上的关联属性
+* **返回值描述:** 成功返回该被删除属性所对应的属性值,失败返回0(注意也有可能本身属性值就为0).
+
+##### 火山.MFC界面.基本.窗口组件.取分组编号
+
+* **类型:** `方法`
+* **名称:** `取分组编号`
+* **返回值数据类型:** `整数`
+* **描述:** 返回本组件在设计时的分组编号,为-1表示无.
+
+##### 火山.MFC界面.基本.窗口组件.取组件分组编号
+
+* **类型:** `方法`
+* **名称:** `取组件分组编号`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `组件窗口句柄值` (`变整数`): 提供所欲获取其设计时分组编号的组件窗口句柄
+* **特性:**
+	* `静态`
+* **描述:** 返回所指定窗口句柄的组件在设计时的分组编号,为-1表示该组件设计时未分组或所提供窗口句柄不对应一个火山窗口组件.
+
+##### 火山.MFC界面.基本.窗口组件.置组件分组编号
+
+* **类型:** `方法`
+* **名称:** `置组件分组编号`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `组件窗口句柄值` (`变整数`): 提供所欲设置其设计时分组编号的组件窗口句柄
+	* `新分组编号` (`整数`): 提供所欲设置的新分组编号
+* **特性:**
+	* `静态`
+* **描述:** 设置所指定窗口句柄的组件在设计时的分组编号
+* **返回值描述:** 成功返回真,失败返回假.
+
+---
+
+#### 火山.MFC界面.基本.窗口容器组件
+
+* **类型:** `类`
+* **名称:** `窗口容器组件`
+* **基础类:** `窗口组件`
+* **文档分类:** `窗口组件.基础类`
+* **描述:** 所有窗口容器组件的基础类
+
+##### 火山.MFC界面.基本.窗口容器组件.创建时宽度
+
+* **类型:** `属性读方法`
+* **名称:** `创建时宽度`
+* **返回值数据类型:** `整数`
+* **描述:** 返回本组件创建时的宽度
+
+##### 火山.MFC界面.基本.窗口容器组件.创建时高度
+
+* **类型:** `属性读方法`
+* **名称:** `创建时高度`
+* **返回值数据类型:** `整数`
+* **描述:** 返回本组件创建时的高度
+
+##### 火山.MFC界面.基本.窗口容器组件.创建容器组件
+
+* **类型:** `方法`
+* **名称:** `创建容器组件`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `父窗口容器组件` (`窗口容器组件`): 提供所创建组件所处的父窗口容器组件
+	* `左边位置` (`整数`): 提供所创建组件在所处父窗口容器组件中的左边横向坐标位置
+	* `顶边位置` (`整数`): 提供所创建组件在所处父窗口容器组件中的顶边纵向坐标位置
+	* `ID值` (`整数`, 默认值: `0xFFFF`): 指定所创建组件在其父窗口容器组件中的ID值
+	* `所处分组编号` (`整数`, 默认值: `-1`): 指定所创建组件所处的设计时分组编号
+* **描述:** 使用调用本方法的本类实际继承类的设计时尺寸创建对应的窗口组件. 如果调用本方法的继承类未被设计过布局,所创建的组件尺寸将为0.
+* **返回值描述:** 返回是否成功
+* **相关例程:** [vol-动态创建布局-dynamic_create-main](#vol-动态创建布局-dynamic_create-main)
+
+##### 火山.MFC界面.基本.窗口容器组件.取所有子组件句柄
+
+* **类型:** `方法`
+* **名称:** `取所有子组件句柄`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `结果句柄数组` (`变整数数组类`): 用作存储所获得的所有直接子组件的窗口句柄值
+* **描述:** 获取本容器组件所有直接子组件的窗口句柄值
+* **返回值描述:** 返回填入到"结果数组"参数数组中的窗口句柄数目
+
+##### 火山.MFC界面.基本.窗口容器组件.显示子组件组
+
+* **类型:** `方法`
+* **名称:** `显示子组件组`
+* **参数:**
+	* `子组件分组编号` (`整数`): 提供需处理子组件位于的设计时分组编号,为-1表示没有进行分组的所有子组件.
+	* `是否显示` (`逻辑型`, 默认值: `真`): 为真则显示位于该分组内的所有子组件,为假则隐藏.
+	* `处理其它组子组件` (`逻辑型`, 默认值: `真`): 为真则处理所有位于其它分组内的子组件,处理方式为相反,即: "是否显示"参数为真则隐藏,否则显示.
+	* `处理未分组子组件` (`逻辑型`, 默认值: `假`): 为真则处理所有未进行分组的子组件,处理方式为相反,即: "是否显示"参数为真则隐藏,否则显示.
+* **描述:** 显示或隐藏本容器组件中的一组设计时指定的子组件(仅限直接子组件)
+
+##### 火山.MFC界面.基本.窗口容器组件.禁止子组件组
+
+* **类型:** `方法`
+* **名称:** `禁止子组件组`
+* **参数:**
+	* `子组件分组编号` (`整数`): 提供需处理子组件位于的设计时分组编号,为-1表示没有进行分组的所有子组件.
+	* `是否禁止` (`逻辑型`, 默认值: `真`): 为真则禁止位于该分组内的所有子组件,为假则允许.
+	* `处理其它组子组件` (`逻辑型`, 默认值: `真`): 为真则处理所有位于其它分组内的子组件,处理方式为相反,即: "是否禁止"参数为真则允许,否则禁止.
+	* `处理未分组子组件` (`逻辑型`, 默认值: `假`): 为真则处理所有未进行分组的子组件,处理方式为相反,即: "是否禁止"参数为真则允许,否则禁止.
+* **描述:** 禁止或允许对本容器组件中的一组设计时指定的子组件(仅限直接子组件)进行操作
+
+---
+
+#### 火山.MFC界面.基本.消息过滤器类
+
+* **类型:** `类`
+* **名称:** `消息过滤器类`
+* **描述:** 用作接收所挂接窗口组件的消息
+* **相关例程:** [vol-窗口组件动态消息过滤-msg_filter-main](#vol-窗口组件动态消息过滤-msg_filter-main)
+
+##### 火山.MFC界面.基本.消息过滤器类.所挂接窗口句柄
+
+* **类型:** `成员变量`
+* **名称:** `所挂接窗口句柄`
+* **数据类型:** `变整数`
+* **描述:** 提供当前所已经挂接到窗口组件的句柄值,为0表示尚未被挂接.
+
+##### 火山.MFC界面.基本.消息过滤器类.消息过滤
+
+* **类型:** `事件定义方法`
+* **名称:** `消息过滤`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `窗口句柄` (`变整数`): 提供消息所对应的窗口句柄(HWND)
+	* `消息值` (`整数`): 提供消息的具体值
+	* `消息参数1` (`变整数`): 提供消息所附带的参数1的值
+	* `消息参数2` (`变整数`): 提供消息所附带的参数2的值
+	* `返回值` (`变整数类`): 当本方法返回假时用作提供具体的返回值,默认为0.
+* **描述:** 当接收到所挂接窗口组件的消息后,本事件被发送.
+* **返回值描述:** 返回0表示允许消息继续向后传递并处理,返回1表示取消掉该消息的后续处理.
+* **相关例程:** [vol-窗口组件动态消息过滤-msg_filter-main](#vol-窗口组件动态消息过滤-msg_filter-main)
+
+##### 火山.MFC界面.基本.消息过滤器类.挂接
+
+* **类型:** `方法`
+* **名称:** `挂接`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `欲挂接的组件` (`窗口组件`): 提供欲将本消息过滤器挂接到的窗口组件
+* **描述:** 将本消息过滤器挂接到所指定的窗口组件,挂接后该窗口组件的所有Windows消息都会首先调用本类的"消息过滤"事件进行过滤.
+* **返回值描述:** 挂接成功返回真,失败返回假.
+* **相关例程:** [vol-窗口组件动态消息过滤-msg_filter-main](#vol-窗口组件动态消息过滤-msg_filter-main)
+
+##### 火山.MFC界面.基本.消息过滤器类.挂接2
+
+* **类型:** `方法`
+* **名称:** `挂接2`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `欲挂接组件的句柄` (`变整数`): 提供欲将本消息过滤器挂接到窗口组件的句柄值
+* **描述:** 将本消息过滤器挂接到所指定的窗口组件,挂接后该窗口组件的所有Windows消息都会首先调用本类的"消息过滤"事件进行过滤.
+* **返回值描述:** 挂接成功返回真,失败返回假.
+
+##### 火山.MFC界面.基本.消息过滤器类.取消挂接
+
+* **类型:** `方法`
+* **名称:** `取消挂接`
+* **描述:** 如果本消息过滤器已经挂接到窗口组件,取消其挂接. 本方法调用不是必需的,本类对象被销毁时,将自动调用本方法.
+
+---
+
+#### 火山.MFC界面.基本.常用界面功能类
+
+* **类型:** `类`
+* **名称:** `常用界面功能类`
+* **特性:**
+	* `全局类`(调用其中的静态方法可以省略类名指定前缀)
+* **文档分类:** `常用功能`
+* **相关例程:** [vol-命名管道-namedpipe-main](#vol-命名管道-namedpipe-main), [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main), [vol-rvm人像抠图-rvm_segmentation-main](#vol-rvm人像抠图-rvm_segmentation-main)
+
+##### 火山.MFC界面.基本.常用界面功能类.处理事件
+
+* **类型:** `全局方法`
+* **名称:** `处理事件`
+* **特性:**
+	* `静态`
+* **描述:** 暂时转让控制权,以便让 Windows 操作系统有机会处理其它的如用户键盘或鼠标输入等事件. 直到操作系统处理并发送完程序消息队列中的所有事件后,本方法才会返回.
+* **相关例程:** [vol-命名管道-namedpipe-main](#vol-命名管道-namedpipe-main), [vol-飞机大战-aircraft-main](#vol-飞机大战-aircraft-main), [vol-rvm人像抠图-rvm_segmentation-main](#vol-rvm人像抠图-rvm_segmentation-main)
+
+##### 火山.MFC界面.基本.常用界面功能类.界面延时
+
+* **类型:** `全局方法`
+* **名称:** `界面延时`
+* **参数:**
+	* `所欲延迟的时间` (`整数`): 提供所欲延迟的时间周期,单位毫秒.
+* **特性:**
+	* `静态`
+* **描述:** 延时所指定的时间,本方法不影响界面更新.
+
+---
+
+#### 火山.MFC界面.基本.菜单类
+
+* **类型:** `类`
+* **名称:** `菜单类`
+* **基础类:** `可设计类`
+* **文档分类:** `常用功能`
+* **描述:** 用作记录MFC菜单对象,提供有对应的菜单设计器,用户可以在所有本类的继承类上点击右键,在弹出菜单中选择打开该设计器进行菜单设计.
+* **相关例程:** [vol-对话框-dialog_test-main](#vol-对话框-dialog_test-main), [vol-工具条-tool_bar-main](#vol-工具条-tool_bar-main), [vol-表格-grid-main](#vol-表格-grid-main), [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main), [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main), [vol-mdi多文档应用程序-mdi-main](#vol-mdi多文档应用程序-mdi-main), [vol-一步一步跟我学火山-step_by_step-main](#vol-一步一步跟我学火山-step_by_step-main), [vol-ado-ado_sample-main](#vol-ado-ado_sample-main)
+
+##### 火山.MFC界面.基本.菜单类.重载
+
+* **类型:** `方法`
+* **名称:** `重载`
+* **描述:** 如果本菜单的内容被修改,执行本方法可以将其重置到设计时状态.
+* **相关例程:** [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main)
+
+##### 火山.MFC界面.基本.菜单类.删除菜单项
+
+* **类型:** `方法`
+* **名称:** `删除菜单项`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所欲删除菜单项ID` (`整数`)
+* **描述:** 删除所指定ID的菜单项,返回是否成功.
+* **相关例程:** [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main)
+
+##### 火山.MFC界面.基本.菜单类.插入菜单项
+
+* **类型:** `方法`
+* **名称:** `插入菜单项`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `新菜单项ID` (`整数`, 默认值: `0`): 指定所欲插入新菜单项的ID值,必须尚不存在,否则将插入失败.如果为0,则自动计算使用一个不重复的ID值.
+	* `新菜单项标题` (`文本型`): 提供新菜单项的标题文本,如果为空文本,则插入一个分隔条.
+	* `插入位置菜单项ID` (`整数`): 如果"是否插入在尾部"参数值为假,新菜单项将插入在为该ID的已有菜单项前面.
+	* `是否插入在尾部` (`逻辑型`, 默认值: `假`): 如果本参数值为真,则将始终插入到"插入位置菜单项ID"参数所指定菜单项所处子菜单的尾部.
+	* `新菜单项提示文本` (`文本型`, 默认值: `""`): 提供新菜单项的提示文本
+	* `是否选中` (`逻辑型`, 默认值: `假`): 是否选中所插入的新菜单项
+	* `是否禁止` (`逻辑型`, 默认值: `假`): 是否禁止所插入的新菜单项
+	* `图标索引位置` (`整数`, 默认值: `-1`): 提供菜单项的图标索引位置,为-1表示无. 注意: 基本菜单类并不支持设置菜单项图标,此特性需要菜单继承类支持.
+* **描述:** 插入一个新的菜单项目
+* **返回值描述:** 成功返回所插入菜单项的ID值,失败或插入分隔条返回0.
+
+##### 火山.MFC界面.基本.菜单类.选中菜单项
+
+* **类型:** `方法`
+* **名称:** `选中菜单项`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所欲操作菜单项ID` (`整数`)
+	* `是否选中` (`逻辑型`)
+* **描述:** 设置或取消所指定ID菜单项目的选中状态,返回是否成功.
+* **相关例程:** [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main)
+
+##### 火山.MFC界面.基本.菜单类.翻转菜单项选中状态
+
+* **类型:** `方法`
+* **名称:** `翻转菜单项选中状态`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所欲操作菜单项ID` (`整数`)
+* **描述:** 翻转所指定ID菜单项目的当前选中状态,返回是否成功.
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main), [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main), [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main)
+
+##### 火山.MFC界面.基本.菜单类.允许菜单项
+
+* **类型:** `方法`
+* **名称:** `允许菜单项`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所欲操作菜单项ID` (`整数`)
+	* `是否允许操作` (`逻辑型`): 指定是否允许用户操作菜单项
+* **描述:** 设置或取消所指定ID菜单项的操作允许状态,返回是否成功.
+* **相关例程:** [vol-cef浏览器-cef-main](#vol-cef浏览器-cef-main), [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main)
+
+##### 火山.MFC界面.基本.菜单类.是否被选中
+
+* **类型:** `方法`
+* **名称:** `是否被选中`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所欲操作菜单项ID` (`整数`)
+* **描述:** 返回所指定ID菜单项是否处于被选中状态,如果所指定菜单项不存在,将始终返回假.
+* **相关例程:** [vol-表格-grid-main](#vol-表格-grid-main), [vol-miniblink浏览器组件-mini_blink_control-main](#vol-miniblink浏览器组件-mini_blink_control-main), [vol-cximage高级图像处理-cximage-main](#vol-cximage高级图像处理-cximage-main)
+
+##### 火山.MFC界面.基本.菜单类.是否被允许
+
+* **类型:** `方法`
+* **名称:** `是否被允许`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所欲操作菜单项ID` (`整数`)
+* **描述:** 返回所指定ID菜单项是否处于被允许操作状态,如果所指定菜单项不存在,将始终返回假.
+* **相关例程:** [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main)
+
+##### 火山.MFC界面.基本.菜单类.取菜单项标题
+
+* **类型:** `方法`
+* **名称:** `取菜单项标题`
+* **返回值数据类型:** `文本型`
+* **参数:**
+	* `所欲操作菜单项ID` (`整数`)
+* **描述:** 返回所指定ID菜单项目的标题文本,如果所指定菜单项不存在,将返回空文本.
+* **相关例程:** [vol-工具条-tool_bar-main](#vol-工具条-tool_bar-main)
+
+##### 火山.MFC界面.基本.菜单类.置菜单项标题
+
+* **类型:** `方法`
+* **名称:** `置菜单项标题`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所欲操作菜单项ID` (`整数`)
+	* `所欲设置的标题` (`文本型`)
+* **描述:** 设置所指定ID菜单项目的标题文本,返回是否成功.
+
+##### 火山.MFC界面.基本.菜单类.取菜单项提示
+
+* **类型:** `方法`
+* **名称:** `取菜单项提示`
+* **返回值数据类型:** `文本型`
+* **参数:**
+	* `所欲操作菜单项ID` (`整数`)
+* **描述:** 返回所指定ID菜单项目的提示文本,如果所指定菜单项不存在,将返回空文本.
+* **相关例程:** [vol-菜单-menu_demo-main](#vol-菜单-menu_demo-main)
+
+##### 火山.MFC界面.基本.菜单类.置菜单项提示
+
+* **类型:** `方法`
+* **名称:** `置菜单项提示`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所欲操作菜单项ID` (`整数`)
+	* `所欲设置的提示文本` (`文本型`)
+* **描述:** 设置所指定ID菜单项目的提示文本,返回是否成功.
+
+##### 火山.MFC界面.基本.菜单类.取菜单项图标索引
+
+* **类型:** `方法`
+* **名称:** `取菜单项图标索引`
+* **返回值数据类型:** `整数`
+* **参数:**
+	* `所欲操作菜单项ID` (`整数`)
+* **描述:** 返回所指定ID菜单项目的图标索引位置,如果所指定菜单项不存在,将返回-1.
+
+##### 火山.MFC界面.基本.菜单类.置菜单项图标索引
+
+* **类型:** `方法`
+* **名称:** `置菜单项图标索引`
+* **返回值数据类型:** `逻辑型`
+* **参数:**
+	* `所欲操作菜单项ID` (`整数`)
+	* `所欲设置的图标索引` (`整数`): 提供所欲设置的图标索引位置,为-1表示无.
+* **描述:** 设置所指定ID菜单项目的图标索引位置,返回是否成功. 注意: 基本菜单类并不支持设置菜单项图标,此特性及所使用到的图片组需要由菜单继承类支持.

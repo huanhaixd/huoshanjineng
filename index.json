@@ -1,0 +1,20 @@
+{
+  "name": "火山平台开发",
+  "version": "1.0.0",
+  "description": "火山平台完整开发知识库",
+  "created": "2025-12-30T10:07:55.281565",
+  "statistics": {
+    "total_files": 228,
+    "syntax_files": 90,
+    "source_files": 130,
+    "module_files": 2,
+    "manual_files": 6,
+    "total_size": 71224576
+  },
+  "categories": {
+    "语法参考": "火山视窗完整语法参考文档",
+    "源代码示例": "实际项目源代码和代码示例",
+    "模块类库": "仰望模块和类库文档",
+    "开发手册": "火山平台开发手册和教程"
+  }
+}
